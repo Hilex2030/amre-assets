@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMRE — Asset Library</title>
+<link rel="stylesheet" href="./html/style.css">
+</head>
+<body>
+<div class="container">
+<h1>📚 AMRE — Asset Library</h1>
+<p>Live gallery of all images, HTML pages, and artifacts in this repository. Click any item to open it.</p>
+<div class="tabs">
+<div class="tab active" data-folder="images">Images</div>
+<div class="tab" data-folder="html">HTML Pages</div>
+<div class="tab" data-folder="artifacts">Artifacts</div>
+</div>
+<div id="content"><p class="empty">Loading…</p></div>
+<h2>Raw URL pattern</h2>
+<p><code>https://raw.githubusercontent.com/Hilex2030/amre-assets/main/&lt;folder&gt;/&lt;filename&gt;</code></p>
+</div>
+<script>
+const REPO = 'Hilex2030/amre-assets';
+const RAW = `https://raw.githubusercontent.com/${REPO}/main`;
+const API = `https://api.github.com/repos/${REPO}/contents`;
+const content = document.getElementById('content');
+const tabs = document.querySelectorAll('.tab');
+async function loadFolder(folder) {
+  content.innerHTML = '<p class="empty">Loading…</p>';
+  try {
+    const res = await fetch(`${API}/${folder}`);
+    const items = await res.json();
+    const files = items.filter(i => i.type === 'file' && !i.name.startsWith('.') && i.name !== 'README.md');
+    if (!files.length) { content.innerHTML = `<p class="empty">No files yet in /${folder}. Upload some to get started!</p>`; return; }
+    if (folder === 'images') {
+      content.innerHTML = `<div class="gallery">${files.map(f => `<a class="card" href="${RAW}/${folder}/${f.name}" target="_blank"><img src="${RAW}/${folder}/${f.name}" alt="${f.name}" loading="lazy"><div class="meta"><div class="name">${f.name}</div><div class="url">${(f.size/1024).toFixed(1)} KB</div></div></a>`).join('')}</div>`;
+    } else {
+      content.innerHTML = `<ul class="list">${files.map(f => `<li><a href="${folder === 'html' ? './' + folder + '/' + f.name : RAW + '/' + folder + '/' + f.name}" target="_blank">${f.name}</a> <span style="color:#7d8590;font-size:0.8rem;">(${(f.size/1024).toFixed(1)} KB)</span></li>`).join('')}</ul>`;
+    }
+  } catch (e) { content.innerHTML = `<p class="empty">Error: ${e.message}</p>`; }
+}
+tabs.forEach(t => t.addEventListener('click', () => { tabs.forEach(x => x.classList.remove('active')); t.classList.add('active'); loadFolder(t.dataset.folder); }));
+loadFolder('images');
+</script>
+</body>
+</html>
