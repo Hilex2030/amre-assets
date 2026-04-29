@@ -1,0 +1,97 @@
+/* Shared stylesheet for AMRE assets pages */
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  background: #0d1117;
+  color: #e6edf3;
+  padding: 2rem;
+  line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; margin-top: 0; }
+h2 { color: #f0f6fc; margin-top: 2.5rem; }
+a { color: #58a6ff; }
+.tabs { display: flex; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+.tab {
+  padding: 0.5rem 1rem;
+  background: #21262d;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #30363d;
+  color: #e6edf3;
+  user-select: none;
+}
+.tab:hover { background: #30363d; }
+.tab.active { background: #1f6feb; border-color: #1f6feb; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.15s, border-color 0.15s;
+  text-decoration: none;
+  display: block;
+}
+.card:hover { transform: translateY(-2px); border-color: #58a6ff; }
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  background: #0d1117;
+}
+.card .meta { padding: 0.6rem 0.8rem; font-size: 0.85rem; }
+.card .name { color: #e6edf3; word-break: break-all; }
+.card .url { color: #7d8590; font-size: 0.7rem; margin-top: 0.3rem; word-break: break-all; }
+.list { list-style: none; padding: 0; }
+.list li {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.empty {
+  color: #7d8590;
+  font-style: italic;
+  padding: 2rem;
+  text-align: center;
+  background: #161b22;
+  border-radius: 8px;
+}
+code {
+  background: #21262d;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+button, .btn {
+  background: #238636;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+button:hover, .btn:hover { background: #2ea043; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid #30363d; }
+th { background: #161b22; color: #f0f6fc; }
+input, select, textarea {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  color: #e6edf3;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: #58a6ff; }
