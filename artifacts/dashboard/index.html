@@ -195,6 +195,121 @@
     border-color: var(--ink);
   }
 
+  /* ===== DAILY FIVE — Hormozi leading-indicator strip ===== */
+  .daily-five-wrap {
+    margin: 32px 0 0;
+  }
+  .daily-five-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 14px; flex-wrap: wrap; gap: 8px;
+  }
+  .daily-five-title {
+    font-size: 13px; font-weight: 600; color: var(--ink);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .daily-five-sub {
+    font-size: 12px; color: var(--ink-3);
+  }
+  .daily-five-sub strong { color: var(--ink); font-weight: 600; }
+  .daily-five-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .d5-card {
+    background: var(--white);
+    border: 1px solid var(--hairline-soft);
+    border-radius: 14px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+    user-select: none;
+  }
+  .d5-card:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
+  .d5-cadence {
+    font-size: 10px; font-weight: 600; color: var(--ink-4);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .d5-label {
+    font-size: 12px; color: var(--ink-2);
+    line-height: 1.3;
+    min-height: 32px;
+  }
+  .d5-value-row {
+    display: flex; align-items: baseline; gap: 4px;
+    margin-top: 12px;
+  }
+  .d5-current {
+    font-size: 28px; font-weight: 600; letter-spacing: -0.02em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .d5-target {
+    font-size: 14px; color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+  .d5-bar {
+    margin-top: 10px;
+    height: 4px; background: var(--hairline-soft);
+    border-radius: 100px; overflow: hidden;
+  }
+  .d5-bar-fill {
+    height: 100%; border-radius: 100px;
+    transition: width 0.4s ease, background 0.2s;
+    width: 0;
+  }
+  .d5-bar-fill.red { background: #FF453A; }
+  .d5-bar-fill.amber { background: #FF9F0A; }
+  .d5-bar-fill.green { background: #34C759; }
+  .d5-status-dot {
+    position: absolute; top: 14px; right: 14px;
+    width: 7px; height: 7px; border-radius: 50%;
+  }
+  .d5-status-dot.red { background: #FF453A; }
+  .d5-status-dot.amber { background: #FF9F0A; }
+  .d5-status-dot.green {
+    background: #34C759;
+    box-shadow: 0 0 0 0 rgba(52,199,89,0.5);
+    animation: pulse 2s infinite;
+  }
+  .d5-controls {
+    display: flex; gap: 6px; margin-top: 10px;
+  }
+  .d5-btn {
+    flex: 1;
+    padding: 6px 8px; border-radius: 8px;
+    border: 1px solid var(--hairline);
+    background: var(--white);
+    color: var(--ink-2);
+    font-size: 11px; font-weight: 500;
+    font-family: var(--sans);
+    cursor: pointer; transition: all 0.15s;
+  }
+  .d5-btn:hover { background: var(--gray-bg); color: var(--ink); border-color: var(--ink-3); }
+  .d5-btn.minus { color: var(--ink-3); }
+  .d5-reset {
+    background: none; border: none;
+    font-size: 11px; color: var(--ink-3);
+    cursor: pointer; padding: 6px 12px;
+    border-radius: 8px;
+    font-family: var(--sans);
+    transition: color 0.15s, background 0.15s;
+  }
+  .d5-reset:hover { color: var(--ink); background: var(--gray-bg); }
+
+  @media (max-width: 920px) {
+    .daily-five-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .daily-five-grid { grid-template-columns: repeat(2, 1fr); }
+    .d5-current { font-size: 24px; }
+    .d5-label { min-height: 0; }
+  }
+
   /* ===== STATS ===== */
   .stats-bar {
     display: flex;
@@ -443,6 +558,95 @@
 
   <div class="wrap">
 
+    <!-- ===== DAILY FIVE ===== -->
+    <div class="daily-five-wrap">
+      <div class="daily-five-head">
+        <div class="daily-five-title">The Daily Five</div>
+        <div class="daily-five-sub">
+          Leading indicators · <strong id="d5DateLabel">Today</strong> ·
+          <button class="d5-reset" id="d5Reset" title="Reset today's counts">Reset day</button>
+        </div>
+      </div>
+      <div class="daily-five-grid" id="dailyFiveGrid">
+
+        <div class="d5-card" data-metric="conversations" data-target="10" data-cadence="day">
+          <div class="d5-status-dot" data-dot></div>
+          <div class="d5-cadence">Daily</div>
+          <div class="d5-label">Conversations<br>started</div>
+          <div class="d5-value-row">
+            <span class="d5-current" data-current>0</span>
+            <span class="d5-target">/ 10</span>
+          </div>
+          <div class="d5-bar"><div class="d5-bar-fill" data-fill></div></div>
+          <div class="d5-controls">
+            <button class="d5-btn minus" data-step="-1">−</button>
+            <button class="d5-btn" data-step="1">+1</button>
+          </div>
+        </div>
+
+        <div class="d5-card" data-metric="sphere" data-target="10" data-cadence="day">
+          <div class="d5-status-dot" data-dot></div>
+          <div class="d5-cadence">Daily</div>
+          <div class="d5-label">Sphere<br>touches</div>
+          <div class="d5-value-row">
+            <span class="d5-current" data-current>0</span>
+            <span class="d5-target">/ 10</span>
+          </div>
+          <div class="d5-bar"><div class="d5-bar-fill" data-fill></div></div>
+          <div class="d5-controls">
+            <button class="d5-btn minus" data-step="-1">−</button>
+            <button class="d5-btn" data-step="1">+1</button>
+          </div>
+        </div>
+
+        <div class="d5-card" data-metric="appointments" data-target="2" data-cadence="week">
+          <div class="d5-status-dot" data-dot></div>
+          <div class="d5-cadence">This week</div>
+          <div class="d5-label">Listing<br>appts booked</div>
+          <div class="d5-value-row">
+            <span class="d5-current" data-current>0</span>
+            <span class="d5-target">/ 2</span>
+          </div>
+          <div class="d5-bar"><div class="d5-bar-fill" data-fill></div></div>
+          <div class="d5-controls">
+            <button class="d5-btn minus" data-step="-1">−</button>
+            <button class="d5-btn" data-step="1">+1</button>
+          </div>
+        </div>
+
+        <div class="d5-card" data-metric="content" data-target="3" data-cadence="week">
+          <div class="d5-status-dot" data-dot></div>
+          <div class="d5-cadence">This week</div>
+          <div class="d5-label">Content<br>published</div>
+          <div class="d5-value-row">
+            <span class="d5-current" data-current>0</span>
+            <span class="d5-target">/ 3</span>
+          </div>
+          <div class="d5-bar"><div class="d5-bar-fill" data-fill></div></div>
+          <div class="d5-controls">
+            <button class="d5-btn minus" data-step="-1">−</button>
+            <button class="d5-btn" data-step="1">+1</button>
+          </div>
+        </div>
+
+        <div class="d5-card" data-metric="oh_visitors" data-target="10" data-cadence="week">
+          <div class="d5-status-dot" data-dot></div>
+          <div class="d5-cadence">This week</div>
+          <div class="d5-label">OH visitors<br>logged</div>
+          <div class="d5-value-row">
+            <span class="d5-current" data-current>0</span>
+            <span class="d5-target">/ 10</span>
+          </div>
+          <div class="d5-bar"><div class="d5-bar-fill" data-fill></div></div>
+          <div class="d5-controls">
+            <button class="d5-btn minus" data-step="-1">−</button>
+            <button class="d5-btn" data-step="1">+1</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- Stats bar -->
     <div class="stats-bar" id="statsBar">
       <div class="stat-item">
@@ -617,7 +821,7 @@
 
   <div class="footer">
     <span class="wm-amre" data-logo-amre>AMRE</span> Real Estate Group @ Compass<br>
-    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 9:18 AM PT</span>
+    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 12:22 PM PT</span>
   </div>
 
 </main>
@@ -715,6 +919,127 @@
   }
   trySwapLogo('[data-logo-amre]', '../tracker-4248-lasalle/logo-amre.svg');
   trySwapLogo('[data-logo-compass]', '../tracker-4248-lasalle/logo-compass.gif');
+
+  // ===== DAILY FIVE =====
+  // Persistence via in-memory + sessionStorage fallback. Daily metrics reset at PT midnight.
+  // Weekly metrics reset Monday PT. Each tap +/- updates the count and re-renders.
+  (function() {
+    const grid = document.getElementById('dailyFiveGrid');
+    if (!grid) return;
+
+    // ---- Time helpers (Pacific Time) ----
+    function ptNow() {
+      const s = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+      return new Date(s);
+    }
+    function ptDayKey() {
+      const d = ptNow();
+      return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+    }
+    function ptWeekKey() {
+      // ISO-style week key — Monday-anchored
+      const d = ptNow();
+      const day = d.getDay(); // 0=Sun..6=Sat
+      const offset = (day === 0 ? -6 : 1 - day); // shift to Monday
+      const monday = new Date(d);
+      monday.setDate(d.getDate() + offset);
+      monday.setHours(0,0,0,0);
+      return monday.getFullYear() + '-W' + String(monday.getMonth()+1).padStart(2,'0') + '-' + String(monday.getDate()).padStart(2,'0');
+    }
+    function dayLabel() {
+      return ptNow().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', timeZone: 'America/Los_Angeles' });
+    }
+
+    // ---- Storage (sessionStorage for now; survives reloads, scoped to auth session) ----
+    const STORAGE_KEY = 'amre_d5_v1';
+    function loadAll() {
+      try {
+        const raw = sessionStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch { return {}; }
+    }
+    function saveAll(state) {
+      try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {}
+    }
+
+    function periodKey(cadence) {
+      return cadence === 'week' ? ptWeekKey() : ptDayKey();
+    }
+    function getCount(metric, cadence) {
+      const state = loadAll();
+      const key = periodKey(cadence);
+      const m = state[metric];
+      if (!m || m.period !== key) return 0;
+      return m.count || 0;
+    }
+    function setCount(metric, cadence, count) {
+      const state = loadAll();
+      state[metric] = { period: periodKey(cadence), count: Math.max(0, count) };
+      saveAll(state);
+    }
+    function resetDay() {
+      const state = loadAll();
+      const dayKey = ptDayKey();
+      Object.keys(state).forEach(metric => {
+        if (state[metric] && state[metric].period === dayKey) {
+          delete state[metric];
+        }
+      });
+      saveAll(state);
+      renderAll();
+    }
+
+    // ---- Render ----
+    function classifyPct(pct) {
+      if (pct >= 100) return 'green';
+      if (pct >= 50) return 'amber';
+      return 'red';
+    }
+    function renderCard(card) {
+      const metric = card.dataset.metric;
+      const target = parseInt(card.dataset.target, 10);
+      const cadence = card.dataset.cadence;
+      const count = getCount(metric, cadence);
+      const pct = target > 0 ? Math.min(100, Math.round((count / target) * 100)) : 0;
+      const cls = classifyPct((count / target) * 100);
+
+      card.querySelector('[data-current]').textContent = count;
+      const fill = card.querySelector('[data-fill]');
+      fill.style.width = pct + '%';
+      fill.classList.remove('red','amber','green');
+      fill.classList.add(cls);
+      const dot = card.querySelector('[data-dot]');
+      dot.classList.remove('red','amber','green');
+      dot.classList.add(cls);
+    }
+    function renderAll() {
+      grid.querySelectorAll('.d5-card').forEach(renderCard);
+      const lbl = document.getElementById('d5DateLabel');
+      if (lbl) lbl.textContent = dayLabel();
+    }
+
+    // ---- Wire up +/- buttons ----
+    grid.addEventListener('click', e => {
+      const btn = e.target.closest('.d5-btn');
+      if (!btn) return;
+      const card = btn.closest('.d5-card');
+      const metric = card.dataset.metric;
+      const cadence = card.dataset.cadence;
+      const target = parseInt(card.dataset.target, 10);
+      const step = parseInt(btn.dataset.step, 10);
+      const current = getCount(metric, cadence);
+      setCount(metric, cadence, current + step);
+      renderCard(card);
+    });
+
+    document.getElementById('d5Reset').addEventListener('click', () => {
+      if (confirm("Reset today's daily counts? (Weekly metrics will not be affected.)")) {
+        resetDay();
+      }
+    });
+
+    renderAll();
+  })();
 </script>
 </body>
 </html>
