@@ -281,16 +281,54 @@
     margin-top: 2px;
   }
   .deal-badge {
-    padding: 4px 12px;
+    padding: 4px 10px 4px 22px;
     border-radius: 100px;
     font-size: 12px;
     font-weight: 600;
     white-space: nowrap;
     flex-shrink: 0;
+    position: relative;
   }
-  .deal-badge.active { background: #E8F5E9; color: #2E7D32; }
+  .deal-badge::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.9;
+  }
+  .deal-badge.active {
+    background: #E8F5E9;
+    color: #2E7D32;
+  }
+  .deal-badge.active::before {
+    background: #34C759;
+    box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.5);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.5); }
+    70% { box-shadow: 0 0 0 6px rgba(52, 199, 89, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 199, 89, 0); }
+  }
+  .deal-badge.exclusive {
+    background: #F3E8FF;
+    color: #6B21A8;
+  }
+  .deal-badge.exclusive::before { background: #9333EA; }
+  .deal-badge.offmarket {
+    background: #FEF3C7;
+    color: #92400E;
+  }
+  .deal-badge.offmarket::before { background: #F59E0B; }
   .deal-badge.pending { background: #FFF3E0; color: #E65100; }
+  .deal-badge.pending::before { background: #FF9F0A; }
   .deal-badge.closed { background: var(--gray-bg); color: var(--ink-3); }
+  .deal-badge.closed::before { background: var(--ink-4); }
 
   .deal-card-stats {
     display: grid;
@@ -420,7 +458,7 @@
         <div class="stat-label">Seller-side</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" id="totalVolume">$3.66M</div>
+        <div class="stat-num" id="totalVolume">$7.66M</div>
         <div class="stat-label">Volume in motion</div>
       </div>
     </div>
@@ -476,7 +514,7 @@
     <div class="deals-grid" id="sellerGrid">
 
       <a class="deal-card" href="../tracker-11023-fruitland-401/" data-side="seller" data-status="active">
-        <div class="deal-card-img-placeholder">🏙️</div>
+        <img class="deal-card-img" src="../tracker-11023-fruitland-401/property-hero.jpg" alt="11023 Fruitland Dr #401">
         <div class="deal-card-body">
           <div class="deal-card-head">
             <div>
@@ -506,7 +544,7 @@
         </div>
       </a>
 
-      <a class="deal-card" href="#" data-side="seller" data-status="pending" onclick="alert('Tracker not yet built. Provide property details to create.'); return false;">
+      <a class="deal-card" href="https://www.compass.com/app/listing/draft/271d18d7-1e1d-4fe5-9cec-e87887bcd430" target="_blank" rel="noopener" data-side="seller" data-status="active">
         <div class="deal-card-img-placeholder">🏡</div>
         <div class="deal-card-body">
           <div class="deal-card-head">
@@ -514,7 +552,7 @@
               <div class="deal-card-addr">847 N Sierra Bonita Ave</div>
               <div class="deal-card-city">West Hollywood, CA</div>
             </div>
-            <span class="deal-badge pending">Pre-listing</span>
+            <span class="deal-badge offmarket">Off-Market</span>
           </div>
           <div class="deal-card-stats">
             <div class="deal-stat">
@@ -527,42 +565,42 @@
             </div>
             <div class="deal-stat">
               <div class="deal-stat-val">Duplex</div>
-              <div class="deal-stat-lbl">Type</div>
+              <div class="deal-stat-lbl">4BD front + back unit</div>
             </div>
           </div>
           <div class="deal-card-footer">
-            <div class="deal-card-agent">Rita · Prep work in progress · Painter on site</div>
+            <div class="deal-card-agent">Rita · Prep work in progress · Compass draft</div>
             <span class="deal-card-arrow">→</span>
           </div>
         </div>
       </a>
 
-      <a class="deal-card" href="#" data-side="seller" data-status="pending" onclick="alert('Tracker not yet built. Provide property details to create.'); return false;">
-        <div class="deal-card-img-placeholder">🏡</div>
+      <a class="deal-card" href="https://www.compass.com/homedetails/14405-Mulholland-Dr-Los-Angeles-CA-90077/2058911761437795105_lid/?origin=listing_page&origin_type=copy_url&agent_id=663cc7255506d6000129ceaf" target="_blank" rel="noopener" data-side="seller" data-status="active">
+        <img class="deal-card-img" src="mulholland-hero.jpg" alt="14405 Mulholland Dr">
         <div class="deal-card-body">
           <div class="deal-card-head">
             <div>
-              <div class="deal-card-addr">Leslie Mayo</div>
-              <div class="deal-card-city">Address TBD</div>
+              <div class="deal-card-addr">14405 Mulholland Dr</div>
+              <div class="deal-card-city">Bel Air, Los Angeles, CA 90077</div>
             </div>
-            <span class="deal-badge pending">Lead</span>
+            <span class="deal-badge exclusive">Compass Exclusive</span>
           </div>
           <div class="deal-card-stats">
             <div class="deal-stat">
-              <div class="deal-stat-val">TBD</div>
-              <div class="deal-stat-lbl">Price</div>
+              <div class="deal-stat-val">$3.995M</div>
+              <div class="deal-stat-lbl">List price</div>
             </div>
             <div class="deal-stat">
-              <div class="deal-stat-val">TBD</div>
-              <div class="deal-stat-lbl">Stage</div>
+              <div class="deal-stat-val">4BD/4BA</div>
+              <div class="deal-stat-lbl">Layout</div>
             </div>
             <div class="deal-stat">
-              <div class="deal-stat-val">TBD</div>
-              <div class="deal-stat-lbl">Type</div>
+              <div class="deal-stat-val">4,453 sf</div>
+              <div class="deal-stat-lbl">$897/sqft</div>
             </div>
           </div>
           <div class="deal-card-footer">
-            <div class="deal-card-agent">Awaiting details</div>
+            <div class="deal-card-agent">Leslie Mayo · Mediterranean · Bel Air hillside · Built 1992</div>
             <span class="deal-card-arrow">→</span>
           </div>
         </div>
@@ -579,7 +617,7 @@
 
   <div class="footer">
     <span class="wm-amre" data-logo-amre>AMRE</span> Real Estate Group @ Compass<br>
-    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 8:59 AM PT</span>
+    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 9:18 AM PT</span>
   </div>
 
 </main>
