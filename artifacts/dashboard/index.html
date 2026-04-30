@@ -408,7 +408,7 @@
     <!-- Stats bar -->
     <div class="stats-bar" id="statsBar">
       <div class="stat-item">
-        <div class="stat-num" id="totalDeals">1</div>
+        <div class="stat-num" id="totalDeals">3</div>
         <div class="stat-label">Active deals</div>
       </div>
       <div class="stat-item">
@@ -416,7 +416,7 @@
         <div class="stat-label">Buyer-side</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" id="totalSeller">0</div>
+        <div class="stat-num" id="totalSeller">2</div>
         <div class="stat-label">Seller-side</div>
       </div>
       <div class="stat-item">
@@ -474,7 +474,69 @@
     <!-- Seller-side deals -->
     <div class="section-label" id="sellerLabel">Representing seller</div>
     <div class="deals-grid" id="sellerGrid">
-      <!-- Seller-side deals will be added here -->
+
+      <a class="deal-card" href="#" data-side="seller" data-status="pending" onclick="alert('Tracker not yet built. Provide property details to create.'); return false;">
+        <div class="deal-card-img-placeholder">🏡</div>
+        <div class="deal-card-body">
+          <div class="deal-card-head">
+            <div>
+              <div class="deal-card-addr">847 N Sierra Bonita Ave</div>
+              <div class="deal-card-city">West Hollywood, CA</div>
+            </div>
+            <span class="deal-badge pending">Pre-listing</span>
+          </div>
+          <div class="deal-card-stats">
+            <div class="deal-stat">
+              <div class="deal-stat-val">TBD</div>
+              <div class="deal-stat-lbl">Price</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">TBD</div>
+              <div class="deal-stat-lbl">Listing</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">Duplex</div>
+              <div class="deal-stat-lbl">Type</div>
+            </div>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-card-agent">Rita · Prep work in progress · Painter on site</div>
+            <span class="deal-card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="deal-card" href="#" data-side="seller" data-status="pending" onclick="alert('Tracker not yet built. Provide property details to create.'); return false;">
+        <div class="deal-card-img-placeholder">🏡</div>
+        <div class="deal-card-body">
+          <div class="deal-card-head">
+            <div>
+              <div class="deal-card-addr">Leslie Mayo</div>
+              <div class="deal-card-city">Address TBD</div>
+            </div>
+            <span class="deal-badge pending">Lead</span>
+          </div>
+          <div class="deal-card-stats">
+            <div class="deal-stat">
+              <div class="deal-stat-val">TBD</div>
+              <div class="deal-stat-lbl">Price</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">TBD</div>
+              <div class="deal-stat-lbl">Stage</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">TBD</div>
+              <div class="deal-stat-lbl">Type</div>
+            </div>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-card-agent">Awaiting details</div>
+            <span class="deal-card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
     </div>
 
     <div class="empty-state" id="emptyState">
@@ -486,7 +548,7 @@
 
   <div class="footer">
     <span class="wm-amre" data-logo-amre>AMRE</span> Real Estate Group @ Compass<br>
-    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 7:17 AM PT</span>
+    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 8:09 AM PT</span>
   </div>
 
 </main>
