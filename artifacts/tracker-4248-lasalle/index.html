@@ -1337,12 +1337,12 @@
           <div class="htl-labels">
             <div class="htl-label-item">
               <div class="htl-label-name">Acceptance</div>
-              <div class="htl-label-date">Apr 27</div>
+              <div class="htl-label-date">Apr 28</div>
               <div class="htl-label-status done">✓ Executed</div>
             </div>
             <div class="htl-label-item">
               <div class="htl-label-name">Contingency</div>
-              <div class="htl-label-date">May 7</div>
+              <div class="htl-label-date">May 8</div>
               <div class="htl-label-status active" id="htlContStatus">—</div>
             </div>
             <div class="htl-label-item">
@@ -1379,7 +1379,7 @@
     <div class="wrap">
       <div class="sec-eyebrow">This week</div>
       <h2 class="sec-title">Three things that can't slip.</h2>
-      <p class="sec-sub">Front-loaded ahead of the May 7 contingency removal. Each requires action this week.</p>
+      <p class="sec-sub">Front-loaded ahead of the May 8 contingency removal. Each requires action this week.</p>
       <div class="crit-grid">
         <div class="crit-card">
           <div class="crit-when">
@@ -1419,20 +1419,20 @@
   <section class="lt">
     <div class="wrap">
       <div class="sec-eyebrow">Timeline</div>
-      <h2 class="sec-title">From offer to close.<br>Thirty-nine days.</h2>
-      <p class="sec-sub">Ten days for inspections. Twenty-nine to fund.</p>
+      <h2 class="sec-title">From offer to close.<br>Thirty-eight days.</h2>
+      <p class="sec-sub">Ten days for inspections. Twenty-eight to fund.</p>
       <div class="timeline">
         <div class="tl-card complete">
           <div class="tl-stage">Phase 01 · Complete</div>
           <div class="tl-label">Acceptance</div>
-          <div class="tl-date">Apr 27, 2026</div>
+          <div class="tl-date">Apr 28, 2026</div>
           <div class="tl-detail">Offer accepted. BAFO terms locked at $2,512,500 with 20% down.</div>
           <div class="tl-countdown">✓ Executed</div>
         </div>
         <div class="tl-card active">
           <div class="tl-stage">Phase 02 · Active</div>
           <div class="tl-label">Contingency Removal</div>
-          <div class="tl-date">May 7, 2026</div>
+          <div class="tl-date">May 8, 2026</div>
           <div class="tl-detail">Inspection only. No appraisal or loan contingency. All findings reconciled before this date.</div>
           <div class="tl-countdown" id="contCountdown">Calculating…</div>
         </div>
@@ -1532,7 +1532,7 @@
         </div>
         <div class="insp-progress-label">
           <span id="inspDone">0 of 5 complete</span>
-          <span id="inspDeadline">Deadline: May 7</span>
+          <span id="inspDeadline">Deadline: May 8</span>
         </div>
       </div>
 
@@ -1614,7 +1614,7 @@
     <div class="wrap">
       <div class="sec-eyebrow">Due diligence</div>
       <h2 class="sec-title">The full picture.<br>Before your deposit locks.</h2>
-      <p class="sec-sub">Four tracks running in parallel. Complete this checklist before signing the Contingency Removal on May 7.</p>
+      <p class="sec-sub">Four tracks running in parallel. Complete this checklist before signing the Contingency Removal on May 8.</p>
 
       <div class="dd-grid">
         <!-- 1: Physical Inspections -->
@@ -1771,7 +1771,7 @@
             <div class="cr-q">
               <div class="cr-q-num">QUESTION 03</div>
               <div class="cr-q-text">Does the price still make sense?</div>
-              <div class="cr-q-detail">If discoveries change the value equation — negotiate or walk. Your deposit becomes non-refundable after May 7.</div>
+              <div class="cr-q-detail">If discoveries change the value equation — negotiate or walk. Your deposit becomes non-refundable after May 8.</div>
             </div>
           </div>
           <div class="cr-advice">Filter every finding through a risk-versus-value mindset: ignore minor cosmetic flaws, budget for aging yet functional systems, and reserve your energy for negotiating structural or safety issues. You are navigating two parallel tracks — physical discoveries from inspections and historical records from seller disclosures — with the goal of identifying deal-breakers before your deposit locks.</div>
@@ -1922,8 +1922,8 @@
         </div>
         <div class="prov warn">
           <div class="prov-tag">Risk · Tight window</div>
-          <div class="prov-title">10-day contingency · May 7.</div>
-          <div class="prov-detail">All inspections, reports, and reconciliation must complete before May 7. Front-load aggressively; build in time for follow-ups.</div>
+          <div class="prov-title">10-day contingency · May 8.</div>
+          <div class="prov-detail">All inspections, reports, and reconciliation must complete before May 8. Front-load aggressively; build in time for follow-ups.</div>
         </div>
         <div class="prov">
           <div class="prov-tag">Property</div>
@@ -1969,7 +1969,7 @@
         </div>
         <div class="foot-meta">
           File 5852-KM · Resolution Escrow<br>
-          Buyer-side · Confidential · Tracker live since Apr 27, 2026
+          Buyer-side · Confidential · Tracker live since Apr 28, 2026
         </div>
       </div>
       <div class="foot-confidential">
@@ -2000,7 +2000,7 @@
     img.src = src;
   }
   trySwapLogo('[data-logo-amre]', 'logo-amre.svg');
-  trySwapLogo('[data-logo-compass]', 'logo-compass.jpg');
+  trySwapLogo('[data-logo-compass]', 'logo-compass.gif');
 
   // ===== Password gate =====
   const ACCESS_CODE = 'lasalle2026';
@@ -2056,7 +2056,7 @@
     return Math.round((pacificTarget - pacificNow) / (1000 * 60 * 60 * 24));
   }
   function updateCountdowns() {
-    const cont = daysBetween('2026-05-07T23:59:59-07:00');
+    const cont = daysBetween('2026-05-08T23:59:59-07:00');
     const coe = daysBetween('2026-06-05T23:59:59-07:00');
 
     const contEl = document.getElementById('contCountdown');
@@ -2088,8 +2088,8 @@
 
   // ===== Progress ring + horizontal timeline =====
   (function() {
-    const acceptance = new Date('2026-04-27T00:00:00-07:00');
-    const contingency = new Date('2026-05-07T23:59:59-07:00');
+    const acceptance = new Date('2026-04-28T00:00:00-07:00');
+    const contingency = new Date('2026-05-08T23:59:59-07:00');
     const coe = new Date('2026-06-05T23:59:59-07:00');
     const now = new Date();
 
