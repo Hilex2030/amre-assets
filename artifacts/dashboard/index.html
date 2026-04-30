@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AMRE — Client Summary Dashboard</title>
+<style>
+  :root {
+    --sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    --ink: #1D1D1F;
+    --ink-2: #424245;
+    --ink-3: #86868B;
+    --ink-4: #AEAEB2;
+    --white: #FFFFFF;
+    --gray-bg: #F5F5F7;
+    --gray-bg-2: #FBFBFD;
+    --hairline: #D2D2D7;
+    --hairline-soft: rgba(0,0,0,0.06);
+    --blue: #0071E3;
+    --green: #34C759;
+    --amber: #FF9F0A;
+    --red: #FF3B30;
+    --wrap: 1120px;
+    --edge: 24px;
+    --radius: 16px;
+    --radius-lg: 24px;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--gray-bg-2);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--edge); }
+
+  /* ===== PASSWORD GATE ===== */
+  #gate {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--gray-bg-2);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+  #gate.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+  .gate-card {
+    text-align: center;
+    padding: 48px;
+    max-width: 380px;
+    width: 100%;
+  }
+  .gate-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .gate-brand .sep {
+    width: 1px; height: 18px;
+    background: var(--hairline);
+  }
+  .wm-amre {
+    font-family: var(--sans);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .wm-amre img, .wm-compass img { height: 22px; width: auto; display: block; }
+  .wm-amre.has-img::before, .wm-compass.has-img::before { content: none; }
+  .wm-amre.has-img, .wm-compass.has-img { font-size: 0; }
+  .wm-compass {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .wm-compass::before { content: "compass"; }
+  .gate-title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .gate-sub { font-size: 15px; color: var(--ink-3); margin-bottom: 32px; }
+  .gate-form { display: flex; flex-direction: column; gap: 12px; }
+  .gate-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: var(--sans);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    text-align: center;
+  }
+  .gate-input:focus { border-color: var(--blue); }
+  .gate-btn {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: var(--ink);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--sans);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .gate-btn:hover { opacity: 0.85; }
+  .gate-error { font-size: 13px; color: var(--red); min-height: 20px; }
+
+  /* ===== TOPNAV ===== */
+  .topnav {
+    background: var(--white);
+    border-bottom: 1px solid var(--hairline-soft);
+    padding: 16px 0;
+  }
+  .topnav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .topnav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .topnav-sep {
+    width: 1px; height: 16px;
+    background: var(--hairline);
+  }
+  .topnav-meta { font-size: 13px; color: var(--ink-3); }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 19px;
+    color: var(--ink-3);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.45;
+  }
+
+  /* ===== FILTERS ===== */
+  .filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--sans);
+    border: 1px solid var(--hairline);
+    background: var(--white);
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover { border-color: var(--ink-4); }
+  .filter-btn.active {
+    background: var(--ink);
+    color: var(--white);
+    border-color: var(--ink);
+  }
+
+  /* ===== STATS ===== */
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 56px;
+    padding: 24px;
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--hairline-soft);
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .stat-label { font-size: 13px; color: var(--ink-3); margin-top: 4px; }
+
+  /* ===== DEAL CARDS ===== */
+  .section-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+    padding-left: 4px;
+  }
+  .deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+  .deal-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--hairline-soft);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+  }
+  .deal-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  .deal-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  .deal-card-img-placeholder {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--gray-bg) 0%, #E8E8ED 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--ink-4);
+  }
+  .deal-card-body { padding: 24px; }
+  .deal-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .deal-card-addr {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.016em;
+    line-height: 1.2;
+  }
+  .deal-card-city {
+    font-size: 14px;
+    color: var(--ink-3);
+    margin-top: 2px;
+  }
+  .deal-badge {
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .deal-badge.active { background: #E8F5E9; color: #2E7D32; }
+  .deal-badge.pending { background: #FFF3E0; color: #E65100; }
+  .deal-badge.closed { background: var(--gray-bg); color: var(--ink-3); }
+
+  .deal-card-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .deal-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .deal-stat-val {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .deal-stat-lbl {
+    font-size: 11px;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .deal-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+  .deal-card-agent {
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  .deal-card-arrow {
+    font-size: 18px;
+    color: var(--blue);
+    transition: transform 0.2s;
+  }
+  .deal-card:hover .deal-card-arrow { transform: translateX(4px); }
+
+  /* ===== EMPTY STATE ===== */
+  .empty-state {
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--ink-3);
+    display: none;
+  }
+  .empty-state.visible { display: block; }
+  .empty-state-icon { font-size: 48px; margin-bottom: 16px; }
+  .empty-state-text { font-size: 17px; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 48px 24px;
+    font-size: 12px;
+    color: var(--ink-4);
+    border-top: 1px solid var(--hairline-soft);
+    margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 48px 0 40px; }
+    .stats-bar { gap: 24px; flex-wrap: wrap; }
+    .deals-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== PASSWORD GATE ===== -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-brand">
+      <span class="wm-amre" data-logo-amre>AMRE</span>
+      <span class="sep"></span>
+      <span class="wm-compass" data-logo-compass></span>
+    </div>
+    <h1 class="gate-title">Client Dashboard</h1>
+    <p class="gate-sub">AMRE Real Estate Group transaction summary.<br>Confidential.</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input type="password" class="gate-input" id="gateInput" placeholder="Enter access code" autofocus>
+      <button type="submit" class="gate-btn">Continue</button>
+      <div class="gate-error" id="gateError"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== DASHBOARD ===== -->
+<main id="dashboard" style="display:none;">
+
+  <div class="topnav">
+    <div class="wrap topnav-inner">
+      <div class="topnav-left">
+        <span class="wm-amre" data-logo-amre>AMRE</span>
+        <span class="topnav-sep"></span>
+        <span class="wm-compass" data-logo-compass></span>
+      </div>
+      <div class="topnav-meta">Client Summary Dashboard</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-eyebrow">Transaction overview</div>
+      <h1 class="hero-title">Every deal.<br>One view.</h1>
+      <p class="hero-sub">Active transactions, key milestones, and direct links to each client's tracker.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- Stats bar -->
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-item">
+        <div class="stat-num" id="totalDeals">1</div>
+        <div class="stat-label">Active deals</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="totalBuyer">1</div>
+        <div class="stat-label">Buyer-side</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="totalSeller">0</div>
+        <div class="stat-label">Seller-side</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="totalVolume">$2.5M</div>
+        <div class="stat-label">Volume in escrow</div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="buyer">Buyer-side</button>
+      <button class="filter-btn" data-filter="seller">Seller-side</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="closed">Closed</button>
+    </div>
+
+    <!-- Buyer-side deals -->
+    <div class="section-label" id="buyerLabel">Representing buyer</div>
+    <div class="deals-grid" id="buyerGrid">
+
+      <a class="deal-card" href="../tracker-4248-lasalle/" data-side="buyer" data-status="active">
+        <img class="deal-card-img" src="../tracker-4248-lasalle/property-hero.jpg" alt="4248 La Salle Ave">
+        <div class="deal-card-body">
+          <div class="deal-card-head">
+            <div>
+              <div class="deal-card-addr">4248 La Salle Ave</div>
+              <div class="deal-card-city">Culver City, CA 90232</div>
+            </div>
+            <span class="deal-badge active">Active</span>
+          </div>
+          <div class="deal-card-stats">
+            <div class="deal-stat">
+              <div class="deal-stat-val">$2,512,500</div>
+              <div class="deal-stat-lbl">Price</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">Jun 5</div>
+              <div class="deal-stat-lbl">COE</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">May 8</div>
+              <div class="deal-stat-lbl">Contingency</div>
+            </div>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-card-agent">Gonzalez Muthyala · 3 units · Carlson Park</div>
+            <span class="deal-card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Seller-side deals -->
+    <div class="section-label" id="sellerLabel">Representing seller</div>
+    <div class="deals-grid" id="sellerGrid">
+      <!-- Seller-side deals will be added here -->
+    </div>
+
+    <div class="empty-state" id="emptyState">
+      <div class="empty-state-icon">📋</div>
+      <div class="empty-state-text">No deals match the selected filter.</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span class="wm-amre" data-logo-amre>AMRE</span> Real Estate Group @ Compass<br>
+    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 7:17 AM PT</span>
+  </div>
+
+</main>
+
+<script>
+  // ===== Password gate =====
+  const CODES = ['amre2026', 'lasalle2026'];
+  const gateForm = document.getElementById('gateForm');
+  const gateInput = document.getElementById('gateInput');
+  const gateError = document.getElementById('gateError');
+  const gate = document.getElementById('gate');
+  const dashboard = document.getElementById('dashboard');
+
+  if (sessionStorage.getItem('amre_dash_auth') === 'true') {
+    gate.classList.add('hidden');
+    dashboard.style.display = '';
+  }
+
+  gateForm.addEventListener('submit', e => {
+    e.preventDefault();
+    if (CODES.includes(gateInput.value.trim().toLowerCase())) {
+      sessionStorage.setItem('amre_dash_auth', 'true');
+      gate.classList.add('hidden');
+      dashboard.style.display = '';
+    } else {
+      gateError.textContent = 'Incorrect code.';
+      gateInput.value = '';
+      gateInput.focus();
+    }
+  });
+
+  // ===== Filters =====
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const allCards = document.querySelectorAll('.deal-card');
+  const buyerLabel = document.getElementById('buyerLabel');
+  const sellerLabel = document.getElementById('sellerLabel');
+  const buyerGrid = document.getElementById('buyerGrid');
+  const sellerGrid = document.getElementById('sellerGrid');
+  const emptyState = document.getElementById('emptyState');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+
+      let visibleCount = 0;
+      allCards.forEach(card => {
+        const side = card.dataset.side;
+        const status = card.dataset.status;
+        let show = true;
+        if (filter === 'buyer') show = side === 'buyer';
+        else if (filter === 'seller') show = side === 'seller';
+        else if (filter === 'active') show = status === 'active';
+        else if (filter === 'closed') show = status === 'closed';
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount++;
+      });
+
+      // Show/hide section labels
+      const buyerVisible = [...buyerGrid.querySelectorAll('.deal-card')].some(c => c.style.display !== 'none');
+      const sellerVisible = [...sellerGrid.querySelectorAll('.deal-card')].some(c => c.style.display !== 'none');
+      buyerLabel.style.display = buyerVisible ? '' : 'none';
+      buyerGrid.style.display = buyerVisible ? '' : 'none';
+      sellerLabel.style.display = sellerVisible ? '' : 'none';
+      sellerGrid.style.display = sellerVisible ? '' : 'none';
+
+      emptyState.classList.toggle('visible', visibleCount === 0);
+    });
+  });
+
+  // Initial state — show seller section only if it has cards
+  if (!sellerGrid.querySelector('.deal-card')) {
+    sellerLabel.style.display = 'none';
+    sellerGrid.style.display = 'none';
+  }
+
+  // ===== Logo swap =====
+  function trySwapLogo(selector, src) {
+    const els = document.querySelectorAll(selector);
+    if (!els.length) return;
+    const img = new Image();
+    img.onload = () => {
+      els.forEach(el => {
+        el.classList.add('has-img');
+        el.innerHTML = '';
+        const i = document.createElement('img');
+        i.src = src;
+        i.alt = '';
+        el.appendChild(i);
+      });
+    };
+    img.onerror = () => {};
+    img.src = src;
+  }
+  trySwapLogo('[data-logo-amre]', '../tracker-4248-lasalle/logo-amre.svg');
+  trySwapLogo('[data-logo-compass]', '../tracker-4248-lasalle/logo-compass.gif');
+</script>
+</body>
+</html>
