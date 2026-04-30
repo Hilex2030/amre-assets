@@ -271,6 +271,242 @@
   }
   .hero-pill strong { color: var(--ink); font-weight: 500; }
 
+  /* ===== PROGRESS OVERVIEW ===== */
+  .progress-section { padding: 80px 0 0; }
+  .progress-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 48px;
+  }
+  .progress-ring-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .progress-ring-container { position: relative; width: 220px; height: 220px; }
+  .progress-ring-container svg { transform: rotate(-90deg); }
+  .progress-ring-bg { fill: none; stroke: var(--hairline-soft); stroke-width: 12; }
+  .progress-ring-fill {
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 12;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1);
+  }
+  .progress-ring-fill.warn { stroke: var(--amber); }
+  .progress-ring-fill.done { stroke: var(--green); }
+  .progress-ring-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .progress-ring-pct {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .progress-ring-label {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin-top: 4px;
+  }
+  .progress-ring-sub {
+    font-size: 14px;
+    color: var(--ink-3);
+    text-align: center;
+  }
+
+  /* Horizontal bar timeline */
+  .htl { margin-top: 0; }
+  .htl-bar-wrap { position: relative; padding: 40px 0 20px; }
+  .htl-track {
+    height: 6px;
+    background: var(--hairline-soft);
+    border-radius: 3px;
+    position: relative;
+  }
+  .htl-filled {
+    position: absolute;
+    left: 0; top: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--blue));
+    border-radius: 3px;
+    transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+  }
+  .htl-nodes {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+  }
+  .htl-node {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--hairline);
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s;
+  }
+  .htl-node.done { border-color: var(--green); background: var(--green); }
+  .htl-node.done::after {
+    content: '✓';
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .htl-node.active {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(0,113,227,0.18);
+    animation: nodePulse 2.4s infinite;
+  }
+  @keyframes nodePulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(0,113,227,0.18); }
+    50% { box-shadow: 0 0 0 8px rgba(0,113,227,0.08); }
+  }
+  .htl-node.pending { border-color: var(--hairline); }
+  .htl-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  .htl-label-item { text-align: center; flex: 1; }
+  .htl-label-item:first-child { text-align: left; }
+  .htl-label-item:last-child { text-align: right; }
+  .htl-label-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .htl-label-date { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
+  .htl-label-status { font-size: 11px; font-weight: 500; margin-top: 4px; }
+  .htl-label-status.done { color: var(--green); }
+  .htl-label-status.active { color: var(--blue); }
+  .htl-label-status.pending { color: var(--ink-4); }
+
+  /* Stats row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .stat-card {
+    background: var(--gray-bg);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .stat-label { font-size: 13px; color: var(--ink-3); margin-top: 6px; }
+
+  /* Financial donut */
+  .fin-section { padding: 80px 0; background: var(--gray-bg); }
+  .fin-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 48px;
+  }
+  .fin-donut-wrap { display: flex; flex-direction: column; align-items: center; }
+  .fin-donut-container { position: relative; width: 200px; height: 200px; }
+  .fin-donut-container svg { transform: rotate(-90deg); }
+  .fin-donut-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .fin-donut-total {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .fin-donut-label { font-size: 12px; color: var(--ink-3); }
+  .fin-legend { display: flex; flex-direction: column; gap: 20px; }
+  .fin-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .fin-legend-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .fin-legend-info { display: flex; flex-direction: column; }
+  .fin-legend-name { font-size: 15px; font-weight: 500; color: var(--ink); }
+  .fin-legend-value { font-size: 14px; color: var(--ink-3); }
+  .fin-legend-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: var(--hairline-soft);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 6px;
+  }
+  .fin-legend-bar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1.2s;
+  }
+
+  /* Inspection checklist */
+  .insp-progress-wrap { margin-top: 48px; margin-bottom: 32px; }
+  .insp-progress-bar {
+    height: 8px;
+    background: var(--hairline-soft);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .insp-progress-fill {
+    height: 100%;
+    background: var(--green);
+    border-radius: 4px;
+    transition: width 1.2s;
+  }
+  .insp-progress-label {
+    font-size: 13px;
+    color: var(--ink-3);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 980px) {
+    .progress-grid { grid-template-columns: 1fr; }
+    .progress-ring-wrap { margin-bottom: 24px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .fin-grid { grid-template-columns: 1fr; }
+    .fin-donut-wrap { margin-bottom: 24px; }
+  }
+  @media (max-width: 640px) {
+    .stats-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .stat-card { padding: 18px; }
+    .stat-value { font-size: 26px; }
+  }
+
   /* ===== CRITICAL THIS WEEK (dark section) ===== */
   .critical {
     padding: 80px 0;
@@ -860,6 +1096,79 @@
     </div>
   </header>
 
+  <!-- ===== PROGRESS OVERVIEW ===== -->
+  <section class="lt progress-section">
+    <div class="wrap">
+      <div class="sec-eyebrow">Progress</div>
+      <h2 class="sec-title">Where we stand.</h2>
+      <div class="progress-grid">
+        <div class="progress-ring-wrap">
+          <div class="progress-ring-container">
+            <svg viewBox="0 0 220 220" width="220" height="220">
+              <circle class="progress-ring-bg" cx="110" cy="110" r="96" />
+              <circle class="progress-ring-fill" id="progressRing" cx="110" cy="110" r="96"
+                stroke-dasharray="603.19" stroke-dashoffset="603.19" />
+            </svg>
+            <div class="progress-ring-center">
+              <div class="progress-ring-pct" id="progressPct">—%</div>
+              <div class="progress-ring-label">complete</div>
+            </div>
+          </div>
+          <div class="progress-ring-sub" id="progressSub">Day — of 39</div>
+        </div>
+
+        <div class="htl">
+          <div class="htl-bar-wrap">
+            <div class="htl-track">
+              <div class="htl-filled" id="htlFilled" style="width: 0%"></div>
+              <div class="htl-nodes">
+                <div class="htl-node done" id="htlNode1"></div>
+                <div class="htl-node active" id="htlNode2"></div>
+                <div class="htl-node pending" id="htlNode3"></div>
+              </div>
+            </div>
+          </div>
+          <div class="htl-labels">
+            <div class="htl-label-item">
+              <div class="htl-label-name">Acceptance</div>
+              <div class="htl-label-date">Apr 27</div>
+              <div class="htl-label-status done">✓ Executed</div>
+            </div>
+            <div class="htl-label-item">
+              <div class="htl-label-name">Contingency</div>
+              <div class="htl-label-date">May 7</div>
+              <div class="htl-label-status active" id="htlContStatus">—</div>
+            </div>
+            <div class="htl-label-item">
+              <div class="htl-label-name">Close</div>
+              <div class="htl-label-date">Jun 5</div>
+              <div class="htl-label-status pending" id="htlCoeStatus">—</div>
+            </div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-value" id="statElapsed">—</div>
+              <div class="stat-label">Days elapsed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="statRemaining">—</div>
+              <div class="stat-label">Days remaining</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">5</div>
+              <div class="stat-label">Inspections scheduled</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">8</div>
+              <div class="stat-label">Contacts on file</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="critical">
     <div class="wrap">
       <div class="sec-eyebrow">This week</div>
@@ -1010,6 +1319,16 @@
       <div class="sec-eyebrow">Diligence</div>
       <h2 class="sec-title">Every report.<br>Front-loaded.</h2>
       <p class="sec-sub">Five inspections in two days. Roofs to schedule. All access via code <code class="acode">lasalle2026</code>.</p>
+
+      <div class="insp-progress-wrap">
+        <div class="insp-progress-bar">
+          <div class="insp-progress-fill" id="inspProgress" style="width: 0%"></div>
+        </div>
+        <div class="insp-progress-label">
+          <span id="inspDone">0 of 5 complete</span>
+          <span id="inspDeadline">Deadline: May 7</span>
+        </div>
+      </div>
 
       <div class="insp-grid">
         <div class="insp-card">
@@ -1383,6 +1702,62 @@
   }
   updateCountdowns();
   setInterval(updateCountdowns, 60 * 60 * 1000);
+
+  // ===== Progress ring + horizontal timeline =====
+  (function() {
+    const acceptance = new Date('2026-04-27T00:00:00-07:00');
+    const contingency = new Date('2026-05-07T23:59:59-07:00');
+    const coe = new Date('2026-06-05T23:59:59-07:00');
+    const now = new Date();
+
+    const totalDays = Math.ceil((coe - acceptance) / (1000*60*60*24));
+    const elapsed = Math.max(0, Math.ceil((now - acceptance) / (1000*60*60*24)));
+    const remaining = Math.max(0, totalDays - elapsed);
+    const pct = Math.min(100, Math.round((elapsed / totalDays) * 100));
+
+    // Ring
+    const ring = document.getElementById('progressRing');
+    const circumference = 2 * Math.PI * 96; // 603.19
+    if (ring) {
+      setTimeout(() => {
+        ring.style.strokeDashoffset = circumference - (circumference * pct / 100);
+      }, 300);
+    }
+    const pctEl = document.getElementById('progressPct');
+    if (pctEl) pctEl.textContent = pct + '%';
+    const subEl = document.getElementById('progressSub');
+    if (subEl) subEl.textContent = 'Day ' + elapsed + ' of ' + totalDays;
+
+    // Horizontal bar
+    const contPct = Math.ceil((contingency - acceptance) / (coe - acceptance) * 100);
+    const fillPct = Math.min(100, Math.round((now - acceptance) / (coe - acceptance) * 100));
+    const htlFilled = document.getElementById('htlFilled');
+    if (htlFilled) setTimeout(() => { htlFilled.style.width = fillPct + '%'; }, 400);
+
+    // Node states
+    const node2 = document.getElementById('htlNode2');
+    const node3 = document.getElementById('htlNode3');
+    if (now >= contingency && node2) { node2.className = 'htl-node done'; }
+    if (now >= coe && node3) { node3.className = 'htl-node done'; }
+
+    // Labels
+    const contStatus = document.getElementById('htlContStatus');
+    const coeStatus = document.getElementById('htlCoeStatus');
+    const contDays = Math.ceil((contingency - now) / (1000*60*60*24));
+    const coeDays = Math.ceil((coe - now) / (1000*60*60*24));
+    if (contStatus) contStatus.textContent = contDays > 0 ? contDays + ' days' : (contDays === 0 ? 'Today' : '✓ Removed');
+    if (coeStatus) coeStatus.textContent = coeDays > 0 ? coeDays + ' days' : (coeDays === 0 ? 'Today' : '✓ Closed');
+
+    // Stats
+    const statEl = document.getElementById('statElapsed');
+    const statRem = document.getElementById('statRemaining');
+    if (statEl) statEl.textContent = elapsed;
+    if (statRem) statRem.textContent = remaining;
+
+    // Inspection progress (all pending until manually marked)
+    const inspProg = document.getElementById('inspProgress');
+    if (inspProg) inspProg.style.width = '0%';
+  })();
 </script>
 
 </body>
