@@ -271,6 +271,46 @@
   }
   .hero-pill strong { color: var(--ink); font-weight: 500; }
 
+  /* ===== PROPERTY OVERVIEW ===== */
+  .prop-section { padding: 0 0 80px; background: linear-gradient(180deg, var(--gray-bg-2) 0%, var(--white) 100%); }
+  .prop-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--hairline-soft);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .prop-img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+  }
+  .prop-info { padding: 40px; display: flex; flex-direction: column; gap: 20px; }
+  .prop-info-title { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+  .prop-info-addr { font-size: 15px; color: var(--ink-3); }
+  .prop-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .prop-stat { display: flex; flex-direction: column; gap: 2px; }
+  .prop-stat-value { font-size: 18px; font-weight: 600; color: var(--ink); }
+  .prop-stat-label { font-size: 12px; color: var(--ink-3); }
+  .prop-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    border-top: 1px solid var(--hairline-soft);
+    padding-top: 20px;
+  }
+  .prop-mls { font-size: 12px; color: var(--ink-4); margin-top: auto; }
+  @media (max-width: 768px) {
+    .prop-card { grid-template-columns: 1fr; }
+    .prop-img { min-height: 240px; }
+  }
+
   /* ===== PROGRESS OVERVIEW ===== */
   .progress-section { padding: 80px 0 0; }
   .progress-grid {
@@ -1235,6 +1275,33 @@
     </div>
   </header>
 
+  <!-- ===== PROPERTY OVERVIEW ===== -->
+  <section class="prop-section">
+    <div class="wrap">
+      <div class="prop-card">
+        <img class="prop-img" src="property-hero.jpg" alt="4248 La Salle Avenue — Spanish-style compound in Carlson Park, Culver City">
+        <div class="prop-info">
+          <div>
+            <div class="prop-info-title">Spanish compound · Carlson Park</div>
+            <div class="prop-info-addr">4248 La Salle Ave, Culver City, CA 90232</div>
+          </div>
+          <div class="prop-info-grid">
+            <div class="prop-stat"><div class="prop-stat-value">5 bed / 5 bath</div><div class="prop-stat-label">Across 3 structures</div></div>
+            <div class="prop-stat"><div class="prop-stat-value">2,627 sq ft</div><div class="prop-stat-label">Total living area</div></div>
+            <div class="prop-stat"><div class="prop-stat-value">6,749 sq ft lot</div><div class="prop-stat-label">0.15 acres</div></div>
+            <div class="prop-stat"><div class="prop-stat-value">Built 1923</div><div class="prop-stat-label">Updated / remodeled</div></div>
+            <div class="prop-stat"><div class="prop-stat-value">3 units</div><div class="prop-stat-label">Duplex w/ detached ADU</div></div>
+            <div class="prop-stat"><div class="prop-stat-value">CCR2YY</div><div class="prop-stat-label">Zoning</div></div>
+          </div>
+          <div class="prop-desc">
+            Three detached homes on a cul-de-sac: a 1,250 sf Spanish main (2 bed + office, Batchelder fireplace, Aga range, hot tub), a 750 sf rear unit (2 bed/1 bath, vaulted ceilings, Heartland range), and a 627 sf two-story ADU with rooftop deck and hillside views. All with AC, separate laundry, private outdoor spaces.
+          </div>
+          <div class="prop-mls">MLS #26733329 · Listed $2,469,000 · Last sold Jun 2023 at $1,915,000 · APN 4207-024-027</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== PROGRESS OVERVIEW ===== -->
   <section class="lt progress-section">
     <div class="wrap">
@@ -1933,7 +2000,7 @@
     img.src = src;
   }
   trySwapLogo('[data-logo-amre]', 'logo-amre.svg');
-  // Compass: text wordmark only (no external logo file — renders consistently)
+  trySwapLogo('[data-logo-compass]', 'logo-compass.jpg');
 
   // ===== Password gate =====
   const ACCESS_CODE = 'lasalle2026';
@@ -1976,11 +2043,17 @@
     }
   });
 
-  // ===== Countdowns =====
+  // ===== Countdowns (Pacific Time) =====
   function daysBetween(target) {
+    // Get current Pacific date
     const now = new Date();
+    const pacificNow = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
     const t = new Date(target);
-    return Math.ceil((t - now) / (1000 * 60 * 60 * 24));
+    const pacificTarget = new Date(t.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+    // Zero out time to count calendar days only
+    pacificNow.setHours(0,0,0,0);
+    pacificTarget.setHours(0,0,0,0);
+    return Math.round((pacificTarget - pacificNow) / (1000 * 60 * 60 * 24));
   }
   function updateCountdowns() {
     const cont = daysBetween('2026-05-07T23:59:59-07:00');
