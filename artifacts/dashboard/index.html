@@ -1394,6 +1394,217 @@
     font-size: 12px; color: rgba(255,255,255,0.7);
   }
 
+  /* ===== BOOK OF BUSINESS ===== */
+  .bob-hero {
+    background: linear-gradient(135deg, #1A237E 0%, #3949AB 100%);
+    color: var(--white);
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin: 24px 0;
+  }
+  .bob-hero-eyebrow {
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.65); margin-bottom: 6px;
+  }
+  .bob-hero-title {
+    font-size: 24px; font-weight: 600;
+    letter-spacing: -0.02em; margin-bottom: 4px;
+  }
+  .bob-hero-sub {
+    font-size: 13px; color: rgba(255,255,255,0.85);
+    margin-bottom: 22px;
+    max-width: 640px;
+  }
+  .bob-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  .bob-stat-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .bob-stat-label {
+    font-size: 11px; font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .bob-stat-value {
+    font-size: 24px; font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .bob-stat-meta {
+    font-size: 11px; color: rgba(255,255,255,0.65);
+    margin-top: 2px;
+  }
+
+  /* Filters */
+  .bob-filters {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    margin: 0 0 16px;
+  }
+  .bob-filter-btn {
+    padding: 8px 14px;
+    border: 1px solid var(--hairline);
+    background: var(--white);
+    color: var(--ink-2);
+    font-size: 12px; font-weight: 500;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: all 0.15s;
+  }
+  .bob-filter-btn:hover { border-color: var(--ink-3); color: var(--ink); }
+  .bob-filter-btn.active {
+    background: var(--ink); color: var(--white);
+    border-color: var(--ink);
+  }
+  .bob-search-row {
+    display: flex; gap: 10px; align-items: center;
+    margin-bottom: 16px;
+  }
+  .bob-search {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: var(--sans);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .bob-search:focus { border-color: var(--ink); }
+  .bob-count-label {
+    font-size: 12px; color: var(--ink-3);
+    white-space: nowrap;
+  }
+  .bob-count-label strong { color: var(--ink); font-weight: 600; }
+
+  /* Group sections */
+  .bob-group {
+    background: var(--white);
+    border: 1px solid var(--hairline-soft);
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .bob-group-head {
+    padding: 18px 22px;
+    background: var(--gray-bg-2);
+    border-bottom: 1px solid var(--hairline-soft);
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+  }
+  .bob-group-head:hover { background: var(--gray-bg); }
+  .bob-group-title {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .bob-group-icon {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .bob-group-icon.active { background: #E8F5E9; }
+  .bob-group-icon.lead { background: #FFF4E5; }
+  .bob-group-icon.dev { background: #E3F2FD; }
+  .bob-group-icon.past { background: #F3E8FF; }
+  .bob-group-icon.cold { background: var(--gray-bg); }
+  .bob-group-meta {
+    font-size: 12px; color: var(--ink-3);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .bob-group-meta strong { color: var(--ink); font-weight: 600; }
+  .bob-group-toggle {
+    color: var(--ink-3); font-size: 18px;
+    transition: transform 0.2s;
+  }
+  .bob-group.open .bob-group-toggle { transform: rotate(90deg); }
+  .bob-group-body { display: none; }
+  .bob-group.open .bob-group-body { display: block; }
+
+  .bob-row {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 100px 110px 100px;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--hairline-soft);
+    transition: background 0.15s;
+  }
+  .bob-row:last-child { border-bottom: none; }
+  .bob-row:hover { background: var(--gray-bg-2); }
+  .bob-row-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .bob-row-addr {
+    font-size: 12px; color: var(--ink-3);
+    margin-top: 2px;
+  }
+  .bob-row-clients {
+    font-size: 12px; color: var(--ink-3);
+  }
+  .bob-side-pill {
+    font-size: 10px; padding: 2px 8px;
+    border-radius: 100px; font-weight: 600;
+    text-align: center; white-space: nowrap;
+    width: fit-content;
+  }
+  .bob-side-pill.buyer { background: #E3F2FD; color: #1976D2; }
+  .bob-side-pill.seller { background: #FFF4E5; color: #E65100; }
+  .bob-row-touch {
+    font-size: 12px; text-align: right;
+  }
+  .bob-row-touch strong { color: var(--ink); font-weight: 600; }
+  .bob-row-touch.recent strong { color: #2E7D32; }
+  .bob-row-touch.cold strong { color: #FF9F0A; }
+  .bob-row-touch.frozen strong { color: #FF453A; }
+  .bob-row-action {
+    padding: 6px 12px;
+    background: var(--ink); color: var(--white);
+    border: none; border-radius: 8px;
+    font-size: 12px; font-weight: 500;
+    cursor: pointer; white-space: nowrap;
+    font-family: var(--sans);
+    transition: opacity 0.15s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+  .bob-row-action:hover { opacity: 0.85; }
+  .bob-row-action.secondary {
+    background: var(--white); color: var(--ink);
+    border: 1px solid var(--hairline);
+  }
+  .bob-row-price {
+    font-size: 13px; font-weight: 600;
+    color: var(--ink); text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .bob-row-price-sub {
+    font-size: 11px; color: var(--ink-3);
+    font-weight: 400; margin-top: 2px;
+  }
+  @media (max-width: 880px) {
+    .bob-row { grid-template-columns: 1fr auto; gap: 4px 12px; }
+    .bob-row > *:not(:first-child) { font-size: 11px; }
+    .bob-row-clients { display: none; }
+  }
+
+  .bob-empty {
+    padding: 32px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+
   /* ===== STATS ===== */
   .stats-bar {
     display: flex;
@@ -1764,6 +1975,10 @@
       <button class="bucket-tab" data-bucket="pipeline" role="tab">
         Pipeline
         <span class="bucket-tab-count">$284K</span>
+      </button>
+      <button class="bucket-tab" data-bucket="bob" role="tab">
+        Book of Business
+        <span class="bucket-tab-count">73</span>
       </button>
       <button class="bucket-tab" data-bucket="marketing" role="tab">
         Marketing
@@ -2575,6 +2790,661 @@
 
     </div><!-- /tab-pipeline -->
 
+    <!-- ===== BOOK OF BUSINESS PANE ===== -->
+    <div class="bucket-pane" id="tab-bob">
+
+      <div class="bob-hero">
+        <div class="bob-hero-eyebrow">Full book · Compass Business Tracker mirror</div>
+        <div class="bob-hero-title">73 deals across the lifecycle.</div>
+        <div class="bob-hero-sub">YTD $1,368 GCI undersells the picture. $99K weighted forecast in motion · 14 closed deals all-time totaling $14.8M+ in volume · 16 developer relationships compounding over time.</div>
+
+        <div class="bob-stats">
+          <div class="bob-stat-card">
+            <div class="bob-stat-label">Active escrows</div>
+            <div class="bob-stat-value">4</div>
+            <div class="bob-stat-meta">$9.66M in motion</div>
+          </div>
+          <div class="bob-stat-card">
+            <div class="bob-stat-label">Active leads</div>
+            <div class="bob-stat-value">11</div>
+            <div class="bob-stat-meta">Future ECDs set</div>
+          </div>
+          <div class="bob-stat-card">
+            <div class="bob-stat-label">Developer network</div>
+            <div class="bob-stat-value">16</div>
+            <div class="bob-stat-meta">Recurring buyers</div>
+          </div>
+          <div class="bob-stat-card">
+            <div class="bob-stat-label">Past closes</div>
+            <div class="bob-stat-value">14</div>
+            <div class="bob-stat-meta">$14.8M+ track record</div>
+          </div>
+          <div class="bob-stat-card">
+            <div class="bob-stat-label">Cold / expired</div>
+            <div class="bob-stat-value">3</div>
+            <div class="bob-stat-meta">Reactivation candidates</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search + filters -->
+      <div class="bob-search-row">
+        <input type="text" class="bob-search" id="bobSearch" placeholder="Search by name, address, or client…">
+        <div class="bob-count-label"><strong id="bobCount">73</strong> deals</div>
+      </div>
+      <div class="bob-filters">
+        <button class="bob-filter-btn active" data-bob-filter="all">All</button>
+        <button class="bob-filter-btn" data-bob-filter="active">Active escrows</button>
+        <button class="bob-filter-btn" data-bob-filter="lead">Leads</button>
+        <button class="bob-filter-btn" data-bob-filter="dev">Developers</button>
+        <button class="bob-filter-btn" data-bob-filter="past">Past clients</button>
+        <button class="bob-filter-btn" data-bob-filter="cold">Cold / expired</button>
+        <button class="bob-filter-btn" data-bob-filter="buyer">Buyer-side</button>
+        <button class="bob-filter-btn" data-bob-filter="seller">Seller-side</button>
+        <button class="bob-filter-btn" data-bob-filter="michael">Lead by Michael</button>
+        <button class="bob-filter-btn" data-bob-filter="ania">Lead by Ania</button>
+      </div>
+
+      <!-- ===== ACTIVE ESCROWS ===== -->
+      <div class="bob-group open" data-bob-cat="active">
+        <div class="bob-group-head" data-bob-toggle>
+          <div class="bob-group-title">
+            <span class="bob-group-icon active">🔥</span>
+            Active escrows / listings
+          </div>
+          <div class="bob-group-meta">
+            <span><strong>4</strong> deals</span>
+            <span><strong>$9.66M</strong> volume</span>
+            <span class="bob-group-toggle">›</span>
+          </div>
+        </div>
+        <div class="bob-group-body">
+
+          <div class="bob-row" data-bob-name="Cynthia & Vasu Muthyala" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Cynthia & Vasu Muthyala</div>
+              <div class="bob-row-addr">4248 La Salle Ave · Culver City</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Buyer · Ania</span></div>
+            <div class="bob-row-touch recent"><strong>2d ago</strong></div>
+            <div class="bob-row-price">$2.51M<div class="bob-row-price-sub">COE Jun 5</div></div>
+            <div><a class="bob-row-action" href="../tracker-4248-lasalle/">Tracker</a></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Pascal De Bruycker" data-bob-side="seller" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Pascal De Bruycker</div>
+              <div class="bob-row-addr">11023 Fruitland Dr #401 · Studio City</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Michael</span></div>
+            <div class="bob-row-touch recent"><strong>1d ago</strong></div>
+            <div class="bob-row-price">$1.15M<div class="bob-row-price-sub">52 DOM</div></div>
+            <div><a class="bob-row-action" href="../tracker-11023-fruitland-401/">Tracker</a></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Leslee Mayo" data-bob-side="seller" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Leslee Mayo</div>
+              <div class="bob-row-addr">14405 Mulholland Dr · Bel Air</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Ania</span></div>
+            <div class="bob-row-touch"><strong>Active</strong></div>
+            <div class="bob-row-price">$3.995M<div class="bob-row-price-sub">Compass Exclusive</div></div>
+            <div><a class="bob-row-action secondary" href="https://www.compass.com/homedetails/14405-Mulholland-Dr-Los-Angeles-CA-90077/2058911761437795105_lid/" target="_blank" rel="noopener">Compass</a></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Rita Tateel & Ted Bavin" data-bob-side="seller" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Rita Tateel & Ted Bavin</div>
+              <div class="bob-row-addr">847 N Sierra Bonita Ave · West Hollywood</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>4mo ago</strong></div>
+            <div class="bob-row-price">$2M<div class="bob-row-price-sub">Off-market target</div></div>
+            <div><a class="bob-row-action secondary" href="https://www.compass.com/app/listing/draft/271d18d7-1e1d-4fe5-9cec-e87887bcd430" target="_blank" rel="noopener">Draft</a></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== LEADS / FUTURE ECDS ===== -->
+      <div class="bob-group" data-bob-cat="lead">
+        <div class="bob-group-head" data-bob-toggle>
+          <div class="bob-group-title">
+            <span class="bob-group-icon lead">🟡</span>
+            Leads · future ECDs / pre-listing
+          </div>
+          <div class="bob-group-meta">
+            <span><strong>11</strong> deals</span>
+            <span><strong>5</strong> seller / <strong>6</strong> buyer</span>
+            <span class="bob-group-toggle">›</span>
+          </div>
+        </div>
+        <div class="bob-group-body">
+
+          <div class="bob-row" data-bob-name="Allison Marks" data-bob-side="seller" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Allison Marks</div>
+              <div class="bob-row-addr">2610 Highland Ave · Santa Monica MF</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Michael</span></div>
+            <div class="bob-row-touch recent"><strong>13d ago</strong></div>
+            <div class="bob-row-price">$1.9M<div class="bob-row-price-sub">Value analysis sent</div></div>
+            <div><a class="bob-row-action" href="mailto:allisonjen22@gmail.com?subject=2610 Highland — Compass Exclusive next steps">Follow up</a></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Bradley Steinberg" data-bob-side="seller" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Bradley Steinberg</div>
+              <div class="bob-row-addr">1155 S Tremaine Ave · Hancock Park area</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Ania</span></div>
+            <div class="bob-row-touch cold"><strong>1wk ago</strong></div>
+            <div class="bob-row-price">TBD<div class="bob-row-price-sub">NB - Hancock Park</div></div>
+            <div><button class="bob-row-action" data-log-name="Bradley Steinberg">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Henry Tom" data-bob-side="seller" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Henry / Harry Tom</div>
+              <div class="bob-row-addr">1315 Franklin St #C</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Ania</span></div>
+            <div class="bob-row-touch cold"><strong>1wk+ ago</strong></div>
+            <div class="bob-row-price">TBD</div>
+            <div><button class="bob-row-action" data-log-name="Henry Tom">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Julia Hernandez & Memo" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Julia Hernandez & Memo</div>
+              <div class="bob-row-addr">Buyer search</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Buyer · Ania</span></div>
+            <div class="bob-row-touch cold"><strong>2wk ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Julia Hernandez & Memo">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Eva Janiszewski" data-bob-side="seller" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Eva Janiszewski · 4 properties</div>
+              <div class="bob-row-addr">1955 Sherbourne · 1842 Queen Anne · 932 Plymouth · 1282 Queen Anne</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Ania</span></div>
+            <div class="bob-row-touch cold"><strong>1wk+ ago</strong></div>
+            <div class="bob-row-price">Multi<div class="bob-row-price-sub">ECDs May 2</div></div>
+            <div><button class="bob-row-action" data-log-name="Eva Janiszewski">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="AJ Bae" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">AJ Bae</div>
+              <div class="bob-row-addr">Buyer · ECD Jul 1</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Buyer · Ania</span></div>
+            <div class="bob-row-touch cold"><strong>1mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="AJ Bae">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Steve Sanders" data-bob-side="seller" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Steve Sanders · Pocket</div>
+              <div class="bob-row-addr">1137 Harrison Ave · ECD May 2</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>6mo+ ago</strong></div>
+            <div class="bob-row-price">TBD<div class="bob-row-price-sub">Also w/ Traci as buyer</div></div>
+            <div><button class="bob-row-action" data-log-name="Steve Sanders">Re-engage</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Bendee Anzures" data-bob-side="seller" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Bendee Anzures</div>
+              <div class="bob-row-addr">1492 Palisades Dr · ECD Jun 30</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Ania</span></div>
+            <div class="bob-row-touch cold"><strong>4mo ago</strong></div>
+            <div class="bob-row-price">TBD</div>
+            <div><button class="bob-row-action" data-log-name="Bendee Anzures">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Max Baumann & Danielle Levine" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Max Baumann & Danielle Levine</div>
+              <div class="bob-row-addr">Buyer · ECD Sep 18</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Buyer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>1mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Max Baumann">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Michael Abraham · 900 Nueva Vista" data-bob-side="seller" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Michael Abraham · 900 Nueva Vista Dr S</div>
+              <div class="bob-row-addr">Personal listing prep</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>2mo ago</strong></div>
+            <div class="bob-row-price">TBD</div>
+            <div><button class="bob-row-action secondary" data-log-name="Nueva Vista personal">Plan</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Shula Finkelstein" data-bob-side="seller" data-bob-agent="amre">
+            <div>
+              <div class="bob-row-name">Shula Finkelstein</div>
+              <div class="bob-row-addr">Pre-listing</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Seller · AMRE</span></div>
+            <div class="bob-row-touch cold"><strong>1wk ago</strong></div>
+            <div class="bob-row-price">TBD</div>
+            <div><button class="bob-row-action" data-log-name="Shula Finkelstein">Touch</button></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== DEVELOPER NETWORK ===== -->
+      <div class="bob-group" data-bob-cat="dev">
+        <div class="bob-group-head" data-bob-toggle>
+          <div class="bob-group-title">
+            <span class="bob-group-icon dev">🏗️</span>
+            Developer network · recurring buyers
+          </div>
+          <div class="bob-group-meta">
+            <span><strong>16</strong> developers</span>
+            <span><strong>Compounding asset</strong></span>
+            <span class="bob-group-toggle">›</span>
+          </div>
+        </div>
+        <div class="bob-group-body">
+
+          <div class="bob-row" data-bob-name="Phillip Illoulian" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Phillip Illoulian · HWHL 26 LLC</div>
+              <div class="bob-row-addr">Closed 3904 East Blvd $2.325M Aug 2025 · repeat buyer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>6mo+ ago</strong></div>
+            <div class="bob-row-price">$2.32M<div class="bob-row-price-sub">Past close</div></div>
+            <div><button class="bob-row-action" data-log-name="Phillip Illoulian">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Jeremy Lappen" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Jeremy Lappen</div>
+              <div class="bob-row-addr">Developer buyer · ECD Jun 27</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>6mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Jeremy Lappen">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Rami Assouline" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Rami Assouline</div>
+              <div class="bob-row-addr">Developer · ECD Jun 27</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Ania</span></div>
+            <div class="bob-row-touch cold"><strong>1mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Rami Assouline">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="David Wong & Hua Brothers" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">David Wong + Gene & Kien Hua</div>
+              <div class="bob-row-addr">Flippers · ECD Jun 27</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>6mo+ ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="David Wong">Re-engage</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Kristen Tucker · Ken Swan" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Kristen Tucker · via Ken Swan</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>6mo+ ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Kristen Tucker">Re-engage</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Daniel Vallejo" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Daniel Vallejo</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>6mo+ ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Daniel Vallejo">Re-engage</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Josh Gorokhovsky · Telos" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Josh Gorokhovsky · Telos Properties</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch frozen"><strong>6mo+ ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Josh Gorokhovsky">Re-engage</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Farzin Fazeli" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Farzin Fazeli</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>1mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Farzin Fazeli">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Jess Gonzales" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Jesse Gonzales</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>2mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Jess Gonzales">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Derrick Brizic" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Derrick Brizic</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>5mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Derrick Brizic">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Emon Yazdi" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Emon Yazdi</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>3mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Emon Yazdi">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Jacob Leonard" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Jacob Leonard</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>1mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Jacob Leonard">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Ashley Tizabi" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Ashley Tizabi</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>1mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Ashley Tizabi">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Shahin Adeli" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Shahin Adeli</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>1mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Shahin Adeli">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Sean Navi" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Sean Navi</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>1mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Sean Navi">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Zamir Alshech" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Zamir Alshech</div>
+              <div class="bob-row-addr">Developer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Developer · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>1mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Zamir Alshech">Touch</button></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== PAST CLIENTS ===== -->
+      <div class="bob-group" data-bob-cat="past">
+        <div class="bob-group-head" data-bob-toggle>
+          <div class="bob-group-title">
+            <span class="bob-group-icon past">🏆</span>
+            Past clients · sphere &amp; referral source
+          </div>
+          <div class="bob-group-meta">
+            <span><strong>14</strong> closes</span>
+            <span><strong>$14.8M+</strong> track record</span>
+            <span class="bob-group-toggle">›</span>
+          </div>
+        </div>
+        <div class="bob-group-body">
+
+          <div class="bob-row" data-bob-name="Reuven Regev" data-bob-side="seller" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Reuven Regev</div>
+              <div class="bob-row-addr">1415 Sunset Ave · Closed Jan 24, 2025</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Past · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>1y+ ago</strong></div>
+            <div class="bob-row-price">$2.19M</div>
+            <div><button class="bob-row-action" data-log-name="Reuven Regev">Annual</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Phillip Illoulian past" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Phillip Illoulian · HWHL 26 LLC</div>
+              <div class="bob-row-addr">3904 East Blvd · Closed Aug 28, 2025</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Past · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>8mo ago</strong></div>
+            <div class="bob-row-price">$2.325M</div>
+            <div><button class="bob-row-action" data-log-name="Phillip Illoulian past">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Andria Piekarz" data-bob-side="seller" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Andria Piekarz</div>
+              <div class="bob-row-addr">14423 Mulholland Dr · Closed May 8, 2025 · neighbor of Leslee</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Past · Michael</span></div>
+            <div class="bob-row-touch frozen"><strong>1y ago</strong></div>
+            <div class="bob-row-price">$1.72M</div>
+            <div><button class="bob-row-action" data-log-name="Andria Piekarz">Annual</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Glen & Debbie Buckley" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Glen & Debbie Buckley</div>
+              <div class="bob-row-addr">4701 Deseret Dr · Closed Sep 2, 2025</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Past · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>8mo ago</strong></div>
+            <div class="bob-row-price">$1.65M</div>
+            <div><button class="bob-row-action" data-log-name="Glen Buckley">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Ben Steinberger" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Ben Steinberger & Alysha Stein-Manes</div>
+              <div class="bob-row-addr">13236 Fiji Way #D · Closed Aug 29, 2025</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Past · Michael</span></div>
+            <div class="bob-row-touch frozen"><strong>8mo ago</strong></div>
+            <div class="bob-row-price">$1.349M</div>
+            <div><button class="bob-row-action" data-log-name="Ben Steinberger">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Estelle Kim" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Estelle Kim</div>
+              <div class="bob-row-addr">2239 Brier Ave · Closed May 26, 2023</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Past · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>3y ago</strong></div>
+            <div class="bob-row-price">$1.27M</div>
+            <div><button class="bob-row-action" data-log-name="Estelle Kim">Annual</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Phillippy Family" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Phillippy Family</div>
+              <div class="bob-row-addr">1154 S Barrington Ave #306 · Closed Dec 12, 2024</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Past · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>1y+ ago</strong></div>
+            <div class="bob-row-price">$825K</div>
+            <div><button class="bob-row-action" data-log-name="Phillippy Family">Annual</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Sunghi Yoo" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Sunghi Yoo & Bill Doyle</div>
+              <div class="bob-row-addr">6324 Keniston Ave · Closed Jan 14, 2025</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Past · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>1y+ ago</strong></div>
+            <div class="bob-row-price">$650K</div>
+            <div><button class="bob-row-action" data-log-name="Sunghi Yoo">Annual</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Nicole Choi & Charles Jun" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Nicole Choi & Charles Jun</div>
+              <div class="bob-row-addr">22702 White Fir Ln · Closed Jun 8, 2023</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Past · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>3y ago</strong></div>
+            <div class="bob-row-price">$1.232M</div>
+            <div><button class="bob-row-action" data-log-name="Nicole Choi">Annual</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Nat Proulx & JF Chedeville" data-bob-side="seller" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Nat Proulx & Jean François Chedeville</div>
+              <div class="bob-row-addr">4265 Don Luis Drive · Closed Sep 28, 2022</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Past · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>3y+ ago</strong></div>
+            <div class="bob-row-price">$1.55M</div>
+            <div><button class="bob-row-action" data-log-name="Nat Proulx">Annual</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Linda Thieben" data-bob-side="seller" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Linda Thieben · LivNow</div>
+              <div class="bob-row-addr">106 Croft Ave · Closed (5mo ago)</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill seller">Past · Michael</span></div>
+            <div class="bob-row-touch frozen"><strong>5mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Linda Thieben">Touch</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Michael Abraham · 2640 Bronson" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Michael Abraham personal · 2640 Bronson</div>
+              <div class="bob-row-addr">w/ Ari Wintraub · Closed Mar 16, 2026</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Personal · Michael</span></div>
+            <div class="bob-row-touch cold"><strong>6wk ago</strong></div>
+            <div class="bob-row-price">$1.01M</div>
+            <div><button class="bob-row-action secondary" data-log-name="2640 Bronson personal">Track</button></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== COLD / EXPIRED ===== -->
+      <div class="bob-group" data-bob-cat="cold">
+        <div class="bob-group-head" data-bob-toggle>
+          <div class="bob-group-title">
+            <span class="bob-group-icon cold">❄️</span>
+            Cold / expired · reactivation candidates
+          </div>
+          <div class="bob-group-meta">
+            <span><strong>3</strong> deals</span>
+            <span class="bob-group-toggle">›</span>
+          </div>
+        </div>
+        <div class="bob-group-body">
+
+          <div class="bob-row" data-bob-name="Charles Soto" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Charles Soto · Expired</div>
+              <div class="bob-row-addr">Buyer · listing expired</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Cold · Michael</span></div>
+            <div class="bob-row-touch frozen"><strong>2mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Charles Soto">Re-engage</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Ricka & Darren" data-bob-side="buyer" data-bob-agent="ania">
+            <div>
+              <div class="bob-row-name">Ricka Berry & Darren Savino · Expired</div>
+              <div class="bob-row-addr">Buyer · ECD Jan 1 came &amp; went</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Cold · Ania</span></div>
+            <div class="bob-row-touch frozen"><strong>2mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Ricka & Darren">Re-engage</button></div>
+          </div>
+
+          <div class="bob-row" data-bob-name="Lindsay Roxon" data-bob-side="buyer" data-bob-agent="michael">
+            <div>
+              <div class="bob-row-name">Lindsay Roxon · Expired</div>
+              <div class="bob-row-addr">Buyer</div>
+            </div>
+            <div class="bob-row-clients"><span class="bob-side-pill buyer">Cold · Michael</span></div>
+            <div class="bob-row-touch frozen"><strong>2mo ago</strong></div>
+            <div class="bob-row-price">—</div>
+            <div><button class="bob-row-action" data-log-name="Lindsay Roxon">Re-engage</button></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Empty state for filters -->
+      <div class="bob-empty" id="bobEmpty" style="display:none;">No deals match the current filter.</div>
+
+    </div><!-- /tab-bob -->
+
     <!-- ===== MARKETING PANE ===== -->
     <div class="bucket-pane" id="tab-marketing">
 
@@ -2874,7 +3744,7 @@
 
   <div class="footer">
     <span class="wm-amre" data-logo-amre>AMRE</span> Real Estate Group @ Compass<br>
-    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 1:06 PM PT</span>
+    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 2:44 PM PT</span>
   </div>
 
   <!-- ===== NOTES MODAL ===== -->
@@ -3652,7 +4522,78 @@
         blocksWrap.parentElement.insertBefore(banner, blocksWrap);
       }
     }
+  })();  // ===== BOOK OF BUSINESS — group toggle, search, filter =====
+  (function() {
+    // Group toggle
+    document.querySelectorAll('[data-bob-toggle]').forEach(head => {
+      head.addEventListener('click', () => {
+        head.closest('.bob-group').classList.toggle('open');
+      });
+    });
+
+    const searchInput = document.getElementById('bobSearch');
+    const filterBtns = document.querySelectorAll('.bob-filter-btn');
+    const groups = document.querySelectorAll('[data-bob-cat]');
+    const allRows = document.querySelectorAll('.bob-row');
+    const countEl = document.getElementById('bobCount');
+    const emptyEl = document.getElementById('bobEmpty');
+    let activeFilter = 'all';
+    let activeQuery = '';
+
+    function applyFilter() {
+      let visible = 0;
+      allRows.forEach(row => {
+        const name = (row.dataset.bobName || '').toLowerCase();
+        const side = row.dataset.bobSide || '';
+        const agent = row.dataset.bobAgent || '';
+        const cat = row.closest('.bob-group').dataset.bobCat || '';
+
+        let matchFilter = false;
+        if (activeFilter === 'all') matchFilter = true;
+        else if (['active','lead','dev','past','cold'].includes(activeFilter)) matchFilter = (cat === activeFilter);
+        else if (activeFilter === 'buyer' || activeFilter === 'seller') matchFilter = (side === activeFilter);
+        else if (activeFilter === 'michael' || activeFilter === 'ania') matchFilter = (agent === activeFilter);
+
+        const matchSearch = !activeQuery ||
+          name.includes(activeQuery) ||
+          (row.querySelector('.bob-row-addr')?.textContent || '').toLowerCase().includes(activeQuery);
+
+        const show = matchFilter && matchSearch;
+        row.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      // Hide groups with zero visible rows
+      groups.forEach(g => {
+        const anyVisible = Array.from(g.querySelectorAll('.bob-row')).some(r => r.style.display !== 'none');
+        g.style.display = anyVisible ? '' : 'none';
+        // Auto-open groups when filtering for results
+        if (anyVisible && (activeFilter !== 'all' || activeQuery)) {
+          g.classList.add('open');
+        }
+      });
+
+      countEl.textContent = visible;
+      emptyEl.style.display = visible === 0 ? '' : 'none';
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.bobFilter;
+        applyFilter();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', e => {
+        activeQuery = e.target.value.trim().toLowerCase();
+        applyFilter();
+      });
+    }
   })();
+
 </script>
 </body>
 </html>
