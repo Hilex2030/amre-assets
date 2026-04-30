@@ -1103,6 +1103,297 @@
     line-height: 1.5;
   }
 
+  /* ===== PIPELINE / FORECAST ===== */
+  .pipe-hero {
+    background: linear-gradient(135deg, #0A4D2E 0%, #2E7D32 100%);
+    color: var(--white);
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin: 24px 0;
+  }
+  .pipe-hero-eyebrow {
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.65); margin-bottom: 6px;
+  }
+  .pipe-hero-title {
+    font-size: 24px; font-weight: 600;
+    letter-spacing: -0.02em; margin-bottom: 4px;
+  }
+  .pipe-hero-sub {
+    font-size: 13px; color: rgba(255,255,255,0.85);
+    margin-bottom: 22px;
+  }
+  .pipe-monthly {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .pipe-month-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .pipe-month-label {
+    font-size: 11px; font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .pipe-month-value {
+    font-size: 22px; font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pipe-month-meta {
+    font-size: 11px; color: rgba(255,255,255,0.65);
+    margin-top: 2px;
+  }
+  .pipe-totals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .pipe-total {
+    background: var(--white);
+    border: 1px solid var(--hairline-soft);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .pipe-total-label {
+    font-size: 11px; font-weight: 600;
+    color: var(--ink-3);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .pipe-total-value {
+    font-size: 28px; font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-top: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pipe-total-meta {
+    font-size: 12px;
+    color: var(--ink-3);
+    margin-top: 2px;
+  }
+  .pipe-total.weighted .pipe-total-value { color: #2E7D32; }
+
+  .pipe-table {
+    background: var(--white);
+    border: 1px solid var(--hairline-soft);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .pipe-row {
+    display: grid;
+    grid-template-columns: 2fr 80px 100px 110px 110px 110px;
+    gap: 10px;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--hairline-soft);
+    font-size: 13px;
+  }
+  .pipe-row:last-child { border-bottom: none; }
+  .pipe-row.head {
+    background: var(--gray-bg);
+    font-size: 11px; font-weight: 600;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .pipe-row-deal { font-weight: 600; color: var(--ink); }
+  .pipe-row-deal-sub {
+    font-size: 11px; color: var(--ink-3);
+    font-weight: 400; margin-top: 2px;
+  }
+  .pipe-side-pill {
+    font-size: 10px; padding: 2px 8px;
+    border-radius: 100px; font-weight: 600;
+    text-align: center;
+  }
+  .pipe-side-pill.buyer { background: #E3F2FD; color: #1976D2; }
+  .pipe-side-pill.seller { background: #FFF4E5; color: #E65100; }
+  .pipe-prob-bar {
+    width: 100%; height: 6px;
+    background: var(--gray-bg); border-radius: 100px;
+    overflow: hidden; position: relative;
+  }
+  .pipe-prob-fill {
+    height: 100%; border-radius: 100px;
+    background: linear-gradient(90deg, #34C759, #2E7D32);
+  }
+  .pipe-prob-num {
+    font-size: 11px; color: var(--ink-3);
+    margin-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pipe-num {
+    font-weight: 600; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .pipe-num.weighted { color: #2E7D32; }
+  .pipe-num.muted { color: var(--ink-3); font-weight: 400; }
+  @media (max-width: 880px) {
+    .pipe-row { grid-template-columns: 1fr auto; gap: 4px 12px; }
+    .pipe-row.head { display: none; }
+    .pipe-row > *:not(:first-child) {
+      grid-column: 2;
+      text-align: right;
+      font-size: 12px;
+    }
+  }
+
+  .pipe-section-title {
+    font-size: 13px; font-weight: 600;
+    color: var(--ink-3);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin: 32px 0 12px;
+  }
+
+  /* ===== NOTES MODAL ===== */
+  .notes-modal-bg {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 9998;
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.15s;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .notes-modal-bg.open { display: flex; }
+  .notes-modal {
+    background: var(--white);
+    border-radius: 18px;
+    width: 100%; max-width: 520px;
+    max-height: 80vh;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  }
+  .notes-modal-head {
+    padding: 24px 28px 16px;
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .notes-modal-name {
+    font-size: 20px; font-weight: 600;
+    letter-spacing: -0.02em; color: var(--ink);
+  }
+  .notes-modal-meta {
+    font-size: 13px; color: var(--ink-3);
+    margin-top: 4px;
+  }
+  .notes-modal-body {
+    flex: 1; overflow-y: auto;
+    padding: 16px 28px;
+  }
+  .note-item {
+    padding: 12px 14px;
+    background: var(--gray-bg-2);
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .note-item-text {
+    font-size: 14px; color: var(--ink);
+    line-height: 1.5;
+  }
+  .note-item-meta {
+    font-size: 11px; color: var(--ink-3);
+    margin-top: 4px;
+  }
+  .note-empty {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--ink-3);
+    font-size: 13px;
+  }
+  .notes-modal-foot {
+    padding: 16px 28px 24px;
+    border-top: 1px solid var(--hairline-soft);
+    display: flex; gap: 8px;
+  }
+  .note-input {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: var(--sans);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .note-input:focus { border-color: var(--ink); }
+  .note-add-btn {
+    padding: 12px 18px;
+    background: var(--ink);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 13px; font-weight: 500;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: opacity 0.15s;
+  }
+  .note-add-btn:hover { opacity: 0.85; }
+  .modal-close {
+    position: absolute;
+    top: 20px; right: 24px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--ink-3);
+    cursor: pointer;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    transition: background 0.15s;
+  }
+  .modal-close:hover {
+    background: var(--gray-bg);
+    color: var(--ink);
+  }
+
+  /* CRM row "notes" button */
+  .crm-row-action.notes {
+    background: var(--white);
+    color: var(--ink-2);
+    border: 1px solid var(--hairline);
+    padding: 6px 8px;
+    margin-left: 4px;
+    font-size: 11px;
+  }
+  .crm-row-action.notes:hover { background: var(--gray-bg); }
+  .crm-row-actions-group {
+    display: flex; gap: 4px; align-items: center;
+  }
+
+  /* ===== CARRIED FORWARD ===== */
+  .carry-forward {
+    background: rgba(255,159,10,0.08);
+    border: 1px solid rgba(255,159,10,0.3);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+  }
+  .cf-eyebrow {
+    font-size: 11px; font-weight: 600;
+    color: #FF9F0A;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .cf-title {
+    font-size: 14px; font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .cf-sub {
+    font-size: 12px; color: rgba(255,255,255,0.7);
+  }
+
   /* ===== STATS ===== */
   .stats-bar {
     display: flex;
@@ -1469,6 +1760,10 @@
       <button class="bucket-tab alert" data-bucket="crm" role="tab">
         CRM
         <span class="bucket-tab-count">7</span>
+      </button>
+      <button class="bucket-tab" data-bucket="pipeline" role="tab">
+        Pipeline
+        <span class="bucket-tab-count">$284K</span>
       </button>
       <button class="bucket-tab" data-bucket="marketing" role="tab">
         Marketing
@@ -2118,6 +2413,168 @@
 
     </div><!-- /tab-crm -->
 
+    <!-- ===== PIPELINE / FORECAST PANE ===== -->
+    <div class="bucket-pane" id="tab-pipeline">
+
+      <div class="pipe-hero">
+        <div class="pipe-hero-eyebrow">Forecast · weighted by probability</div>
+        <div class="pipe-hero-title">$99K expected · next 4 months.</div>
+        <div class="pipe-hero-sub">$193K if everything closes. Probability × net = expected. Update as deals firm up.</div>
+
+        <div class="pipe-monthly">
+          <div class="pipe-month-card">
+            <div class="pipe-month-label">May 2026</div>
+            <div class="pipe-month-value">$0</div>
+            <div class="pipe-month-meta">Nothing booked</div>
+          </div>
+          <div class="pipe-month-card">
+            <div class="pipe-month-label">Jun 2026</div>
+            <div class="pipe-month-value">$47.7K</div>
+            <div class="pipe-month-meta">La Salle COE</div>
+          </div>
+          <div class="pipe-month-card">
+            <div class="pipe-month-label">Jul 2026</div>
+            <div class="pipe-month-value">$11.5K</div>
+            <div class="pipe-month-meta">Fruitland est.</div>
+          </div>
+          <div class="pipe-month-card">
+            <div class="pipe-month-label">Aug 2026</div>
+            <div class="pipe-month-value">$24K</div>
+            <div class="pipe-month-meta">Mulholland est.</div>
+          </div>
+          <div class="pipe-month-card">
+            <div class="pipe-month-label">Sep 2026</div>
+            <div class="pipe-month-value">$16K</div>
+            <div class="pipe-month-meta">Sierra Bonita est.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pipe-totals">
+        <div class="pipe-total">
+          <div class="pipe-total-label">Volume in motion</div>
+          <div class="pipe-total-value">$9.66M</div>
+          <div class="pipe-total-meta">Across 4 active deals</div>
+        </div>
+        <div class="pipe-total">
+          <div class="pipe-total-label">GCI · if all close</div>
+          <div class="pipe-total-value">$241K</div>
+          <div class="pipe-total-meta">2.5% × sale price</div>
+        </div>
+        <div class="pipe-total weighted">
+          <div class="pipe-total-label">Weighted forecast</div>
+          <div class="pipe-total-value">$99K</div>
+          <div class="pipe-total-meta">Expected net to AMRE</div>
+        </div>
+        <div class="pipe-total">
+          <div class="pipe-total-label">Avg close confidence</div>
+          <div class="pipe-total-value">51%</div>
+          <div class="pipe-total-meta">Probability-weighted</div>
+        </div>
+      </div>
+
+      <div class="pipe-section-title">Deal forecast</div>
+      <div class="pipe-table">
+        <div class="pipe-row head">
+          <div>Deal</div>
+          <div>Side</div>
+          <div>Probability</div>
+          <div>GCI</div>
+          <div>Net AMRE</div>
+          <div>Weighted</div>
+        </div>
+
+        <div class="pipe-row">
+          <div>
+            <div class="pipe-row-deal">4248 La Salle Ave</div>
+            <div class="pipe-row-deal-sub">Vasu &amp; Cynthia · COE Jun 5 · $2.51M</div>
+          </div>
+          <div><span class="pipe-side-pill buyer">Buyer</span></div>
+          <div>
+            <div class="pipe-prob-bar"><div class="pipe-prob-fill" style="width:95%"></div></div>
+            <div class="pipe-prob-num">95%</div>
+          </div>
+          <div class="pipe-num muted">$62,812</div>
+          <div class="pipe-num">$50,250</div>
+          <div class="pipe-num weighted">$47,738</div>
+        </div>
+
+        <div class="pipe-row">
+          <div>
+            <div class="pipe-row-deal">11023 Fruitland #401</div>
+            <div class="pipe-row-deal-sub">Pascal · 52 DOM · $1.15M</div>
+          </div>
+          <div><span class="pipe-side-pill seller">Seller</span></div>
+          <div>
+            <div class="pipe-prob-bar"><div class="pipe-prob-fill" style="width:50%"></div></div>
+            <div class="pipe-prob-num">50%</div>
+          </div>
+          <div class="pipe-num muted">$28,750</div>
+          <div class="pipe-num">$23,000</div>
+          <div class="pipe-num weighted">$11,500</div>
+        </div>
+
+        <div class="pipe-row">
+          <div>
+            <div class="pipe-row-deal">14405 Mulholland Dr</div>
+            <div class="pipe-row-deal-sub">Leslee · Compass Exclusive · $3.995M</div>
+          </div>
+          <div><span class="pipe-side-pill seller">Seller</span></div>
+          <div>
+            <div class="pipe-prob-bar"><div class="pipe-prob-fill" style="width:30%"></div></div>
+            <div class="pipe-prob-num">30%</div>
+          </div>
+          <div class="pipe-num muted">$99,875</div>
+          <div class="pipe-num">$79,900</div>
+          <div class="pipe-num weighted">$23,970</div>
+        </div>
+
+        <div class="pipe-row">
+          <div>
+            <div class="pipe-row-deal">847 N Sierra Bonita</div>
+            <div class="pipe-row-deal-sub">Rita &amp; Ted · Off-market · $2M target</div>
+          </div>
+          <div><span class="pipe-side-pill seller">Seller</span></div>
+          <div>
+            <div class="pipe-prob-bar"><div class="pipe-prob-fill" style="width:40%"></div></div>
+            <div class="pipe-prob-num">40%</div>
+          </div>
+          <div class="pipe-num muted">$50,000</div>
+          <div class="pipe-num">$40,000</div>
+          <div class="pipe-num weighted">$16,000</div>
+        </div>
+
+      </div>
+
+      <p style="font-size:11px; color:var(--ink-3); margin-top:12px; line-height:1.5;">
+        Assumptions: 2.5% GCI of sale price · 80% net to AMRE after Compass split · probability is judgment-based, update as deals firm up. Buyer-side at 95% reflects in-escrow status; off-market and Compass Exclusive listings start at 30–40% until offers materialize.
+      </p>
+
+      <div class="pipe-section-title">Listings vs. buyer-side mix</div>
+      <div class="pipe-totals">
+        <div class="pipe-total">
+          <div class="pipe-total-label">Buyer-side weighted</div>
+          <div class="pipe-total-value">$47.7K</div>
+          <div class="pipe-total-meta">48% of forecast · 1 deal</div>
+        </div>
+        <div class="pipe-total weighted">
+          <div class="pipe-total-label">Seller-side weighted</div>
+          <div class="pipe-total-value">$51.5K</div>
+          <div class="pipe-total-meta">52% of forecast · 3 listings</div>
+        </div>
+        <div class="pipe-total">
+          <div class="pipe-total-label">Listing volume</div>
+          <div class="pipe-total-value">$7.15M</div>
+          <div class="pipe-total-meta">Equity in the business</div>
+        </div>
+      </div>
+
+      <p style="font-size:13px; color:var(--ink-3); margin-top:16px; line-height:1.55;">
+        <strong style="color:var(--ink);">The Tom Ferry view:</strong> Buyer-side is income, listings are equity. Three active listings totaling $7.15M means the business has compounding leverage — each OH drives future buyers, sphere expansion, and referral velocity. Goal: keep at least 3 active listings at all times.
+      </p>
+
+    </div><!-- /tab-pipeline -->
+
     <!-- ===== MARKETING PANE ===== -->
     <div class="bucket-pane" id="tab-marketing">
 
@@ -2417,7 +2874,25 @@
 
   <div class="footer">
     <span class="wm-amre" data-logo-amre>AMRE</span> Real Estate Group @ Compass<br>
-    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 12:57 PM PT</span>
+    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 1:06 PM PT</span>
+  </div>
+
+  <!-- ===== NOTES MODAL ===== -->
+  <div class="notes-modal-bg" id="notesModal">
+    <div class="notes-modal">
+      <div class="notes-modal-head">
+        <button class="modal-close" id="notesClose">×</button>
+        <div class="notes-modal-name" id="notesName">Contact</div>
+        <div class="notes-modal-meta" id="notesMeta">Last touch: —</div>
+      </div>
+      <div class="notes-modal-body" id="notesBody">
+        <div class="note-empty">No notes yet. Add one below.</div>
+      </div>
+      <div class="notes-modal-foot">
+        <input type="text" class="note-input" id="noteInput" placeholder="What was said? (Cmd+Enter to save)">
+        <button class="note-add-btn" id="noteAdd">Add note</button>
+      </div>
+    </div>
   </div>
 
 </main>
@@ -2912,6 +3387,271 @@
       const mp = document.getElementById('mktPostsShipped');
       if (mp) mp.textContent = count;
     } catch {}
+  })();
+
+  // ===== CONTACT RECORDS — persistent last-touch + notes =====
+  // Storage key: amre_contacts_v1
+  // Shape: { [contactId]: { name, lastTouch: ISO date, notes: [{text, ts}] } }
+  (function() {
+    const STORAGE = 'amre_contacts_v1';
+
+    function slugify(name) {
+      return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    }
+    function loadContacts() {
+      try {
+        const raw = localStorage.getItem(STORAGE);
+        return raw ? JSON.parse(raw) : {};
+      } catch { return {}; }
+    }
+    function saveContacts(c) {
+      try { localStorage.setItem(STORAGE, JSON.stringify(c)); } catch {}
+    }
+    function ensureContact(id, name) {
+      const all = loadContacts();
+      if (!all[id]) {
+        all[id] = { name, lastTouch: null, notes: [] };
+        saveContacts(all);
+      }
+      return all[id];
+    }
+    function logTouch(id, name) {
+      const all = loadContacts();
+      if (!all[id]) all[id] = { name, lastTouch: null, notes: [] };
+      all[id].lastTouch = new Date().toISOString();
+      saveContacts(all);
+      return all[id];
+    }
+    function addNote(id, name, text) {
+      const all = loadContacts();
+      if (!all[id]) all[id] = { name, lastTouch: null, notes: [] };
+      all[id].notes.unshift({ text, ts: new Date().toISOString() });
+      all[id].lastTouch = new Date().toISOString();
+      saveContacts(all);
+      return all[id];
+    }
+    function daysSince(iso) {
+      if (!iso) return null;
+      const then = new Date(iso);
+      const now = new Date();
+      return Math.floor((now - then) / (1000*60*60*24));
+    }
+    function relativeLabel(iso) {
+      const d = daysSince(iso);
+      if (d === null) return null;
+      if (d === 0) return 'Today';
+      if (d === 1) return '1d ago';
+      if (d < 30) return d + 'd ago';
+      if (d < 365) return Math.floor(d/30) + 'mo ago';
+      return Math.floor(d/365) + 'y ago';
+    }
+
+    // Tag every CRM row with a contact ID and add Notes button
+    document.querySelectorAll('.crm-row').forEach(row => {
+      const nameEl = row.querySelector('.crm-row-name');
+      if (!nameEl) return;
+      const name = nameEl.textContent.trim();
+      const id = slugify(name);
+      row.dataset.contactId = id;
+      ensureContact(id, name);
+
+      // Add notes button if action cell exists
+      const lastCell = row.children[row.children.length - 1];
+      if (lastCell && !lastCell.querySelector('.crm-row-action.notes')) {
+        const existingBtn = lastCell.querySelector('.crm-row-action');
+        const wrap = document.createElement('div');
+        wrap.className = 'crm-row-actions-group';
+        const notesBtn = document.createElement('button');
+        notesBtn.className = 'crm-row-action notes';
+        notesBtn.textContent = 'Notes';
+        notesBtn.dataset.openNotes = id;
+        notesBtn.dataset.contactName = name;
+        if (existingBtn) {
+          lastCell.replaceChild(wrap, existingBtn);
+          wrap.appendChild(existingBtn);
+          wrap.appendChild(notesBtn);
+        } else {
+          lastCell.appendChild(notesBtn);
+        }
+      }
+
+      // Update touch label from stored data if available
+      const touchEl = row.querySelector('.crm-row-touch');
+      if (touchEl) {
+        const all = loadContacts();
+        const c = all[id];
+        if (c && c.lastTouch) {
+          const lbl = relativeLabel(c.lastTouch);
+          const days = daysSince(c.lastTouch);
+          touchEl.classList.remove('cold', 'frozen');
+          if (days >= 90) touchEl.classList.add('frozen');
+          else if (days >= 30) touchEl.classList.add('cold');
+          touchEl.innerHTML = `<strong>${lbl}</strong>`;
+        }
+      }
+    });
+
+    // Hook into existing log-name buttons to also stamp the contact's lastTouch
+    document.querySelectorAll('[data-log-name]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.logName;
+        const id = slugify(name);
+        const c = logTouch(id, name);
+        // Update the visible row touch indicator
+        const row = btn.closest('.crm-row');
+        if (row) {
+          const touchEl = row.querySelector('.crm-row-touch');
+          if (touchEl) {
+            touchEl.classList.remove('cold', 'frozen');
+            touchEl.innerHTML = `<strong>Today</strong>`;
+          }
+        }
+      }, { capture: false });
+    });
+
+    // ===== Notes modal =====
+    const modalBg = document.getElementById('notesModal');
+    const modalName = document.getElementById('notesName');
+    const modalMeta = document.getElementById('notesMeta');
+    const modalBody = document.getElementById('notesBody');
+    const modalClose = document.getElementById('notesClose');
+    const noteInput = document.getElementById('noteInput');
+    const noteAdd = document.getElementById('noteAdd');
+    let currentId = null;
+    let currentName = null;
+
+    function renderNotes() {
+      if (!currentId) return;
+      const all = loadContacts();
+      const c = all[currentId] || { name: currentName, notes: [] };
+      modalName.textContent = c.name;
+      const lt = c.lastTouch;
+      modalMeta.textContent = lt
+        ? `Last touch: ${relativeLabel(lt)} · ${new Date(lt).toLocaleDateString()}`
+        : 'Last touch: never';
+
+      if (!c.notes || c.notes.length === 0) {
+        modalBody.innerHTML = '<div class="note-empty">No notes yet. Add one below.</div>';
+        return;
+      }
+      modalBody.innerHTML = c.notes.map(n => `
+        <div class="note-item">
+          <div class="note-item-text">${escapeHtml(n.text)}</div>
+          <div class="note-item-meta">${new Date(n.ts).toLocaleString()}</div>
+        </div>
+      `).join('');
+    }
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;')
+        .replace(/'/g,'&#39;');
+    }
+    function openModal(id, name) {
+      currentId = id;
+      currentName = name;
+      modalBg.classList.add('open');
+      noteInput.value = '';
+      renderNotes();
+      setTimeout(() => noteInput.focus(), 50);
+    }
+    function closeModal() {
+      modalBg.classList.remove('open');
+      currentId = null;
+      currentName = null;
+    }
+
+    document.querySelectorAll('[data-open-notes]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openModal(btn.dataset.openNotes, btn.dataset.contactName);
+      });
+    });
+    modalClose.addEventListener('click', closeModal);
+    modalBg.addEventListener('click', e => {
+      if (e.target === modalBg) closeModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modalBg.classList.contains('open')) closeModal();
+    });
+
+    function submitNote() {
+      const text = noteInput.value.trim();
+      if (!text || !currentId) return;
+      addNote(currentId, currentName, text);
+      noteInput.value = '';
+      renderNotes();
+      // Update row touch indicator
+      const row = document.querySelector(`[data-contact-id="${currentId}"]`);
+      if (row) {
+        const touchEl = row.querySelector('.crm-row-touch');
+        if (touchEl) {
+          touchEl.classList.remove('cold','frozen');
+          touchEl.innerHTML = `<strong>Today</strong>`;
+        }
+      }
+    }
+    noteAdd.addEventListener('click', submitNote);
+    noteInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) submitNote();
+      else if (e.key === 'Enter' && !e.shiftKey) submitNote();
+    });
+  })();
+
+  // ===== TOMORROW'S PLAN — auto-rollover =====
+  // When the dashboard loads on a new PT day, any incomplete tasks from yesterday
+  // become a "Carried forward" callout at the top of today's plan.
+  (function() {
+    const PLAN_KEY = 'amre_dayplan_v1';
+    const ROLLOVER_KEY = 'amre_dayplan_rollover_v1';
+
+    function ptDayKey() {
+      const s = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+      const d = new Date(s);
+      return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+    }
+
+    let plan;
+    try { plan = JSON.parse(sessionStorage.getItem(PLAN_KEY) || 'null'); } catch { plan = null; }
+    const today = ptDayKey();
+
+    if (plan && plan.day && plan.day !== today) {
+      // It's a new day — capture what didn't get done yesterday
+      const allTasks = Array.from(document.querySelectorAll('.time-block')).map(b => ({
+        id: b.dataset.taskId,
+        title: (b.querySelector('.tb-task') || {}).textContent || b.dataset.taskId
+      }));
+      const incomplete = allTasks.filter(t => !plan.done[t.id]);
+
+      if (incomplete.length > 0) {
+        const carry = {
+          fromDay: plan.day,
+          tasks: incomplete
+        };
+        try { localStorage.setItem(ROLLOVER_KEY, JSON.stringify(carry)); } catch {}
+      } else {
+        try { localStorage.removeItem(ROLLOVER_KEY); } catch {}
+      }
+      // Reset the day plan for today
+      try { sessionStorage.setItem(PLAN_KEY, JSON.stringify({ day: today, done: {} })); } catch {}
+    }
+
+    // Show carry-forward banner if we have rollover for today
+    let carry;
+    try { carry = JSON.parse(localStorage.getItem(ROLLOVER_KEY) || 'null'); } catch { carry = null; }
+    if (carry && carry.tasks && carry.tasks.length > 0) {
+      const blocksWrap = document.getElementById('timeBlocks');
+      if (blocksWrap) {
+        const banner = document.createElement('div');
+        banner.className = 'carry-forward';
+        const list = carry.tasks.map(t => '• ' + t.title.replace(/^Reply: |^Send next-step: |^La Salle: /,'')).join('<br>');
+        banner.innerHTML = `
+          <div class="cf-eyebrow">Carried forward from ${carry.fromDay}</div>
+          <div class="cf-title">${carry.tasks.length} unfinished from yesterday</div>
+          <div class="cf-sub">${list}</div>
+        `;
+        blocksWrap.parentElement.insertBefore(banner, blocksWrap);
+      }
+    }
   })();
 </script>
 </body>
