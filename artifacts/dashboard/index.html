@@ -408,7 +408,7 @@
     <!-- Stats bar -->
     <div class="stats-bar" id="statsBar">
       <div class="stat-item">
-        <div class="stat-num" id="totalDeals">3</div>
+        <div class="stat-num" id="totalDeals">4</div>
         <div class="stat-label">Active deals</div>
       </div>
       <div class="stat-item">
@@ -416,12 +416,12 @@
         <div class="stat-label">Buyer-side</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" id="totalSeller">2</div>
+        <div class="stat-num" id="totalSeller">3</div>
         <div class="stat-label">Seller-side</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" id="totalVolume">$2.5M</div>
-        <div class="stat-label">Volume in escrow</div>
+        <div class="stat-num" id="totalVolume">$3.7M</div>
+        <div class="stat-label">Volume in motion</div>
       </div>
     </div>
 
@@ -474,6 +474,37 @@
     <!-- Seller-side deals -->
     <div class="section-label" id="sellerLabel">Representing seller</div>
     <div class="deals-grid" id="sellerGrid">
+
+      <a class="deal-card" href="#" data-side="seller" data-status="active" onclick="alert('Tracker not yet built. Provide property details to create.'); return false;">
+        <div class="deal-card-img-placeholder">🏙️</div>
+        <div class="deal-card-body">
+          <div class="deal-card-head">
+            <div>
+              <div class="deal-card-addr">11023 Fruitland Dr #401</div>
+              <div class="deal-card-city">Studio City, CA</div>
+            </div>
+            <span class="deal-badge active">Active listing</span>
+          </div>
+          <div class="deal-card-stats">
+            <div class="deal-stat">
+              <div class="deal-stat-val">$1.2M</div>
+              <div class="deal-stat-lbl">List price</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">3BD/3.5BA</div>
+              <div class="deal-stat-lbl">Layout</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">1,820 sf</div>
+              <div class="deal-stat-lbl">Size</div>
+            </div>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-card-agent">Pascal De Bruycker · OH Sun 2–4pm · Pricing review</div>
+            <span class="deal-card-arrow">→</span>
+          </div>
+        </div>
+      </a>
 
       <a class="deal-card" href="#" data-side="seller" data-status="pending" onclick="alert('Tracker not yet built. Provide property details to create.'); return false;">
         <div class="deal-card-img-placeholder">🏡</div>
@@ -548,7 +579,7 @@
 
   <div class="footer">
     <span class="wm-amre" data-logo-amre>AMRE</span> Real Estate Group @ Compass<br>
-    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 8:09 AM PT</span>
+    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 8:39 AM PT</span>
   </div>
 
 </main>
