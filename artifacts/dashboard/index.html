@@ -310,6 +310,349 @@
     .d5-label { min-height: 0; }
   }
 
+  /* ===== BUCKET TABS ===== */
+  .bucket-tabs {
+    display: flex;
+    gap: 4px;
+    margin: 32px 0 8px;
+    padding: 4px;
+    background: var(--gray-bg);
+    border-radius: 12px;
+    width: fit-content;
+  }
+  .bucket-tab {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: var(--ink-3);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--sans);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .bucket-tab:hover { color: var(--ink); }
+  .bucket-tab.active {
+    background: var(--white);
+    color: var(--ink);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    font-weight: 600;
+  }
+  .bucket-tab-count {
+    font-size: 11px;
+    background: var(--ink);
+    color: var(--white);
+    padding: 1px 8px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+  .bucket-tab.active .bucket-tab-count {
+    background: var(--blue);
+  }
+  .bucket-tab.alert .bucket-tab-count {
+    background: #FF3B30;
+  }
+  .bucket-pane { display: none; }
+  .bucket-pane.active { display: block; }
+
+  /* ===== CRM BUCKET ===== */
+  .crm-recommendation {
+    background: linear-gradient(135deg, #1D1D1F 0%, #2C2C2E 100%);
+    color: var(--white);
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .crm-rec-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 6px;
+  }
+  .crm-rec-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .crm-rec-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+  }
+  .crm-rec-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .crm-rec-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px;
+    transition: background 0.15s;
+  }
+  .crm-rec-item:hover { background: rgba(255,255,255,0.1); }
+  .crm-rec-rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    background: var(--white);
+    color: var(--ink);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .crm-rec-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .crm-rec-context {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .crm-rec-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .crm-rec-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: 6px 10px;
+    background: var(--white);
+    color: var(--ink);
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: opacity 0.15s;
+  }
+  .crm-rec-btn:hover { opacity: 0.85; }
+  .crm-rec-btn.secondary {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+  }
+
+  /* CRM segments */
+  .crm-segments-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 32px 0 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .crm-section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .crm-db-stat {
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  .crm-db-stat strong { color: var(--ink); font-weight: 600; }
+  .crm-db-stat .alert-pill {
+    display: inline-block;
+    background: #FFF4E5;
+    color: #E65100;
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-weight: 600;
+    margin-left: 8px;
+  }
+
+  .crm-segment {
+    background: var(--white);
+    border: 1px solid var(--hairline-soft);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .crm-seg-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+  }
+  .crm-seg-head:hover { background: var(--gray-bg-2); }
+  .crm-seg-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .crm-seg-icon {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+  .crm-seg-icon.hot { background: #FFEBEE; }
+  .crm-seg-icon.warm { background: #FFF4E5; }
+  .crm-seg-icon.sphere { background: #E8F5E9; }
+  .crm-seg-icon.network { background: #E3F2FD; }
+  .crm-seg-icon.dormant { background: var(--gray-bg); }
+  .crm-seg-meta {
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  .crm-seg-meta strong { color: var(--ink); font-weight: 600; }
+  .crm-seg-toggle {
+    color: var(--ink-3);
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+  .crm-segment.open .crm-seg-toggle { transform: rotate(90deg); }
+  .crm-seg-body {
+    display: none;
+    border-top: 1px solid var(--hairline-soft);
+  }
+  .crm-segment.open .crm-seg-body { display: block; }
+  .crm-row {
+    display: grid;
+    grid-template-columns: 1fr 160px 100px auto;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--hairline-soft);
+    transition: background 0.15s;
+  }
+  .crm-row:last-child { border-bottom: none; }
+  .crm-row:hover { background: var(--gray-bg-2); }
+  .crm-row-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .crm-row-context { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
+  .crm-row-source {
+    font-size: 11px;
+    color: var(--ink-3);
+    background: var(--gray-bg);
+    padding: 3px 8px;
+    border-radius: 100px;
+    text-align: center;
+  }
+  .crm-row-touch { font-size: 12px; color: var(--ink-3); text-align: right; }
+  .crm-row-touch strong { color: var(--ink); font-weight: 600; }
+  .crm-row-touch.cold strong { color: #FF9F0A; }
+  .crm-row-touch.frozen strong { color: #FF453A; }
+  .crm-row-action {
+    padding: 6px 12px;
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    white-space: nowrap;
+  }
+  .crm-row-action:hover { opacity: 0.85; }
+  .crm-row-action.secondary {
+    background: var(--white);
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+  }
+  @media (max-width: 720px) {
+    .crm-row { grid-template-columns: 1fr auto; gap: 8px; }
+    .crm-row-source, .crm-row-touch { display: none; }
+  }
+
+  .crm-funnel {
+    background: var(--white);
+    border: 1px solid var(--hairline-soft);
+    border-radius: 14px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .crm-funnel-head {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .crm-funnel-sub {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin-bottom: 20px;
+  }
+  .crm-funnel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  .crm-funnel-step {
+    padding: 16px;
+    background: var(--gray-bg-2);
+    border-radius: 10px;
+    text-align: center;
+  }
+  .crm-funnel-num {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .crm-funnel-label {
+    font-size: 12px;
+    color: var(--ink-3);
+    margin-top: 4px;
+  }
+  .crm-funnel-rate {
+    font-size: 11px;
+    color: var(--ink-4);
+    margin-top: 2px;
+  }
+
+  /* Marketing placeholder */
+  .placeholder-pane {
+    background: var(--white);
+    border: 1px dashed var(--hairline);
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: center;
+    margin: 32px 0;
+  }
+  .placeholder-pane h3 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .placeholder-pane p {
+    font-size: 15px;
+    color: var(--ink-3);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
   /* ===== STATS ===== */
   .stats-bar {
     display: flex;
@@ -667,6 +1010,24 @@
       </div>
     </div>
 
+    <!-- ===== BUCKET TABS ===== -->
+    <div class="bucket-tabs" role="tablist">
+      <button class="bucket-tab active" data-bucket="clients" role="tab">
+        Clients
+        <span class="bucket-tab-count">4</span>
+      </button>
+      <button class="bucket-tab alert" data-bucket="crm" role="tab">
+        CRM
+        <span class="bucket-tab-count">3</span>
+      </button>
+      <button class="bucket-tab" data-bucket="marketing" role="tab">
+        Marketing
+      </button>
+    </div>
+
+    <!-- ===== CLIENTS PANE ===== -->
+    <div class="bucket-pane active" id="tab-clients">
+
     <!-- Filters -->
     <div class="filters">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -817,11 +1178,359 @@
       <div class="empty-state-text">No deals match the selected filter.</div>
     </div>
 
+    </div><!-- /tab-clients -->
+
+    <!-- ===== CRM PANE ===== -->
+    <div class="bucket-pane" id="tab-crm">
+
+      <!-- Today's recommendation -->
+      <div class="crm-recommendation">
+        <div class="crm-rec-eyebrow">Reach out today · Highest leverage</div>
+        <div class="crm-rec-title">Three calls that move the business.</div>
+        <div class="crm-rec-sub">Ranked by recency × deal size × open ball. Replies, not initiations.</div>
+
+        <div class="crm-rec-list">
+
+          <div class="crm-rec-item">
+            <div class="crm-rec-rank">1</div>
+            <div class="crm-rec-name">Maryann O'Donnell · Compass</div>
+            <div class="crm-rec-context">
+              Apr 29 · "How much is the seller asking? What is his timing? Lease back?" — re: 847 Sierra Bonita. Bringing it to her business partner. <strong style="color:#FFD60A;">Open ball, ~24 hours cold.</strong>
+            </div>
+            <div class="crm-rec-actions">
+              <a class="crm-rec-btn" href="mailto:maryann.odonnell@compass.com?subject=Re: 847 N Sierra Bonita — pricing & timing">Reply now</a>
+              <button class="crm-rec-btn secondary" data-log-name="Maryann O'Donnell">Log call</button>
+            </div>
+          </div>
+
+          <div class="crm-rec-item">
+            <div class="crm-rec-rank">2</div>
+            <div class="crm-rec-name">Linda Van Gilder</div>
+            <div class="crm-rec-context">
+              Apr 29 · 9455 Beckford Ave Northridge, also moving to Wisteria. Met with husband. Roof concern, asbestos ~$25K. Need next-step proposal.
+            </div>
+            <div class="crm-rec-actions">
+              <a class="crm-rec-btn" href="mailto:vangilderlinda@aol.com?subject=9455 Beckford — Next Steps">Send next-step</a>
+              <button class="crm-rec-btn secondary" data-log-name="Linda Van Gilder">Log call</button>
+            </div>
+          </div>
+
+          <div class="crm-rec-item">
+            <div class="crm-rec-rank">3</div>
+            <div class="crm-rec-name">Naman @ LaHaus · DB reactivation</div>
+            <div class="crm-rec-context">
+              Apr 29 · 915 contacts in your database with phone numbers, sitting cold. Reactivation campaign payment link sent. <strong style="color:#FFD60A;">$500/mo unlocks 915 conversations.</strong>
+            </div>
+            <div class="crm-rec-actions">
+              <a class="crm-rec-btn" href="mailto:naman@lahaus.com?subject=Re: AMRE Reactivation — Next Steps">Decide on plan</a>
+              <button class="crm-rec-btn secondary" data-log-name="Naman / LaHaus">Log call</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Database health -->
+      <div class="crm-segments-head">
+        <div class="crm-section-title">Database segments</div>
+        <div class="crm-db-stat">
+          <strong>915</strong> contacts with phone · <strong>~12</strong> hot/warm tracked here
+          <span class="alert-pill">903 dormant — reactivate</span>
+        </div>
+      </div>
+
+      <!-- Hot leads -->
+      <div class="crm-segment open">
+        <div class="crm-seg-head" data-toggle>
+          <div class="crm-seg-title">
+            <span class="crm-seg-icon hot">🔥</span>
+            Hot leads · real timeline
+          </div>
+          <div class="crm-seg-meta"><strong>4</strong> · all touched in last 7 days <span class="crm-seg-toggle">›</span></div>
+        </div>
+        <div class="crm-seg-body">
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Maryann O'Donnell</div>
+              <div class="crm-row-context">Compass agent · Hollywood office · Sierra Bonita interest, business partner review</div>
+            </div>
+            <div class="crm-row-source">Cinco party</div>
+            <div class="crm-row-touch"><strong>1d ago</strong></div>
+            <div>
+              <a class="crm-row-action" href="mailto:maryann.odonnell@compass.com">Reply</a>
+            </div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Linda Van Gilder</div>
+              <div class="crm-row-context">9455 Beckford · Northridge · pre-listing · Wisteria move · roof + asbestos</div>
+            </div>
+            <div class="crm-row-source">Wisteria network</div>
+            <div class="crm-row-touch"><strong>1d ago</strong></div>
+            <div>
+              <a class="crm-row-action" href="mailto:vangilderlinda@aol.com">Email</a>
+            </div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Kenneth Howard</div>
+              <div class="crm-row-context">Buyer · Fruitland #401 · pre-offer · agent Alyssa Wilson · wants Zoom</div>
+            </div>
+            <div class="crm-row-source">Fruitland OH</div>
+            <div class="crm-row-touch"><strong>3d ago</strong></div>
+            <div>
+              <a class="crm-row-action" href="mailto:kennethhoward8272@gmail.com">Schedule</a>
+            </div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Akim · Beverly Hills target</div>
+              <div class="crm-row-context">Buyer · $9M range · 522 N Rexford match firing · Compass searches active</div>
+            </div>
+            <div class="crm-row-source">Buyer search</div>
+            <div class="crm-row-touch cold"><strong>14d ago</strong></div>
+            <div>
+              <button class="crm-row-action secondary" data-log-name="Akim">Touch</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Warm leads -->
+      <div class="crm-segment">
+        <div class="crm-seg-head" data-toggle>
+          <div class="crm-seg-title">
+            <span class="crm-seg-icon warm">🟡</span>
+            Warm · OH visitors + repeat shows
+          </div>
+          <div class="crm-seg-meta"><strong>6</strong> · need 30-day touch <span class="crm-seg-toggle">›</span></div>
+        </div>
+        <div class="crm-seg-body">
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Richard &amp; Mario + partner</div>
+              <div class="crm-row-context">Fruitland · 2nd visit Apr 27 · alarm/ceiling/countertop questions · agent loop</div>
+            </div>
+            <div class="crm-row-source">Fruitland OH</div>
+            <div class="crm-row-touch"><strong>3d ago</strong></div>
+            <div><button class="crm-row-action secondary" data-log-name="Richard & Mario">Touch</button></div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Mike Pashai</div>
+              <div class="crm-row-context">Agent · Fruitland private showing Apr 28 · client feedback pending</div>
+            </div>
+            <div class="crm-row-source">Fruitland</div>
+            <div class="crm-row-touch"><strong>2d ago</strong></div>
+            <div><button class="crm-row-action secondary" data-log-name="Mike Pashai">Touch</button></div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Anna Bilan + client</div>
+              <div class="crm-row-context">Compass agent · brought client Apr 27 · co-op opportunity</div>
+            </div>
+            <div class="crm-row-source">Fruitland OH</div>
+            <div class="crm-row-touch"><strong>3d ago</strong></div>
+            <div><button class="crm-row-action secondary" data-log-name="Anna Bilan">Touch</button></div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Fanbo + daughter</div>
+              <div class="crm-row-context">Fruitland 2nd visit Mar 22 · genuine interest, no follow-up logged</div>
+            </div>
+            <div class="crm-row-source">Fruitland OH</div>
+            <div class="crm-row-touch cold"><strong>39d ago</strong></div>
+            <div><button class="crm-row-action" data-log-name="Fanbo">Re-engage</button></div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Hallory &amp; Josh</div>
+              <div class="crm-row-context">Fruitland Mar 30 OH · first-time buyers Toluca Lake</div>
+            </div>
+            <div class="crm-row-source">Fruitland OH</div>
+            <div class="crm-row-touch cold"><strong>31d ago</strong></div>
+            <div><button class="crm-row-action" data-log-name="Hallory & Josh">Re-engage</button></div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Akiyo + son</div>
+              <div class="crm-row-context">Fruitland Mar 22 OH · 323-736-6300</div>
+            </div>
+            <div class="crm-row-source">Fruitland OH</div>
+            <div class="crm-row-touch cold"><strong>39d ago</strong></div>
+            <div><button class="crm-row-action" data-log-name="Akiyo">Re-engage</button></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sphere -->
+      <div class="crm-segment">
+        <div class="crm-seg-head" data-toggle>
+          <div class="crm-seg-title">
+            <span class="crm-seg-icon sphere">🟢</span>
+            Sphere · past clients &amp; recurring referrals
+          </div>
+          <div class="crm-seg-meta"><strong>~50</strong> · annual touch cadence <span class="crm-seg-toggle">›</span></div>
+        </div>
+        <div class="crm-seg-body">
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Sally Jacobs · Wisteria-bound</div>
+              <div class="crm-row-context">Discussed home sale — also moving to Wisteria · referenced in Pascal/Rita pitch decks</div>
+            </div>
+            <div class="crm-row-source">Wisteria</div>
+            <div class="crm-row-touch cold"><strong>60+ days</strong></div>
+            <div><button class="crm-row-action" data-log-name="Sally Jacobs">Re-engage</button></div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">1415 Sunset (Santa Monica) past client</div>
+              <div class="crm-row-context">Closed prior listing · referenced as success story · annual check-in due</div>
+            </div>
+            <div class="crm-row-source">Past client</div>
+            <div class="crm-row-touch cold"><strong>Annual</strong></div>
+            <div><button class="crm-row-action secondary" data-log-name="1415 Sunset">Touch</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agent network -->
+      <div class="crm-segment">
+        <div class="crm-seg-head" data-toggle>
+          <div class="crm-seg-title">
+            <span class="crm-seg-icon network">🔵</span>
+            Agent network · co-op opportunities
+          </div>
+          <div class="crm-seg-meta"><strong>4</strong> · Compass + Top Agent Network <span class="crm-seg-toggle">›</span></div>
+        </div>
+        <div class="crm-seg-body">
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Michael Bergin · Bergin Group</div>
+              <div class="crm-row-context">Compass · DRE 01845572 · Fruitland viewing inquiry Apr 27</div>
+            </div>
+            <div class="crm-row-source">Compass</div>
+            <div class="crm-row-touch"><strong>3d ago</strong></div>
+            <div><a class="crm-row-action secondary" href="mailto:michael@michaelbergin.com">Email</a></div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Alyssa Wilson</div>
+              <div class="crm-row-context">Compass · Kenneth Howard's buyer agent · Fruitland pre-offer</div>
+            </div>
+            <div class="crm-row-source">Compass</div>
+            <div class="crm-row-touch"><strong>3d ago</strong></div>
+            <div><button class="crm-row-action secondary" data-log-name="Alyssa Wilson">Touch</button></div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Naman Desai · LaHaus</div>
+              <div class="crm-row-context">Reactivation campaign vendor · 915-contact DB · payment decision pending</div>
+            </div>
+            <div class="crm-row-source">Vendor</div>
+            <div class="crm-row-touch"><strong>1d ago</strong></div>
+            <div><a class="crm-row-action" href="mailto:naman@lahaus.com">Decide</a></div>
+          </div>
+
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">Top Agent Network (TAN)</div>
+              <div class="crm-row-context">~45K agents · joined for Sierra Bonita reach · activate for Mulholland too</div>
+            </div>
+            <div class="crm-row-source">Network</div>
+            <div class="crm-row-touch cold"><strong>Activate</strong></div>
+            <div><button class="crm-row-action" data-log-name="TAN post">Post listing</button></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Dormant -->
+      <div class="crm-segment">
+        <div class="crm-seg-head" data-toggle>
+          <div class="crm-seg-title">
+            <span class="crm-seg-icon dormant">⚫</span>
+            Dormant · 90+ days · reactivation candidates
+          </div>
+          <div class="crm-seg-meta"><strong>903</strong> · in LaHaus pipeline <span class="crm-seg-toggle">›</span></div>
+        </div>
+        <div class="crm-seg-body">
+          <div class="crm-row">
+            <div>
+              <div class="crm-row-name">915-contact LaHaus database</div>
+              <div class="crm-row-context">Cold contacts with phone numbers · 12 surfaced as warm/hot above · 903 untouched · awaiting reactivation campaign decision</div>
+            </div>
+            <div class="crm-row-source">Database</div>
+            <div class="crm-row-touch frozen"><strong>Cold</strong></div>
+            <div><a class="crm-row-action" href="mailto:naman@lahaus.com">Activate plan</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversion funnel -->
+      <div class="crm-funnel">
+        <div class="crm-funnel-head">Conversion funnel · last 90 days</div>
+        <div class="crm-funnel-sub">Where are leads dying? The drop between OH visitors and conversations is the bottleneck.</div>
+        <div class="crm-funnel-grid">
+          <div class="crm-funnel-step">
+            <div class="crm-funnel-num">~30</div>
+            <div class="crm-funnel-label">OH visitors</div>
+            <div class="crm-funnel-rate">Fruitland 12 OHs</div>
+          </div>
+          <div class="crm-funnel-step">
+            <div class="crm-funnel-num">12</div>
+            <div class="crm-funnel-label">Tracked leads</div>
+            <div class="crm-funnel-rate">40% capture</div>
+          </div>
+          <div class="crm-funnel-step">
+            <div class="crm-funnel-num">4</div>
+            <div class="crm-funnel-label">Hot conversations</div>
+            <div class="crm-funnel-rate">33% conversion</div>
+          </div>
+          <div class="crm-funnel-step">
+            <div class="crm-funnel-num">2</div>
+            <div class="crm-funnel-label">Pre-offer</div>
+            <div class="crm-funnel-rate">50% conversion</div>
+          </div>
+          <div class="crm-funnel-step">
+            <div class="crm-funnel-num">0</div>
+            <div class="crm-funnel-label">Closed escrow</div>
+            <div class="crm-funnel-rate">— (yet)</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tab-crm -->
+
+    <!-- ===== MARKETING PANE (placeholder) ===== -->
+    <div class="bucket-pane" id="tab-marketing">
+      <div class="placeholder-pane">
+        <h3>Marketing engine — coming next</h3>
+        <p>"Ship today" content prompts pulled from this week's events, active campaign analytics per listing, and personal brand metrics. Building this after CRM is in real-world use.</p>
+      </div>
+    </div>
+
   </div>
 
   <div class="footer">
     <span class="wm-amre" data-logo-amre>AMRE</span> Real Estate Group @ Compass<br>
-    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 12:22 PM PT</span>
+    Confidential · Last updated <span id="footerTimestamp">Apr 30, 2026 at 12:31 PM PT</span>
   </div>
 
 </main>
@@ -1039,6 +1748,85 @@
     });
 
     renderAll();
+  })();
+
+  // ===== BUCKET TABS =====
+  (function() {
+    const tabs = document.querySelectorAll('.bucket-tab');
+    const panes = document.querySelectorAll('.bucket-pane');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.bucket;
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        panes.forEach(p => p.classList.remove('active'));
+        const pane = document.getElementById('tab-' + target);
+        if (pane) pane.classList.add('active');
+      });
+    });
+  })();
+
+  // ===== CRM segment toggles =====
+  document.querySelectorAll('.crm-seg-head[data-toggle]').forEach(head => {
+    head.addEventListener('click', () => {
+      head.closest('.crm-segment').classList.toggle('open');
+    });
+  });
+
+  // ===== "Log call" / "Touch" buttons → increment Daily Five =====
+  // Tapping any [data-log-name] button increments Conversations Started by 1
+  // and gives quick visual confirmation.
+  (function() {
+    const logBtns = document.querySelectorAll('[data-log-name]');
+    logBtns.forEach(btn => {
+      btn.addEventListener('click', e => {
+        const name = btn.dataset.logName;
+        // Increment conversations counter via the same storage the Daily Five uses
+        try {
+          const STORAGE_KEY = 'amre_d5_v1';
+          const raw = sessionStorage.getItem(STORAGE_KEY);
+          const state = raw ? JSON.parse(raw) : {};
+          // ptDayKey logic inline
+          const s = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+          const d = new Date(s);
+          const dayKey = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+          const m = state.conversations;
+          const count = (m && m.period === dayKey) ? (m.count || 0) : 0;
+          state.conversations = { period: dayKey, count: count + 1 };
+          sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+
+          // Re-render Daily Five
+          const card = document.querySelector('.d5-card[data-metric="conversations"]');
+          if (card) {
+            const target = parseInt(card.dataset.target, 10);
+            const newCount = count + 1;
+            const pct = target > 0 ? Math.min(100, Math.round((newCount / target) * 100)) : 0;
+            const cls = (newCount / target) * 100 >= 100 ? 'green' : (newCount / target) * 100 >= 50 ? 'amber' : 'red';
+            card.querySelector('[data-current]').textContent = newCount;
+            const fill = card.querySelector('[data-fill]');
+            fill.style.width = pct + '%';
+            fill.classList.remove('red','amber','green');
+            fill.classList.add(cls);
+            const dot = card.querySelector('[data-dot]');
+            dot.classList.remove('red','amber','green');
+            dot.classList.add(cls);
+          }
+
+          // Visual confirmation
+          const orig = btn.textContent;
+          btn.textContent = '✓ Logged';
+          btn.style.background = '#34C759';
+          btn.style.color = 'white';
+          setTimeout(() => {
+            btn.textContent = orig;
+            btn.style.background = '';
+            btn.style.color = '';
+          }, 1400);
+        } catch (err) {
+          console.error('Log error', err);
+        }
+      });
+    });
   })();
 </script>
 </body>
