@@ -271,6 +271,124 @@
   }
   .hero-pill strong { color: var(--ink); font-weight: 500; }
 
+  /* ===== OPERATING COSTS ===== */
+  .op-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .op-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px;
+    border: 1px solid var(--hairline-soft);
+  }
+  .op-card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .op-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .op-card-total {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .op-card-total-sub {
+    font-size: 14px;
+    color: var(--ink-3);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+  .op-rows { display: flex; flex-direction: column; }
+  .op-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 16px;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 15px;
+    color: var(--ink-2);
+  }
+  .op-row.op-row-divider {
+    border-top: 1px dashed var(--hairline-soft);
+    margin-top: 8px;
+    padding-top: 16px;
+  }
+  .op-row-label { color: var(--ink-2); }
+  .op-row-value {
+    font-weight: 600;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    min-width: 80px;
+  }
+  .op-row-flag {
+    font-size: 11px;
+    color: var(--amber);
+    background: var(--amber-bg, #FFF4E5);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .op-row-tenant { grid-template-columns: 1fr auto; }
+  .op-row-meta {
+    font-size: 12px;
+    color: var(--ink-3);
+    font-weight: 400;
+  }
+  .op-card-foot {
+    font-size: 13px;
+    color: var(--ink-3);
+    line-height: 1.5;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+  .op-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 24px 32px;
+    background: var(--ink);
+    border-radius: var(--radius);
+    color: var(--white);
+  }
+  .op-summary-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .op-summary-value {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .op-summary-net { border-left: 1px solid rgba(255,255,255,0.15); padding-left: 24px; }
+  .op-pos { color: #30D158; }
+  .op-neg { color: #FF453A; }
+  @media (max-width: 880px) {
+    .op-grid { grid-template-columns: 1fr; }
+    .op-summary { grid-template-columns: 1fr; gap: 12px; }
+    .op-summary-net { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 16px; }
+  }
+
   /* ===== STICKY NAV ===== */
   .sticky-nav {
     position: sticky;
@@ -1328,6 +1446,7 @@
       <a href="#thisweek">This week</a>
       <a href="#timeline">Timeline</a>
       <a href="#terms">Terms</a>
+      <a href="#operating">Costs</a>
       <a href="#inspections">Inspections</a>
       <a href="#duediligence">Checklist</a>
       <a href="#contacts">Contacts</a>
@@ -1588,6 +1707,104 @@
             <li>Three separate roofs · schedule by May 3</li>
             <li>Loan signing location TBD</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OPERATING COSTS ===== -->
+  <section class="lt" id="operating">
+    <div class="wrap">
+      <div class="sec-eyebrow">Operating costs</div>
+      <h2 class="sec-title">What it costs to own.<br>What it earns back.</h2>
+      <p class="sec-sub">Pulled from seller's actual utility bills (Apr 2026) and signed leases. Critical for contingency removal question #2.</p>
+
+      <div class="op-grid">
+
+        <div class="op-card">
+          <div class="op-card-head">
+            <div class="op-card-title">Monthly utilities</div>
+            <div class="op-card-total">$868<span class="op-card-total-sub">/mo</span></div>
+          </div>
+          <div class="op-rows">
+            <div class="op-row">
+              <div class="op-row-label">Main house electric</div>
+              <div class="op-row-flag">⚠ Address mismatch</div>
+              <div class="op-row-value">$44.72</div>
+            </div>
+            <div class="op-row">
+              <div class="op-row-label">Main house gas</div>
+              <div class="op-row-value">$82.46</div>
+            </div>
+            <div class="op-row">
+              <div class="op-row-label">Main house water</div>
+              <div class="op-row-value">$128.44</div>
+            </div>
+            <div class="op-row op-row-divider">
+              <div class="op-row-label">Rentals electric (4250)</div>
+              <div class="op-row-value">$328.16</div>
+            </div>
+            <div class="op-row">
+              <div class="op-row-label">Rentals gas</div>
+              <div class="op-row-value">$86.37</div>
+            </div>
+            <div class="op-row">
+              <div class="op-row-label">Rentals water</div>
+              <div class="op-row-value">$198.07</div>
+            </div>
+          </div>
+          <div class="op-card-foot">
+            <strong>Heads up:</strong> Main house electric bill (acct 8011243043) shows service address <em>8809 Washington Blvd</em>, not 4248 La Salle. Verify with seller before contingency removal — this may not be the right account, and actual electric for the main house could be substantially higher than $44.72/mo.
+          </div>
+        </div>
+
+        <div class="op-card">
+          <div class="op-card-head">
+            <div class="op-card-title">Rent roll</div>
+            <div class="op-card-total">$6,860<span class="op-card-total-sub">/mo</span></div>
+          </div>
+          <div class="op-rows">
+            <div class="op-row op-row-tenant">
+              <div class="op-row-label">
+                <strong>4248 — Unit A</strong><br>
+                <span class="op-row-meta">Mark McKenna · since Oct 2023 · month-to-month</span>
+              </div>
+              <div class="op-row-value">$3,165</div>
+            </div>
+            <div class="op-row op-row-tenant op-row-divider">
+              <div class="op-row-label">
+                <strong>4250 — Back unit</strong><br>
+                <span class="op-row-meta">Sam &amp; Hannah · lease 6/15/25–7/14/26</span>
+              </div>
+              <div class="op-row-value">$3,695</div>
+            </div>
+            <div class="op-row op-row-tenant">
+              <div class="op-row-label">
+                <strong>ADU</strong><br>
+                <span class="op-row-meta">Tenant TBD · estoppels pending</span>
+              </div>
+              <div class="op-row-value">TBD</div>
+            </div>
+          </div>
+          <div class="op-card-foot">
+            Estoppels were sent Apr 29 to verify these figures with tenants directly. ADU rent and remaining lease terms still to be confirmed.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="op-summary">
+        <div class="op-summary-item">
+          <div class="op-summary-label">Documented rental income</div>
+          <div class="op-summary-value">+$6,860/mo</div>
+        </div>
+        <div class="op-summary-item">
+          <div class="op-summary-label">Documented utilities</div>
+          <div class="op-summary-value op-neg">−$868/mo</div>
+        </div>
+        <div class="op-summary-item op-summary-net">
+          <div class="op-summary-label">Net before debt service, taxes, insurance</div>
+          <div class="op-summary-value op-pos">+$5,992/mo</div>
         </div>
       </div>
     </div>
@@ -2042,7 +2259,7 @@
         </div>
         <div class="foot-meta">
           File 5852-KM · Resolution Escrow<br>
-          Buyer-side · Confidential · Tracker live since Apr 28, 2026 · Last updated Apr 30, 2026 at 7:17 AM PT
+          Buyer-side · Confidential · Tracker live since Apr 28, 2026 · Last updated Apr 30, 2026 at 8:42 AM PT
         </div>
       </div>
       <div class="foot-confidential">
