@@ -156,11 +156,11 @@
   }
   .wm-compass {
     font-family: var(--sans);
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.22em;
     color: var(--ink);
-    text-transform: lowercase;
+    text-transform: uppercase;
   }
   .wm-compass::before { content: "compass"; }
   .wm-amre img, .wm-compass img { height: 22px; width: auto; display: block; }
@@ -886,6 +886,145 @@
     border-radius: 980px;
   }
 
+  /* ===== DUE DILIGENCE CHECKLIST ===== */
+  .dd-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .dd-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 36px;
+    border: 1px solid var(--hairline-soft);
+  }
+  .dd-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .dd-card-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .dd-card-icon.physical { background: var(--blue); color: var(--white); }
+  .dd-card-icon.legal { background: var(--amber); color: var(--white); }
+  .dd-card-icon.tenant { background: #7B61FF; color: var(--white); }
+  .dd-card-icon.insurance { background: var(--green); color: var(--white); }
+  .dd-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.016em;
+    color: var(--ink);
+  }
+  .dd-card-sub { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+  .dd-items { display: flex; flex-direction: column; gap: 14px; }
+  .dd-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--ink-2);
+  }
+  .dd-check {
+    width: 20px; height: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--hairline);
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: transparent;
+  }
+  .dd-check.done { background: var(--green); border-color: var(--green); color: var(--white); }
+  .dd-check.in-progress { background: var(--amber-bg); border-color: var(--amber); color: var(--amber); }
+  .dd-item-text strong { color: var(--ink); font-weight: 500; }
+  .dd-item-link {
+    display: inline;
+    color: var(--blue);
+    font-size: 13px;
+  }
+  .dd-item-link:hover { text-decoration: underline; }
+
+  /* Contingency removal framework */
+  .cr-card {
+    background: var(--ink);
+    color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    margin-top: 48px;
+    grid-column: 1 / -1;
+  }
+  .cr-title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .cr-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 32px;
+    max-width: 640px;
+  }
+  .cr-questions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .cr-q {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cr-q-num {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: 0.04em;
+  }
+  .cr-q-text {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .cr-q-detail {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.45;
+  }
+  .cr-advice {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.55;
+    max-width: 800px;
+  }
+
+  @media (max-width: 980px) {
+    .dd-grid { grid-template-columns: 1fr; }
+    .cr-questions { grid-template-columns: 1fr; }
+  }
+
   /* ===== CONTACTS ===== */
   .contacts-grid {
     display: grid;
@@ -1403,6 +1542,177 @@
     </div>
   </section>
 
+  <!-- ===== DUE DILIGENCE CHECKLIST ===== -->
+  <section class="lt">
+    <div class="wrap">
+      <div class="sec-eyebrow">Due diligence</div>
+      <h2 class="sec-title">The full picture.<br>Before your deposit locks.</h2>
+      <p class="sec-sub">Four tracks running in parallel. Complete this checklist before signing the Contingency Removal on May 7.</p>
+
+      <div class="dd-grid">
+        <!-- 1: Physical Inspections -->
+        <div class="dd-card">
+          <div class="dd-card-head">
+            <div class="dd-card-icon physical">🔍</div>
+            <div>
+              <div class="dd-card-title">Physical inspections</div>
+              <div class="dd-card-sub">Structure, systems, hidden conditions</div>
+            </div>
+          </div>
+          <div class="dd-items">
+            <div class="dd-item">
+              <div class="dd-check">✓</div>
+              <div class="dd-item-text"><strong>Sewer scope</strong> — Thu Apr 30, 10:30 AM (Sewer Scope Pros · Guillermo)</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check">✓</div>
+              <div class="dd-item-text"><strong>Mold inspection</strong> — Fri May 1, 9:00 AM (California Microbial · $900 for 3 structures)</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check">✓</div>
+              <div class="dd-item-text"><strong>Chimney inspection</strong> — Fri May 1, 9:00 AM (Chimney Saviors · decorative fireplace, as-is per SMCO #1)</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check">✓</div>
+              <div class="dd-item-text"><strong>General home inspection</strong> — Fri May 1, 9:30 AM–1:30 PM (Advanced Property Inspections · structural, electrical, plumbing red flags)</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check">✓</div>
+              <div class="dd-item-text"><strong>Termite / WDO</strong> — Fri May 1, 11:30 AM (Blue Cloud · Ellie · $225 · Section 1 dry rot/water damage)</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check">✓</div>
+              <div class="dd-item-text"><strong>Roof inspections ×3</strong> — Schedule by May 3. Three separate roofs, one per structure. Each roofer must issue an individual report.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Repair cost estimates</strong> — For any major issues found, get contractor quotes to confirm they fit budget before contingency removal.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2: Permits & Legal -->
+        <div class="dd-card">
+          <div class="dd-card-head">
+            <div class="dd-card-icon legal">⚖</div>
+            <div>
+              <div class="dd-card-title">Permits &amp; legal</div>
+              <div class="dd-card-sub">Culver City specific</div>
+            </div>
+          </div>
+          <div class="dd-items">
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Verify permits</strong> — Search the <a class="dd-item-link" href="https://aca-prod.accela.com/CULVERCITY/Default.aspx" target="_blank">Culver City Citizen Portal (Accela)</a> to ensure all additions, ADU, and remodels were legally permitted.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Certificate of Occupancy</strong> — Culver City report received. May need to confirm CO status given the 3-unit configuration.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Zoning classification</strong> — Confirm the property is legally classified for current use (Duplex w/ ADU vs. Triplex). Affects insurance, lending, and rental rights.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Remodel documentation</strong> — Upgrade &amp; remodel info received from seller (Apr 29). Cross-reference against permit history on Accela. If mismatch, contact City Building Division.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3: Rent Control & Tenants -->
+        <div class="dd-card">
+          <div class="dd-card-head">
+            <div class="dd-card-icon tenant">🏠</div>
+            <div>
+              <div class="dd-card-title">Rent control &amp; tenants</div>
+              <div class="dd-card-sub">Culver City protections apply</div>
+            </div>
+          </div>
+          <div class="dd-items">
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Registration status</strong> — Verify units are registered on the <a class="dd-item-link" href="https://culvercity.hdlgov.com/Home/SignIn/LandlordRegistration" target="_blank">Culver City Landlord Portal (HdL)</a> or ask seller to clarify.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Rent compliance</strong> — Review rent roll. Ensure current rent hasn't exceeded the annual 3.5% (or current CPI) increase cap. Verify last rent increase date.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check in-progress">…</div>
+              <div class="dd-item-text"><strong>Estoppels &amp; leases</strong> — Sent to buyers Apr 29. Verify seller claims with tenants directly: who owns the fridge? Who pays water?</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Relocation liability</strong> — Calculate potential costs if owner move-in eviction is planned. Culver City requires relocation payments to tenants.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Property management</strong> — Get Culver City-specific PM referrals. Separate pricing for medium-term rental on front unit vs. long-term tenant units.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4: Insurance & Disclosures -->
+        <div class="dd-card">
+          <div class="dd-card-head">
+            <div class="dd-card-icon insurance">🛡</div>
+            <div>
+              <div class="dd-card-title">Insurance &amp; disclosures</div>
+              <div class="dd-card-sub">Coverage, title, seller transparency</div>
+            </div>
+          </div>
+          <div class="dd-items">
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Preliminary title report</strong> — Due by May 4 (Fidelity National). Check for liens or easements restricting use of yard/driveway.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Hazards / claims history</strong> — Review NHD report (received Apr 29 in broker opening package) for past floods, fires, or environmental issues.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check in-progress">…</div>
+              <div class="dd-item-text"><strong>Insurance quote</strong> — Beverly Cavanaugh (Paul Diaz Insurance) contacted Apr 29. Lender needs this for binding. <em>Note: old roof or Federal Pacific electrical panel may spike premium or deny coverage.</em></div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check"></div>
+              <div class="dd-item-text"><strong>Seller disclosures</strong> — Read TDS and SPQ for neighbor noise, past leaks, neighborhood nuisances. Prepare questions for seller from these documents.</div>
+            </div>
+            <div class="dd-item">
+              <div class="dd-check in-progress">…</div>
+              <div class="dd-item-text"><strong>Utility verification</strong> — Bills received Apr 29 (electric bill was wrong address — 8809 Washington Blvd — corrected). Golden State Water status unresolved.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contingency Removal Framework -->
+        <div class="cr-card">
+          <div class="cr-title">The goal: removing contingencies.</div>
+          <div class="cr-sub">Only sign the Contingency Removal form once you can answer "Yes" to all three questions.</div>
+          <div class="cr-questions">
+            <div class="cr-q">
+              <div class="cr-q-num">QUESTION 01</div>
+              <div class="cr-q-text">Do I know exactly what I am buying?</div>
+              <div class="cr-q-detail">Physical condition &amp; legal standing. Permits, zoning, structural integrity, tenant rights — all verified.</div>
+            </div>
+            <div class="cr-q">
+              <div class="cr-q-num">QUESTION 02</div>
+              <div class="cr-q-text">Do I know what it will cost to own and fix?</div>
+              <div class="cr-q-detail">Insurance premiums, repair estimates, PM costs, and relocation liabilities — all quantified.</div>
+            </div>
+            <div class="cr-q">
+              <div class="cr-q-num">QUESTION 03</div>
+              <div class="cr-q-text">Does the price still make sense?</div>
+              <div class="cr-q-detail">If discoveries change the value equation — negotiate or walk. Your deposit becomes non-refundable after May 7.</div>
+            </div>
+          </div>
+          <div class="cr-advice">Filter every finding through a risk-versus-value mindset: ignore minor cosmetic flaws, budget for aging yet functional systems, and reserve your energy for negotiating structural or safety issues. You are navigating two parallel tracks — physical discoveries from inspections and historical records from seller disclosures — with the goal of identifying deal-breakers before your deposit locks.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="alt">
     <div class="wrap">
       <div class="sec-eyebrow">Roster</div>
@@ -1623,7 +1933,7 @@
     img.src = src;
   }
   trySwapLogo('[data-logo-amre]', 'logo-amre.svg');
-  trySwapLogo('[data-logo-compass]', 'logo-compass.png');
+  // Compass: text wordmark only (no external logo file — renders consistently)
 
   // ===== Password gate =====
   const ACCESS_CODE = 'lasalle2026';
