@@ -2,261 +2,520 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Properties | AMRE Real Estate Group</title>
-<meta name="description" content="Browse current and recent AMRE Real Estate Group listings in Los Angeles.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Los Angeles Properties | AMRE Real Estate Group | Luxury Homes & Investment Properties</title>
+<meta name="description" content="Browse current AMRE Real Estate Group listings in Los Angeles, Beverly Hills, Malibu, Venice, Santa Monica and more. Luxury homes, multifamily investments, and Private Exclusives.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://amre.group/properties">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Los Angeles Properties | AMRE Real Estate Group | Luxury Homes & Investment Properties">
+<meta property="og:description" content="Browse current AMRE Real Estate Group listings in Los Angeles, Beverly Hills, Malibu, Venice, Santa Monica and more. Luxury homes, multifamily investments, and Private Exclusives.">
+<meta property="og:image" content="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg">
+<meta property="og:url" content="https://amre.group/properties">
+<meta property="og:site_name" content="AMRE Real Estate Group">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Los Angeles Properties | AMRE Real Estate Group | Luxury Homes & Investment Properties">
+<meta name="twitter:description" content="Browse current AMRE Real Estate Group listings in Los Angeles, Beverly Hills, Malibu, Venice, Santa Monica and more. Luxury homes, multifamily investments, and Private Exclusives.">
+<meta name="twitter:image" content="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg">
+<!-- Geo / Local SEO -->
+<meta name="geo.region" content="US-CA">
+<meta name="geo.placename" content="Beverly Hills, Los Angeles">
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<!-- Tally -->
 <script async src="https://tally.so/widgets/embed.js"></script>
+<!-- Schema.org -->
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"RealEstateAgent",
+  "name":"AMRE Real Estate Group",
+  "url":"https://amre.group",
+  "logo":"https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-black.svg",
+  "image":"https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg",
+  "description":"Elite Los Angeles real estate advisory for sellers, buyers, and investors.",
+  "telephone":"+13237198585",
+  "email":"michael.abraham@compass.com",
+  "address":{"@type":"PostalAddress","streetAddress":"9454 Wilshire Blvd, Suite 100","addressLocality":"Beverly Hills","addressRegion":"CA","postalCode":"90212","addressCountry":"US"},
+  "areaServed":["Los Angeles","Beverly Hills","Santa Monica","Malibu","Studio City","Bel Air","Brentwood"],
+  "priceRange":"$$$",
+  "employee":[
+    {"@type":"Person","name":"Michael Abraham","jobTitle":"Real Estate Agent","identifier":"CA DRE# 02242095"},
+    {"@type":"Person","name":"Ania De Pourbaix","jobTitle":"Real Estate Agent","identifier":"CA DRE# 01891438"}
+  ],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"3","bestRating":"5"}
+}</script>
 <style>
-:root{--black:#0A0A0A;--ink:#111111;--off-black:#1A1A1A;--mid:#666666;--muted:#999999;--border-dark:#E8E8E8;--white:#FFFFFF;--cream:#F8F6F1;--gold:#B8965A;--gold-light:#D4AE78;--serif:'Cormorant',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif;--nav-h:72px;}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--sans);background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
+:root{
+  --black:#000;--ink:#1d1d1f;--mid:#6e6e73;--subtle:#86868b;
+  --rule:#d2d2d7;--light:#f5f5f7;--white:#fbfbfd;
+  --gold:#b5894e;--gold-lt:#d4aa72;--blue:#0071e3;--blue-dk:#0064c8;
+  --serif:'Playfair Display',Georgia,serif;
+  --sf:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',sans-serif;
+  --nav-h:52px;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+  --ease-out:cubic-bezier(0,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sf);background:var(--white);color:var(--ink);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.47059}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{font-family:var(--sf);cursor:pointer;border:none;background:none}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border-dark);}
-.nav-logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:.08em;color:var(--ink);}
-.nav-logo span{color:var(--gold);}
-.nav-links{display:flex;align-items:center;gap:36px;list-style:none;}
-.nav-links a{font-size:13px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);transition:color .2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--ink);}
-.nav-cta{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:10px 24px;border:1px solid var(--ink);color:var(--ink);border-radius:2px;transition:all .2s;}
-.nav-cta:hover{background:var(--ink);color:var(--white);}
-@media(max-width:900px){.nav{padding:0 24px;}.nav-links{display:none;}}
+/* ── NAV ── */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 22px;
+  background:rgba(29,29,31,.8);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:background .35s var(--ease),border-color .35s;
+}
+.site-nav.is-light{
+  background:rgba(255,255,255,.82);
+  border-bottom-color:rgba(0,0,0,.1);
+}
+.nav-brand{display:flex;align-items:center;gap:0;flex-shrink:0}
+.nav-brand img{height:20px;width:auto;transition:opacity .3s}
+.logo-dark{display:none}
+.site-nav.is-light .logo-dark{display:block}
+.site-nav.is-light .logo-white{display:none}
+.nav-sep{width:1px;height:16px;background:rgba(255,255,255,.22);
+  margin:0 12px;transition:background .35s}
+.site-nav.is-light .nav-sep{background:rgba(0,0,0,.15)}
+.nav-links{
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;gap:24px;list-style:none;
+}
+.nav-links a{
+  font-size:12px;font-weight:400;
+  color:rgba(255,255,255,.8);
+  transition:color .2s;white-space:nowrap;
+}
+.site-nav.is-light .nav-links a{color:rgba(29,29,31,.7)}
+.nav-links a:hover{color:#fff}
+.site-nav.is-light .nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:#fff}
+.site-nav.is-light .nav-links a.active{color:var(--ink)}
+.nav-cta{
+  font-size:12px;font-weight:400;
+  color:rgba(255,255,255,.8);
+  transition:color .2s;white-space:nowrap;flex-shrink:0;
+}
+.site-nav.is-light .nav-cta{color:rgba(29,29,31,.7)}
+.nav-cta:hover{color:#fff}
+.site-nav.is-light .nav-cta:hover{color:var(--ink)}
+@media(max-width:860px){
+  .nav-links{display:none}
+  .site-nav{padding:0 16px}
+}
 
-.page-hero{padding-top:calc(var(--nav-h) + 64px);padding-bottom:56px;padding-left:48px;padding-right:48px;border-bottom:1px solid var(--border-dark);}
-.page-hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:16px;}
-.page-hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
-.page-hero h1{font-family:var(--serif);font-size:clamp(44px,6vw,80px);font-weight:300;line-height:.95;color:var(--ink);letter-spacing:-.02em;max-width:700px;margin-bottom:24px;}
-.page-hero h1 em{font-style:italic;color:var(--gold);}
-.page-hero-sub{font-size:17px;font-weight:300;line-height:1.7;color:var(--mid);max-width:480px;}
-@media(max-width:768px){.page-hero{padding-left:24px;padding-right:24px;}}
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
+  font-family:var(--sf);font-weight:400;border-radius:980px;
+  transition:background .2s,transform .15s,opacity .2s}
+.btn-blue{
+  font-size:14px;padding:12px 22px;
+  background:var(--blue);color:#fff;
+}
+.btn-blue:hover{background:var(--blue-dk);transform:translateY(-1px)}
+.btn-outline-white{
+  font-size:14px;padding:11px 22px;
+  border:1px solid rgba(255,255,255,.42);color:rgba(255,255,255,.9);
+}
+.btn-outline-white:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.7)}
+.btn-outline-dark{
+  font-size:14px;padding:11px 22px;
+  border:1px solid rgba(0,0,0,.25);color:var(--ink);
+}
+.btn-outline-dark:hover{background:rgba(0,0,0,.05)}
+.btn-text{
+  font-size:14px;color:var(--blue);gap:4px;border-radius:0;
+  transition:gap .2s;
+}
+.btn-text:hover{gap:8px}
+.btn-text::after{content:'›';font-size:18px;line-height:1}
+.btn-gold{
+  font-size:14px;padding:12px 22px;
+  background:var(--gold);color:#fff;
+}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-1px)}
 
-/* FILTER BAR */
-.filter-bar{padding:24px 48px;border-bottom:1px solid var(--border-dark);display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-.filter-btn{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:8px 20px;border:1px solid var(--border-dark);border-radius:2px;cursor:pointer;background:var(--white);color:var(--mid);transition:all .2s;}
-.filter-btn:hover,.filter-btn.active{background:var(--ink);color:var(--white);border-color:var(--ink);}
-.filter-label{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:8px;}
-@media(max-width:768px){.filter-bar{padding:16px 24px;}}
+/* ── PAGE HERO (subpages) ── */
+.page-hero{
+  padding-top:calc(var(--nav-h) + 72px);
+  padding-bottom:80px;
+  padding-inline:44px;
+  background:var(--ink);
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(181,137,78,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(181,137,78,.04) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.page-hero-bg-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  opacity:.18;
+}
+.page-hero-inner{position:relative;z-index:2;max-width:800px}
+.page-eyebrow{
+  font-size:11px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.page-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.page-hero h1{
+  font-family:var(--serif);
+  font-size:clamp(44px,6.5vw,88px);
+  font-weight:400;line-height:1.0;
+  letter-spacing:-.01em;
+  color:#fff;
+  margin-bottom:24px;
+}
+.page-hero h1 em{font-style:italic;color:var(--gold-lt)}
+.page-hero-sub{
+  font-size:clamp(15px,1.8vw,18px);
+  font-weight:300;line-height:1.7;
+  color:rgba(255,255,255,.55);
+  max-width:500px;
+}
+@media(max-width:680px){.page-hero{padding-inline:20px}}
 
-/* LISTINGS GRID */
-.listings-section{padding:56px 48px 80px;}
-.listings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border-dark);}
-.listing-card{background:var(--white);position:relative;cursor:pointer;transition:all .2s;}
-.listing-card:hover{z-index:2;box-shadow:0 8px 40px rgba(0,0,0,.12);}
-.listing-img{height:260px;background:linear-gradient(135deg,#1A1A2E 0%,#2D3A5E 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.listing-img-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(184,150,90,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(184,150,90,.06) 1px,transparent 1px);background-size:30px 30px;}
-.listing-badge{position:absolute;top:16px;left:16px;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:2px;}
-.badge-active{background:var(--gold);color:var(--black);}
-.badge-sold{background:rgba(0,0,0,.6);color:rgba(255,255,255,.7);}
-.badge-pe{background:rgba(10,10,10,.8);color:var(--gold);border:1px solid var(--gold);}
-.listing-address-overlay{font-family:var(--serif);font-size:22px;font-weight:300;color:rgba(255,255,255,.15);text-align:center;padding:24px;}
-.listing-body{padding:24px 28px;}
-.listing-price{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--ink);margin-bottom:4px;}
-.listing-address{font-size:14px;font-weight:400;color:var(--ink);margin-bottom:4px;}
-.listing-location{font-size:12px;font-weight:300;color:var(--muted);margin-bottom:16px;}
-.listing-details{display:flex;gap:16px;flex-wrap:wrap;}
-.listing-detail{font-size:12px;font-weight:400;color:var(--mid);display:flex;align-items:center;gap:4px;}
-.listing-detail::after{content:'·';margin-left:8px;color:var(--border-dark);}
-.listing-detail:last-child::after{display:none;}
-@media(max-width:900px){.listings-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.listings-grid{grid-template-columns:1fr;}}
+/* ── LAYOUT ── */
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:44px}
+.wrap-sm{max-width:860px;margin-inline:auto;padding-inline:44px}
+@media(max-width:680px){.wrap,.wrap-sm{padding-inline:20px}}
 
-/* CONNECT CTA */
-.connect-cta{background:var(--cream);padding:80px 48px;text-align:center;border-top:1px solid var(--border-dark);}
-.connect-cta .eyebrow{justify-content:center;}
-.connect-cta h2{font-family:var(--serif);font-size:clamp(36px,4vw,56px);font-weight:300;letter-spacing:-.02em;margin:16px 0 12px;}
-.connect-cta h2 em{font-style:italic;color:var(--gold);}
-.connect-cta p{font-size:16px;font-weight:300;color:var(--mid);max-width:460px;margin:0 auto 36px;line-height:1.7;}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:16px 36px;background:var(--gold);color:var(--black);border-radius:2px;transition:background .2s,transform .15s;}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);}
-.eyebrow{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:16px;}
-.eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
-@media(max-width:768px){.connect-cta,.listings-section{padding-left:24px;padding-right:24px;}}
+/* ── SECTION LABELS ── */
+.eyebrow{
+  font-size:11px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--blue);
+  text-align:center;margin-bottom:14px;
+}
+.eyebrow-left{text-align:left}
+.section-h{
+  font-family:var(--serif);
+  font-size:clamp(30px,4vw,52px);
+  font-weight:400;line-height:1.07;
+  letter-spacing:-.01em;
+  color:var(--ink);text-align:center;
+}
+.section-h em{font-style:italic;color:var(--gold)}
+.section-h-left{text-align:left}
+.section-h-white{color:#fff}
+.lede{
+  font-size:17px;font-weight:300;line-height:1.7;
+  color:var(--mid);text-align:center;
+  max-width:580px;margin-inline:auto;
+}
+.lede-left{text-align:left;margin-inline:0}
+.lede-white{color:rgba(255,255,255,.55)}
+.divider{width:40px;height:1px;background:var(--gold);margin:22px 0}
 
-footer{background:var(--black);padding:48px;}
-.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
-.footer-logo{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--white);}
-.footer-logo span{color:var(--gold);}
-.footer-legal,.footer-dre{font-size:11px;font-weight:300;color:rgba(255,255,255,.2);}
-@media(max-width:768px){footer{padding:36px 24px;}.footer-inner{flex-direction:column;text-align:center;}}
+/* ── FADE ANIMATIONS ── */
+.f{opacity:0;transform:translateY(24px);
+  transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.f.in{opacity:1;transform:translateY(0)}
+.f.d1{transition-delay:.08s}.f.d2{transition-delay:.16s}
+.f.d3{transition-delay:.24s}.f.d4{transition-delay:.32s}
 
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
-.fade-in.visible{opacity:1;transform:translateY(0);}
-.fd1{transition-delay:.1s;}.fd2{transition-delay:.2s;}.fd3{transition-delay:.3s;}
+/* ── FOOTER ── */
+.site-footer{
+  background:#000;
+  border-top:1px solid rgba(255,255,255,.07);
+  padding:60px 44px 36px;
+}
+.footer-grid{
+  max-width:1200px;margin-inline:auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  margin-bottom:28px;
+}
+.footer-brand img{height:18px;width:auto;opacity:.65;margin-bottom:14px}
+.footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.footer-logos img{height:16px;width:auto;opacity:.6}
+.footer-logo-sep{width:1px;height:13px;background:rgba(255,255,255,.18)}
+.footer-tagline{
+  font-size:13px;font-weight:300;line-height:1.6;
+  color:rgba(255,255,255,.3);max-width:240px;
+}
+.footer-col-head{
+  font-size:10px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.22);margin-bottom:16px;
+}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{
+  font-size:13px;font-weight:300;
+  color:rgba(255,255,255,.42);transition:color .2s;
+}
+.footer-links a:hover{color:rgba(255,255,255,.8)}
+.footer-bottom{
+  max-width:1200px;margin-inline:auto;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+.footer-legal{font-size:11px;font-weight:300;color:rgba(255,255,255,.18)}
+.footer-dre{font-size:11px;font-weight:300;color:rgba(255,255,255,.18);text-align:right}
+@media(max-width:860px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .site-footer{padding:48px 20px 28px}
+  .footer-bottom{flex-direction:column}
+  .footer-dre{text-align:left}
+}
 </style>
 </head>
 <body>
-
-<nav class="nav">
-  <a href="/amre-assets/website/" class="nav-logo">AMRE<span>.</span></a>
+<nav class="site-nav" id="siteNav">
+  <a href="/amre-assets/website/" class="nav-brand" aria-label="AMRE Real Estate Group">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" class="logo-white" width="80" height="20">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-black.svg" alt="AMRE Real Estate Group" class="logo-dark" width="80" height="20">
+    <div class="nav-sep" aria-hidden="true"></div>
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" class="logo-white" width="72" height="16">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-black.png" alt="Compass" class="logo-dark" width="72" height="16">
+  </a>
   <ul class="nav-links">
-    <li><a href="/amre-assets/website/#services">Services</a></li>
     <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
     <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
     <li><a href="/amre-assets/website/properties/" class="active">Properties</a></li>
     <li><a href="/amre-assets/website/team/">Team</a></li>
+    <li><a href="/amre-assets/website/contact/">Contact</a></li>
   </ul>
-  <a href="/amre-assets/website/contact/" class="nav-cta">Get In Touch</a>
+  <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
 </nav>
-
-<div class="page-hero">
-  <div class="container" style="max-width:1280px;margin:0 auto;">
-    <div class="page-hero-eyebrow">Current & Recent Listings</div>
-    <h1>Properties<br>we <em>represent.</em></h1>
-    <p class="page-hero-sub">Active listings, recent sales, and exclusive inventory from AMRE Real Estate Group.</p>
+<div class="page-hero" style="padding-bottom:60px">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Current & Recent Listings</p>
+    <h1>Properties we <em>represent.</em></h1>
+    <p class="page-hero-sub">Active listings, sold properties, and exclusive inventory across Los Angeles County.</p>
   </div>
 </div>
 
-<div class="filter-bar">
-  <span class="filter-label">Filter:</span>
-  <button class="filter-btn active" onclick="filter('all',this)">All</button>
-  <button class="filter-btn" onclick="filter('active',this)">Active</button>
-  <button class="filter-btn" onclick="filter('sold',this)">Sold</button>
-  <button class="filter-btn" onclick="filter('pe',this)">Private Exclusive</button>
+<!-- FILTER -->
+<div style="background:var(--white);border-bottom:1px solid var(--rule);padding:16px 44px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;position:sticky;top:var(--nav-h);z-index:100">
+  <span style="font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--subtle);margin-right:4px">Filter:</span>
+  <button class="filter-pill active" onclick="filterProps('all',this)">All</button>
+  <button class="filter-pill" onclick="filterProps('sale',this)">For Sale</button>
+  <button class="filter-pill" onclick="filterProps('pending',this)">Pending</button>
+  <button class="filter-pill" onclick="filterProps('sold',this)">Sold</button>
 </div>
 
-<div class="listings-section">
-  <div style="max-width:1280px;margin:0 auto;">
-    <div class="listings-grid" id="listings-grid">
-
-      <!-- 2030 Vine St -->
-      <div class="listing-card fade-in" data-status="active">
-        <div class="listing-img" style="background:linear-gradient(135deg,#1A1A2E,#3D2B1F);">
-          <div class="listing-img-bg"></div>
-          <div class="listing-address-overlay">2030 Vine St</div>
-          <span class="listing-badge badge-active" style="position:absolute;top:16px;left:16px;">Active</span>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">Contact for Price</div>
-          <div class="listing-address">2030 Vine St</div>
-          <div class="listing-location">Hollywood Hills, Los Angeles</div>
-          <div class="listing-details">
-            <span class="listing-detail">5 Bed</span>
-            <span class="listing-detail">4 Bath</span>
-            <span class="listing-detail">Gated</span>
-            <span class="listing-detail">Views</span>
+<!-- LISTINGS -->
+<section style="background:var(--white);padding:56px 44px 80px">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="plisting-grid" id="propGrid">
+      <article class="plisting-card f" data-status="pending" itemscope itemtype="https://schema.org/RealEstateListing">
+        <a href="https://amre.group/properties/4240-avenida-de-la-encinal-malibu-ca-us-90265-26659403" target="_blank" class="plisting-link">
+          <div class="plisting-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg')"><span class="plisting-badge badge-pending">Pending</span></div>
+          <div class="plisting-body">
+            <div class="plisting-price" itemprop="price" content="5000000">$5,000,000</div>
+            <div class="plisting-addr" itemprop="name">4240 Avenida De La Encinal</div>
+            <div class="plisting-city" itemprop="addressLocality">Malibu, CA 90265</div>
+            <div class="plisting-specs"><span>6 BD</span><span>5 BA</span><span>5,800 SF</span></div>
           </div>
-        </div>
-      </div>
-
-      <!-- 1282 Queen Anne -->
-      <div class="listing-card fade-in fd1" data-status="active">
-        <div class="listing-img" style="background:linear-gradient(135deg,#1F2A1A,#2D3D25);">
-          <div class="listing-img-bg"></div>
-          <div class="listing-address-overlay">1282 Queen Anne</div>
-          <span class="listing-badge badge-active" style="position:absolute;top:16px;left:16px;">Active</span>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">Contact for Price</div>
-          <div class="listing-address">1282 Queen Anne Pl, Unit 2</div>
-          <div class="listing-location">Mid-Wilshire, Los Angeles 90019</div>
-          <div class="listing-details">
-            <span class="listing-detail">1 Bed</span>
-            <span class="listing-detail">1 Bath</span>
-            <span class="listing-detail">850 sq ft</span>
+        </a>
+      </article>
+      <article class="plisting-card f d1" data-status="sale" itemscope itemtype="https://schema.org/RealEstateListing">
+        <a href="https://amre.group/properties/1620-electric-ave-venice-ca-90291-26670155" target="_blank" class="plisting-link">
+          <div class="plisting-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26670155/3498201198900289763.jpg')"><span class="plisting-badge badge-sale">For Sale</span></div>
+          <div class="plisting-body">
+            <div class="plisting-price">$4,998,000</div>
+            <div class="plisting-addr">1620 Electric Ave</div>
+            <div class="plisting-city">Venice, CA 90291</div>
+            <div class="plisting-specs"><span>5 BD</span><span>6 BA</span><span>3,790 SF</span></div>
           </div>
-        </div>
-      </div>
-
-      <!-- 11155 S Tremaine -->
-      <div class="listing-card fade-in fd2" data-status="pe">
-        <div class="listing-img" style="background:linear-gradient(135deg,#0D1A1A,#1A2D2D);">
-          <div class="listing-img-bg"></div>
-          <div class="listing-address-overlay">11155 S Tremaine</div>
-          <span class="listing-badge badge-pe" style="position:absolute;top:16px;left:16px;">Private Exclusive</span>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">$2,495,000</div>
-          <div class="listing-address">11155 S Tremaine Ave</div>
-          <div class="listing-location">South Los Angeles · Triplex</div>
-          <div class="listing-details">
-            <span class="listing-detail">3 Units</span>
-            <span class="listing-detail">$11,994/mo income</span>
-            <span class="listing-detail">~3.75% cap</span>
+        </a>
+      </article>
+      <article class="plisting-card f d2" data-status="sale" itemscope itemtype="https://schema.org/RealEstateListing">
+        <a href="https://amre.group/properties/812-n-vista-st-los-angeles-ca-us-90046-25-481113" target="_blank" class="plisting-link">
+          <div class="plisting-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25-481113/-7576905626461730898.jpg')"><span class="plisting-badge badge-sale">For Sale</span></div>
+          <div class="plisting-body">
+            <div class="plisting-price">$4,998,000</div>
+            <div class="plisting-addr">812 N Vista St</div>
+            <div class="plisting-city">Los Angeles, CA 90046</div>
+            <div class="plisting-specs"><span>5 BD</span><span>6 BA</span><span>5,351 SF</span></div>
           </div>
-        </div>
-      </div>
-
-      <!-- Placeholder active -->
-      <div class="listing-card fade-in" data-status="active">
-        <div class="listing-img" style="background:linear-gradient(135deg,#1A1A30,#2A1A30);">
-          <div class="listing-img-bg"></div>
-          <span class="listing-badge badge-active" style="position:absolute;top:16px;left:16px;">Active</span>
-          <div style="text-align:center;color:rgba(255,255,255,.2);font-family:var(--serif);font-size:14px;letter-spacing:.1em;">COMING SOON</div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">Contact for Details</div>
-          <div class="listing-address">New Listing</div>
-          <div class="listing-location">Beverly Hills Adjacent</div>
-          <div class="listing-details">
-            <span class="listing-detail">Contact AMRE</span>
+        </a>
+      </article>
+      <article class="plisting-card f" data-status="pending" itemscope itemtype="https://schema.org/RealEstateListing">
+        <a href="https://amre.group/properties/2635-carman-crest-dr-los-angeles-ca-us-90068-25604409" target="_blank" class="plisting-link">
+          <div class="plisting-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25604409/-5983608283421614608.jpg')"><span class="plisting-badge badge-pending">Under Contract</span></div>
+          <div class="plisting-body">
+            <div class="plisting-price">$4,995,000</div>
+            <div class="plisting-addr">2635 Carman Crest Dr</div>
+            <div class="plisting-city">Los Angeles, CA 90068</div>
+            <div class="plisting-specs"><span>4 BD</span><span>6 BA</span><span>3,381 SF</span></div>
           </div>
-        </div>
-      </div>
-
-      <!-- Placeholder sold -->
-      <div class="listing-card fade-in fd1" data-status="sold">
-        <div class="listing-img" style="background:linear-gradient(135deg,#1A1A1A,#2A2A2A);">
-          <div class="listing-img-bg"></div>
-          <span class="listing-badge badge-sold" style="position:absolute;top:16px;left:16px;">Sold</span>
-          <div style="text-align:center;color:rgba(255,255,255,.15);font-family:var(--serif);font-size:14px;letter-spacing:.1em;">REPRESENTED SELLER</div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">Sold</div>
-          <div class="listing-address">Recent Sale</div>
-          <div class="listing-location">Los Angeles</div>
-          <div class="listing-details">
-            <span class="listing-detail">Represented Seller</span>
+        </a>
+      </article>
+      <article class="plisting-card f d1" data-status="sale" itemscope itemtype="https://schema.org/RealEstateListing">
+        <a href="https://amre.group/properties/295-mabery-rd-santa-monica-ca-us-90402-26651421" target="_blank" class="plisting-link">
+          <div class="plisting-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26651421/6783575949282440405.jpg')"><span class="plisting-badge badge-sale">For Sale</span></div>
+          <div class="plisting-body">
+            <div class="plisting-price">$4,995,000</div>
+            <div class="plisting-addr">295 Mabery Rd</div>
+            <div class="plisting-city">Santa Monica, CA 90402</div>
+            <div class="plisting-specs"><span>5 BD</span><span>3 BA</span><span>2,273 SF</span></div>
           </div>
+        </a>
+      </article>
+      <article class="plisting-card f d2" data-status="sold" itemscope itemtype="https://schema.org/RealEstateListing">
+        <a href="https://amre.group/properties/11556-bellagio-rd-los-angeles-ca-us-90049-25585727" target="_blank" class="plisting-link">
+          <div class="plisting-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25585727/-5498964793090052872.jpg')"><span class="plisting-badge badge-sold">Sold</span></div>
+          <div class="plisting-body">
+            <div class="plisting-price">$5,000,000</div>
+            <div class="plisting-addr">11556 Bellagio Rd</div>
+            <div class="plisting-city">Los Angeles, CA 90049</div>
+            <div class="plisting-specs"><span>4 BD</span><span>4 BA</span><span>3,035 SF</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="plisting-card f" data-status="sold" itemscope itemtype="https://schema.org/RealEstateListing">
+        <a href="https://amre.group/properties/25-488935" target="_blank" class="plisting-link">
+          <div class="plisting-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25-488935/-8694670094009842049.jpg')"><span class="plisting-badge badge-sold">Sold</span></div>
+          <div class="plisting-body">
+            <div class="plisting-price">$4,995,000</div>
+            <div class="plisting-addr">9000 W 3rd St, Unit 502</div>
+            <div class="plisting-city">Los Angeles, CA 90048</div>
+            <div class="plisting-specs"><span>3 BD</span><span>3 BA</span><span>2,470 SF</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="plisting-card f d1" data-status="sold" itemscope itemtype="https://schema.org/RealEstateListing">
+        <a href="https://amre.group/properties/24-414469" target="_blank" class="plisting-link">
+          <div class="plisting-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/24-414469/2218794429727573212.jpg')"><span class="plisting-badge badge-sold">Sold</span></div>
+          <div class="plisting-body">
+            <div class="plisting-price">$4,969,000</div>
+            <div class="plisting-addr">4254 Wilkinson Ave</div>
+            <div class="plisting-city">Studio City, CA 91604</div>
+            <div class="plisting-specs"><span>4 BD</span><span>5 BA</span><span>4,272 SF</span></div>
+          </div>
+        </a>
+      </article>
+      <div class="plisting-card plisting-cta f d2">
+        <div style="padding:36px 28px;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:center">
+          <p style="font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Private Access</p>
+          <h3 style="font-family:var(--serif);font-size:26px;font-weight:400;color:#fff;line-height:1.1;margin-bottom:12px">Listings not<br>on <em>Zillow.</em></h3>
+          <p style="font-size:13px;font-weight:300;line-height:1.65;color:rgba(255,255,255,.42);margin-bottom:24px">Compass Private Exclusives give AMRE clients access to homes before they hit the public market.</p>
+          <a href="/amre-assets/website/contact/" class="btn btn-gold">Request Access</a>
         </div>
       </div>
-
-      <!-- More listings CTA card -->
-      <div class="listing-card fade-in fd2" style="background:var(--cream);display:flex;align-items:center;justify-content:center;min-height:360px;">
-        <div style="text-align:center;padding:48px 40px;">
-          <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--ink);margin-bottom:12px;line-height:1.2;">Looking for<br>something <em style='color:var(--gold);font-style:italic;'>specific?</em></div>
-          <p style="font-size:14px;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:28px;">We have access to Private Exclusive and off-market inventory not shown publicly.</p>
-          <a href="/amre-assets/website/contact/" class="btn-primary">Talk to Us</a>
-        </div>
-      </div>
-
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="https://amre.group/properties" target="_blank" class="btn btn-outline-dark">View Full Portfolio on AMRE.group ↗</a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- CONNECT -->
-<div class="connect-cta">
-  <div class="eyebrow">Off-Market Access</div>
-  <h2>See what's not<br>listed <em>publicly.</em></h2>
-  <p>Compass Private Exclusives and our agent network give AMRE clients access to inventory the public never sees.</p>
-  <a href="/amre-assets/website/contact/" class="btn-primary">Request Private Inventory</a>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">AMRE<span>.</span></div>
-    <div class="footer-legal">© 2026 AMRE Real Estate Group. Information deemed reliable but not guaranteed.</div>
-    <div class="footer-dre">Michael Abraham DRE# 02242095 · Ania de Pourbaix DRE# 01891438 · Compass DRE# 01991628</div>
+<footer class="site-footer" itemscope itemtype="https://schema.org/RealEstateAgent">
+  <meta itemprop="name" content="AMRE Real Estate Group">
+  <meta itemprop="telephone" content="+13237198585">
+  <meta itemprop="email" content="michael.abraham@compass.com">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logos">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" width="70" height="16">
+        <div class="footer-logo-sep"></div>
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64" height="14">
+      </div>
+      <p class="footer-tagline">Elite Los Angeles real estate advisory — for sellers, buyers, and investors of the city's finest properties.</p>
+    </div>
+    <div>
+      <div class="footer-col-head">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+        <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
+        <li><a href="/amre-assets/website/properties/">Properties</a></li>
+        <li><a href="/amre-assets/website/team/">Team</a></li>
+        <li><a href="/amre-assets/website/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Services</div>
+      <ul class="footer-links">
+        <li><a href="/amre-assets/website/sellers/#three-phase">3-Phase Marketing</a></li>
+        <li><a href="/amre-assets/website/sellers/#concierge">Compass Concierge</a></li>
+        <li><a href="/amre-assets/website/buyers/">Buyer Advisory</a></li>
+        <li><a href="/amre-assets/website/#contact">Home Valuation</a></li>
+        <li><a href="/amre-assets/website/#contact">Investment Advisory</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Connect</div>
+      <ul class="footer-links">
+        <li><a href="tel:3237198585">(323) 719-8585</a></li>
+        <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
+        <li><a href="https://www.instagram.com/michaelabraham.realtor/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@MichaelAbraham.Realtor" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. Information deemed reliable but not guaranteed. Equal Housing Opportunity.</p>
+    <p class="footer-dre">Michael Abraham CA DRE# 02242095 &nbsp;·&nbsp; Ania De Pourbaix CA DRE# 01891438 &nbsp;·&nbsp; Compass DRE# 01991628</p>
   </div>
 </footer>
-
 <script>
-function filter(status, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+(function(){
+  var nav=document.getElementById('siteNav');
+  if(!nav)return;
+  function upd(){nav.classList.toggle('is-light',window.scrollY>80)}
+  upd();
+  window.addEventListener('scroll',upd,{passive:true});
+  // reveal animation
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+    })
+  },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.f').forEach(function(el){io.observe(el)});
+})();
+</script>
+<style>
+.plisting-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.plisting-card{background:var(--light);border-radius:2px;overflow:hidden}
+.plisting-link{display:block;color:inherit}
+.plisting-img{height:228px;background-size:cover;background-position:center;position:relative;overflow:hidden;transition:transform .4s var(--ease)}
+.plisting-link:hover .plisting-img{transform:scale(1.03)}
+.plisting-badge{position:absolute;top:12px;left:12px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px}
+.badge-sale{background:var(--blue);color:#fff}
+.badge-pending{background:#f59e0b;color:#fff}
+.badge-sold{background:rgba(0,0,0,.6);color:rgba(255,255,255,.72)}
+.plisting-body{padding:18px 18px 22px}
+.plisting-price{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:4px}
+.plisting-addr{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px}
+.plisting-city{font-size:12px;font-weight:300;color:var(--mid);margin-bottom:12px}
+.plisting-specs{display:flex;gap:14px}
+.plisting-specs span{font-size:11px;font-weight:400;color:var(--subtle)}
+.plisting-cta{background:var(--ink)}
+.filter-pill{font-size:12px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:7px 18px;border:1px solid var(--rule);border-radius:980px;background:#fff;color:var(--mid);cursor:pointer;transition:all .2s;font-family:var(--sf)}
+.filter-pill:hover,.filter-pill.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+@media(max-width:860px){.plisting-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.plisting-grid{grid-template-columns:1fr}}
+</style>
+<script>
+function filterProps(status,btn){
+  document.querySelectorAll('.filter-pill').forEach(function(b){b.classList.remove('active')});
   btn.classList.add('active');
-  document.querySelectorAll('.listing-card[data-status]').forEach(card => {
-    if(status === 'all' || card.dataset.status === status) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
+  document.querySelectorAll('.plisting-card[data-status]').forEach(function(c){
+    c.style.display=(status==='all'||c.dataset.status===status)?'':'none';
   });
 }
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 </script>
-</body>
-</html>
+</body></html>
