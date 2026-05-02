@@ -2,1072 +2,946 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMRE Real Estate Group | Los Angeles</title>
-<meta name="description" content="AMRE Real Estate Group — elite Los Angeles real estate professionals. Expert advisory for sellers, buyers, and investors of LA's finest properties.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AMRE Real Estate Group · Los Angeles</title>
+<meta name="description" content="Elite Los Angeles real estate advisory. AMRE Real Estate Group at Compass.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <script async src="https://tally.so/widgets/embed.js"></script>
 <style>
-:root {
-  --black: #0A0A0A;
-  --ink: #111111;
-  --off-black: #1A1A1A;
-  --dark: #222222;
-  --mid: #666666;
-  --muted: #999999;
-  --border: rgba(255,255,255,0.1);
-  --border-dark: #E8E8E8;
-  --white: #FFFFFF;
-  --cream: #F8F6F1;
-  --gold: #B8965A;
-  --gold-light: #D4AE78;
-  --blue: #0071E3;
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS  —  Apple + AMRE
+───────────────────────────────────────────── */
+:root{
+  --apple-dark:  #1d1d1f;
+  --apple-mid:   #6e6e73;
+  --apple-light: #f5f5f7;
+  --apple-white: #fbfbfd;
+  --apple-blue:  #0071e3;
+  --gold:        #b5894e;
+  --gold-lt:     #d4aa72;
+  --white:       #ffffff;
 
-  --serif: 'Cormorant', Georgia, serif;
-  --sans: 'DM Sans', -apple-system, sans-serif;
+  --sf: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", "Helvetica Neue", Helvetica, sans-serif;
+  --serif: "Playfair Display", "Georgia", serif;
 
-  --nav-h: 72px;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--sans);
-  background: var(--white);
-  color: var(--ink);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  --nav-h: 52px;
+  --ease:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-a { text-decoration: none; color: inherit; }
+/* ─────────────  RESET  ───────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sf);
+  background:var(--apple-white);
+  color:var(--apple-dark);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
 
-img { display: block; max-width: 100%; }
-
-/* ── NAV ── */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: var(--nav-h);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px;
-  transition: background 0.4s, border-color 0.4s;
+/* ─────────────  NAV  ───────────── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 22px;
+  background:rgba(29,29,31,0.72);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  transition:background 0.4s var(--ease), border-color 0.4s;
 }
-.nav.scrolled {
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--border-dark);
-}
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--white);
-  transition: color 0.4s;
-}
-.nav.scrolled .nav-logo { color: var(--ink); }
-.nav-logo span { color: var(--gold); }
-
-.nav-links {
-  display: flex; align-items: center; gap: 36px;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
-  transition: color 0.2s;
-}
-.nav.scrolled .nav-links a { color: var(--mid); }
-.nav-links a:hover { color: var(--white); }
-.nav.scrolled .nav-links a:hover { color: var(--ink); }
-.nav-cta {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 10px 24px;
-  border: 1px solid rgba(255,255,255,0.4);
-  color: var(--white);
-  border-radius: 2px;
-  transition: all 0.2s;
-}
-.nav.scrolled .nav-cta {
-  border-color: var(--ink);
-  color: var(--ink);
-}
-.nav-cta:hover {
-  background: var(--white);
-  color: var(--ink);
-}
-.nav.scrolled .nav-cta:hover {
-  background: var(--ink);
-  color: var(--white);
+.nav.light{
+  background:rgba(251,251,253,0.82);
+  border-bottom:1px solid rgba(0,0,0,0.1);
 }
 
-@media (max-width: 900px) {
-  .nav { padding: 0 24px; }
-  .nav-links { display: none; }
+/* brand lockup */
+.nav-brand{
+  display:flex;align-items:center;gap:0;
+  flex-shrink:0;
+}
+.nav-brand img.amre-logo{
+  height:22px;width:auto;
+}
+.nav-brand .divider{
+  width:1px;height:18px;
+  background:rgba(255,255,255,0.25);
+  margin:0 12px;
+  transition:background 0.4s;
+}
+.nav.light .nav-brand .divider{background:rgba(0,0,0,0.15)}
+.nav-brand img.compass-logo{
+  height:16px;width:auto;
+  opacity:0.85;
 }
 
-/* ── HERO ── */
-.hero {
-  position: relative;
-  height: 100vh;
-  min-height: 700px;
-  display: flex; flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 48px 80px;
-  overflow: hidden;
-  background: var(--black);
+/* center links */
+.nav-links{
+  display:flex;align-items:center;gap:28px;
+  list-style:none;
+  position:absolute;left:50%;transform:translateX(-50%);
+}
+.nav-links a{
+  font-size:12px;font-weight:400;letter-spacing:0.01em;
+  color:rgba(255,255,255,0.82);
+  transition:color 0.2s;
+}
+.nav.light .nav-links a{color:rgba(29,29,31,0.75)}
+.nav-links a:hover{color:#fff}
+.nav.light .nav-links a:hover{color:var(--apple-dark)}
+
+/* right cta */
+.nav-cta{
+  font-size:12px;font-weight:400;letter-spacing:0.01em;
+  color:rgba(255,255,255,0.82);
+  transition:color 0.2s;
+  flex-shrink:0;
+}
+.nav.light .nav-cta{color:rgba(29,29,31,0.75)}
+.nav-cta:hover{color:#fff}
+.nav.light .nav-cta:hover{color:var(--apple-dark)}
+
+@media(max-width:860px){
+  .nav-links{display:none}
 }
 
-.hero-bg {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    160deg,
-    #0A0A0A 0%,
-    #1A1A2E 35%,
-    #16213E 60%,
-    #0A0A0A 100%
+/* ─────────────  HERO  ───────────── */
+.hero{
+  position:relative;
+  height:100svh;min-height:680px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
+  padding-bottom:100px;
+  text-align:center;
+  overflow:hidden;
+}
+.hero-img{
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1580655653885-65763b2597d0?w=1920&auto=format&fit=crop&q=80');
+  background-size:cover;background-position:center 60%;
+  transform:scale(1.04);
+  animation:heroZoom 14s var(--ease) forwards;
+}
+@keyframes heroZoom{
+  from{transform:scale(1.04)}
+  to{transform:scale(1.0)}
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.18) 0%,
+    rgba(0,0,0,0.10) 40%,
+    rgba(0,0,0,0.62) 80%,
+    rgba(0,0,0,0.82) 100%
   );
 }
+.hero-content{
+  position:relative;z-index:2;
+  max-width:760px;
+  padding:0 24px;
+  animation:heroFade 1.4s 0.3s both var(--ease);
+}
+@keyframes heroFade{
+  from{opacity:0;transform:translateY(28px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.hero-eyebrow{
+  font-size:12px;font-weight:400;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);
+  margin-bottom:18px;
+}
+.hero-headline{
+  font-family:var(--serif);
+  font-size:clamp(48px,7.5vw,96px);
+  font-weight:400;line-height:1.02;
+  letter-spacing:-0.01em;
+  color:#fff;
+  margin-bottom:22px;
+}
+.hero-headline em{font-style:italic;color:var(--gold-lt)}
+.hero-sub{
+  font-size:clamp(16px,2vw,19px);
+  font-weight:300;line-height:1.65;
+  color:rgba(255,255,255,0.7);
+  max-width:540px;margin:0 auto 40px;
+}
+.hero-actions{
+  display:flex;align-items:center;justify-content:center;
+  gap:14px;flex-wrap:wrap;
+}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--sf);font-size:14px;font-weight:400;
+  padding:13px 26px;
+  background:var(--apple-blue);color:#fff;
+  border-radius:980px;
+  transition:background 0.2s, transform 0.15s;
+  white-space:nowrap;
+}
+.btn-primary:hover{background:#0077ed;transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:14px;font-weight:400;
+  color:rgba(255,255,255,0.82);
+  padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,0.3);
+  transition:color 0.2s,border-color 0.2s;
+  white-space:nowrap;
+}
+.btn-ghost:hover{color:#fff;border-color:#fff}
 
-/* Subtle grid overlay */
-.hero-bg::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(184,150,90,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(184,150,90,0.04) 1px, transparent 1px);
-  background-size: 80px 80px;
+/* scroll indicator */
+.hero-scroll{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:7px;
 }
+.hero-scroll span{
+  font-size:10px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+}
+.hero-scroll-bar{
+  width:1px;height:36px;
+  background:linear-gradient(to bottom,rgba(255,255,255,0.4),transparent);
+  animation:scrollPulse 2.4s infinite;
+}
+@keyframes scrollPulse{0%,100%{opacity:0.3;transform:scaleY(0.8) translateY(-4px)}50%{opacity:1;transform:scaleY(1) translateY(0)}}
 
-/* Gradient fade at bottom */
-.hero-bg::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(10,10,10,0.9) 100%);
+/* ─────────────  INTRO STATEMENT  ───────────── */
+.statement{
+  background:var(--apple-dark);
+  padding:110px 24px;
+  text-align:center;
 }
+.statement-text{
+  font-family:var(--serif);
+  font-size:clamp(28px,4vw,52px);
+  font-weight:400;font-style:italic;
+  line-height:1.22;
+  color:rgba(255,255,255,0.92);
+  max-width:800px;
+  margin:0 auto;
+}
+.statement-text em{color:var(--gold-lt);font-style:normal}
 
-.hero-label {
-  position: relative; z-index: 2;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-  display: flex; align-items: center; gap: 16px;
+/* ─────────────  SERVICES  ───────────── */
+.services{
+  background:var(--apple-light);
+  padding:100px 24px;
 }
-.hero-label::before {
-  content: '';
-  display: block;
-  width: 40px; height: 1px;
-  background: var(--gold);
+.section-label{
+  font-size:12px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--apple-blue);
+  text-align:center;
+  margin-bottom:16px;
 }
+.section-headline{
+  font-family:var(--serif);
+  font-size:clamp(32px,4.5vw,56px);
+  font-weight:400;line-height:1.1;
+  letter-spacing:-0.01em;
+  text-align:center;
+  color:var(--apple-dark);
+  max-width:640px;
+  margin:0 auto 64px;
+}
+.section-headline em{font-style:italic;color:var(--gold)}
 
-.hero-headline {
-  position: relative; z-index: 2;
-  font-family: var(--serif);
-  font-size: clamp(56px, 8vw, 112px);
-  font-weight: 300;
-  line-height: 0.95;
-  color: var(--white);
-  letter-spacing: -0.02em;
-  max-width: 900px;
-  margin-bottom: 40px;
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3px;
+  max-width:1200px;
+  margin:0 auto;
 }
+.svc-card{
+  background:#fff;
+  overflow:hidden;
+  border-radius:2px;
+  transition:transform 0.3s var(--ease), box-shadow 0.3s;
+}
+.svc-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.10);
+}
+.svc-img{
+  height:260px;
+  background-size:cover;background-position:center;
+  position:relative;
+}
+.svc-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.5));
+}
+.svc-body{padding:32px 28px 36px}
+.svc-num{
+  font-size:11px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--apple-blue);
+  margin-bottom:12px;
+}
+.svc-title{
+  font-family:var(--serif);
+  font-size:26px;font-weight:400;
+  color:var(--apple-dark);
+  margin-bottom:12px;
+}
+.svc-desc{
+  font-size:14px;font-weight:300;
+  line-height:1.75;
+  color:var(--apple-mid);
+  margin-bottom:24px;
+}
+.svc-link{
+  font-size:14px;font-weight:400;
+  color:var(--apple-blue);
+  display:flex;align-items:center;gap:4px;
+  transition:gap 0.2s;
+}
+.svc-card:hover .svc-link{gap:8px}
+.svc-link::after{content:'›';font-size:18px;line-height:1}
 
-.hero-headline em {
-  font-style: italic;
-  color: var(--gold);
-}
+@media(max-width:860px){.services-grid{grid-template-columns:1fr}}
 
-.hero-sub {
-  position: relative; z-index: 2;
-  max-width: 500px;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 48px;
+/* ─────────────  STATS  ───────────── */
+.stats{
+  background:var(--apple-white);
+  padding:80px 24px;
+  border-top:1px solid rgba(0,0,0,0.06);
+  border-bottom:1px solid rgba(0,0,0,0.06);
 }
+.stats-inner{
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:rgba(0,0,0,0.06);
+  border:1px solid rgba(0,0,0,0.06);
+  border-radius:16px;
+  overflow:hidden;
+}
+.stat{
+  background:var(--apple-white);
+  padding:40px 28px;text-align:center;
+}
+.stat-n{
+  font-family:var(--serif);
+  font-size:clamp(40px,5vw,60px);
+  font-weight:400;
+  color:var(--apple-dark);
+  line-height:1;
+  margin-bottom:8px;
+}
+.stat-n sup{font-size:0.45em;vertical-align:super}
+.stat-n span{color:var(--gold)}
+.stat-l{
+  font-size:12px;font-weight:400;
+  letter-spacing:0.04em;
+  color:var(--apple-mid);
+}
+@media(max-width:680px){.stats-inner{grid-template-columns:1fr 1fr}}
 
-.hero-actions {
-  position: relative; z-index: 2;
-  display: flex; align-items: center; gap: 24px;
-  flex-wrap: wrap;
+/* ─────────────  COMPASS SECTION  ───────────── */
+.compass-section{
+  background:var(--apple-dark);
+  padding:100px 24px;
+  position:relative;overflow:hidden;
 }
-
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 16px 36px;
-  background: var(--gold);
-  color: var(--black);
-  border-radius: 2px;
-  transition: background 0.2s, transform 0.15s;
+.compass-section::before{
+  content:'';position:absolute;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(0,113,227,0.12),transparent 70%);
+  top:-100px;right:-100px;pointer-events:none;
 }
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-.btn-ghost {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  transition: color 0.2s, border-color 0.2s;
+.compass-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
 }
-.btn-ghost:hover { color: var(--white); border-color: var(--white); }
-
-.hero-scroll {
-  position: absolute; z-index: 2;
-  bottom: 40px; right: 48px;
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+.compass-left .section-headline{text-align:left;margin:0 0 20px}
+.compass-left .section-headline{color:#fff}
+.compass-left .lede{
+  font-size:17px;font-weight:300;line-height:1.7;
+  color:rgba(255,255,255,0.55);
+  margin-bottom:36px;
 }
-.hero-scroll-line {
-  width: 1px; height: 48px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
-  animation: scrollPulse 2s infinite;
+.compass-cards{display:flex;flex-direction:column;gap:2px}
+.compass-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:24px 28px;
+  border-radius:12px;
+  display:flex;gap:16px;align-items:flex-start;
+  transition:background 0.3s,border-color 0.3s;
+  margin-bottom:10px;
 }
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+.compass-card:hover{
+  background:rgba(255,255,255,0.07);
+  border-color:rgba(255,255,255,0.15);
 }
-
-@media (max-width: 768px) {
-  .hero { padding: 0 24px 60px; }
-  .hero-scroll { display: none; }
+.compass-icon{
+  width:36px;height:36px;
+  background:rgba(0,113,227,0.15);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;margin-top:2px;
 }
-
-/* ── STATS BAR ── */
-.stats-bar {
-  background: var(--cream);
-  padding: 48px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background-color: var(--border-dark);
-  border-top: 1px solid var(--border-dark);
-  border-bottom: 1px solid var(--border-dark);
+.compass-card-title{
+  font-size:15px;font-weight:500;color:#fff;margin-bottom:5px;
 }
-.stat-cell {
-  background: var(--cream);
-  padding: 36px 40px;
-  text-align: center;
-}
-.stat-num {
-  font-family: var(--serif);
-  font-size: 52px;
-  font-weight: 300;
-  color: var(--ink);
-  line-height: 1;
-  margin-bottom: 8px;
-  letter-spacing: -0.02em;
-}
-.stat-num span { color: var(--gold); }
-.stat-lbl {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-@media (max-width: 768px) {
-  .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 0; }
-  .stat-num { font-size: 40px; }
-}
-
-/* ── SECTIONS ── */
-section { padding: 120px 48px; }
-.section-dark { background: var(--ink); color: var(--white); }
-.section-cream { background: var(--cream); }
-
-.eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-  display: flex; align-items: center; gap: 16px;
-}
-.eyebrow::before {
-  content: '';
-  display: block;
-  width: 32px; height: 1px;
-  background: var(--gold);
-}
-
-h2 {
-  font-family: var(--serif);
-  font-size: clamp(38px, 5vw, 68px);
-  font-weight: 300;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
-h2 em { font-style: italic; color: var(--gold); }
-
-.section-dark h2 { color: var(--white); }
-
-.lede {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--mid);
-  max-width: 560px;
-}
-.section-dark .lede { color: rgba(255,255,255,0.55); }
-
-.container { max-width: 1280px; margin: 0 auto; }
-.container-md { max-width: 980px; margin: 0 auto; }
-
-@media (max-width: 768px) {
-  section { padding: 80px 24px; }
-}
-
-/* ── SERVICES ── */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border-dark);
-  border: 1px solid var(--border-dark);
-  margin-top: 64px;
-}
-.service-card {
-  background: var(--white);
-  padding: 52px 44px;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.3s;
-}
-.service-card:hover { background: var(--cream); }
-.service-num {
-  font-family: var(--serif);
-  font-size: 72px;
-  font-weight: 300;
-  color: rgba(0,0,0,0.06);
-  line-height: 1;
-  margin-bottom: 32px;
-  letter-spacing: -0.04em;
-}
-.service-title {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 16px;
-  color: var(--ink);
-}
-.service-desc {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--mid);
-  margin-bottom: 32px;
-}
-.service-link {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: flex; align-items: center; gap: 8px;
-}
-.service-link::after {
-  content: '→';
-  transition: transform 0.2s;
-}
-.service-card:hover .service-link::after { transform: translateX(4px); }
-@media (max-width: 900px) {
-  .services-grid { grid-template-columns: 1fr; }
+.compass-card-body{
+  font-size:13px;font-weight:300;line-height:1.65;
+  color:rgba(255,255,255,0.45);
 }
 
-/* ── ABOUT / MISSION ── */
-.about-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.about-visual {
-  position: relative;
-  height: 600px;
-}
-.about-img-main {
-  position: absolute;
-  top: 0; left: 0;
-  width: 75%;
-  height: 80%;
-  background: linear-gradient(135deg, #1A1A2E, #2D2D44);
-  border-radius: 2px;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-}
-.about-img-accent {
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 50%;
-  height: 45%;
-  background: var(--gold);
-  border-radius: 2px;
-  display: flex; align-items: center; justify-content: center;
-}
-.about-img-text {
-  font-family: var(--serif);
-  font-size: 14px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.about-img-quote {
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--black);
-  text-align: center;
-  padding: 24px;
-  line-height: 1.5;
-}
-.about-content { padding-right: 24px; }
-.about-content .eyebrow { margin-top: 32px; }
-.about-body {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--mid);
-  margin: 32px 0;
-}
-.about-body strong { color: var(--ink); font-weight: 500; }
-@media (max-width: 900px) {
-  .about-layout { grid-template-columns: 1fr; }
-  .about-visual { height: 360px; }
-  .about-content { padding-right: 0; }
+@media(max-width:860px){
+  .compass-inner{grid-template-columns:1fr}
+  .compass-left .section-headline{text-align:center}
 }
 
-/* ── COMPASS SECTION ── */
-.compass-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 64px;
+/* ─────────────  TEAM  ───────────── */
+.team-section{
+  background:var(--apple-white);
+  padding:100px 24px;
 }
-.compass-card {
-  padding: 40px;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 2px;
-  transition: border-color 0.3s, background 0.3s;
+.team-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;max-width:1200px;margin:56px auto 0;
 }
-.compass-card:hover {
-  border-color: var(--gold);
-  background: rgba(184,150,90,0.05);
+.agent-card{
+  background:var(--apple-light);
+  overflow:hidden;border-radius:2px;
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:360px;
+  transition:transform 0.3s var(--ease);
 }
-.compass-card-icon {
-  font-size: 32px;
-  margin-bottom: 20px;
+.agent-card:hover{transform:translateY(-3px)}
+.agent-photo{
+  background-size:cover;background-position:center top;
+  position:relative;
+  min-height:320px;
 }
-.compass-card-title {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--white);
-  margin-bottom: 12px;
+.agent-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,transparent 60%,var(--apple-light));
 }
-.compass-card-body {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.5);
+.agent-info{
+  padding:40px 32px 40px 24px;
+  display:flex;flex-direction:column;justify-content:center;
 }
-@media (max-width: 900px) {
-  .compass-grid { grid-template-columns: 1fr; }
+.agent-role{
+  font-size:11px;font-weight:500;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--apple-blue);margin-bottom:10px;
 }
-
-/* ── TEAM ── */
-.team-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  margin-top: 64px;
+.agent-name{
+  font-family:var(--serif);
+  font-size:clamp(24px,3vw,34px);
+  font-weight:400;line-height:1.1;
+  color:var(--apple-dark);
+  margin-bottom:14px;
 }
-.team-card {
-  position: relative;
-  overflow: hidden;
-  background: var(--off-black);
-  padding: 56px 52px;
-  transition: background 0.3s;
+.agent-bio{
+  font-size:13px;font-weight:300;line-height:1.75;
+  color:var(--apple-mid);
+  margin-bottom:20px;
 }
-.team-card:hover { background: #252525; }
-.team-card-role {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
+.agent-dre{
+  font-size:11px;font-weight:400;
+  color:rgba(0,0,0,0.3);
 }
-.team-card-name {
-  font-family: var(--serif);
-  font-size: 38px;
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-.team-card-bio {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.5);
-  max-width: 380px;
-  margin-bottom: 32px;
-}
-.team-card-dre {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.25);
-}
-.team-card-dre strong { color: rgba(255,255,255,0.4); font-weight: 400; }
-.team-card-num {
-  position: absolute;
-  top: 40px; right: 40px;
-  font-family: var(--serif);
-  font-size: 120px;
-  font-weight: 300;
-  line-height: 1;
-  color: rgba(255,255,255,0.03);
-  letter-spacing: -0.04em;
-  pointer-events: none;
-}
-@media (max-width: 768px) {
-  .team-grid { grid-template-columns: 1fr; }
+@media(max-width:860px){
+  .team-grid{grid-template-columns:1fr}
+  .agent-card{grid-template-columns:1fr}
+  .agent-photo{min-height:220px}
+  .agent-photo-overlay{background:linear-gradient(to bottom,transparent 60%,var(--apple-light))}
 }
 
-/* ── TESTIMONIALS ── */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 64px;
+/* ─────────────  TESTIMONIALS  ───────────── */
+.testimonials{
+  background:var(--apple-light);
+  padding:100px 24px;
 }
-.testimonial {
-  padding: 40px;
-  border: 1px solid var(--border-dark);
-  border-radius: 2px;
-  position: relative;
+.testi-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;max-width:1100px;margin:56px auto 0;
 }
-.testimonial::before {
-  content: '"';
-  font-family: var(--serif);
-  font-size: 80px;
-  font-weight: 300;
-  color: var(--gold);
-  opacity: 0.3;
-  position: absolute;
-  top: 16px; left: 32px;
-  line-height: 1;
+.testi{
+  background:#fff;
+  padding:36px 30px;
+  border-radius:18px;
+  box-shadow:0 2px 16px rgba(0,0,0,0.04);
+  transition:box-shadow 0.3s,transform 0.3s;
 }
-.testimonial-text {
-  font-family: var(--serif);
-  font-size: 17px;
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.7;
-  color: var(--ink);
-  margin-bottom: 28px;
-  padding-top: 24px;
+.testi:hover{
+  box-shadow:0 8px 32px rgba(0,0,0,0.09);
+  transform:translateY(-3px);
 }
-.testimonial-author {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
+.stars{
+  display:flex;gap:3px;margin-bottom:18px;
 }
-@media (max-width: 900px) {
-  .testimonials-grid { grid-template-columns: 1fr; }
+.star{color:#ffd60a;font-size:15px}
+.testi-text{
+  font-size:15px;font-weight:300;line-height:1.75;
+  color:var(--apple-dark);
+  margin-bottom:24px;
+  font-style:italic;
+}
+.testi-author{
+  font-size:12px;font-weight:500;
+  color:var(--apple-mid);
+  letter-spacing:0.04em;
+}
+@media(max-width:860px){.testi-grid{grid-template-columns:1fr}}
+
+/* ─────────────  CONTACT  ───────────── */
+.contact-section{
+  background:var(--apple-dark);
+  padding:100px 24px;
+}
+.contact-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1.1fr;
+  gap:72px;align-items:start;
+}
+.contact-left .section-headline{
+  text-align:left;margin:0 0 14px;color:#fff;
+}
+.contact-lede{
+  font-size:17px;font-weight:300;line-height:1.7;
+  color:rgba(255,255,255,0.5);
+  margin-bottom:44px;
+}
+.contact-details{display:flex;flex-direction:column;gap:18px}
+.contact-item-label{
+  font-size:10px;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.28);margin-bottom:4px;
+}
+.contact-item-value{
+  font-size:15px;font-weight:300;
+  color:rgba(255,255,255,0.65);
+}
+.contact-item-value a{color:rgba(255,255,255,0.65);transition:color 0.2s}
+.contact-item-value a:hover{color:#fff}
+
+.contact-form-box{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:44px 40px;
+}
+.form-title{
+  font-family:var(--serif);
+  font-size:26px;font-weight:400;color:#fff;
+  margin-bottom:6px;
+}
+.form-sub{
+  font-size:14px;font-weight:300;
+  color:rgba(255,255,255,0.4);
+  margin-bottom:28px;line-height:1.6;
+}
+@media(max-width:860px){
+  .contact-inner{grid-template-columns:1fr}
+  .contact-form-box{padding:32px 24px}
 }
 
-/* ── CONTACT ── */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: start;
+/* ─────────────  FOOTER  ───────────── */
+footer{
+  background:#000;
+  padding:52px 24px 36px;
+  border-top:1px solid rgba(255,255,255,0.06);
 }
-.contact-info {}
-.contact-info h2 { margin-bottom: 24px; }
-.contact-info .lede { margin-bottom: 48px; }
-.contact-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-bottom: 48px;
+.footer-top{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  margin-bottom:28px;
 }
-.contact-item {}
-.contact-item-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 6px;
+.footer-brand-block{}
+.footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.footer-logos img{height:18px;width:auto;opacity:0.7}
+.footer-logos .foot-divider{width:1px;height:14px;background:rgba(255,255,255,0.2)}
+.footer-tagline{
+  font-size:13px;font-weight:300;
+  color:rgba(255,255,255,0.3);
+  line-height:1.7;max-width:260px;
 }
-.contact-item-value {
-  font-size: 16px;
-  font-weight: 300;
-  color: var(--ink);
+.footer-col-head{
+  font-size:11px;font-weight:500;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(255,255,255,0.25);margin-bottom:16px;
 }
-.contact-item-value a { color: var(--ink); }
-.contact-item-value a:hover { color: var(--gold); }
-
-.contact-form-wrap {
-  background: var(--cream);
-  padding: 52px;
-  border-radius: 2px;
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{
+  font-size:13px;font-weight:300;
+  color:rgba(255,255,255,0.45);
+  transition:color 0.2s;
 }
-.contact-form-title {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 8px;
+.footer-links a:hover{color:rgba(255,255,255,0.8)}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
 }
-.contact-form-sub {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--mid);
-  margin-bottom: 32px;
-  line-height: 1.6;
+.footer-legal,.footer-dre{
+  font-size:11px;font-weight:300;
+  color:rgba(255,255,255,0.18);
 }
-@media (max-width: 900px) {
-  .contact-layout { grid-template-columns: 1fr; }
-  .contact-form-wrap { padding: 36px 28px; }
+@media(max-width:860px){
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column}
+  .footer-dre{text-align:left}
 }
 
-/* ── FOOTER ── */
-footer {
-  background: var(--black);
-  padding: 72px 48px 36px;
-  color: rgba(255,255,255,0.4);
+/* ─────────────  SCROLL ANIMATIONS  ───────────── */
+.reveal{
+  opacity:0;transform:translateY(30px);
+  transition:opacity 0.8s var(--ease),transform 0.8s var(--ease);
 }
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  margin-bottom: 36px;
-}
-.footer-brand-name {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--white);
-  letter-spacing: 0.05em;
-  margin-bottom: 16px;
-}
-.footer-brand-name span { color: var(--gold); }
-.footer-tagline {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.4);
-  max-width: 280px;
-  margin-bottom: 24px;
-}
-.footer-compass {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-}
-.footer-col-title {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  margin-bottom: 20px;
-}
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.footer-links a {
-  font-size: 14px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.5);
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--white); }
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.footer-legal {
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.2);
-}
-.footer-dre {
-  font-size: 11px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.2);
-  text-align: right;
-}
-@media (max-width: 900px) {
-  footer { padding: 56px 24px 32px; }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .footer-dre { text-align: center; }
-}
-@media (max-width: 480px) {
-  .footer-top { grid-template-columns: 1fr; }
-}
-
-/* ── ANIMATIONS ── */
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.fade-in-delay-1 { transition-delay: 0.1s; }
-.fade-in-delay-2 { transition-delay: 0.2s; }
-.fade-in-delay-3 { transition-delay: 0.3s; }
-
-/* ── DIVIDER ── */
-.divider {
-  width: 48px; height: 1px;
-  background: var(--gold);
-  margin: 32px 0;
-}
-.section-dark .divider { background: rgba(255,255,255,0.2); }
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:0.1s}
+.delay-2{transition-delay:0.2s}
+.delay-3{transition-delay:0.3s}
+.delay-4{transition-delay:0.4s}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <a href="/amre-assets/website/" class="nav-logo">AMRE<span>.</span></a>
+<!-- ══════════════  NAV  ══════════════ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-brand">
+    <img class="amre-logo"
+         src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg"
+         alt="AMRE Real Estate Group"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='none'">
+    <div class="divider"></div>
+    <img class="compass-logo"
+         src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png"
+         alt="Compass"
+         onerror="this.style.cssText='font-family:inherit;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);display:block'">
+  </div>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
-    <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
-    <li><a href="/amre-assets/website/properties/">Properties</a></li>
-    <li><a href="/amre-assets/website/team/">Team</a></li>
+    <li><a href="sellers/">Sellers</a></li>
+    <li><a href="buyers/">Buyers</a></li>
+    <li><a href="properties/">Properties</a></li>
+    <li><a href="team/">Team</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Get In Touch</a>
+  <a class="nav-cta" href="#contact">Get In Touch</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-label">Los Angeles Real Estate</div>
-  <h1 class="hero-headline">
-    Elite advisory<br>
-    for <em>discerning</em><br>
-    clients.
-  </h1>
-  <p class="hero-sub">
-    AMRE Real Estate Group delivers expert advisory services to sellers, buyers, and developers of Los Angeles's finest properties.
-  </p>
-  <div class="hero-actions">
-    <a href="#contact" class="btn-primary">Start a Conversation</a>
-    <a href="/amre-assets/website/properties/" class="btn-ghost">View Properties &nbsp;→</a>
+<!-- ══════════════  HERO  ══════════════ -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">AMRE Real Estate Group · Compass Beverly Hills</p>
+    <h1 class="hero-headline">
+      Los Angeles real estate,<br>
+      <em>elevated.</em>
+    </h1>
+    <p class="hero-sub">
+      Expert advisory for sellers, buyers, and investors of
+      Los Angeles's finest properties.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start a Conversation</a>
+      <a href="properties/" class="btn-ghost">View Properties &thinsp;›</a>
+    </div>
   </div>
   <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
+    <div class="hero-scroll-bar"></div>
     <span>Scroll</span>
   </div>
 </section>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-cell fade-in">
-    <div class="stat-num">20<span>+</span></div>
-    <div class="stat-lbl">Years Combined Experience</div>
+<!-- ══════════════  STATEMENT  ══════════════ -->
+<section class="statement reveal">
+  <p class="statement-text">
+    "We are the <em>new generation</em> of elite real estate professionals —
+    delivering expert advisory to sellers, buyers,
+    and developers of Los Angeles's finest properties."
+  </p>
+</section>
+
+<!-- ══════════════  SERVICES  ══════════════ -->
+<section class="services" id="services">
+  <p class="section-label reveal">What We Do</p>
+  <h2 class="section-headline reveal">A full-spectrum<br>real estate <em>practice.</em></h2>
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-img"
+           style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80')">
+        <div class="svc-img-overlay"></div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-num">01 — Buying</div>
+        <div class="svc-title">Find Your Place</div>
+        <p class="svc-desc">Access to the full LA market — including Private Exclusives and off-market properties unavailable to the public. We negotiate on your behalf with precision and architectural insight.</p>
+        <a href="buyers/" class="svc-link">Buyer Advisory</a>
+      </div>
+    </div>
+    <div class="svc-card reveal delay-1">
+      <div class="svc-img"
+           style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format&fit=crop&q=80')">
+        <div class="svc-img-overlay"></div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-num">02 — Selling</div>
+        <div class="svc-title">Sell on Your Terms</div>
+        <p class="svc-desc">Our Compass 3-Phase Marketing Strategy — Private Exclusive, Coming Soon, Full Launch — gives your home unparalleled exposure while protecting its value and your privacy.</p>
+        <a href="sellers/" class="svc-link">Seller Strategy</a>
+      </div>
+    </div>
+    <div class="svc-card reveal delay-2">
+      <div class="svc-img"
+           style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop&q=80')">
+        <div class="svc-img-overlay"></div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-num">03 — Investing</div>
+        <div class="svc-title">Build Your Portfolio</div>
+        <p class="svc-desc">A decade of multifamily investment experience in Los Angeles. Value-add strategies, 1031 exchange guidance, and off-market sourcing to maximize your returns.</p>
+        <a href="#contact" class="svc-link">Investment Advisory</a>
+      </div>
+    </div>
   </div>
-  <div class="stat-cell fade-in fade-in-delay-1">
-    <div class="stat-num"><span>$</span>1B<span>+</span></div>
-    <div class="stat-lbl">In Transactions</div>
-  </div>
-  <div class="stat-cell fade-in fade-in-delay-2">
-    <div class="stat-num">LA<span>'s</span></div>
-    <div class="stat-lbl">Top Producing Team</div>
-  </div>
-  <div class="stat-cell fade-in fade-in-delay-3">
-    <div class="stat-num"><span>#</span>1</div>
-    <div class="stat-lbl">Compass Beverly Hills</div>
+</section>
+
+<!-- ══════════════  STATS  ══════════════ -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <div class="stat-n">20<span>+</span></div>
+      <div class="stat-l">Years Combined Experience</div>
+    </div>
+    <div class="stat reveal delay-1">
+      <div class="stat-n"><span>$</span>1B<span>+</span></div>
+      <div class="stat-l">In Transactions</div>
+    </div>
+    <div class="stat reveal delay-2">
+      <div class="stat-n">100<span>+</span></div>
+      <div class="stat-l">Transactions Closed</div>
+    </div>
+    <div class="stat reveal delay-3">
+      <div class="stat-n"><span>#</span>1</div>
+      <div class="stat-l">Compass Beverly Hills</div>
+    </div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="eyebrow fade-in">What We Do</div>
-    <h2 class="fade-in">A full-spectrum<br>real estate <em>practice.</em></h2>
-    <div class="services-grid" style="margin-top: 64px;">
-      <div class="service-card fade-in">
-        <div class="service-num">01</div>
-        <div class="service-title">Buying</div>
-        <p class="service-desc">Navigating the Los Angeles market with precision and inside access. From first-time buyers to seasoned investors, we guide every client to the right property at the right price.</p>
-        <a href="/amre-assets/website/buyers/" class="service-link">Buyer Resources</a>
-      </div>
-      <div class="service-card fade-in fade-in-delay-1">
-        <div class="service-num">02</div>
-        <div class="service-title">Selling</div>
-        <p class="service-desc">Our Compass 3-Phase Marketing Strategy — Private Exclusive, Coming Soon, and Full MLS Launch — gives your home maximum exposure while protecting its value.</p>
-        <a href="/amre-assets/website/sellers/" class="service-link">Seller Strategy</a>
-      </div>
-      <div class="service-card fade-in fade-in-delay-2">
-        <div class="service-num">03</div>
-        <div class="service-title">Investing</div>
-        <p class="service-desc">With over a decade of multifamily investment experience in Los Angeles, we specialize in value-add strategies that unlock hidden potential and maximize returns.</p>
-        <a href="#contact" class="service-link">Discuss Investment</a>
-      </div>
+<!-- ══════════════  COMPASS  ══════════════ -->
+<section class="compass-section" id="compass">
+  <div class="compass-inner">
+    <div class="compass-left">
+      <p class="section-label reveal" style="text-align:left">The Compass Advantage</p>
+      <h2 class="section-headline reveal">Tools that work<br>harder for <em>you.</em></h2>
+      <p class="lede reveal">As Compass agents, Michael and Ania bring exclusive programs unavailable through any other brokerage.</p>
+      <a href="sellers/" class="btn-primary reveal" style="width:fit-content">Explore Seller Strategy</a>
     </div>
-  </div>
-</section>
-
-<!-- ABOUT / MISSION -->
-<section class="section-cream" id="about">
-  <div class="container">
-    <div class="about-layout">
-      <div class="about-visual">
-        <div class="about-img-main">
-          <span class="about-img-text">Beverly Hills · Los Angeles</span>
-        </div>
-        <div class="about-img-accent">
-          <p class="about-img-quote">"The new generation of elite real estate."</p>
+    <div class="compass-cards reveal delay-1">
+      <div class="compass-card">
+        <div class="compass-icon">🔒</div>
+        <div>
+          <div class="compass-card-title">Private Exclusive</div>
+          <p class="compass-card-body">Market your home to Compass's 34,000+ agents before any public listing. No days-on-market, no price drop history, complete discretion.</p>
         </div>
       </div>
-      <div class="about-content">
-        <div class="eyebrow fade-in">Our Mission</div>
-        <h2 class="fade-in">Excellence through<br><em>innovation.</em></h2>
-        <div class="divider"></div>
-        <p class="about-body fade-in">
-          We are the new generation of elite real estate professionals, delivering <strong>expert advisory services</strong> to sellers, buyers, and developers of Los Angeles's finest properties.
-        </p>
-        <p class="about-body fade-in">
-          Our dedication to excellence and innovation sets us apart. With <strong>20+ years of combined experience</strong> and deep roots in the Los Angeles market, we serve as fearless negotiators and trusted advisors — guiding clients through every stage of their real estate journey with white-glove precision.
-        </p>
-        <a href="/amre-assets/website/team/" class="btn-primary" style="display:inline-flex; margin-top: 16px;">Meet the Team</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPASS ADVANTAGE -->
-<section class="section-dark" id="compass">
-  <div class="container">
-    <div class="eyebrow fade-in">The Compass Advantage</div>
-    <h2 class="fade-in">Tools that work<br>harder for <em>you.</em></h2>
-    <p class="lede fade-in" style="margin-top: 20px;">As Compass agents, Michael and Ania bring exclusive programs and technology that independent agents simply cannot access.</p>
-    <div class="compass-grid">
-      <div class="compass-card fade-in">
-        <div class="compass-card-icon">🔒</div>
-        <div class="compass-card-title">Private Exclusive</div>
-        <p class="compass-card-body">Market your home to Compass's network of 34,000+ top agents before public listing — no days on market, no price drop history, maximum discretion.</p>
-      </div>
-      <div class="compass-card fade-in fade-in-delay-1">
-        <div class="compass-card-icon">🏗️</div>
-        <div class="compass-card-title">Compass Concierge</div>
-        <p class="compass-card-body">Cover the upfront cost of home improvements — paint, staging, landscaping — with zero interest and zero fees. Pay only when your home sells.</p>
-      </div>
-      <div class="compass-card fade-in fade-in-delay-2">
-        <div class="compass-card-icon">📊</div>
-        <div class="compass-card-title">Compass One</div>
-        <p class="compass-card-body">A centralized dashboard connecting you and your agent through every phase of the transaction — 24/7 transparency from offer to close.</p>
-      </div>
-    </div>
-    <div style="margin-top: 48px; display: flex; gap: 24px; flex-wrap: wrap;">
-      <a href="/amre-assets/website/sellers/" class="btn-primary">Seller Strategy</a>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM PREVIEW -->
-<section id="team">
-  <div class="container">
-    <div class="eyebrow fade-in">The Team</div>
-    <h2 class="fade-in">Trusted advisors.<br><em>Proven results.</em></h2>
-    <div class="team-grid" style="margin-top: 64px;">
-      <div class="team-card fade-in">
-        <div class="team-card-num">01</div>
-        <div class="team-card-role">Principal Agent · Architect · NAR Member</div>
-        <div class="team-card-name">Michael<br>Abraham</div>
-        <p class="team-card-bio">A distinguished Los Angeles Realtor®, licensed architect, and proud NAR member. Known for strategic thinking, architectural insight, and a decade of multifamily investment expertise.</p>
-        <div class="team-card-dre">CA DRE# <strong>02242095</strong></div>
-      </div>
-      <div class="team-card fade-in fade-in-delay-1">
-        <div class="team-card-num">02</div>
-        <div class="team-card-role">Principal Agent · Compass Beverly Hills</div>
-        <div class="team-card-name">Ania de<br>Pourbaix</div>
-        <p class="team-card-bio">A seasoned Los Angeles real estate professional with deep expertise in the luxury market. Known for her meticulous attention to detail and exceptional client relationships.</p>
-        <div class="team-card-dre">CA DRE# <strong>01891438</strong></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section-cream" id="testimonials">
-  <div class="container">
-    <div class="eyebrow fade-in">Client Experiences</div>
-    <h2 class="fade-in">What clients<br><em>say.</em></h2>
-    <div class="testimonials-grid">
-      <div class="testimonial fade-in">
-        <p class="testimonial-text">Even though they were representing the seller, they kept everything smooth and transparent throughout the whole process. After purchasing the home, they quickly found me a great tenant through their network.</p>
-        <div class="testimonial-author">— Cyrus P.</div>
-      </div>
-      <div class="testimonial fade-in fade-in-delay-1">
-        <p class="testimonial-text">Michael and Ania are true professionals. Very knowledgeable, understand the market, and are just, all around, great to work with. Couldn't recommend them enough.</p>
-        <div class="testimonial-author">— Ross Van Der W.</div>
-      </div>
-      <div class="testimonial fade-in fade-in-delay-2">
-        <p class="testimonial-text">Their insightful vision and commitment to high-quality work enabled us to produce captivating results. Their professionalism and collaborative approach made the process both efficient and enjoyable.</p>
-        <div class="testimonial-author">— Jessica C.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-layout">
-      <div class="contact-info">
-        <div class="eyebrow fade-in">Get In Touch</div>
-        <h2 class="fade-in">Let's talk<br>real estate.</h2>
-        <div class="divider"></div>
-        <p class="lede fade-in">Whether you're buying, selling, or investing — we'd love to hear about your goals and explore how we can help.</p>
-        <div class="contact-detail">
-          <div class="contact-item fade-in">
-            <div class="contact-item-label">Phone</div>
-            <div class="contact-item-value"><a href="tel:3237198585">(323) 719-8585</a></div>
-          </div>
-          <div class="contact-item fade-in">
-            <div class="contact-item-label">Email</div>
-            <div class="contact-item-value"><a href="mailto:michael.abraham@compass.com">michael.abraham@compass.com</a></div>
-          </div>
-          <div class="contact-item fade-in">
-            <div class="contact-item-label">Office</div>
-            <div class="contact-item-value">9454 Wilshire Blvd, Suite 100<br>Beverly Hills, CA 90212</div>
-          </div>
-          <div class="contact-item fade-in">
-            <div class="contact-item-label">Brokerage</div>
-            <div class="contact-item-value">Compass · DRE# 01991628</div>
-          </div>
+      <div class="compass-card">
+        <div class="compass-icon">🏗</div>
+        <div>
+          <div class="compass-card-title">Compass Concierge</div>
+          <p class="compass-card-body">Front the cost of home improvements — staging, paint, landscaping — with zero interest and zero fees. Repay only at closing.</p>
         </div>
       </div>
-      <div class="contact-form-wrap fade-in">
-        <div class="contact-form-title">Start a conversation</div>
-        <p class="contact-form-sub">We typically respond within a few hours during business hours.</p>
-        <iframe data-tally-src="https://tally.so/embed/aQZxXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy" width="100%" height="420" frameborder="0"
-          marginheight="0" marginwidth="0" title="Get In Touch">
-        </iframe>
+      <div class="compass-card">
+        <div class="compass-icon">📊</div>
+        <div>
+          <div class="compass-card-title">Compass One</div>
+          <p class="compass-card-body">A live dashboard connecting you and your agent through every phase of your transaction — 24/7 transparency from offer to close.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══════════════  TEAM  ══════════════ -->
+<section class="team-section" id="team">
+  <p class="section-label reveal">The Team</p>
+  <h2 class="section-headline reveal">Trusted advisors.<br><em>Proven results.</em></h2>
+  <div class="team-grid">
+    <div class="agent-card reveal">
+      <div class="agent-photo"
+           style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&auto=format&fit=crop&q=80')">
+        <div class="agent-photo-overlay"></div>
+      </div>
+      <div class="agent-info">
+        <div class="agent-role">Principal Agent · Architect</div>
+        <div class="agent-name">Michael<br>Abraham</div>
+        <p class="agent-bio">Licensed Realtor®, architect, and NAR member. A decade of LA multifamily investment expertise with a strategic, client-first approach.</p>
+        <div class="agent-dre">CA DRE# 02242095</div>
+      </div>
+    </div>
+    <div class="agent-card reveal delay-1">
+      <div class="agent-photo"
+           style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=80')">
+        <div class="agent-photo-overlay"></div>
+      </div>
+      <div class="agent-info">
+        <div class="agent-role">Principal Agent · Compass</div>
+        <div class="agent-name">Ania de<br>Pourbaix</div>
+        <p class="agent-bio">Seasoned luxury market specialist known for meticulous attention to detail and exceptional client relationships across Los Angeles.</p>
+        <div class="agent-dre">CA DRE# 01891438</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════  TESTIMONIALS  ══════════════ -->
+<section class="testimonials">
+  <p class="section-label reveal">Client Experiences</p>
+  <h2 class="section-headline reveal">What people<br><em>say.</em></h2>
+  <div class="testi-grid">
+    <div class="testi reveal">
+      <div class="stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">"Even though they were representing the seller, they kept everything smooth and transparent. After closing, they quickly found me a great tenant through their network."</p>
+      <div class="testi-author">— Cyrus P.</div>
+    </div>
+    <div class="testi reveal delay-1">
+      <div class="stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">"True professionals. Very knowledgeable, they understand the market, and are just, all around, great to work with. Couldn't recommend them enough."</p>
+      <div class="testi-author">— Ross Van Der W.</div>
+    </div>
+    <div class="testi reveal delay-2">
+      <div class="stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">"Their insightful vision and professionalism made the process both efficient and enjoyable. The results were captivating and exceeded our expectations."</p>
+      <div class="testi-author">— Jessica C.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════  CONTACT  ══════════════ -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <p class="section-label reveal" style="text-align:left">Get In Touch</p>
+      <h2 class="section-headline reveal">Let's talk<br>real estate.</h2>
+      <p class="contact-lede reveal">Whether you're buying, selling, or investing — we'd love to hear about your goals.</p>
+      <div class="contact-details reveal delay-1">
+        <div>
+          <div class="contact-item-label">Phone</div>
+          <div class="contact-item-value"><a href="tel:3237198585">(323) 719-8585</a></div>
+        </div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value"><a href="mailto:michael.abraham@compass.com">michael.abraham@compass.com</a></div>
+        </div>
+        <div>
+          <div class="contact-item-label">Office</div>
+          <div class="contact-item-value">9454 Wilshire Blvd, Suite 100<br>Beverly Hills, CA 90212</div>
+        </div>
+        <div>
+          <div class="contact-item-label">Brokerage</div>
+          <div class="contact-item-value">Compass · DRE# 01991628</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-box reveal delay-2">
+      <div class="form-title">Send a message</div>
+      <p class="form-sub">We typically respond within a few hours on business days.</p>
+      <iframe data-tally-src="https://tally.so/embed/aQZxXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy" width="100%" height="420" frameborder="0"
+        marginheight="0" marginwidth="0" title="Contact AMRE"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════  FOOTER  ══════════════ -->
 <footer>
-  <div class="container">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-name">AMRE<span>.</span></div>
-        <p class="footer-tagline">Elite LA market knowledge, investment-focused expertise, and white-glove service — for every stage of your real estate journey.</p>
-        <div class="footer-compass">at Compass · Beverly Hills</div>
+  <div class="footer-top">
+    <div class="footer-brand-block">
+      <div class="footer-logos">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg"
+             alt="AMRE" onerror="this.outerHTML='<span style=\'font-size:14px;font-weight:500;color:rgba(255,255,255,.6)\'>AMRE</span>'">
+        <div class="foot-divider"></div>
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png"
+             alt="Compass" onerror="this.outerHTML='<span style=\'font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)\'>Compass</span>'">
       </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
-          <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
-          <li><a href="/amre-assets/website/properties/">Properties</a></li>
-          <li><a href="/amre-assets/website/team/">Team</a></li>
-          <li><a href="/amre-assets/website/contact/">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="sellers/#three-phase">3-Phase Marketing</a></li>
-          <li><a href="sellers/#concierge">Compass Concierge</a></li>
-          <li><a href="/amre-assets/website/buyers/">Buyer Advisory</a></li>
-          <li><a href="#contact">Home Valuation</a></li>
-          <li><a href="#contact">Investment Analysis</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Connect</div>
-        <ul class="footer-links">
-          <li><a href="tel:3237198585">(323) 719-8585</a></li>
-          <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
-          <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
-        </ul>
-      </div>
+      <p class="footer-tagline">Elite LA market knowledge, investment expertise, and white-glove service.</p>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. Information deemed reliable but not guaranteed.</div>
-      <div class="footer-dre">Michael Abraham CA DRE# 02242095 · Ania de Pourbaix CA DRE# 01891438 · Compass DRE# 01991628</div>
+    <div>
+      <div class="footer-col-head">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="sellers/">Sellers</a></li>
+        <li><a href="buyers/">Buyers</a></li>
+        <li><a href="properties/">Properties</a></li>
+        <li><a href="team/">Team</a></li>
+        <li><a href="contact/">Contact</a></li>
+      </ul>
     </div>
+    <div>
+      <div class="footer-col-head">Services</div>
+      <ul class="footer-links">
+        <li><a href="sellers/">3-Phase Marketing</a></li>
+        <li><a href="sellers/">Compass Concierge</a></li>
+        <li><a href="buyers/">Buyer Advisory</a></li>
+        <li><a href="#contact">Home Valuation</a></li>
+        <li><a href="#contact">Investment Advisory</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Connect</div>
+      <ul class="footer-links">
+        <li><a href="tel:3237198585">(323) 719-8585</a></li>
+        <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
+        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. Information deemed reliable but not guaranteed.</p>
+    <p class="footer-dre">Michael Abraham DRE# 02242095 · Ania de Pourbaix DRE# 01891438 · Compass DRE# 01991628</p>
   </div>
 </footer>
 
 <script>
-// Nav scroll behavior
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
+// Nav — switch to light theme when scrolled past hero
+const nav  = document.getElementById('mainNav');
+const hero = document.querySelector('.hero');
+const io   = new IntersectionObserver(
+  ([e]) => nav.classList.toggle('light', !e.isIntersecting),
+  { threshold: 0.05 }
+);
+io.observe(hero);
 
-// Fade-in observer
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
+// Scroll-reveal
+const revealIO = new IntersectionObserver(
+  entries => entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
-      observer.unobserve(e.target);
+      revealIO.unobserve(e.target);
     }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  }),
+  { threshold: 0.1, rootMargin: '0px 0px -48px 0px' }
+);
+document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
 </script>
 </body>
 </html>
