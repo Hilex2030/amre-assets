@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | AMRE Real Estate Group</title>
+<meta name="description" content="Contact AMRE Real Estate Group. Michael Abraham & Ania de Pourbaix — Compass Beverly Hills.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script async src="https://tally.so/widgets/embed.js"></script>
+<style>
+:root{--black:#0A0A0A;--ink:#111111;--off-black:#1A1A1A;--mid:#666666;--muted:#999999;--border-dark:#E8E8E8;--white:#FFFFFF;--cream:#F8F6F1;--gold:#B8965A;--gold-light:#D4AE78;--serif:'Cormorant',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif;--nav-h:72px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border-dark);}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:.08em;color:var(--ink);}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:10px 24px;border:1px solid var(--gold);color:var(--gold);border-radius:2px;transition:all .2s;}
+.nav-cta:hover{background:var(--gold);color:var(--black);}
+@media(max-width:900px){.nav{padding:0 24px;}.nav-links{display:none;}}
+
+/* MAIN CONTACT LAYOUT */
+.contact-page{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;}
+.contact-left{background:var(--ink);padding:calc(var(--nav-h) + 80px) 64px 80px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.contact-left::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(184,150,90,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(184,150,90,.05) 1px,transparent 1px);background-size:80px 80px;}
+.contact-left-content{position:relative;z-index:2;}
+.contact-eyebrow{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:16px;}
+.contact-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+.contact-headline{font-family:var(--serif);font-size:clamp(44px,5vw,72px);font-weight:300;line-height:.95;color:var(--white);letter-spacing:-.02em;margin-bottom:32px;}
+.contact-headline em{font-style:italic;color:var(--gold);}
+.contact-tagline{font-size:16px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.5);max-width:380px;margin-bottom:56px;}
+
+.contact-agents{display:flex;flex-direction:column;gap:32px;margin-bottom:48px;}
+.contact-agent{padding:28px;border:1px solid rgba(255,255,255,.08);border-radius:2px;transition:border-color .3s;}
+.contact-agent:hover{border-color:var(--gold);}
+.contact-agent-name{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--white);margin-bottom:4px;}
+.contact-agent-role{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.contact-agent-links{display:flex;flex-direction:column;gap:8px;}
+.contact-agent-link{font-size:13px;font-weight:300;color:rgba(255,255,255,.4);transition:color .2s;display:flex;align-items:center;gap:8px;}
+.contact-agent-link:hover{color:rgba(255,255,255,.8);}
+
+.contact-office{padding:28px;background:rgba(255,255,255,.03);border-radius:2px;}
+.contact-office-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:12px;}
+.contact-office-text{font-size:14px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.7;}
+
+/* RIGHT SIDE - FORM */
+.contact-right{background:var(--cream);padding:calc(var(--nav-h) + 80px) 64px 80px;display:flex;flex-direction:column;justify-content:flex-start;}
+.form-title{font-family:var(--serif);font-size:32px;font-weight:400;color:var(--ink);margin-bottom:8px;}
+.form-sub{font-size:15px;font-weight:300;color:var(--mid);line-height:1.6;margin-bottom:40px;}
+
+/* RESPONSE MODES */
+.contact-modes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:40px;}
+.contact-mode{padding:20px;border:1px solid var(--border-dark);border-radius:2px;cursor:pointer;transition:all .2s;background:var(--white);}
+.contact-mode:hover{border-color:var(--gold);}
+.contact-mode-icon{font-size:20px;margin-bottom:8px;}
+.contact-mode-label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.contact-mode-desc{font-size:12px;font-weight:300;color:var(--mid);}
+
+@media(max-width:900px){
+  .contact-page{grid-template-columns:1fr;min-height:auto;}
+  .contact-left{padding:calc(var(--nav-h) + 48px) 32px 48px;}
+  .contact-right{padding:48px 32px;}
+}
+
+footer{background:var(--black);padding:36px 48px;}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--white);}
+.footer-logo span{color:var(--gold);}
+.footer-legal,.footer-dre{font-size:11px;font-weight:300;color:rgba(255,255,255,.2);}
+@media(max-width:768px){footer{padding:28px 24px;}.footer-inner{flex-direction:column;text-align:center;}}
+
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.fd1{transition-delay:.1s;}.fd2{transition-delay:.15s;}.fd3{transition-delay:.25s;}.fd4{transition-delay:.35s;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">AMRE<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/sellers/">Sellers</a></li>
+    <li><a href="/buyers/">Buyers</a></li>
+    <li><a href="/properties/">Properties</a></li>
+    <li><a href="/team/">Team</a></li>
+  </ul>
+  <a href="tel:3237198585" class="nav-cta">Call Now</a>
+</nav>
+
+<div class="contact-page">
+  <!-- LEFT -->
+  <div class="contact-left">
+    <div class="contact-left-content">
+      <div class="contact-eyebrow fade-in">Contact</div>
+      <h1 class="contact-headline fade-in fd1">
+        Let's start<br>a <em>conversation.</em>
+      </h1>
+      <p class="contact-tagline fade-in fd2">Whether you're ready to move or just beginning to think about it — we're here to listen, advise, and deliver.</p>
+
+      <div class="contact-agents fade-in fd3">
+        <div class="contact-agent">
+          <div class="contact-agent-name">Michael Abraham</div>
+          <div class="contact-agent-role">Principal Agent · DRE# 02242095</div>
+          <div class="contact-agent-links">
+            <a href="tel:3237198585" class="contact-agent-link">📞 (323) 719-8585</a>
+            <a href="mailto:michael.abraham@compass.com" class="contact-agent-link">✉️ michael.abraham@compass.com</a>
+          </div>
+        </div>
+        <div class="contact-agent">
+          <div class="contact-agent-name">Ania de Pourbaix</div>
+          <div class="contact-agent-role">Principal Agent · DRE# 01891438</div>
+          <div class="contact-agent-links">
+            <a href="tel:3102703879" class="contact-agent-link">📞 (310) 270-3879</a>
+            <a href="mailto:ania.d@compass.com" class="contact-agent-link">✉️ ania.d@compass.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-office fade-in fd4">
+        <div class="contact-office-label">Office</div>
+        <p class="contact-office-text">
+          9454 Wilshire Blvd, Suite 100<br>
+          Beverly Hills, CA 90212<br>
+          Compass · DRE# 01991628
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="contact-right">
+    <div class="form-title fade-in">Send a message</div>
+    <p class="form-sub fade-in fd1">We typically respond within a few hours on business days. For urgent matters, call us directly.</p>
+
+    <div class="contact-modes fade-in fd2">
+      <div class="contact-mode">
+        <div class="contact-mode-icon">🏠</div>
+        <div class="contact-mode-label">Buying</div>
+        <div class="contact-mode-desc">Start your search</div>
+      </div>
+      <div class="contact-mode">
+        <div class="contact-mode-icon">💰</div>
+        <div class="contact-mode-label">Selling</div>
+        <div class="contact-mode-desc">Get a valuation</div>
+      </div>
+      <div class="contact-mode">
+        <div class="contact-mode-icon">📊</div>
+        <div class="contact-mode-label">Investing</div>
+        <div class="contact-mode-desc">Multifamily & more</div>
+      </div>
+      <div class="contact-mode">
+        <div class="contact-mode-icon">💬</div>
+        <div class="contact-mode-label">Just exploring</div>
+        <div class="contact-mode-desc">No pressure</div>
+      </div>
+    </div>
+
+    <div class="fade-in fd3">
+      <iframe data-tally-src="https://tally.so/embed/aQZxXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy" width="100%" height="480" frameborder="0"
+        marginheight="0" marginwidth="0" title="Get In Touch"></iframe>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">AMRE<span>.</span></div>
+    <div class="footer-legal">© 2026 AMRE Real Estate Group. Information deemed reliable but not guaranteed.</div>
+    <div class="footer-dre">Michael Abraham DRE# 02242095 · Ania de Pourbaix DRE# 01891438 · Compass DRE# 01991628</div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.05,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
