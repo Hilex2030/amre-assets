@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
 <title>Janiszewski Estate Planning · AMRE</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
 <style>
   :root {
     --white:#FFFFFF;
@@ -460,6 +462,164 @@
     table.port-table { min-width: 640px; }
   }
 
+  /* ============ MAP ============ */
+  .map-wrap {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+    background: white;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    position: relative;
+  }
+  #portfolio-map {
+    height: 580px;
+    width: 100%;
+    background: var(--gray-100);
+  }
+  .map-fallback {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); font-size: 14px;
+    pointer-events: none;
+  }
+  .map-legend {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--secondary);
+  }
+  .map-legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .map-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+  }
+  .map-dot.dot-keep { background: #248A3D; }
+  .map-dot.dot-hold { background: #0071E3; }
+  .map-dot.dot-sell { background: #B25000; }
+  .map-dot.dot-watch { background: #86868B; }
+  .map-dot.dot-renovate { background: #E30000; }
+  .leaflet-popup-content-wrapper {
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  }
+  .leaflet-popup-content {
+    margin: 14px 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  }
+  @media (max-width: 720px) {
+    #portfolio-map { height: 440px; }
+    .map-legend { gap: 14px; font-size: 13px; }
+  }
+
+  /* ============ PACKAGE CARDS ============ */
+  .pkg-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 980px) { .pkg-grid { grid-template-columns: 1fr; } }
+  .pkg-card {
+    background: var(--white);
+    border: 1px solid var(--hairline);
+    border-radius: 24px;
+    padding: 32px;
+    display: flex; flex-direction: column;
+  }
+  .pkg-card .pkg-tag {
+    display: inline-block; align-self: flex-start;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px 10px; border-radius: 980px;
+    margin-bottom: 14px;
+  }
+  .pkg-card h3 {
+    font-size: 22px; font-weight: 600; letter-spacing: -0.02em;
+    margin: 0 0 4px; line-height: 1.25;
+  }
+  .pkg-card .pkg-meta {
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .pkg-card p {
+    font-size: 15px; color: var(--secondary);
+    line-height: 1.6; margin: 0 0 16px;
+  }
+  .pkg-list {
+    margin: 0 0 16px; padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--gray-200);
+  }
+  .pkg-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 14px; color: var(--ink);
+  }
+  .pkg-list li:last-child { border-bottom: none; }
+  .pkg-action {
+    margin-top: auto;
+    padding: 14px 16px;
+    background: var(--gray-100);
+    border-radius: 12px;
+    font-size: 13px; color: var(--ink);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* ============ PREP CARDS ============ */
+  .prep-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 980px) { .prep-grid { grid-template-columns: 1fr; } }
+  .prep-card {
+    background: var(--white);
+    border: 1px solid var(--hairline);
+    border-radius: 24px;
+    padding: 32px;
+  }
+  .prep-card.prep-card-flag {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
+  }
+  .prep-card h3 {
+    font-size: 22px; font-weight: 600; letter-spacing: -0.02em;
+    margin: 0 0 4px;
+  }
+  .prep-card.prep-card-flag h3 { color: white; }
+  .prep-card .prep-meta {
+    font-size: 13px; color: var(--muted);
+    margin: 0 0 20px;
+  }
+  .prep-card.prep-card-flag .prep-meta { color: rgba(255,255,255,0.6); }
+  .prep-list {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .prep-list li {
+    padding: 10px 0;
+    border-top: 1px solid var(--gray-200);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--secondary);
+  }
+  .prep-card.prep-card-flag .prep-list li {
+    border-top-color: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.78);
+  }
+  .prep-list li:first-child { border-top: none; }
+  .prep-list strong { color: var(--ink); font-weight: 600; }
+  .prep-card.prep-card-flag .prep-list strong { color: white; }
+
   /* ============ FOOTER ============ */
   footer {
     border-top: 1px solid var(--hairline);
@@ -519,14 +679,10 @@
     <span class="nav-status">Active Estate Plan</span>
     <div class="nav-anchors">
       <a href="#summary">Summary</a>
+      <a href="#map">Map</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#irvine">Irvine</a>
-      <a href="#west-la">West LA</a>
-      <a href="#oceanside">Oceanside</a>
-      <a href="#riverside">Riverside</a>
-      <a href="#yucaipa">Yucaipa</a>
-      <a href="#sugarloaf">Sugarloaf</a>
-      <a href="#partnership">Partnership</a>
+      <a href="#packages">Packages</a>
+      <a href="#prep">Prep</a>
       <a href="#strategy">Strategy</a>
       <a href="#actions">Open Items</a>
     </div>
@@ -563,6 +719,26 @@
       <div class="pill-label">Pro-forma upside</div>
       <div class="pill-value">+$2.5M</div>
       <div class="pill-meta">Sherbourne value-add</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PORTFOLIO MAP ========== -->
+<section id="map">
+  <div class="container">
+    <div class="section-eyebrow">Geographic distribution</div>
+    <h2>The portfolio on the map.</h2>
+    <p class="lede">Five California regions. South Orange County (Irvine), West LA / Mid-City, Hollywood + Koreatown, the Inland Empire (Riverside + Yucaipa), the North County coast (Oceanside), and Big Bear (Sugarloaf). Pin colors reflect strategic posture — click any pin for the property snapshot.</p>
+    <div class="map-wrap">
+      <div id="portfolio-map" role="region" aria-label="Portfolio map showing 15 California properties"></div>
+      <div class="map-fallback" id="map-fallback">Loading map…</div>
+    </div>
+    <div class="map-legend">
+      <span><span class="map-dot dot-keep"></span>Keep · cash flow / hold</span>
+      <span><span class="map-dot dot-hold"></span>Optimize · reposition / hold</span>
+      <span><span class="map-dot dot-sell"></span>Sell candidate</span>
+      <span><span class="map-dot dot-renovate"></span>Renovate · restore</span>
+      <span><span class="map-dot dot-watch"></span>Verify pending</span>
     </div>
   </div>
 </section>
@@ -1332,6 +1508,117 @@
   </div>
 </section>
 
+<!-- ========== PACKAGE SALE OPPORTUNITIES ========== -->
+<section id="packages" class="section-gray">
+  <div class="container">
+    <div class="section-eyebrow">Package & group sale strategy</div>
+    <h2>Selling more, by selling together.</h2>
+    <p class="lede">Three concrete grouping plays. Each one trades on a different premium — partner-coordinated scale, asset-class fit for institutional buyers, or geographic concentration for a regional investor. Group sales typically command 3–8% premiums over the sum of individual sales because they attract larger, more sophisticated buyer pools.</p>
+    <div class="pkg-grid">
+
+      <div class="pkg-card">
+        <span class="pkg-tag tag-sell">Highest priority</span>
+        <h3>Hollywood + K-town · 24-unit package</h3>
+        <div class="pkg-meta">3 buildings · ~$7.8M total · ~$1.95M your share</div>
+        <p>Three 1960s-era 8-unit RSO buildings under the same partnership group. The Gramercy heir transition is the catalyst — estates prefer clean exits over the headache of multi-generational RSO management. A 24-unit "scale buy" attracts professional multifamily funds rather than mom-and-pop investors, and historically commands a premium over individual asset sales.</p>
+        <ul class="pkg-list">
+          <li>1012 N Hudson · 8 units · 1964</li>
+          <li>1016 N Hudson · 8 units · 1964 (adjacent to 1012)</li>
+          <li>321 S Gramercy · 8 units · 1959 · LAR4 zoning premium</li>
+        </ul>
+        <div class="pkg-action">Open the partner conversation now. Verify all three soft-story retrofit statuses + 321 Gramercy LLC structure before going to market.</div>
+      </div>
+
+      <div class="pkg-card">
+        <span class="pkg-tag tag-hold">Strategic option</span>
+        <h3>West LA value-add · 19 units</h3>
+        <div class="pkg-meta">2 properties · ~$3.65M as-is · ~$5M+ pro-forma</div>
+        <p>Sherbourne (15-unit) + Queen Anne (4-unit) as a combined offer to a multifamily value-add fund. Both 90034 / 90019, both with rent upside, both stabilized enough for bridge or agency financing. The package gives a fund 19 doors of West LA exposure with one closing — and lets you exit two assets that would otherwise be slow-moving individual sales.</p>
+        <ul class="pkg-list">
+          <li>1955 S Sherbourne · 15 units · 1963 · ~$1,333/unit current vs. $2,700 market</li>
+          <li>1282 Queen Anne · 4 units · ~$1,724/unit average</li>
+        </ul>
+        <div class="pkg-action">Model both paths. Package may discount Sherbourne's full pro-forma upside vs. a standalone reposition. Run the numbers before committing.</div>
+      </div>
+
+      <div class="pkg-card">
+        <span class="pkg-tag tag-watch">Long-term option</span>
+        <h3>Yucaipa portfolio · 5 properties</h3>
+        <div class="pkg-meta">5 properties · ~$3.07M total · ~10–13 doors</div>
+        <p>The five Yucaipa holdings span SFRs and small multifamily across the same Inland Empire submarket. Could attract a single regional investor seeking diversified yield in a low-tax, low-RSO county — particularly someone running a 1031 upleg from a coastal sale. Keep individually for now, but maintain a "ready file" so a single-buyer exit is executable on short notice.</p>
+        <ul class="pkg-list">
+          <li>12010, 12012, 12026 3rd St · same-street cluster</li>
+          <li>12333 Westpark Cir · modern (2006) SFR rental</li>
+          <li>33101 Eagle Point Dr · stabilized SFR in Chapman Heights</li>
+        </ul>
+        <div class="pkg-action">Hold for now. Maintain rent rolls + leases + insurance docs in a shared "ready file." Verify 12026 unit count first — could lift package value.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== LISTING PREP PLAYBOOK ========== -->
+<section id="prep">
+  <div class="container">
+    <div class="section-eyebrow">Sale readiness</div>
+    <h2>The 60-day pre-list playbook.</h2>
+    <p class="lede">Selling residential and selling RSO multifamily are different documentation stacks. These are the items to have in hand before anything goes to market — incomplete files cost basis points at close and trigger price reductions during inspection. The LA RSO column is where most of the work lives.</p>
+    <div class="prep-grid">
+
+      <div class="prep-card">
+        <h3>Single-family residences</h3>
+        <p class="prep-meta">Catawba · Plymouth · East St · Westpark · Eagle Point</p>
+        <ul class="prep-list">
+          <li><strong>TDS</strong> · Transfer Disclosure Statement (CA-required)</li>
+          <li><strong>SPQ</strong> · Seller Property Questionnaire</li>
+          <li><strong>NHD</strong> · Natural Hazard Disclosure (third-party report)</li>
+          <li><strong>Lead-based paint disclosure</strong> for pre-1978 stock — applies to <strong>Catawba (1969)</strong> and <strong>East St (1926)</strong></li>
+          <li><strong>Permit history</strong> from the city / county portal</li>
+          <li><strong>HOA disclosure packet</strong> for Catawba ($194/mo) and Eagle Point ($83/mo)</li>
+          <li><strong>Property tax bills</strong> · most recent annual + any supplemental</li>
+          <li><strong>Tenant lease + estoppel</strong> for any occupied SFR (Plymouth, Westpark, Eagle Point)</li>
+          <li><strong>Pre-list inspections</strong> (optional but recommended): general home, sewer scope on East St (1926), termite</li>
+        </ul>
+      </div>
+
+      <div class="prep-card">
+        <h3>Multifamily · Inland Empire</h3>
+        <p class="prep-meta">Villa St · 12010 / 12012 / 12026 3rd St</p>
+        <ul class="prep-list">
+          <li><strong>Rent roll</strong> · current snapshot + 12-month history</li>
+          <li><strong>Lease agreements</strong> for every unit, signed</li>
+          <li><strong>Tenant estoppels</strong> · executed before LOI is signed</li>
+          <li><strong>T-12 operating statement</strong> · expense detail by category</li>
+          <li><strong>Property tax bills</strong> · most recent + special assessments</li>
+          <li><strong>Insurance binder</strong> · current premium, claim history, fire-zone rating (Yucaipa 9–10/10)</li>
+          <li><strong>Capital improvements log</strong> · with receipts where possible</li>
+          <li><strong>Vendor contracts</strong> (lawn, pool at Villa St, pest, trash)</li>
+          <li><strong>Pool inspection</strong> for Villa St (1959 pool will draw CapEx credit requests)</li>
+        </ul>
+      </div>
+
+      <div class="prep-card prep-card-flag">
+        <h3>Multifamily · LA RSO</h3>
+        <p class="prep-meta">Sherbourne · Queen Anne · Hudson 1012/1016 · Gramercy</p>
+        <ul class="prep-list">
+          <li>All multifamily docs above, <strong>plus the LA-specific stack:</strong></li>
+          <li><strong>Soft-story retrofit certificate</strong> — Sherbourne (1963), Hudson 1012/1016 (1964), Gramercy (1959) all in scope</li>
+          <li><strong>RSO registration</strong> certificate · current year</li>
+          <li><strong>RSO compliance audit</strong> · rent registered on every unit</li>
+          <li><strong>REAP status check</strong> · confirm not in Rent Escrow Account Program</li>
+          <li><strong>Maximum allowable rent (MAR)</strong> calculation per unit</li>
+          <li><strong>Tenant relocation fee</strong> exposure (Ellis Act, owner move-in, no-fault)</li>
+          <li><strong>Tenant tenure</strong> report — long-tenured tenants discount price; recent vacancies signal turnover potential</li>
+          <li><strong>Building & Safety</strong> open work order check via LADBS portal</li>
+          <li><strong>Just Cause for Eviction</strong> compliance under LA Municipal Code</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ========== OPEN ITEMS / ACTIONS ========== -->
 <section id="actions">
   <div class="container-narrow">
@@ -1420,7 +1707,7 @@
 <footer>
   <div class="foot-brand"><b>AMRE</b> &nbsp;|&nbsp; compass</div>
   <div class="foot-meta">Janiszewski Estate Planning · Confidential portfolio review</div>
-  <div class="foot-meta" id="last-updated">Last updated May 1, 2026 at 4:34 PM PT</div>
+  <div class="foot-meta" id="last-updated">Last updated May 1, 2026 at 5:19 PM PT</div>
   <div class="foot-confidential">
     This document contains confidential financial information and strategic recommendations prepared for the Janiszewski estate. Valuations are estimates based on automated services, public records, and Compass comparables, and should be re-validated against current market conditions before any transaction. Tax projections assume conservative county rates and are not a substitute for advice from a licensed CPA or attorney.
   </div>
@@ -1428,7 +1715,7 @@
 
 <script>
 (function(){
-  const ACCESS_CODE = "janiszewski2026";
+  const ACCESS_CODE = "jani2026";
   const STORAGE_KEY = "janiszewski-estate-unlocked";
   const gate = document.getElementById('gate');
   const form = document.getElementById('gate-form');
@@ -1455,6 +1742,106 @@
       input.select();
     }
   });
+
+  // Portfolio map initialization
+  function initPortfolioMap() {
+    if (typeof L === 'undefined') {
+      // Leaflet hasn't loaded yet — retry briefly
+      setTimeout(initPortfolioMap, 200);
+      return;
+    }
+    const el = document.getElementById('portfolio-map');
+    if (!el || el.dataset.initialized === '1') return;
+    el.dataset.initialized = '1';
+
+    const fallback = document.getElementById('map-fallback');
+    if (fallback) fallback.style.display = 'none';
+
+    const properties = [
+      {lat: 33.6510, lng: -117.8157, name: '5381 Catawba Ln',         city: 'Irvine, CA 92603',    value: '$2,200,000',          posture: 'keep',     anchor: '#irvine'},
+      {lat: 34.0395, lng: -118.3893, name: '1955 S Sherbourne Dr',     city: 'Los Angeles, 90034',  value: '$2.4M – $4.86M',      posture: 'hold',     anchor: '#west-la'},
+      {lat: 34.0507, lng: -118.3358, name: '1282 Queen Anne Pl',       city: 'Los Angeles, 90019',  value: '$1,250,000',          posture: 'sell',     anchor: '#west-la'},
+      {lat: 34.0560, lng: -118.3293, name: '832 S Plymouth Blvd',      city: 'Los Angeles, 90019',  value: '$1,400,000',          posture: 'hold',     anchor: '#west-la'},
+      {lat: 33.2103, lng: -117.3717, name: '2714 East St',             city: 'Oceanside, 92054',    value: '$865,000',            posture: 'renovate', anchor: '#oceanside'},
+      {lat: 33.9740, lng: -117.3262, name: '1152-1168 Villa St',       city: 'Riverside, 92507',    value: '$2,400,000',          posture: 'keep',     anchor: '#riverside'},
+      {lat: 34.0317, lng: -117.0510, name: '12010 3rd St',             city: 'Yucaipa, 92399',      value: '$500,000',            posture: 'keep',     anchor: '#yucaipa'},
+      {lat: 34.0316, lng: -117.0506, name: '12012 3rd St',             city: 'Yucaipa, 92399',      value: '$700,000',            posture: 'keep',     anchor: '#yucaipa'},
+      {lat: 34.0314, lng: -117.0500, name: '12026 3rd St',             city: 'Yucaipa, 92399',      value: '$593,000',            posture: 'watch',    anchor: '#yucaipa'},
+      {lat: 34.0405, lng: -117.0260, name: '12333 Westpark Cir',       city: 'Yucaipa, 92399',      value: '$680,000',            posture: 'keep',     anchor: '#yucaipa'},
+      {lat: 34.0285, lng: -117.0143, name: '33101 Eagle Point Dr',     city: 'Yucaipa, 92399',      value: '$593,000',            posture: 'keep',     anchor: '#yucaipa'},
+      {lat: 34.2415, lng: -116.8055, name: '203 Moreno Ln #207',       city: 'Sugarloaf, 92386',    value: '$175,000',            posture: 'sell',     anchor: '#sugarloaf'},
+      {lat: 34.0915, lng: -118.3267, name: '1012 N Hudson Ave',        city: 'Los Angeles, 90038',  value: '$625,000 (25%)',      posture: 'hold',     anchor: '#partnership'},
+      {lat: 34.0918, lng: -118.3267, name: '1016 N Hudson Ave',        city: 'Los Angeles, 90038',  value: '$625,000 (25%)',      posture: 'hold',     anchor: '#partnership'},
+      {lat: 34.0680, lng: -118.3033, name: '321 S Gramercy Pl',        city: 'Los Angeles, 90020',  value: '$700,000 (25%)',      posture: 'sell',     anchor: '#partnership'}
+    ];
+
+    const colors = {
+      keep:     '#248A3D',
+      hold:     '#0071E3',
+      sell:     '#B25000',
+      watch:    '#86868B',
+      renovate: '#E30000'
+    };
+    const postureLabels = {
+      keep: 'Keep',
+      hold: 'Optimize / Hold',
+      sell: 'Sell candidate',
+      watch: 'Verify pending',
+      renovate: 'Renovate'
+    };
+
+    const map = L.map('portfolio-map', {
+      scrollWheelZoom: false,
+      zoomControl: true,
+      attributionControl: true
+    }).setView([34.0, -117.6], 8);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    const bounds = [];
+    properties.forEach(p => {
+      const marker = L.circleMarker([p.lat, p.lng], {
+        radius: 9,
+        fillColor: colors[p.posture] || '#0071E3',
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.95
+      }).addTo(map);
+
+      const popupHTML = [
+        '<div style="min-width:200px;">',
+        '<div style="font-weight:600;font-size:15px;letter-spacing:-0.01em;margin-bottom:2px;color:#1D1D1F;">', p.name, '</div>',
+        '<div style="font-size:12px;color:#86868B;margin-bottom:10px;">', p.city, '</div>',
+        '<div style="font-size:13px;color:#1D1D1F;"><strong>', p.value, '</strong></div>',
+        '<div style="font-size:12px;color:#6E6E73;margin-top:2px;">', postureLabels[p.posture] || '', '</div>',
+        '<div style="margin-top:10px;"><a href="', p.anchor, '" style="font-size:13px;color:#0071E3;text-decoration:none;font-weight:500;">View details &rarr;</a></div>',
+        '</div>'
+      ].join('');
+      marker.bindPopup(popupHTML);
+      bounds.push([p.lat, p.lng]);
+    });
+
+    if (bounds.length) {
+      map.fitBounds(bounds, { padding: [50, 50], maxZoom: 11 });
+    }
+
+    // Tap-to-enable scroll zoom on desktop click, since default is off
+    map.on('click', function() { map.scrollWheelZoom.enable(); });
+    map.on('mouseout', function() { map.scrollWheelZoom.disable(); });
+  }
+
+  // Defer init until both DOM and Leaflet are ready
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initPortfolioMap();
+  } else {
+    document.addEventListener('DOMContentLoaded', initPortfolioMap);
+  }
+  window.addEventListener('load', initPortfolioMap);
 
   // Active section highlight
   const anchors = Array.from(document.querySelectorAll('.nav-anchors a'));
