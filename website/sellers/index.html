@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sell With AMRE | Los Angeles Real Estate</title>
+<meta name="description" content="Sell your Los Angeles home with AMRE Real Estate Group. Compass 3-Phase Marketing, Private Exclusive, Concierge program, and proven results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script async src="https://tally.so/widgets/embed.js"></script>
+<style>
+:root {
+  --black:#0A0A0A; --ink:#111111; --off-black:#1A1A1A; --dark:#222222;
+  --mid:#666666; --muted:#999999; --border-dark:#E8E8E8;
+  --white:#FFFFFF; --cream:#F8F6F1; --gold:#B8965A; --gold-light:#D4AE78;
+  --serif:'Cormorant',Georgia,serif; --sans:'DM Sans',-apple-system,sans-serif;
+  --nav-h:72px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(255,255,255,0.92);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border-dark);}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:.08em;color:var(--ink);}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);}
+.nav-cta{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:10px 24px;border:1px solid var(--ink);color:var(--ink);border-radius:2px;transition:all .2s;}
+.nav-cta:hover{background:var(--ink);color:var(--white);}
+@media(max-width:900px){.nav{padding:0 24px;}.nav-links{display:none;}}
+
+/* PAGE HERO */
+.page-hero{padding-top:calc(var(--nav-h) + 80px);padding-bottom:80px;padding-left:48px;padding-right:48px;background:var(--ink);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(184,150,90,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(184,150,90,.04) 1px,transparent 1px);background-size:80px 80px;}
+.page-hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:16px;}
+.page-hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+.page-hero h1{font-family:var(--serif);font-size:clamp(52px,7vw,100px);font-weight:300;line-height:.95;color:var(--white);letter-spacing:-.02em;max-width:800px;margin-bottom:32px;}
+.page-hero h1 em{font-style:italic;color:var(--gold);}
+.page-hero-sub{font-size:18px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.55);max-width:520px;}
+@media(max-width:768px){.page-hero{padding-left:24px;padding-right:24px;}}
+
+/* SECTIONS */
+section{padding:100px 48px;}
+.section-dark{background:var(--ink);color:var(--white);}
+.section-cream{background:var(--cream);}
+.container{max-width:1280px;margin:0 auto;}
+.container-md{max-width:960px;margin:0 auto;}
+
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:16px;}
+.eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+h2{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-.02em;}
+h2 em{font-style:italic;color:var(--gold);}
+.section-dark h2{color:var(--white);}
+.lede{font-size:18px;font-weight:300;line-height:1.7;color:var(--mid);max-width:560px;}
+.section-dark .lede{color:rgba(255,255,255,.55);}
+.divider{width:48px;height:1px;background:var(--gold);margin:28px 0;}
+
+/* PHASES */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px;border:1px solid rgba(255,255,255,.1);}
+.phase{padding:52px 44px;border-right:1px solid rgba(255,255,255,.1);position:relative;}
+.phase:last-child{border-right:none;}
+.phase-num{font-family:var(--serif);font-size:11px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;}
+.phase-title{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--white);margin-bottom:16px;}
+.phase-body{font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.5);margin-bottom:28px;}
+.phase-stat{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:var(--white);background:rgba(255,255,255,.08);border-radius:2px;padding:8px 16px;}
+.phase-bg-num{position:absolute;top:24px;right:24px;font-family:var(--serif);font-size:120px;font-weight:300;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;}
+@media(max-width:900px){.phases{grid-template-columns:1fr;}.phase{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);}.phase:last-child{border-bottom:none;}}
+
+/* DATA CARDS */
+.data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.08);margin-top:64px;}
+.data-card{background:var(--ink);padding:48px 40px;text-align:center;}
+.data-card-num{font-family:var(--serif);font-size:64px;font-weight:300;color:var(--white);line-height:1;margin-bottom:8px;}
+.data-card-num span{color:var(--gold);}
+.data-card-lbl{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+@media(max-width:768px){.data-cards{grid-template-columns:1fr 1fr;}}
+
+/* CONCIERGE */
+.concierge-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.concierge-visual{background:var(--ink);padding:52px;border-radius:2px;}
+.concierge-visual-title{font-family:var(--serif);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:32px;}
+.concierge-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;}
+.concierge-row:last-child{border-bottom:none;}
+.concierge-row-label{font-weight:300;color:rgba(255,255,255,.5);}
+.concierge-row-value{font-weight:500;color:var(--white);}
+.concierge-row-value.gold{color:var(--gold);}
+.concierge-content .eyebrow{margin-top:0;}
+.concierge-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:28px 0;}
+.concierge-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;font-weight:300;line-height:1.6;color:var(--mid);}
+.concierge-list li::before{content:'→';color:var(--gold);flex-shrink:0;margin-top:2px;}
+@media(max-width:900px){.concierge-layout{grid-template-columns:1fr;}}
+
+/* VALUATION CTA */
+.valuation-cta{background:linear-gradient(135deg,var(--gold) 0%,#8B6A35 100%);padding:80px 48px;text-align:center;}
+.valuation-cta h2{color:var(--black);margin-bottom:16px;}
+.valuation-cta h2 em{color:var(--black);font-style:italic;}
+.valuation-cta p{font-size:18px;font-weight:300;color:rgba(0,0,0,.6);max-width:480px;margin:0 auto 40px;}
+
+/* BUTTONS */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:16px 36px;background:var(--gold);color:var(--black);border-radius:2px;transition:background .2s,transform .15s;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-dark{background:var(--ink);color:var(--white);}
+.btn-dark:hover{background:#333;transform:translateY(-1px);}
+.btn-outline{background:transparent;border:1px solid var(--black);color:var(--black);}
+.btn-outline:hover{background:var(--black);color:var(--white);}
+
+/* CONTACT STRIP */
+.contact-strip{background:var(--cream);padding:80px 48px;}
+.contact-strip-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-form-wrap{background:var(--white);padding:48px;border-radius:2px;border:1px solid var(--border-dark);}
+@media(max-width:768px){.contact-strip-inner{grid-template-columns:1fr;}.contact-strip,.valuation-cta,section{padding-left:24px;padding-right:24px;}}
+
+/* FOOTER */
+footer{background:var(--black);padding:48px;border-top:1px solid rgba(255,255,255,.06);}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--white);}
+.footer-logo span{color:var(--gold);}
+.footer-legal{font-size:11px;font-weight:300;color:rgba(255,255,255,.2);}
+.footer-dre{font-size:11px;font-weight:300;color:rgba(255,255,255,.2);}
+@media(max-width:768px){footer{padding:36px 24px;}.footer-inner{flex-direction:column;text-align:center;}}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.fd1{transition-delay:.1s;}.fd2{transition-delay:.2s;}.fd3{transition-delay:.3s;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">AMRE<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/sellers/" class="active">Sellers</a></li>
+    <li><a href="/buyers/">Buyers</a></li>
+    <li><a href="/properties/">Properties</a></li>
+    <li><a href="/team/">Team</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Valuation</a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-eyebrow">Seller Advisory</div>
+    <h1>Sell on your<br>terms. Not the<br><em>market's.</em></h1>
+    <p class="page-hero-sub">Our Compass 3-Phase Marketing Strategy gives your home unparalleled exposure while protecting its value — and your privacy.</p>
+  </div>
+</div>
+
+<!-- THREE PHASE -->
+<section class="section-dark" id="three-phase">
+  <div class="container">
+    <div class="eyebrow fade-in">The AMRE Approach</div>
+    <h2 class="fade-in">Three phases.<br><em>One advantage.</em></h2>
+    <p class="lede fade-in" style="margin-top:16px;">The same playbook used by professional homebuilders and developers — now available to every Compass seller.</p>
+    <div class="phases">
+      <div class="phase fade-in">
+        <div class="phase-bg-num">01</div>
+        <div class="phase-num">Phase 01</div>
+        <div class="phase-title">Private Exclusive</div>
+        <p class="phase-body">Your property is quietly marketed to Compass's nationwide network of 34,000+ top agents and their qualified buyers. No public MLS. No days on market accumulating. No public price drops.<br><br>Test pricing, gather real feedback, and sometimes find a buyer willing to pay a premium for early access. All inquiries route directly to Michael & Ania — no lead diversion to third-party agents.</p>
+        <div class="phase-stat">34,000+ Compass agents</div>
+      </div>
+      <div class="phase fade-in fd1">
+        <div class="phase-bg-num">02</div>
+        <div class="phase-num">Phase 02</div>
+        <div class="phase-title">Coming Soon</div>
+        <p class="phase-body">Your listing moves to Compass.com — publicly visible to all agents and buyers on the internet, but still not on the MLS. No days-on-market clock running. No price drop history visible.<br><br>You get the buzz and urgency of a full public launch without the downside risk. Engagement data flows back to us — how many agents viewed it, bookmarked it, shared it.</p>
+        <div class="phase-stat">60M+ buyers on Compass.com</div>
+      </div>
+      <div class="phase fade-in fd2">
+        <div class="phase-bg-num">03</div>
+        <div class="phase-num">Phase 03</div>
+        <div class="phase-title">Full MLS Launch</div>
+        <p class="phase-body">Armed with feedback from Phases 1 & 2, we launch on the MLS and all major platforms — Zillow, Redfin, Realtor.com — with a market-tested price and pre-established demand.<br><br>Your listing enters the public market with momentum. The data we gathered shapes every detail of the launch strategy.</p>
+        <div class="phase-stat">MLS + all portals</div>
+      </div>
+    </div>
+
+    <div class="data-cards" style="margin-top:2px;">
+      <div class="data-card fade-in">
+        <div class="data-card-num"><span>+</span>2.9<span>%</span></div>
+        <div class="data-card-lbl">Higher closing prices vs. direct-to-MLS · Compass 2024 data</div>
+      </div>
+      <div class="data-card fade-in fd1">
+        <div class="data-card-num">20<span>%</span></div>
+        <div class="data-card-lbl">Faster to accepted offer · Compass 2024 data</div>
+      </div>
+      <div class="data-card fade-in fd2">
+        <div class="data-card-num">30<span>%</span></div>
+        <div class="data-card-lbl">Less likely to take a price cut · Compass 2024 data</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCIERGE -->
+<section id="concierge">
+  <div class="container">
+    <div class="concierge-layout">
+      <div class="concierge-content">
+        <div class="eyebrow fade-in">Compass Concierge</div>
+        <h2 class="fade-in">Make updates.<br>Pay nothing<br>until <em>closing.</em></h2>
+        <div class="divider"></div>
+        <p style="font-size:16px;font-weight:300;line-height:1.8;color:var(--mid);margin-bottom:24px;" class="fade-in">Compass fronts the cost of pre-sale improvements — interest-free — so you can maximize your sale price without out-of-pocket expenses today.</p>
+        <ul class="concierge-list fade-in">
+          <li>Fresh exterior and interior paint</li>
+          <li>Landscaping and curb appeal improvements</li>
+          <li>Deep cleaning and professional staging</li>
+          <li>Minor plumbing or electrical touchups</li>
+          <li>Roof, gutters, or exterior repairs</li>
+          <li>Kitchen and bathroom updates</li>
+          <li>Flooring replacement or refinishing</li>
+        </ul>
+        <a href="#contact" class="btn-primary fade-in">Explore Concierge</a>
+      </div>
+      <div class="concierge-visual fade-in">
+        <div class="concierge-visual-title">How Concierge Works</div>
+        <div class="concierge-row">
+          <span class="concierge-row-label">Interest rate</span>
+          <span class="concierge-row-value gold">0%</span>
+        </div>
+        <div class="concierge-row">
+          <span class="concierge-row-label">Fees</span>
+          <span class="concierge-row-value gold">None</span>
+        </div>
+        <div class="concierge-row">
+          <span class="concierge-row-label">Repayment</span>
+          <span class="concierge-row-value">At close of escrow only</span>
+        </div>
+        <div class="concierge-row">
+          <span class="concierge-row-label">Out-of-pocket today</span>
+          <span class="concierge-row-value gold">$0</span>
+        </div>
+        <div class="concierge-row">
+          <span class="concierge-row-label">If home doesn't sell</span>
+          <span class="concierge-row-value">Per program terms</span>
+        </div>
+        <div style="margin-top:28px;padding:20px;background:rgba(184,150,90,.1);border-radius:2px;">
+          <p style="font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.6);">Even small improvements — fresh paint, cleaned common areas — can meaningfully improve first impressions and maximize your sale price.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUATION CTA -->
+<div class="valuation-cta">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center;color:rgba(0,0,0,.5);">Free Home Valuation</div>
+    <h2 style="color:var(--black);">Find out what<br>your home is <em>worth.</em></h2>
+    <p>Get a comprehensive analysis of your home's value based on current market data, comparable sales, and our local expertise.</p>
+    <a href="#contact" class="btn-primary btn-dark">Request Your Valuation</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-strip" id="contact">
+  <div class="contact-strip-inner">
+    <div>
+      <div class="eyebrow fade-in">Ready to Sell?</div>
+      <h2 class="fade-in" style="font-size:clamp(32px,4vw,52px);">Let's build<br>your <em>strategy.</em></h2>
+      <div class="divider"></div>
+      <p style="font-size:15px;font-weight:300;line-height:1.8;color:var(--mid);margin-bottom:32px;" class="fade-in">We'll start with a free consultation — no obligation. We'll walk you through market conditions, your home's positioning, and the exact strategy we'd use to maximize your proceeds.</p>
+      <div style="display:flex;flex-direction:column;gap:16px;" class="fade-in">
+        <div style="font-size:14px;font-weight:300;color:var(--mid);">📞 <a href="tel:3237198585" style="color:var(--ink);">(323) 719-8585</a></div>
+        <div style="font-size:14px;font-weight:300;color:var(--mid);">✉️ <a href="mailto:michael.abraham@compass.com" style="color:var(--ink);">michael.abraham@compass.com</a></div>
+        <div style="font-size:14px;font-weight:300;color:var(--mid);">📍 9454 Wilshire Blvd, Suite 100, Beverly Hills CA 90212</div>
+      </div>
+    </div>
+    <div class="contact-form-wrap fade-in">
+      <div style="font-family:var(--serif);font-size:24px;font-weight:400;margin-bottom:8px;">Start a conversation</div>
+      <p style="font-size:14px;font-weight:300;color:var(--mid);margin-bottom:24px;line-height:1.6;">We typically respond within a few hours.</p>
+      <iframe data-tally-src="https://tally.so/embed/aQZxXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy" width="100%" height="420" frameborder="0"
+        marginheight="0" marginwidth="0" title="Get In Touch"></iframe>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">AMRE<span>.</span></div>
+    <div class="footer-legal">© 2026 AMRE Real Estate Group. Information deemed reliable but not guaranteed.</div>
+    <div class="footer-dre">Michael Abraham DRE# 02242095 · Ania de Pourbaix DRE# 01891438 · Compass DRE# 01991628</div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
