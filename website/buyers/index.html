@@ -6,13 +6,13 @@
 <title>Buy a Home in Los Angeles | AMRE Real Estate Group | Buyer Advisory & Off-Market Access</title>
 <meta name="description" content="Buy your next LA home with AMRE. Access to Private Exclusives, off-market properties, and expert buyer representation. Architectural insight, fearless negotiation. Call (323) 719-8585.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://amre.group/buyers">
+<link rel="canonical" href="https://hilex2030.github.io/amre-assets/website/buyers/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Buy a Home in Los Angeles | AMRE Real Estate Group | Buyer Advisory & Off-Market Access">
 <meta property="og:description" content="Buy your next LA home with AMRE. Access to Private Exclusives, off-market properties, and expert buyer representation. Architectural insight, fearless negotiation. Call (323) 719-8585.">
 <meta property="og:image" content="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=900/https://media-production.lp-cdn.com/media/da69cef8-797b-4d84-b74e-4a5937adf975">
-<meta property="og:url" content="https://amre.group/buyers">
+<meta property="og:url" content="https://hilex2030.github.io/amre-assets/website/buyers/">
 <meta property="og:site_name" content="AMRE Real Estate Group">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -358,25 +358,59 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   border:none !important;
 }
 
+
+
+/* ====================================================================
+   AMRE 2026 site update — typography refresh, readability bump,
+   footer contrast, hero re-flow.
+   ==================================================================== */
+.hero-h, .section-h, .page-hero h1, .svc-title, .agent-name, .compass-card-h, .prop-cta-h, .prop-price, .form-box-title, .statement-q, .testi-text {
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: -.015em;
+}
+.hero-h em, .section-h em, .page-hero h1 em, .prop-cta-h em, .compass-card-h em {
+  font-style: italic; font-weight: 400;
+}
+.statement-q, .testi-text { font-weight: 400; font-style: italic; }
+.prop-price { font-weight: 600; letter-spacing: 0; }
+.hero-h { line-height: 1.05; }
+.page-hero h1 { line-height: 1.05; }
+.section-h { line-height: 1.12; }
+.lede { font-size: 18px; line-height: 1.7; }
+.svc-desc, .compass-card-p, .agent-bio, .faq-a p { font-size: 15px; line-height: 1.78; }
+.testi-text { font-size: 17px; line-height: 1.65; }
+.contact-val { font-size: 15px; }
+.form-box-sub { font-size: 14px; }
+.page-hero-sub, .hero-sub { font-size: clamp(15px, 1.7vw, 18px); line-height: 1.7; }
+.footer-tagline { color: rgba(255,255,255,.62); font-size: 13px; max-width: 260px; }
+.footer-col-head { color: rgba(255,255,255,.55); font-size: 10px; }
+.footer-links a { color: rgba(255,255,255,.72); font-size: 13px; }
+.footer-links a:hover { color: #fff; }
+.footer-legal { color: rgba(255,255,255,.50); font-size: 11px; }
+.footer-dre { color: rgba(255,255,255,.40); font-size: 11px; }
+.hero-content { max-width: 880px; }
+.hero-h { font-size: clamp(44px, 6.2vw, 84px); }
+@media (max-width: 680px) { .hero-content { max-width: 100%; } }
 </style>
 </head>
 <body>
-<nav class="site-nav" id="siteNav">
+<nav class="site-nav" id="siteNav" role="navigation" aria-label="Main navigation">
   <a href="/amre-assets/website/" class="nav-brand" aria-label="AMRE Real Estate Group">
-    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" class="logo-white" width="80" height="20">
-    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-black.svg" alt="AMRE Real Estate Group" class="logo-dark" width="80" height="20">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" class="logo-white nav-amre" width="80" height="22">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-black.svg" alt="AMRE Real Estate Group" class="logo-dark nav-amre" width="80" height="22">
     <div class="nav-sep" aria-hidden="true"></div>
-    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" class="logo-white" width="72" height="16">
-    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-black.png" alt="Compass" class="logo-dark" width="72" height="16">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" class="logo-white nav-compass" width="70" height="15">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-black.png" alt="Compass" class="logo-dark nav-compass" width="70" height="15">
   </a>
   <ul class="nav-links">
-    <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
-    <li><a href="/amre-assets/website/buyers/" class="active">Buyers</a></li>
-    <li><a href="/amre-assets/website/properties/">Properties</a></li>
-    <li><a href="/amre-assets/website/team/">Team</a></li>
-    <li><a href="/amre-assets/website/contact/">Contact</a></li>
+      <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+      <li><a href="/amre-assets/website/buyers/" class="active">Buyers</a></li>
+      <li><a href="/amre-assets/website/properties/">Properties</a></li>
+      <li><a href="/amre-assets/website/team/">Team</a></li>
+      <li><a href="/amre-assets/website/contact/">Contact</a></li>
   </ul>
-  <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
+  <a href="/amre-assets/website/contact/" class="nav-cta">Get In Touch</a>
 </nav>
 <div class="page-hero">
   <div class="page-hero-bg-img" style="background-image:url('https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=900/https://media-production.lp-cdn.com/media/da69cef8-797b-4d84-b74e-4a5937adf975')"></div>
@@ -518,15 +552,14 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 <footer class="site-footer" itemscope itemtype="https://schema.org/RealEstateAgent">
   <meta itemprop="name" content="AMRE Real Estate Group">
   <meta itemprop="telephone" content="+13237198585">
-  <meta itemprop="email" content="michael.abraham@compass.com">
   <div class="footer-grid">
-    <div class="footer-brand">
+    <div>
       <div class="footer-logos">
-        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" width="70" height="16">
-        <div class="footer-logo-sep"></div>
-        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64" height="14">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" width="70">
+        <div class="footer-sep"></div>
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64">
       </div>
-      <p class="footer-tagline">Elite Los Angeles real estate advisory — for sellers, buyers, and investors of the city's finest properties.</p>
+      <p class="footer-tagline">Empowering clients to achieve their real estate dreams, one home at a time. Compass Beverly Hills.</p>
     </div>
     <div>
       <div class="footer-col-head">Navigate</div>
@@ -544,8 +577,8 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
         <li><a href="/amre-assets/website/sellers/#three-phase">3-Phase Marketing</a></li>
         <li><a href="/amre-assets/website/sellers/#concierge">Compass Concierge</a></li>
         <li><a href="/amre-assets/website/buyers/">Buyer Advisory</a></li>
-        <li><a href="/amre-assets/website/#contact">Home Valuation</a></li>
-        <li><a href="/amre-assets/website/#contact">Investment Advisory</a></li>
+        <li><a href="/amre-assets/website/contact/">Home Valuation</a></li>
+        <li><a href="/amre-assets/website/contact/">Investment Advisory</a></li>
       </ul>
     </div>
     <div>
@@ -554,14 +587,14 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
         <li><a href="tel:3237198585">(323) 719-8585</a></li>
         <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
         <li><a href="https://www.instagram.com/michaelabraham.realtor/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="https://www.youtube.com/@MichaelAbraham.Realtor" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. Information deemed reliable but not guaranteed. Equal Housing Opportunity.</p>
-    <p class="footer-dre">Michael Abraham CA DRE# 02242095 &nbsp;·&nbsp; Ania De Pourbaix CA DRE# 01891438 &nbsp;·&nbsp; Compass DRE# 01991628</p>
+    <p class="footer-dre">Michael Abraham CA DRE# 02242095  ·  Ania De Pourbaix CA DRE# 01891438  ·  Compass DRE# 01991628</p>
   </div>
 </footer>
 <script>
