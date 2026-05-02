@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMRE Real Estate Group | Los Angeles</title>
+<meta name="description" content="AMRE Real Estate Group — elite Los Angeles real estate professionals. Expert advisory for sellers, buyers, and investors of LA's finest properties.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script async src="https://tally.so/widgets/embed.js"></script>
+<style>
+:root {
+  --black: #0A0A0A;
+  --ink: #111111;
+  --off-black: #1A1A1A;
+  --dark: #222222;
+  --mid: #666666;
+  --muted: #999999;
+  --border: rgba(255,255,255,0.1);
+  --border-dark: #E8E8E8;
+  --white: #FFFFFF;
+  --cream: #F8F6F1;
+  --gold: #B8965A;
+  --gold-light: #D4AE78;
+  --blue: #0071E3;
+
+  --serif: 'Cormorant', Georgia, serif;
+  --sans: 'DM Sans', -apple-system, sans-serif;
+
+  --nav-h: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+img { display: block; max-width: 100%; }
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  transition: background 0.4s, border-color 0.4s;
+}
+.nav.scrolled {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border-dark);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  transition: color 0.4s;
+}
+.nav.scrolled .nav-logo { color: var(--ink); }
+.nav-logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex; align-items: center; gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+}
+.nav.scrolled .nav-links a { color: var(--mid); }
+.nav-links a:hover { color: var(--white); }
+.nav.scrolled .nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: var(--white);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.nav.scrolled .nav-cta {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.nav-cta:hover {
+  background: var(--white);
+  color: var(--ink);
+}
+.nav.scrolled .nav-cta:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .nav { padding: 0 24px; }
+  .nav-links { display: none; }
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 48px 80px;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    160deg,
+    #0A0A0A 0%,
+    #1A1A2E 35%,
+    #16213E 60%,
+    #0A0A0A 100%
+  );
+}
+
+/* Subtle grid overlay */
+.hero-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(184,150,90,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184,150,90,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Gradient fade at bottom */
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(10,10,10,0.9) 100%);
+}
+
+.hero-label {
+  position: relative; z-index: 2;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.hero-label::before {
+  content: '';
+  display: block;
+  width: 40px; height: 1px;
+  background: var(--gold);
+}
+
+.hero-headline {
+  position: relative; z-index: 2;
+  font-family: var(--serif);
+  font-size: clamp(56px, 8vw, 112px);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  position: relative; z-index: 2;
+  max-width: 500px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 48px;
+}
+
+.hero-actions {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; gap: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: var(--white); border-color: var(--white); }
+
+.hero-scroll {
+  position: absolute; z-index: 2;
+  bottom: 40px; right: 48px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.hero-scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+  animation: scrollPulse 2s infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 0 24px 60px; }
+  .hero-scroll { display: none; }
+}
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: var(--cream);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: var(--border-dark);
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+}
+.stat-cell {
+  background: var(--cream);
+  padding: 36px 40px;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.stat-num span { color: var(--gold); }
+.stat-lbl {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+@media (max-width: 768px) {
+  .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 0; }
+  .stat-num { font-size: 40px; }
+}
+
+/* ── SECTIONS ── */
+section { padding: 120px 48px; }
+.section-dark { background: var(--ink); color: var(--white); }
+.section-cream { background: var(--cream); }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 16px;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px; height: 1px;
+  background: var(--gold);
+}
+
+h2 {
+  font-family: var(--serif);
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+h2 em { font-style: italic; color: var(--gold); }
+
+.section-dark h2 { color: var(--white); }
+
+.lede {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--mid);
+  max-width: 560px;
+}
+.section-dark .lede { color: rgba(255,255,255,0.55); }
+
+.container { max-width: 1280px; margin: 0 auto; }
+.container-md { max-width: 980px; margin: 0 auto; }
+
+@media (max-width: 768px) {
+  section { padding: 80px 24px; }
+}
+
+/* ── SERVICES ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-dark);
+  border: 1px solid var(--border-dark);
+  margin-top: 64px;
+}
+.service-card {
+  background: var(--white);
+  padding: 52px 44px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.service-card:hover { background: var(--cream); }
+.service-num {
+  font-family: var(--serif);
+  font-size: 72px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.06);
+  line-height: 1;
+  margin-bottom: 32px;
+  letter-spacing: -0.04em;
+}
+.service-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.service-desc {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--mid);
+  margin-bottom: 32px;
+}
+.service-link {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 8px;
+}
+.service-link::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+.service-card:hover .service-link::after { transform: translateX(4px); }
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* ── ABOUT / MISSION ── */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-visual {
+  position: relative;
+  height: 600px;
+}
+.about-img-main {
+  position: absolute;
+  top: 0; left: 0;
+  width: 75%;
+  height: 80%;
+  background: linear-gradient(135deg, #1A1A2E, #2D2D44);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.about-img-accent {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 50%;
+  height: 45%;
+  background: var(--gold);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+}
+.about-img-text {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.about-img-quote {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--black);
+  text-align: center;
+  padding: 24px;
+  line-height: 1.5;
+}
+.about-content { padding-right: 24px; }
+.about-content .eyebrow { margin-top: 32px; }
+.about-body {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--mid);
+  margin: 32px 0;
+}
+.about-body strong { color: var(--ink); font-weight: 500; }
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .about-visual { height: 360px; }
+  .about-content { padding-right: 0; }
+}
+
+/* ── COMPASS SECTION ── */
+.compass-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 64px;
+}
+.compass-card {
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 2px;
+  transition: border-color 0.3s, background 0.3s;
+}
+.compass-card:hover {
+  border-color: var(--gold);
+  background: rgba(184,150,90,0.05);
+}
+.compass-card-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.compass-card-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.compass-card-body {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+}
+@media (max-width: 900px) {
+  .compass-grid { grid-template-columns: 1fr; }
+}
+
+/* ── TEAM ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 64px;
+}
+.team-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--off-black);
+  padding: 56px 52px;
+  transition: background 0.3s;
+}
+.team-card:hover { background: #252525; }
+.team-card-role {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.team-card-name {
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.team-card-bio {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.5);
+  max-width: 380px;
+  margin-bottom: 32px;
+}
+.team-card-dre {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.25);
+}
+.team-card-dre strong { color: rgba(255,255,255,0.4); font-weight: 400; }
+.team-card-num {
+  position: absolute;
+  top: 40px; right: 40px;
+  font-family: var(--serif);
+  font-size: 120px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255,255,255,0.03);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+.testimonial {
+  padding: 40px;
+  border: 1px solid var(--border-dark);
+  border-radius: 2px;
+  position: relative;
+}
+.testimonial::before {
+  content: '"';
+  font-family: var(--serif);
+  font-size: 80px;
+  font-weight: 300;
+  color: var(--gold);
+  opacity: 0.3;
+  position: absolute;
+  top: 16px; left: 32px;
+  line-height: 1;
+}
+.testimonial-text {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 28px;
+  padding-top: 24px;
+}
+.testimonial-author {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+@media (max-width: 900px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
+/* ── CONTACT ── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-info {}
+.contact-info h2 { margin-bottom: 24px; }
+.contact-info .lede { margin-bottom: 48px; }
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.contact-item {}
+.contact-item-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.contact-item-value {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--ink);
+}
+.contact-item-value a { color: var(--ink); }
+.contact-item-value a:hover { color: var(--gold); }
+
+.contact-form-wrap {
+  background: var(--cream);
+  padding: 52px;
+  border-radius: 2px;
+}
+.contact-form-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.contact-form-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-form-wrap { padding: 36px 28px; }
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  padding: 72px 48px 36px;
+  color: rgba(255,255,255,0.4);
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 36px;
+}
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.footer-brand-name span { color: var(--gold); }
+.footer-tagline {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.4);
+  max-width: 280px;
+  margin-bottom: 24px;
+}
+.footer-compass {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.footer-col-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 20px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-legal {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.2);
+}
+.footer-dre {
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.2);
+  text-align: right;
+}
+@media (max-width: 900px) {
+  footer { padding: 56px 24px 32px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-dre { text-align: center; }
+}
+@media (max-width: 480px) {
+  .footer-top { grid-template-columns: 1fr; }
+}
+
+/* ── ANIMATIONS ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+
+/* ── DIVIDER ── */
+.divider {
+  width: 48px; height: 1px;
+  background: var(--gold);
+  margin: 32px 0;
+}
+.section-dark .divider { background: rgba(255,255,255,0.2); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo">AMRE<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="sellers/">Sellers</a></li>
+    <li><a href="buyers/">Buyers</a></li>
+    <li><a href="properties/">Properties</a></li>
+    <li><a href="team/">Team</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get In Touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-label">Los Angeles Real Estate</div>
+  <h1 class="hero-headline">
+    Elite advisory<br>
+    for <em>discerning</em><br>
+    clients.
+  </h1>
+  <p class="hero-sub">
+    AMRE Real Estate Group delivers expert advisory services to sellers, buyers, and developers of Los Angeles's finest properties.
+  </p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn-primary">Start a Conversation</a>
+    <a href="properties/" class="btn-ghost">View Properties &nbsp;→</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-cell fade-in">
+    <div class="stat-num">20<span>+</span></div>
+    <div class="stat-lbl">Years Combined Experience</div>
+  </div>
+  <div class="stat-cell fade-in fade-in-delay-1">
+    <div class="stat-num"><span>$</span>1B<span>+</span></div>
+    <div class="stat-lbl">In Transactions</div>
+  </div>
+  <div class="stat-cell fade-in fade-in-delay-2">
+    <div class="stat-num">LA<span>'s</span></div>
+    <div class="stat-lbl">Top Producing Team</div>
+  </div>
+  <div class="stat-cell fade-in fade-in-delay-3">
+    <div class="stat-num"><span>#</span>1</div>
+    <div class="stat-lbl">Compass Beverly Hills</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="eyebrow fade-in">What We Do</div>
+    <h2 class="fade-in">A full-spectrum<br>real estate <em>practice.</em></h2>
+    <div class="services-grid" style="margin-top: 64px;">
+      <div class="service-card fade-in">
+        <div class="service-num">01</div>
+        <div class="service-title">Buying</div>
+        <p class="service-desc">Navigating the Los Angeles market with precision and inside access. From first-time buyers to seasoned investors, we guide every client to the right property at the right price.</p>
+        <a href="buyers/" class="service-link">Buyer Resources</a>
+      </div>
+      <div class="service-card fade-in fade-in-delay-1">
+        <div class="service-num">02</div>
+        <div class="service-title">Selling</div>
+        <p class="service-desc">Our Compass 3-Phase Marketing Strategy — Private Exclusive, Coming Soon, and Full MLS Launch — gives your home maximum exposure while protecting its value.</p>
+        <a href="sellers/" class="service-link">Seller Strategy</a>
+      </div>
+      <div class="service-card fade-in fade-in-delay-2">
+        <div class="service-num">03</div>
+        <div class="service-title">Investing</div>
+        <p class="service-desc">With over a decade of multifamily investment experience in Los Angeles, we specialize in value-add strategies that unlock hidden potential and maximize returns.</p>
+        <a href="#contact" class="service-link">Discuss Investment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / MISSION -->
+<section class="section-cream" id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-visual">
+        <div class="about-img-main">
+          <span class="about-img-text">Beverly Hills · Los Angeles</span>
+        </div>
+        <div class="about-img-accent">
+          <p class="about-img-quote">"The new generation of elite real estate."</p>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="eyebrow fade-in">Our Mission</div>
+        <h2 class="fade-in">Excellence through<br><em>innovation.</em></h2>
+        <div class="divider"></div>
+        <p class="about-body fade-in">
+          We are the new generation of elite real estate professionals, delivering <strong>expert advisory services</strong> to sellers, buyers, and developers of Los Angeles's finest properties.
+        </p>
+        <p class="about-body fade-in">
+          Our dedication to excellence and innovation sets us apart. With <strong>20+ years of combined experience</strong> and deep roots in the Los Angeles market, we serve as fearless negotiators and trusted advisors — guiding clients through every stage of their real estate journey with white-glove precision.
+        </p>
+        <a href="team/" class="btn-primary" style="display:inline-flex; margin-top: 16px;">Meet the Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPASS ADVANTAGE -->
+<section class="section-dark" id="compass">
+  <div class="container">
+    <div class="eyebrow fade-in">The Compass Advantage</div>
+    <h2 class="fade-in">Tools that work<br>harder for <em>you.</em></h2>
+    <p class="lede fade-in" style="margin-top: 20px;">As Compass agents, Michael and Ania bring exclusive programs and technology that independent agents simply cannot access.</p>
+    <div class="compass-grid">
+      <div class="compass-card fade-in">
+        <div class="compass-card-icon">🔒</div>
+        <div class="compass-card-title">Private Exclusive</div>
+        <p class="compass-card-body">Market your home to Compass's network of 34,000+ top agents before public listing — no days on market, no price drop history, maximum discretion.</p>
+      </div>
+      <div class="compass-card fade-in fade-in-delay-1">
+        <div class="compass-card-icon">🏗️</div>
+        <div class="compass-card-title">Compass Concierge</div>
+        <p class="compass-card-body">Cover the upfront cost of home improvements — paint, staging, landscaping — with zero interest and zero fees. Pay only when your home sells.</p>
+      </div>
+      <div class="compass-card fade-in fade-in-delay-2">
+        <div class="compass-card-icon">📊</div>
+        <div class="compass-card-title">Compass One</div>
+        <p class="compass-card-body">A centralized dashboard connecting you and your agent through every phase of the transaction — 24/7 transparency from offer to close.</p>
+      </div>
+    </div>
+    <div style="margin-top: 48px; display: flex; gap: 24px; flex-wrap: wrap;">
+      <a href="sellers/" class="btn-primary">Seller Strategy</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM PREVIEW -->
+<section id="team">
+  <div class="container">
+    <div class="eyebrow fade-in">The Team</div>
+    <h2 class="fade-in">Trusted advisors.<br><em>Proven results.</em></h2>
+    <div class="team-grid" style="margin-top: 64px;">
+      <div class="team-card fade-in">
+        <div class="team-card-num">01</div>
+        <div class="team-card-role">Principal Agent · Architect · NAR Member</div>
+        <div class="team-card-name">Michael<br>Abraham</div>
+        <p class="team-card-bio">A distinguished Los Angeles Realtor®, licensed architect, and proud NAR member. Known for strategic thinking, architectural insight, and a decade of multifamily investment expertise.</p>
+        <div class="team-card-dre">CA DRE# <strong>02242095</strong></div>
+      </div>
+      <div class="team-card fade-in fade-in-delay-1">
+        <div class="team-card-num">02</div>
+        <div class="team-card-role">Principal Agent · Compass Beverly Hills</div>
+        <div class="team-card-name">Ania de<br>Pourbaix</div>
+        <p class="team-card-bio">A seasoned Los Angeles real estate professional with deep expertise in the luxury market. Known for her meticulous attention to detail and exceptional client relationships.</p>
+        <div class="team-card-dre">CA DRE# <strong>01891438</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-cream" id="testimonials">
+  <div class="container">
+    <div class="eyebrow fade-in">Client Experiences</div>
+    <h2 class="fade-in">What clients<br><em>say.</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial fade-in">
+        <p class="testimonial-text">Even though they were representing the seller, they kept everything smooth and transparent throughout the whole process. After purchasing the home, they quickly found me a great tenant through their network.</p>
+        <div class="testimonial-author">— Cyrus P.</div>
+      </div>
+      <div class="testimonial fade-in fade-in-delay-1">
+        <p class="testimonial-text">Michael and Ania are true professionals. Very knowledgeable, understand the market, and are just, all around, great to work with. Couldn't recommend them enough.</p>
+        <div class="testimonial-author">— Ross Van Der W.</div>
+      </div>
+      <div class="testimonial fade-in fade-in-delay-2">
+        <p class="testimonial-text">Their insightful vision and commitment to high-quality work enabled us to produce captivating results. Their professionalism and collaborative approach made the process both efficient and enjoyable.</p>
+        <div class="testimonial-author">— Jessica C.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="eyebrow fade-in">Get In Touch</div>
+        <h2 class="fade-in">Let's talk<br>real estate.</h2>
+        <div class="divider"></div>
+        <p class="lede fade-in">Whether you're buying, selling, or investing — we'd love to hear about your goals and explore how we can help.</p>
+        <div class="contact-detail">
+          <div class="contact-item fade-in">
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value"><a href="tel:3237198585">(323) 719-8585</a></div>
+          </div>
+          <div class="contact-item fade-in">
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value"><a href="mailto:michael.abraham@compass.com">michael.abraham@compass.com</a></div>
+          </div>
+          <div class="contact-item fade-in">
+            <div class="contact-item-label">Office</div>
+            <div class="contact-item-value">9454 Wilshire Blvd, Suite 100<br>Beverly Hills, CA 90212</div>
+          </div>
+          <div class="contact-item fade-in">
+            <div class="contact-item-label">Brokerage</div>
+            <div class="contact-item-value">Compass · DRE# 01991628</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-in">
+        <div class="contact-form-title">Start a conversation</div>
+        <p class="contact-form-sub">We typically respond within a few hours during business hours.</p>
+        <iframe data-tally-src="https://tally.so/embed/aQZxXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy" width="100%" height="420" frameborder="0"
+          marginheight="0" marginwidth="0" title="Get In Touch">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">AMRE<span>.</span></div>
+        <p class="footer-tagline">Elite LA market knowledge, investment-focused expertise, and white-glove service — for every stage of your real estate journey.</p>
+        <div class="footer-compass">at Compass · Beverly Hills</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="sellers/">Sellers</a></li>
+          <li><a href="buyers/">Buyers</a></li>
+          <li><a href="properties/">Properties</a></li>
+          <li><a href="team/">Team</a></li>
+          <li><a href="contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="sellers/#three-phase">3-Phase Marketing</a></li>
+          <li><a href="sellers/#concierge">Compass Concierge</a></li>
+          <li><a href="buyers/">Buyer Advisory</a></li>
+          <li><a href="#contact">Home Valuation</a></li>
+          <li><a href="#contact">Investment Analysis</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <ul class="footer-links">
+          <li><a href="tel:3237198585">(323) 719-8585</a></li>
+          <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. Information deemed reliable but not guaranteed.</div>
+      <div class="footer-dre">Michael Abraham CA DRE# 02242095 · Ania de Pourbaix CA DRE# 01891438 · Compass DRE# 01991628</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll behavior
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Fade-in observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
