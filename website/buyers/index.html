@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy With AMRE | Los Angeles Real Estate</title>
+<meta name="description" content="Buy your next Los Angeles home with AMRE Real Estate Group. Expert buyer advisory, investment strategy, and white-glove service.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script async src="https://tally.so/widgets/embed.js"></script>
+<style>
+:root{--black:#0A0A0A;--ink:#111111;--off-black:#1A1A1A;--mid:#666666;--muted:#999999;--border-dark:#E8E8E8;--white:#FFFFFF;--cream:#F8F6F1;--gold:#B8965A;--gold-light:#D4AE78;--serif:'Cormorant',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif;--nav-h:72px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(255,255,255,0.92);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border-dark);}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:.08em;color:var(--ink);}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);}
+.nav-cta{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:10px 24px;border:1px solid var(--ink);color:var(--ink);border-radius:2px;transition:all .2s;}
+.nav-cta:hover{background:var(--ink);color:var(--white);}
+@media(max-width:900px){.nav{padding:0 24px;}.nav-links{display:none;}}
+
+/* PAGE HERO - lighter tone for buyers */
+.page-hero{padding-top:calc(var(--nav-h) + 80px);padding-bottom:80px;padding-left:48px;padding-right:48px;background:var(--cream);position:relative;border-bottom:1px solid var(--border-dark);}
+.page-hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:16px;}
+.page-hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+.page-hero h1{font-family:var(--serif);font-size:clamp(52px,7vw,100px);font-weight:300;line-height:.95;color:var(--ink);letter-spacing:-.02em;max-width:800px;margin-bottom:32px;}
+.page-hero h1 em{font-style:italic;color:var(--gold);}
+.page-hero-sub{font-size:18px;font-weight:300;line-height:1.7;color:var(--mid);max-width:520px;}
+@media(max-width:768px){.page-hero{padding-left:24px;padding-right:24px;}}
+
+section{padding:100px 48px;}
+.section-dark{background:var(--ink);color:var(--white);}
+.section-cream{background:var(--cream);}
+.container{max-width:1280px;margin:0 auto;}
+
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:16px;}
+.eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+h2{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-.02em;}
+h2 em{font-style:italic;color:var(--gold);}
+.section-dark h2{color:var(--white);}
+.lede{font-size:18px;font-weight:300;line-height:1.7;color:var(--mid);max-width:560px;}
+.section-dark .lede{color:rgba(255,255,255,.55);}
+.divider{width:48px;height:1px;background:var(--gold);margin:28px 0;}
+
+/* PROCESS STEPS */
+.process-steps{display:flex;flex-direction:column;gap:0;margin-top:64px;border:1px solid var(--border-dark);}
+.process-step{display:grid;grid-template-columns:80px 1fr 1fr;gap:0;border-bottom:1px solid var(--border-dark);}
+.process-step:last-child{border-bottom:none;}
+.step-num{display:flex;align-items:center;justify-content:center;padding:40px;border-right:1px solid var(--border-dark);font-family:var(--serif);font-size:36px;font-weight:300;color:var(--gold);}
+.step-content{padding:40px 48px;border-right:1px solid var(--border-dark);}
+.step-title{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--ink);margin-bottom:12px;}
+.step-desc{font-size:14px;font-weight:300;line-height:1.8;color:var(--mid);}
+.step-detail{padding:40px 48px;background:var(--cream);}
+.step-detail-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.step-detail-content{font-size:14px;font-weight:300;line-height:1.7;color:var(--mid);}
+@media(max-width:768px){.process-step{grid-template-columns:1fr;}.step-num{justify-content:flex-start;padding:24px 24px 0;}.step-content{padding:16px 24px;border-right:none;}.step-detail{padding:16px 24px 32px;}}
+
+/* BUYER TYPES */
+.buyer-types{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.08);margin-top:64px;}
+.buyer-type{background:var(--off-black);padding:48px 40px;}
+.buyer-type-icon{font-size:36px;margin-bottom:20px;}
+.buyer-type-title{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--white);margin-bottom:12px;}
+.buyer-type-desc{font-size:14px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.5);margin-bottom:24px;}
+.buyer-type-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.buyer-type-list li{font-size:13px;font-weight:300;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:8px;}
+.buyer-type-list li::before{content:'·';color:var(--gold);}
+@media(max-width:900px){.buyer-types{grid-template-columns:1fr;}}
+
+/* MORTGAGE CALCULATOR */
+.calc-section{background:var(--cream);}
+.calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.calc-box{background:var(--white);border:1px solid var(--border-dark);padding:48px;border-radius:2px;}
+.calc-title{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:8px;}
+.calc-sub{font-size:13px;font-weight:300;color:var(--mid);margin-bottom:32px;}
+.calc-field{margin-bottom:24px;}
+.calc-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:block;}
+.calc-input{width:100%;padding:14px 16px;border:1px solid var(--border-dark);border-radius:2px;font-family:var(--sans);font-size:15px;font-weight:300;color:var(--ink);background:var(--white);transition:border-color .2s;outline:none;}
+.calc-input:focus{border-color:var(--gold);}
+.calc-result{background:var(--ink);padding:32px;border-radius:2px;margin-top:24px;}
+.calc-result-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:8px;}
+.calc-result-num{font-family:var(--serif);font-size:52px;font-weight:300;color:var(--white);line-height:1;}
+.calc-result-num span{color:var(--gold);}
+.calc-result-sub{font-size:12px;font-weight:300;color:rgba(255,255,255,.4);margin-top:8px;}
+.calc-disclaimer{font-size:11px;font-weight:300;color:var(--muted);margin-top:16px;line-height:1.6;}
+@media(max-width:900px){.calc-layout{grid-template-columns:1fr;}}
+
+/* MARKET INSIGHT */
+.market-insight{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.market-insight-content{}
+.market-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.08);margin-top:40px;}
+.market-stat{background:var(--off-black);padding:32px;}
+.market-stat-num{font-family:var(--serif);font-size:40px;font-weight:300;color:var(--white);line-height:1;margin-bottom:8px;}
+.market-stat-num span{color:var(--gold);}
+.market-stat-lbl{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+@media(max-width:768px){.market-insight{grid-template-columns:1fr;}.market-stats{grid-template-columns:1fr 1fr;}}
+
+/* CONTACT */
+.contact-strip{background:var(--white);padding:80px 48px;border-top:1px solid var(--border-dark);}
+.contact-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-form-wrap{background:var(--cream);padding:48px;border-radius:2px;}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:16px 36px;background:var(--gold);color:var(--black);border-radius:2px;transition:background .2s,transform .15s;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);}
+@media(max-width:768px){.contact-inner{grid-template-columns:1fr;}.contact-strip{padding:60px 24px;}.contact-form-wrap{padding:32px 24px;}}
+
+footer{background:var(--black);padding:48px;}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--white);}
+.footer-logo span{color:var(--gold);}
+.footer-legal,.footer-dre{font-size:11px;font-weight:300;color:rgba(255,255,255,.2);}
+@media(max-width:768px){footer{padding:36px 24px;}.footer-inner{flex-direction:column;text-align:center;}section{padding-left:24px;padding-right:24px;}}
+
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.fd1{transition-delay:.1s;}.fd2{transition-delay:.2s;}.fd3{transition-delay:.3s;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">AMRE<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/sellers/">Sellers</a></li>
+    <li><a href="/buyers/" class="active">Buyers</a></li>
+    <li><a href="/properties/">Properties</a></li>
+    <li><a href="/team/">Team</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Start Your Search</a>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-eyebrow">Buyer Advisory</div>
+    <h1>Find your place<br>in <em>Los Angeles.</em></h1>
+    <p class="page-hero-sub">From first-time buyers to seasoned investors, we provide the market intelligence, access, and advocacy to help you buy with confidence.</p>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="eyebrow fade-in">The Buying Process</div>
+    <h2 class="fade-in">Every step,<br><em>navigated.</em></h2>
+    <div class="process-steps">
+      <div class="process-step fade-in">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-title">Strategy & Consultation</div>
+          <p class="step-desc">We start by understanding your goals — lifestyle, timeline, investment horizon, and must-haves. This shapes the entire search strategy.</p>
+        </div>
+        <div class="step-detail">
+          <div class="step-detail-label">What to expect</div>
+          <p class="step-detail-content">A 30–60 minute consultation covering market conditions, neighborhood analysis, pricing strategy, and timeline planning.</p>
+        </div>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-title">Access & Search</div>
+          <p class="step-desc">We expose you to the full market — including Compass Private Exclusives and off-market properties unavailable to the public or other agents.</p>
+        </div>
+        <div class="step-detail">
+          <div class="step-detail-label">Your advantage</div>
+          <p class="step-detail-content">Private Exclusive inventory, agent-to-agent networks, and early access to Coming Soon listings before they hit the MLS.</p>
+        </div>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-title">Offer & Negotiation</div>
+          <p class="step-desc">We craft competitive offers, protect your interests, and negotiate with skill. Our architectural and investment background means we see risk others miss.</p>
+        </div>
+        <div class="step-detail">
+          <div class="step-detail-label">Our edge</div>
+          <p class="step-detail-content">Michael's architectural background provides a unique advantage evaluating structural integrity, renovation potential, and true property value.</p>
+        </div>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-title">Due Diligence & Close</div>
+          <p class="step-desc">We manage inspections, coordinate with lenders, and guide you through escrow — ensuring nothing falls through the cracks.</p>
+        </div>
+        <div class="step-detail">
+          <div class="step-detail-label">After closing</div>
+          <p class="step-detail-content">Our relationship doesn't end at closing. Renovation referrals, tenant placement, and ongoing investment advisory — we're your long-term partner.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUYER TYPES -->
+<section class="section-dark">
+  <div class="container">
+    <div class="eyebrow fade-in">Who We Work With</div>
+    <h2 class="fade-in">Every buyer<br>has a different<br><em>reason.</em></h2>
+    <div class="buyer-types">
+      <div class="buyer-type fade-in">
+        <div class="buyer-type-icon">🏠</div>
+        <div class="buyer-type-title">Owner-Occupant</div>
+        <p class="buyer-type-desc">Looking for your primary residence in Los Angeles. We help you find the right neighborhood, the right home, and the right price.</p>
+        <ul class="buyer-type-list">
+          <li>First-time buyers</li>
+          <li>Upsizing or downsizing</li>
+          <li>Relocation from out of state</li>
+          <li>Single-family homes & condos</li>
+        </ul>
+      </div>
+      <div class="buyer-type fade-in fd1">
+        <div class="buyer-type-icon">📈</div>
+        <div class="buyer-type-title">Income Investor</div>
+        <p class="buyer-type-desc">Building a rental portfolio or seeking cash-flowing multifamily assets. Our investment background means we underwrite deals seriously.</p>
+        <ul class="buyer-type-list">
+          <li>2–4 unit properties</li>
+          <li>Multifamily acquisitions</li>
+          <li>Value-add opportunities</li>
+          <li>Portfolio growth strategy</li>
+        </ul>
+      </div>
+      <div class="buyer-type fade-in fd2">
+        <div class="buyer-type-icon">🔄</div>
+        <div class="buyer-type-title">1031 Exchange</div>
+        <p class="buyer-type-desc">Deferring capital gains and under the clock. We know exactly how to surface qualified replacement properties quickly and discreetly.</p>
+        <ul class="buyer-type-list">
+          <li>45-day ID window management</li>
+          <li>Like-kind property sourcing</li>
+          <li>Off-market access</li>
+          <li>Qualified intermediary coordination</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET INSIGHT -->
+<section class="section-dark" style="padding-top:0;">
+  <div class="container">
+    <div class="market-insight">
+      <div class="market-insight-content">
+        <div class="eyebrow fade-in">Los Angeles Market</div>
+        <h2 class="fade-in">Why now is the<br>time to <em>move.</em></h2>
+        <p class="lede fade-in" style="margin-top:16px;">Los Angeles real estate has appreciated 626% over 35 years — and the fundamentals that drive that growth are stronger than ever.</p>
+        <div class="market-stats">
+          <div class="market-stat fade-in">
+            <div class="market-stat-num">626<span>%</span></div>
+            <div class="market-stat-lbl">Appreciation since 1989</div>
+          </div>
+          <div class="market-stat fade-in fd1">
+            <div class="market-stat-num"><span>~</span>7<span>%</span></div>
+            <div class="market-stat-lbl">Annual price growth target</div>
+          </div>
+          <div class="market-stat fade-in fd2">
+            <div class="market-stat-num">2028</div>
+            <div class="market-stat-lbl">LA Olympics — major tailwind</div>
+          </div>
+          <div class="market-stat fade-in fd3">
+            <div class="market-stat-num"><span>&lt;</span>4<span>%</span></div>
+            <div class="market-stat-lbl">Vacancy rates in key submarkets</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:52px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:2px;" class="fade-in">
+        <div style="font-family:var(--serif);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;">The LA Advantage</div>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08);">
+            <div style="font-family:var(--serif);font-size:18px;font-weight:400;color:var(--white);margin-bottom:8px;">Global demand</div>
+            <p style="font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.4);">LA attracts buyers from around the world. Limited supply against persistent global demand creates long-term price resilience.</p>
+          </div>
+          <div style="padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08);">
+            <div style="font-family:var(--serif);font-size:18px;font-weight:400;color:var(--white);margin-bottom:8px;">2028 Olympics infrastructure</div>
+            <p style="font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.4);">Infrastructure investment and international attention are elevating valuations throughout the LA corridor — and the runway is still ahead.</p>
+          </div>
+          <div>
+            <div style="font-family:var(--serif);font-size:18px;font-weight:400;color:var(--white);margin-bottom:8px;">Constrained supply</div>
+            <p style="font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.4);">Geography, zoning, and entitlement timelines mean LA simply cannot build enough. Supply constraints favor long-term owners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORTGAGE CALCULATOR -->
+<section class="calc-section">
+  <div class="container">
+    <div class="calc-layout">
+      <div>
+        <div class="eyebrow fade-in">Planning Tool</div>
+        <h2 class="fade-in">Estimate your<br><em>payment.</em></h2>
+        <div class="divider"></div>
+        <p style="font-size:16px;font-weight:300;line-height:1.8;color:var(--mid);margin-bottom:32px;" class="fade-in">Use this calculator to get a rough estimate of your monthly mortgage payment. For a precise pre-approval, we'll connect you with a trusted lender from our network.</p>
+        <p style="font-size:14px;font-weight:300;line-height:1.7;color:var(--mid);" class="fade-in">Our lending partners typically offer competitive rates and can pre-approve you quickly — often within 24 hours for qualified buyers.</p>
+        <a href="#contact" class="btn-primary" style="margin-top:32px;display:inline-flex;" class="fade-in">Connect with a Lender</a>
+      </div>
+      <div class="calc-box fade-in">
+        <div class="calc-title">Mortgage Calculator</div>
+        <p class="calc-sub">Estimates only. Actual payments vary based on lender, credit, and taxes.</p>
+        <div class="calc-field">
+          <label class="calc-label" for="price">Home Price</label>
+          <input type="number" id="price" class="calc-input" value="1500000" placeholder="1,500,000">
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="down">Down Payment (%)</label>
+          <input type="number" id="down" class="calc-input" value="20" placeholder="20">
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="rate">Interest Rate (%)</label>
+          <input type="number" id="rate" class="calc-input" value="7" step="0.1" placeholder="7.0">
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="term">Loan Term (years)</label>
+          <input type="number" id="term" class="calc-input" value="30" placeholder="30">
+        </div>
+        <div class="calc-result">
+          <div class="calc-result-label">Estimated Monthly Payment</div>
+          <div class="calc-result-num" id="result"><span>$</span>7,976</div>
+          <div class="calc-result-sub" id="result-sub">Principal & interest only · 30yr @ 7% · 20% down</div>
+        </div>
+        <p class="calc-disclaimer">Does not include property taxes, insurance, or HOA fees. For informational purposes only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-strip" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="eyebrow fade-in">Start Your Search</div>
+      <h2 class="fade-in" style="font-size:clamp(32px,4vw,52px);font-family:var(--serif);font-weight:300;line-height:1.05;">Find your<br>next <em>home.</em></h2>
+      <div class="divider"></div>
+      <p style="font-size:15px;font-weight:300;line-height:1.8;color:var(--mid);margin-bottom:32px;" class="fade-in">Tell us what you're looking for and we'll get to work. Whether you're ready to move quickly or just beginning to explore, we're here to help.</p>
+      <div style="display:flex;flex-direction:column;gap:16px;" class="fade-in">
+        <div style="font-size:14px;color:var(--mid);">📞 <a href="tel:3237198585" style="color:var(--ink);">(323) 719-8585</a></div>
+        <div style="font-size:14px;color:var(--mid);">✉️ <a href="mailto:michael.abraham@compass.com" style="color:var(--ink);">michael.abraham@compass.com</a></div>
+        <div style="font-size:14px;color:var(--mid);">📍 9454 Wilshire Blvd, Suite 100, Beverly Hills CA 90212</div>
+      </div>
+    </div>
+    <div class="contact-form-wrap fade-in">
+      <div style="font-family:var(--serif);font-size:24px;font-weight:400;margin-bottom:8px;">Start a conversation</div>
+      <p style="font-size:14px;font-weight:300;color:var(--mid);margin-bottom:24px;line-height:1.6;">We typically respond within a few hours.</p>
+      <iframe data-tally-src="https://tally.so/embed/aQZxXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy" width="100%" height="420" frameborder="0"
+        marginheight="0" marginwidth="0" title="Get In Touch"></iframe>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">AMRE<span>.</span></div>
+    <div class="footer-legal">© 2026 AMRE Real Estate Group. Information deemed reliable but not guaranteed.</div>
+    <div class="footer-dre">Michael Abraham DRE# 02242095 · Ania de Pourbaix DRE# 01891438 · Compass DRE# 01991628</div>
+  </div>
+</footer>
+
+<script>
+// Mortgage calculator
+function calc(){
+  const P=parseFloat(document.getElementById('price').value)||0;
+  const dp=parseFloat(document.getElementById('down').value)||0;
+  const r=parseFloat(document.getElementById('rate').value)||0;
+  const n=parseFloat(document.getElementById('term').value)||30;
+  const loan=P*(1-dp/100);
+  const mo=r/100/12;
+  const pmt=mo>0?loan*(mo*Math.pow(1+mo,n*12))/(Math.pow(1+mo,n*12)-1):loan/(n*12);
+  document.getElementById('result').innerHTML=`<span>$</span>${Math.round(pmt).toLocaleString()}`;
+  document.getElementById('result-sub').textContent=`Principal & interest only · ${n}yr @ ${r}% · ${dp}% down`;
+}
+['price','down','rate','term'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+calc();
+
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
