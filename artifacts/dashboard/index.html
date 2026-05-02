@@ -1739,6 +1739,11 @@
   .deal-badge.pending::before { background: #FF9F0A; }
   .deal-badge.closed { background: var(--gray-bg); color: var(--ink-3); }
   .deal-badge.closed::before { background: var(--ink-4); }
+  .deal-badge.estate {
+    background: #E0F2FE;
+    color: #075985;
+  }
+  .deal-badge.estate::before { background: #0284C7; }
 
   .deal-card-stats {
     display: grid;
@@ -1945,7 +1950,7 @@
     <!-- Stats bar -->
     <div class="stats-bar" id="statsBar">
       <div class="stat-item">
-        <div class="stat-num" id="totalDeals">4</div>
+        <div class="stat-num" id="totalDeals">5</div>
         <div class="stat-label">Active deals</div>
       </div>
       <div class="stat-item">
@@ -1953,11 +1958,11 @@
         <div class="stat-label">Buyer-side</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" id="totalSeller">3</div>
+        <div class="stat-num" id="totalSeller">4</div>
         <div class="stat-label">Seller-side</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" id="totalVolume">$7.66M</div>
+        <div class="stat-num" id="totalVolume">$23.4M</div>
         <div class="stat-label">Volume in motion</div>
       </div>
     </div>
@@ -1966,7 +1971,7 @@
     <div class="bucket-tabs" role="tablist">
       <button class="bucket-tab active" data-bucket="clients" role="tab">
         Clients
-        <span class="bucket-tab-count">4</span>
+        <span class="bucket-tab-count">5</span>
       </button>
       <button class="bucket-tab alert" data-bucket="crm" role="tab">
         CRM
@@ -2038,6 +2043,37 @@
     <!-- Seller-side deals -->
     <div class="section-label" id="sellerLabel">Representing seller</div>
     <div class="deals-grid" id="sellerGrid">
+
+      <a class="deal-card" href="../tracker-janiszewski-estate/" data-side="seller" data-status="active">
+        <div class="deal-card-img-placeholder" style="background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%); color: #075985; font-size: 30px; letter-spacing: 0.06em; font-weight: 600;">JANI · 15</div>
+        <div class="deal-card-body">
+          <div class="deal-card-head">
+            <div>
+              <div class="deal-card-addr">Janiszewski Estate Planning</div>
+              <div class="deal-card-city">15 properties · 5 California regions</div>
+            </div>
+            <span class="deal-badge estate">Estate Plan</span>
+          </div>
+          <div class="deal-card-stats">
+            <div class="deal-stat">
+              <div class="deal-stat-val">~$15.7M</div>
+              <div class="deal-stat-lbl">Est. value</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">12 + 3</div>
+              <div class="deal-stat-lbl">Owned · partner</div>
+            </div>
+            <div class="deal-stat">
+              <div class="deal-stat-val">+$2.5M</div>
+              <div class="deal-stat-lbl">Sherbourne upside</div>
+            </div>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-card-agent">Portfolio review · package sale plays · 1031 + step-up basis planning</div>
+            <span class="deal-card-arrow">→</span>
+          </div>
+        </div>
+      </a>
 
       <a class="deal-card" href="../tracker-11023-fruitland-401/" data-side="seller" data-status="active">
         <img class="deal-card-img" src="../tracker-11023-fruitland-401/property-hero.jpg" alt="11023 Fruitland Dr #401">
