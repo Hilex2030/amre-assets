@@ -6,12 +6,12 @@
 <title>AMRE Real Estate Group | Los Angeles Real Estate | Compass Beverly Hills</title>
 <meta name="description" content="AMRE Real Estate Group at Compass Beverly Hills. Expert advisory for sellers, buyers, and investors in Los Angeles. Call (323) 719-8585.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://amre.group/">
+<link rel="canonical" href="https://hilex2030.github.io/amre-assets/website/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AMRE Real Estate Group | Los Angeles">
 <meta property="og:description" content="Elite LA real estate advisory. Expert sellers, buyers, and investment services from AMRE at Compass Beverly Hills.">
 <meta property="og:image" content="https://res.cloudinary.com/luxuryp/videos/f_auto,q_auto/so_0,eo_0/woxa6oigeefrvm3lrso0/11023-fruitland-dr-branded-3.jpg">
-<meta property="og:url" content="https://amre.group/">
+<meta property="og:url" content="https://hilex2030.github.io/amre-assets/website/">
 <meta name="geo.region" content="US-CA">
 <meta name="geo.placename" content="Beverly Hills, Los Angeles">
 <script type="application/ld+json">{
@@ -491,6 +491,40 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 details[open] .faq-q::after{transform:rotate(45deg)}
 .faq-a{padding:0 22px 18px}
 .faq-a p{font-family:var(--sans);font-size:13px;font-weight:300;line-height:1.75;color:var(--mid)}
+
+
+/* ====================================================================
+   AMRE 2026 site update — typography refresh, readability bump,
+   footer contrast, hero re-flow.
+   ==================================================================== */
+.hero-h, .section-h, .page-hero h1, .svc-title, .agent-name, .compass-card-h, .prop-cta-h, .prop-price, .form-box-title, .statement-q, .testi-text {
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: -.015em;
+}
+.hero-h em, .section-h em, .page-hero h1 em, .prop-cta-h em, .compass-card-h em {
+  font-style: italic; font-weight: 400;
+}
+.statement-q, .testi-text { font-weight: 400; font-style: italic; }
+.prop-price { font-weight: 600; letter-spacing: 0; }
+.hero-h { line-height: 1.05; }
+.page-hero h1 { line-height: 1.05; }
+.section-h { line-height: 1.12; }
+.lede { font-size: 18px; line-height: 1.7; }
+.svc-desc, .compass-card-p, .agent-bio, .faq-a p { font-size: 15px; line-height: 1.78; }
+.testi-text { font-size: 17px; line-height: 1.65; }
+.contact-val { font-size: 15px; }
+.form-box-sub { font-size: 14px; }
+.page-hero-sub, .hero-sub { font-size: clamp(15px, 1.7vw, 18px); line-height: 1.7; }
+.footer-tagline { color: rgba(255,255,255,.62); font-size: 13px; max-width: 260px; }
+.footer-col-head { color: rgba(255,255,255,.55); font-size: 10px; }
+.footer-links a { color: rgba(255,255,255,.72); font-size: 13px; }
+.footer-links a:hover { color: #fff; }
+.footer-legal { color: rgba(255,255,255,.50); font-size: 11px; }
+.footer-dre { color: rgba(255,255,255,.40); font-size: 11px; }
+.hero-content { max-width: 880px; }
+.hero-h { font-size: clamp(44px, 6.2vw, 84px); }
+@media (max-width: 680px) { .hero-content { max-width: 100%; } }
 </style>
 </head>
 <body>
@@ -503,12 +537,14 @@ details[open] .faq-q::after{transform:rotate(45deg)}
     <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" class="logo-white nav-compass" width="70" height="15">
     <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-black.png" alt="Compass" class="logo-dark nav-compass" width="70" height="15">
   </a>
-  <ul class="nav-links"><li><a href="/amre-assets/website/sellers/">Sellers</a></li>
-<li><a href="/amre-assets/website/buyers/">Buyers</a></li>
-<li><a href="/amre-assets/website/properties/">Properties</a></li>
-<li><a href="/amre-assets/website/team/">Team</a></li>
-<li><a href="/amre-assets/website/contact/">Contact</a></li></ul>
-  <a href="/amre-assets/website/#contact" class="nav-cta">Get In Touch</a>
+  <ul class="nav-links">
+      <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+      <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
+      <li><a href="/amre-assets/website/properties/">Properties</a></li>
+      <li><a href="/amre-assets/website/team/">Team</a></li>
+      <li><a href="/amre-assets/website/contact/">Contact</a></li>
+  </ul>
+  <a href="/amre-assets/website/contact/" class="nav-cta">Get In Touch</a>
 </nav>
 
 <!-- ── VIDEO HERO ── -->
@@ -525,10 +561,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
 
   <div class="hero-content">
     <p class="hero-eyebrow">AMRE Real Estate Group &nbsp;·&nbsp; Compass Beverly Hills</p>
-    <h1 class="hero-h">
-      Empowering clients<br>
-      one home <em>at a time.</em>
-    </h1>
+    <h1 class="hero-h">Empowering clients one home <em>at a time.</em></h1>
     <p class="hero-sub">
       Expert advisory for sellers, buyers, and investors
       of Los Angeles's finest properties.
@@ -627,7 +660,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
     <h2 class="section-h f">Exceptional homes across <em>Los Angeles.</em></h2>
     <div class="props-grid">
       <article class="prop-card f" itemscope itemtype="https://schema.org/RealEstateListing">
-        <a href="https://amre.group/properties/4240-avenida-de-la-encinal-malibu-ca-us-90265-26659403" target="_blank" rel="noopener" class="prop-link">
+        <a href="/amre-assets/website/properties/" class="prop-link">
           <div class="prop-img"><img src="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg" alt="4240 Avenida De La Encinal Malibu" loading="lazy"><span class="prop-badge badge-pending">Pending</span></div>
           <div class="prop-body">
             <div class="prop-price">$5,000,000</div>
@@ -638,7 +671,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
         </a>
       </article>
       <article class="prop-card f d1" itemscope itemtype="https://schema.org/RealEstateListing">
-        <a href="https://amre.group/properties/1620-electric-ave-venice-ca-90291-26670155" target="_blank" rel="noopener" class="prop-link">
+        <a href="/amre-assets/website/properties/" class="prop-link">
           <div class="prop-img"><img src="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26670155/3498201198900289763.jpg" alt="1620 Electric Ave Venice" loading="lazy"><span class="prop-badge badge-sale">For Sale</span></div>
           <div class="prop-body">
             <div class="prop-price">$4,998,000</div>
@@ -649,7 +682,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
         </a>
       </article>
       <article class="prop-card f d2" itemscope itemtype="https://schema.org/RealEstateListing">
-        <a href="https://amre.group/properties/812-n-vista-st-los-angeles-ca-us-90046-25-481113" target="_blank" rel="noopener" class="prop-link">
+        <a href="/amre-assets/website/properties/" class="prop-link">
           <div class="prop-img"><img src="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25-481113/-7576905626461730898.jpg" alt="812 N Vista St Los Angeles" loading="lazy"><span class="prop-badge badge-sale">For Sale</span></div>
           <div class="prop-body">
             <div class="prop-price">$4,998,000</div>
@@ -660,7 +693,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
         </a>
       </article>
       <article class="prop-card f" itemscope itemtype="https://schema.org/RealEstateListing">
-        <a href="https://amre.group/properties/295-mabery-rd-santa-monica-ca-us-90402-26651421" target="_blank" rel="noopener" class="prop-link">
+        <a href="/amre-assets/website/properties/" class="prop-link">
           <div class="prop-img"><img src="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26651421/6783575949282440405.jpg" alt="295 Mabery Rd Santa Monica" loading="lazy"><span class="prop-badge badge-sale">For Sale</span></div>
           <div class="prop-body">
             <div class="prop-price">$4,995,000</div>
@@ -671,7 +704,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
         </a>
       </article>
       <article class="prop-card f d1" itemscope itemtype="https://schema.org/RealEstateListing">
-        <a href="https://amre.group/properties/11556-bellagio-rd-los-angeles-ca-us-90049-25585727" target="_blank" rel="noopener" class="prop-link">
+        <a href="/amre-assets/website/properties/" class="prop-link">
           <div class="prop-img"><img src="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25585727/-5498964793090052872.jpg" alt="11556 Bellagio Rd Los Angeles" loading="lazy"><span class="prop-badge badge-sold">Sold</span></div>
           <div class="prop-body">
             <div class="prop-price">$5,000,000</div>
@@ -690,9 +723,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:44px" class="f">
-      <a href="https://amre.group/properties" class="btn btn-outline-dark" target="_blank" rel="noopener">View Full Portfolio on AMRE.group</a>
-    </div>
+    
   </div>
 </section>
 
@@ -899,8 +930,8 @@ details[open] .faq-q::after{transform:rotate(45deg)}
         <li><a href="/amre-assets/website/sellers/#three-phase">3-Phase Marketing</a></li>
         <li><a href="/amre-assets/website/sellers/#concierge">Compass Concierge</a></li>
         <li><a href="/amre-assets/website/buyers/">Buyer Advisory</a></li>
-        <li><a href="/amre-assets/website/#contact">Home Valuation</a></li>
-        <li><a href="/amre-assets/website/#contact">Investment Advisory</a></li>
+        <li><a href="/amre-assets/website/contact/">Home Valuation</a></li>
+        <li><a href="/amre-assets/website/contact/">Investment Advisory</a></li>
       </ul>
     </div>
     <div>
@@ -916,7 +947,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
   </div>
   <div class="footer-bottom">
     <p class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. Information deemed reliable but not guaranteed. Equal Housing Opportunity.</p>
-    <p class="footer-dre">Michael Abraham CA DRE# 02242095 &nbsp;·&nbsp; Ania De Pourbaix CA DRE# 01891438 &nbsp;·&nbsp; Compass DRE# 01991628</p>
+    <p class="footer-dre">Michael Abraham CA DRE# 02242095  ·  Ania De Pourbaix CA DRE# 01891438  ·  Compass DRE# 01991628</p>
   </div>
 </footer>
 
