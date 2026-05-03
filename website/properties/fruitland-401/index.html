@@ -7,7 +7,7 @@
 <meta name="description" content="Rare top-floor corner penthouse in Studio City. 3 bed, 2.5 bath, 1,705 sq ft. Listed at $1,150,000. AMRE Real Estate Group at Compass. Call (323) 719-8585.">
 <meta property="og:title" content="Studio City Penthouse — 11023 Fruitland Dr Unit 401">
 <meta property="og:description" content="Top-floor corner penthouse. 3BR, 2.5BA, 1,705 SF. $1,150,000. Studio City, CA.">
-<meta property="og:image" content="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/4e4ee112-d8cc-4d51-9dd8-2c112c5fae76">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1_T3pw3m7ilDTBxOta3Z1T8KzZi8p30BA">
 <script type="application/ld+json">{
   "@context":"https://schema.org",
   "@type":"RealEstateListing",
@@ -365,6 +365,15 @@ body,p,span,a,button,input,label,
   .mobile-drawer{display:none!important}
 }
 
+
+/* ── VIDEO HERO (property page) ── */
+.prop-video-hero{position:relative;height:100svh;min-height:680px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:0 44px 88px;overflow:hidden}
+.hero-video-wrap{position:absolute;inset:0;overflow:hidden}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(125deg,rgba(7,11,51,.72) 0%,rgba(7,11,51,.4) 45%,rgba(0,0,0,.2) 70%,rgba(0,0,0,.65) 100%)}
+.prop-video-content{position:relative;z-index:2;max-width:800px;animation:hfade 1.2s .2s both}
+@keyframes hfade{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px){.prop-video-hero{padding:0 20px 80px}}
 </style>
 </head>
 <body>
@@ -399,12 +408,23 @@ body,p,span,a,button,input,label,
   </ul>
 </div>
 
-<!-- HERO -->
-<div class="prop-hero">
-  <div class="prop-hero-img"><img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/4e4ee112-d8cc-4d51-9dd8-2c112c5fae76" alt="11023 Fruitland Dr Unit 401 Studio City" loading="eager"></div>
-  <div class="prop-hero-overlay"></div>
-  <div class="prop-hero-content">
-    <div class="prop-price-badge"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M16 10h.01M8 10h.01M12 14h.01M16 14h.01M8 14h.01"/></svg> Active Listing &nbsp;·&nbsp; Studio City</div>
+
+<!-- VIDEO HERO — same video as home page, with property info overlay -->
+<section class="prop-video-hero" aria-label="11023 Fruitland Dr Unit 401 Studio City Penthouse">
+  <div class="hero-video-wrap" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline
+      poster="https://res.cloudinary.com/luxuryp/videos/f_auto,q_auto/so_0,eo_0/woxa6oigeefrvm3lrso0/11023-fruitland-dr-branded-3.jpg"
+      aria-hidden="true">
+      <source src="https://res.cloudinary.com/luxuryp/videos/f_webm,vc_vp9,q_auto/woxa6oigeefrvm3lrso0/11023-fruitland-dr-branded-3.webm" type="video/webm">
+      <source src="https://res.cloudinary.com/luxuryp/videos/f_mp4,vc_h264,q_auto/woxa6oigeefrvm3lrso0/11023-fruitland-dr-branded-3.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="prop-video-content">
+    <div class="prop-price-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M16 10h.01M8 10h.01M12 14h.01M16 14h.01M8 14h.01"/></svg>
+      Active Listing&nbsp;&nbsp;·&nbsp;&nbsp;Studio City
+    </div>
     <div class="prop-hero-price">$1,150,000</div>
     <p class="prop-hero-addr">11023 Fruitland Dr, Unit 401 &nbsp;·&nbsp; Studio City, CA 91602</p>
     <div class="prop-hero-specs">
@@ -414,21 +434,19 @@ body,p,span,a,button,input,label,
       <div class="prop-hero-spec"><div class="prop-hero-spec-num">$674</div><div class="prop-hero-spec-lbl">Price / SF</div></div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- GALLERY -->
 <div class="gallery" style="padding:0 0 4px">
-  <div class="gallery-main"><img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85/https://media-production.lp-cdn.com/media/62a7a34f-5b0f-45a1-8546-ae02b0cac643" alt="Living area — 11023 Fruitland Dr Unit 401" loading="lazy"></div>
-  <div class="gallery-thumb"><img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85/https://media-production.lp-cdn.com/media/9d0896dd-fbfb-4002-aef3-ddac8ed9411f" alt="Interior — 11023 Fruitland Dr" loading="lazy"></div>
+  <div class="gallery-main"><img src="https://lh3.googleusercontent.com/d/1_T3pw3m7ilDTBxOta3Z1T8KzZi8p30BA" alt="Entrance — 11023 Fruitland Dr Unit 401" loading="lazy"></div>
+  <div class="gallery-thumb"><img src="https://lh3.googleusercontent.com/d/1dZAUKDXmN0dX5XEgfL6sZIfuMa9Ms1It" alt="Living Room — 11023 Fruitland Dr" loading="lazy"></div>
   <div class="gallery-thumb" style="position:relative">
-    <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/62a7a34f-5b0f-45a1-8546-ae02b0cac643" alt="View — 11023 Fruitland Dr" loading="lazy">
-    <a href="https://amre.group/home-search/listings/1827421332859456892-11023-Fruitland-Dr-Unit-401" target="_blank" rel="noopener"
-       style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;gap:6px">
+    <img src="https://lh3.googleusercontent.com/d/1n7jrFJSROP60wbGNvPawJ0BbGj6Yz3HH" alt="Living Room — 11023 Fruitland Dr" loading="lazy">
+    <a href="https://amre.group/home-search/listings/1827421332859456892-11023-Fruitland-Dr-Unit-401" target="_blank" rel="noopener" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;gap:6px">
       View All Photos ↗
     </a>
   </div>
 </div>
-
 <!-- DETAILS -->
 <section class="prop-details">
   <div class="prop-details-grid">
@@ -467,26 +485,51 @@ body,p,span,a,button,input,label,
   </div>
 </section>
 
+
 <!-- Photo Gallery -->
 <section class="gallery-section" style="background:#f5f5f7;padding:80px 0 64px">
   <div class="wrap" style="max-width:1100px;margin:0 auto;padding:0 24px">
     <p class="section-eyebrow" style="text-align:center;letter-spacing:.12em;font-size:11px;text-transform:uppercase;color:#86868b;margin-bottom:8px">Photo Gallery</p>
     <h2 class="section-h" style="text-align:center;font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:400;color:#1a1a1a;margin-bottom:48px">Experience the Space.</h2>
     <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-      <a href="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/4e4ee112-d8cc-4d51-9dd8-2c112c5fae76" target="_blank" rel="noopener" class="gallery-hero-img" style="grid-column:span 2;grid-row:span 2;display:block;border-radius:16px;overflow:hidden;aspect-ratio:4/3">
-        <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/4e4ee112-d8cc-4d51-9dd8-2c112c5fae76" alt="Penthouse living area with panoramic views" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      <a href="https://lh3.googleusercontent.com/d/1_T3pw3m7ilDTBxOta3Z1T8KzZi8p30BA" target="_blank" rel="noopener" class="gallery-hero-img" style="grid-column:span 2;grid-row:span 2;display:block;border-radius:16px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1_T3pw3m7ilDTBxOta3Z1T8KzZi8p30BA" alt="Penthouse entrance — 11023 Fruitland Dr Unit 401" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
       </a>
-      <a href="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/62a7a34f-5b0f-45a1-8546-ae02b0cac643" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
-        <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/62a7a34f-5b0f-45a1-8546-ae02b0cac643" alt="Open-plan kitchen and dining" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      <a href="https://lh3.googleusercontent.com/d/1dZAUKDXmN0dX5XEgfL6sZIfuMa9Ms1It" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1dZAUKDXmN0dX5XEgfL6sZIfuMa9Ms1It" alt="Living room" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
       </a>
-      <a href="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/9d0896dd-fbfb-4002-aef3-ddac8ed9411f" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
-        <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/9d0896dd-fbfb-4002-aef3-ddac8ed9411f" alt="Primary bedroom suite" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      <a href="https://lh3.googleusercontent.com/d/1n7jrFJSROP60wbGNvPawJ0BbGj6Yz3HH" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1n7jrFJSROP60wbGNvPawJ0BbGj6Yz3HH" alt="Living room alternate view" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
       </a>
-      <a href="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/907bfe36-f0ac-4756-a67d-29168b3ef262" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
-        <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/907bfe36-f0ac-4756-a67d-29168b3ef262" alt="Private terrace" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      <a href="https://lh3.googleusercontent.com/d/128c65kaVzWaV6L20sB7HLyyOEy9OCEBv" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/128c65kaVzWaV6L20sB7HLyyOEy9OCEBv" alt="Interior view" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
       </a>
-      <a href="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/980d683c-0631-4e33-8f72-25b4510907c8" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
-        <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/980d683c-0631-4e33-8f72-25b4510907c8" alt="Studio City neighborhood views" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      <a href="https://lh3.googleusercontent.com/d/1XKYIG_9EtmXkvyIwvUsuJQn1EXHyjnx3" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1XKYIG_9EtmXkvyIwvUsuJQn1EXHyjnx3" alt="Interior view" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      </a>
+      <a href="https://lh3.googleusercontent.com/d/1ujwi3Qk6kniFt7j9baoAzLbXkD9ETUGu" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1ujwi3Qk6kniFt7j9baoAzLbXkD9ETUGu" alt="Interior view" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      </a>
+      <a href="https://lh3.googleusercontent.com/d/1LMnjMjYDfPBlE2kiJNyVl2ruQucZqZDO" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1LMnjMjYDfPBlE2kiJNyVl2ruQucZqZDO" alt="Interior view" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      </a>
+      <a href="https://lh3.googleusercontent.com/d/17oHWKkuDH94xjE9-UPuzkM2BcX6BgE1e" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/17oHWKkuDH94xjE9-UPuzkM2BcX6BgE1e" alt="Bedroom" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      </a>
+      <a href="https://lh3.googleusercontent.com/d/1FD82Vcv9o14hwiRlE4H99x0ilkEkTIDT" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1FD82Vcv9o14hwiRlE4H99x0ilkEkTIDT" alt="Bedroom" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      </a>
+      <a href="https://lh3.googleusercontent.com/d/1JHjIYwxNtoV4f6doNdSl9J1HurXb4ldQ" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1JHjIYwxNtoV4f6doNdSl9J1HurXb4ldQ" alt="Bathroom" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      </a>
+      <a href="https://lh3.googleusercontent.com/d/1iUDm4ibuQgyCdNsZ_1U2fxftC4gNEXMf" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1iUDm4ibuQgyCdNsZ_1U2fxftC4gNEXMf" alt="Bathroom detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      </a>
+      <a href="https://lh3.googleusercontent.com/d/1LoER_8BVJGaUkHUH7J8-8YqwTQWJrTmy" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1LoER_8BVJGaUkHUH7J8-8YqwTQWJrTmy" alt="Interior" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
+      </a>
+      <a href="https://lh3.googleusercontent.com/d/1NcTx6ijawnWaAPehpLixUoF985SJRoaa" target="_blank" rel="noopener" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+        <img src="https://lh3.googleusercontent.com/d/1NcTx6ijawnWaAPehpLixUoF985SJRoaa" alt="Walk-in closet" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease">
       </a>
     </div>
     <p style="text-align:center;margin-top:24px;font-size:13px;color:#86868b">Click any image to view full size</p>
@@ -499,8 +542,6 @@ body,p,span,a,button,input,label,
   .gallery-hero-img{grid-column:span 1;grid-row:span 1}
 }
 </style>
-
-
 <!-- FEATURES -->
 <section class="prop-features">
   <div style="max-width:1200px;margin:0 auto">
