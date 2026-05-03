@@ -818,16 +818,16 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   })();
 </script>
 <style>
-/* ── SELLERS HERO: photo + dark overlay (overrides site-overrides forest) ── */
+/* ── SELLERS HERO: photo + 20% black overlay (overrides site-overrides forest) ── */
 .page-hero{
-  background: #0e0e0e !important;       /* dark base so photo reads clearly */
+  background: rgba(0,0,0,0.20) !important;   /* 20% black base over photo */
 }
 .page-hero::before{
   background-image: none !important;    /* remove brass-grid pattern */
-  background: linear-gradient(125deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.65) 100%) !important;
+  background: rgba(0,0,0,0.20) !important;   /* additional 20% darkening layer */
 }
 .page-hero-bg-img{
-  opacity: 0.52 !important;             /* was 0.18 — show photo properly */
+  opacity: 0.88 !important;             /* photo shows clearly */
 }
 
 /* ── PHASE CARDS (on dark ink section) ── */
