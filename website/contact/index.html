@@ -74,8 +74,8 @@ button{font-family:var(--sf);cursor:pointer;border:none;background:none}
   position:fixed;top:0;left:0;right:0;z-index:500;
   height:var(--nav-h);
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 22px;
-  background:rgba(29,29,31,.8);
+  padding:0 24px;
+  background:rgba(7,11,51,0.88);
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(255,255,255,.08);
@@ -570,6 +570,52 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 [style*="background:var(--forest)"] p,[style*="background:var(--navy)"] p{
   color:rgba(255,255,255,.78)!important;font-size:clamp(14px,1.5vw,16px)!important;
 }
+
+/* ── HAMBURGER + MOBILE DRAWER ── */
+.nav-right{display:flex;align-items:center;gap:12px}
+.ham-btn{display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:32px;height:32px;cursor:pointer;background:none;border:none;padding:4px;
+  flex-shrink:0}
+.ham-btn span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;
+  transition:transform .25s,opacity .2s,width .25s}
+.ham-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham-btn.open span:nth-child(2){opacity:0;width:0}
+.ham-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-drawer{
+  position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;z-index:498;
+  background:rgba(7,11,51,0.97);
+  backdrop-filter:saturate(180%) blur(24px);
+  -webkit-backdrop-filter:saturate(180%) blur(24px);
+  display:flex;flex-direction:column;
+  padding:32px 24px 48px;
+  transform:translateY(-110%);opacity:0;
+  transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .3s;
+  pointer-events:none}
+.mobile-drawer.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.mobile-drawer ul{list-style:none;display:flex;flex-direction:column;gap:0;flex:1}
+.mobile-drawer li{border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-drawer a{
+  display:block;color:#fff;font-family:var(--sans);
+  font-size:clamp(20px,5vw,26px);font-weight:300;
+  letter-spacing:-.01em;padding:20px 0;
+  transition:color .2s,padding-left .2s}
+.mobile-drawer a:hover{color:var(--brass,#ffc13c);padding-left:8px}
+.mobile-drawer .drawer-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:32px;width:100%;
+  background:var(--blue,#0064e5);color:#fff!important;border-radius:980px;
+  font-size:16px!important;font-weight:500!important;padding:16px 32px!important;
+  border-bottom:none!important;letter-spacing:.02em}
+.mobile-drawer .drawer-cta:hover{background:#0049a8;padding-left:32px!important}
+@media(max-width:860px){
+  .nav-links{display:none!important}
+  .nav-cta{display:none!important}
+  .ham-btn{display:flex}
+}
+@media(min-width:861px){
+  .mobile-drawer{display:none!important}
+}
+
 </style>
 <link rel="stylesheet" href="/amre-assets/website/assets/css/site-overrides.css">
 </head>
@@ -588,8 +634,22 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
     <li><a href="/amre-assets/website/team/">Team</a></li>
     <li><a href="/amre-assets/website/contact/" class="active">Contact</a></li>
   </ul>
-  <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
+  <div class="nav-right">
+    <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
+    <button class="ham-btn" id="hamBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer"><span></span><span></span><span></span></button>
+  </div>
 </nav>
+
+<!-- Mobile navigation drawer -->
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <ul role="list">
+    <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+    <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
+    <li><a href="/amre-assets/website/team/">Team</a></li>
+    <li><a href="/amre-assets/website/contact/" class="drawer-active">Contact</a></li>
+    <li><a href="/amre-assets/website/contact/" class="drawer-cta">Get In Touch</a></li>
+  </ul>
+</div>
 <div style="min-height:100svh;display:grid;grid-template-columns:1fr 1fr" class="contact-split">
   <!-- LEFT -->
   <div class="split-left">
@@ -601,14 +661,14 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
         <div class="split-agent" itemscope itemtype="https://schema.org/Person">
           <div class="split-agent-name" itemprop="name">Michael Abraham</div>
           <div class="split-agent-role" itemprop="jobTitle">Principal Agent · DRE# 02242095</div>
-          <a href="tel:3237198585" class="split-agent-link" itemprop="telephone">📞 (323) 719-8585</a>
-          <a href="mailto:michael.abraham@compass.com" class="split-agent-link" itemprop="email">✉ michael.abraham@compass.com</a>
+          <a href="tel:3237198585" class="split-agent-link" itemprop="telephone"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (323) 719-8585</a>
+          <a href="mailto:michael.abraham@compass.com" class="split-agent-link" itemprop="email"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> michael.abraham@compass.com</a>
         </div>
         <div class="split-agent" itemscope itemtype="https://schema.org/Person">
           <div class="split-agent-name" itemprop="name">Ania De Pourbaix</div>
           <div class="split-agent-role" itemprop="jobTitle">Principal Agent · DRE# 01891438</div>
-          <a href="tel:3102703879" class="split-agent-link" itemprop="telephone">📞 (310) 270-3879</a>
-          <a href="mailto:ania.d@compass.com" class="split-agent-link" itemprop="email">✉ ania.d@compass.com</a>
+          <a href="tel:3102703879" class="split-agent-link" itemprop="telephone"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (310) 270-3879</a>
+          <a href="mailto:ania.d@compass.com" class="split-agent-link" itemprop="email"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> ania.d@compass.com</a>
         </div>
       </div>
       <div class="split-office f" itemscope itemtype="https://schema.org/PostalAddress">
@@ -631,8 +691,8 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
             <div class="cam-role">Principal Agent &nbsp;·&nbsp; DRE# 02242095</div>
           </div>
           <div class="cam-links">
-            <a href="tel:3237198585" itemprop="telephone">📞 (323) 719-8585</a>
-            <a href="mailto:michael.abraham@compass.com" itemprop="email">✉ michael.abraham@compass.com</a>
+            <a href="tel:3237198585" itemprop="telephone"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (323) 719-8585</a>
+            <a href="mailto:michael.abraham@compass.com" itemprop="email"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> michael.abraham@compass.com</a>
           </div>
         </div>
         <div class="contact-agent-mini" itemscope itemtype="https://schema.org/Person">
@@ -641,8 +701,8 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
             <div class="cam-role">Principal Agent &nbsp;·&nbsp; DRE# 01891438</div>
           </div>
           <div class="cam-links">
-            <a href="tel:3102703879" itemprop="telephone">📞 (310) 270-3879</a>
-            <a href="mailto:ania.d@compass.com" itemprop="email">✉ ania.d@compass.com</a>
+            <a href="tel:3102703879" itemprop="telephone"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (310) 270-3879</a>
+            <a href="mailto:ania.d@compass.com" itemprop="email"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> ania.d@compass.com</a>
           </div>
         </div>
       </div>
@@ -651,9 +711,9 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
       <p class="f" style="font-size:13px;font-weight:300;color:var(--mid);line-height:1.6;margin-bottom:20px">We typically respond within a few hours on business days.</p>
 
       <div class="intent-chips f" id="intentChips">
-        <button class="chip" onclick="selectIntent(this,'Buying')">🏠 Buying</button>
-        <button class="chip" onclick="selectIntent(this,'Selling')">💰 Selling</button>
-        <button class="chip" onclick="selectIntent(this,'Investing')">📊 Investing</button>
+        <button class="chip" onclick="selectIntent(this,'Buying')"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Buying</button>
+        <button class="chip" onclick="selectIntent(this,'Selling')"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 8v2m-3-7h4.5a1.5 1.5 0 0 1 0 3H9a1.5 1.5 0 0 0 0 3H13m-1-8a1.5 1.5 0 0 1 1.5 1.5"/></svg> Selling</button>
+        <button class="chip" onclick="selectIntent(this,'Investing')"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/><path d="M2 20h20"/></svg> Investing</button>
         <button class="chip" onclick="selectIntent(this,'Just exploring')">💬 Just exploring</button>
       </div>
 
@@ -728,6 +788,26 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.f').forEach(function(el){io.observe(el)});
 })();
+
+  // ── Hamburger menu ──
+  (function(){
+    var btn=document.getElementById('hamBtn');
+    var drawer=document.getElementById('mobileDrawer');
+    if(!btn||!drawer)return;
+    btn.addEventListener('click',function(){
+      var open=btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      drawer.classList.toggle('open',open);
+      document.body.style.overflow=open?'hidden':'';
+    });
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        btn.classList.remove('open');
+        drawer.classList.remove('open');
+        document.body.style.overflow='';
+      });
+    });
+  })();
 </script>
 <style>
 .contact-split{min-height:100svh}
