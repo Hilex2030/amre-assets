@@ -366,7 +366,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 .stat-n{color:var(--forest) !important}
 .stat-n sup{color:var(--brass) !important}
 /* Valuation CTA bg */
-.valuation-cta{background:linear-gradient(135deg,var(--forest),#40493c) !important}
+.valuation-cta{background:var(--forest) !important}
 /* Filter pills */
 .filter-pill.active,.filter-btn.active{background:var(--forest) !important;border-color:var(--forest) !important}
 /* Prop badges */
@@ -524,6 +524,12 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   .testi-card{padding:22px 16px !important}
 }
 
+
+/* dark bg text — lighter, bigger */
+.section-dark p,.section-dark li,.compass-card-p,.phase-desc,.statement-q,
+[style*="background:var(--forest)"] p,[style*="background:var(--navy)"] p{
+  color:rgba(255,255,255,.78)!important;font-size:clamp(14px,1.5vw,16px)!important;
+}
 </style>
 </head>
 <body>
@@ -536,13 +542,12 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
     <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-black.png" alt="Compass" class="logo-dark nav-compass" width="70" height="15">
   </a>
   <ul class="nav-links">
-      <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
-      <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
-      <li><a href="/amre-assets/website/properties/">Properties</a></li>
-      <li><a href="/amre-assets/website/team/" class="active">Team</a></li>
-      <li><a href="/amre-assets/website/contact/">Contact</a></li>
+    <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+    <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
+    <li><a href="/amre-assets/website/team/" class="active">Team</a></li>
+    <li><a href="/amre-assets/website/contact/">Contact</a></li>
   </ul>
-  <a href="/amre-assets/website/contact/" class="nav-cta">Get In Touch</a>
+  <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
 </nav>
 <div class="page-hero">
   <div class="page-hero-bg-img" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg')"></div>
@@ -623,7 +628,55 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
     <p class="eyebrow f">Client Voices</p>
     <h2 class="section-h f" style="margin-bottom:52px">What people <em>experience.</em></h2>
     <div class="testi-grid">
-      <blockquote class="testi-card f"><div class="testi-stars">★★★★★</div><p class="testi-text">"Even though they were representing the seller, they kept everything smooth and transparent throughout the whole process. After closing, they quickly found me a great tenant through their network. I would definitely work with them again."</p><footer class="testi-author">— Cyrus P. &nbsp;·&nbsp; Buyer & Investor</footer></blockquote>
+      <blockquote class="testi-card f"><div class="testi-stars">★★★★★</div><p class="testi-text">"Even though they were representing the seller, they kept everything smooth and transparent throughout the whole process. After closing, they quickly found me a great tenant through their network. I would definitely work with them again."</p><footer class="site-footer" itemscope itemtype="https://schema.org/RealEstateAgent">
+  <meta itemprop="name" content="AMRE Real Estate Group">
+  <meta itemprop="telephone" content="+13237198585">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logos">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" width="70">
+        <div class="footer-sep"></div>
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64">
+      </div>
+      <p class="footer-tagline">Empowering clients to achieve their real estate dreams, one home at a time. Compass Beverly Hills.</p>
+    </div>
+    <div>
+      <div class="footer-col-head">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+        <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
+        <li><a href="/amre-assets/website/team/">Team</a></li>
+        <li><a href="/amre-assets/website/contact/">Contact</a></li>
+        <li><a href="/amre-assets/website/properties/fruitland-401/">Featured Property</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Services</div>
+      <ul class="footer-links">
+        <li><a href="/amre-assets/website/sellers/#three-phase">3-Phase Marketing</a></li>
+        <li><a href="/amre-assets/website/sellers/#concierge">Compass Concierge</a></li>
+        <li><a href="/amre-assets/website/buyers/">Buyer Advisory</a></li>
+        <li><a href="/amre-assets/website/#contact">Home Valuation</a></li>
+        <li><a href="/amre-assets/website/#contact">Investment Advisory</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Connect</div>
+      <ul class="footer-links">
+        <li><a href="tel:3237198585">(323) 719-8585</a></li>
+        <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
+        <li><a href="https://www.instagram.com/amre.group/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@AMRE_Real_Estate" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.facebook.com/amre.grp" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/company/amre-real-estate-group/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. Information deemed reliable but not guaranteed. Equal Housing Opportunity.</p>
+    <p class="footer-dre">Michael Abraham CA DRE# 02242095 &nbsp;·&nbsp; Ania De Pourbaix CA DRE# 01891438 &nbsp;·&nbsp; Compass DRE# 01991628</p>
+  </div>
+</footer></blockquote>
       <blockquote class="testi-card f d1"><div class="testi-stars">★★★★★</div><p class="testi-text">"Michael and Ania are true professionals. Very knowledgeable, they understand the market, and are just, all around, great to work with. Couldn't recommend them enough."</p><footer class="testi-author">— Ross Van Der W. &nbsp;·&nbsp; Buyer</footer></blockquote>
       <blockquote class="testi-card f d2"><div class="testi-stars">★★★★★</div><p class="testi-text">"Their insightful vision and commitment to producing captivating results was remarkable. Their professionalism and collaborative approach made the process both efficient and enjoyable."</p><footer class="testi-author">— Jessica C. &nbsp;·&nbsp; Seller</footer></blockquote>
     </div>
@@ -660,7 +713,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
       <ul class="footer-links">
         <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
         <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
-        <li><a href="/amre-assets/website/properties/">Properties</a></li>
+        
         <li><a href="/amre-assets/website/team/">Team</a></li>
         <li><a href="/amre-assets/website/contact/">Contact</a></li>
       </ul>
@@ -682,7 +735,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
         <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
         <li><a href="https://www.instagram.com/michaelabraham.realtor/" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.youtube.com/@MichaelAbraham.Realtor" target="_blank" rel="noopener">YouTube</a></li>
-        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/company/amre-real-estate-group/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </div>
   </div>
