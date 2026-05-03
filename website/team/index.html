@@ -74,8 +74,8 @@ button{font-family:var(--sf);cursor:pointer;border:none;background:none}
   position:fixed;top:0;left:0;right:0;z-index:500;
   height:var(--nav-h);
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 22px;
-  background:rgba(29,29,31,.8);
+  padding:0 24px;
+  background:rgba(7,11,51,0.88);
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(255,255,255,.08);
@@ -547,6 +547,52 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
 .agent-creds span{color:#1c3d31;font-weight:600;letter-spacing:.04em}
 .agent-actions{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap}
 
+
+/* ── HAMBURGER + MOBILE DRAWER ── */
+.nav-right{display:flex;align-items:center;gap:12px}
+.ham-btn{display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:32px;height:32px;cursor:pointer;background:none;border:none;padding:4px;
+  flex-shrink:0}
+.ham-btn span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;
+  transition:transform .25s,opacity .2s,width .25s}
+.ham-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham-btn.open span:nth-child(2){opacity:0;width:0}
+.ham-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-drawer{
+  position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;z-index:498;
+  background:rgba(7,11,51,0.97);
+  backdrop-filter:saturate(180%) blur(24px);
+  -webkit-backdrop-filter:saturate(180%) blur(24px);
+  display:flex;flex-direction:column;
+  padding:32px 24px 48px;
+  transform:translateY(-110%);opacity:0;
+  transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .3s;
+  pointer-events:none}
+.mobile-drawer.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.mobile-drawer ul{list-style:none;display:flex;flex-direction:column;gap:0;flex:1}
+.mobile-drawer li{border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-drawer a{
+  display:block;color:#fff;font-family:var(--sans);
+  font-size:clamp(20px,5vw,26px);font-weight:300;
+  letter-spacing:-.01em;padding:20px 0;
+  transition:color .2s,padding-left .2s}
+.mobile-drawer a:hover{color:var(--brass,#ffc13c);padding-left:8px}
+.mobile-drawer .drawer-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:32px;width:100%;
+  background:var(--blue,#0064e5);color:#fff!important;border-radius:980px;
+  font-size:16px!important;font-weight:500!important;padding:16px 32px!important;
+  border-bottom:none!important;letter-spacing:.02em}
+.mobile-drawer .drawer-cta:hover{background:#0049a8;padding-left:32px!important}
+@media(max-width:860px){
+  .nav-links{display:none!important}
+  .nav-cta{display:none!important}
+  .ham-btn{display:flex}
+}
+@media(min-width:861px){
+  .mobile-drawer{display:none!important}
+}
+
 </style>
 <link rel="stylesheet" href="/amre-assets/website/assets/css/site-overrides.css">
 </head>
@@ -565,8 +611,22 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
     <li><a href="/amre-assets/website/team/" class="active">Team</a></li>
     <li><a href="/amre-assets/website/contact/">Contact</a></li>
   </ul>
-  <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
+  <div class="nav-right">
+    <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
+    <button class="ham-btn" id="hamBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer"><span></span><span></span><span></span></button>
+  </div>
 </nav>
+
+<!-- Mobile navigation drawer -->
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <ul role="list">
+    <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+    <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
+    <li><a href="/amre-assets/website/team/" class="drawer-active">Team</a></li>
+    <li><a href="/amre-assets/website/contact/">Contact</a></li>
+    <li><a href="/amre-assets/website/contact/" class="drawer-cta">Get In Touch</a></li>
+  </ul>
+</div>
 <div class="page-hero">
   <div class="page-hero-bg-img" style="background-image:linear-gradient(135deg, #070B33 0%, #1c3d31 100%)"></div>
   <div class="page-hero-inner">
@@ -635,10 +695,10 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
     <p class="eyebrow f" style="color:var(--gold)">What Drives Us</p>
     <h2 class="section-h section-h-white f" style="margin-bottom:52px">The principles behind<br><em>every transaction.</em></h2>
     <div class="values-grid">
-      <div class="value-card f"><span class="value-icon">🎯</span><h3 class="value-title">Integrity</h3><p class="value-body">Honest assessments, even when it's not what you want to hear. Trust is earned over time, not promised upfront.</p></div>
-      <div class="value-card f d1"><span class="value-icon">🔍</span><h3 class="value-title">Precision</h3><p class="value-body">From valuation to offer strategy, we obsess over every detail that moves the needle. Every number matters.</p></div>
-      <div class="value-card f d2"><span class="value-icon">🤝</span><h3 class="value-title">Partnership</h3><p class="value-body">Our relationship doesn't end at closing. We're your long-term real estate partner — for the next deal, the next stage.</p></div>
-      <div class="value-card f d3"><span class="value-icon">💡</span><h3 class="value-title">Innovation</h3><p class="value-body">Compass technology, market data, and AI-assisted analysis — we give clients a genuine competitive edge.</p></div>
+      <div class="value-card f"><span class="value-icon"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><h3 class="value-title">Integrity</h3><p class="value-body">Honest assessments, even when it's not what you want to hear. Trust is earned over time, not promised upfront.</p></div>
+      <div class="value-card f d1"><span class="value-icon"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><h3 class="value-title">Precision</h3><p class="value-body">From valuation to offer strategy, we obsess over every detail that moves the needle. Every number matters.</p></div>
+      <div class="value-card f d2"><span class="value-icon"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span><h3 class="value-title">Partnership</h3><p class="value-body">Our relationship doesn't end at closing. We're your long-term real estate partner — for the next deal, the next stage.</p></div>
+      <div class="value-card f d3"><span class="value-icon"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span><h3 class="value-title">Innovation</h3><p class="value-body">Compass technology, market data, and AI-assisted analysis — we give clients a genuine competitive edge.</p></div>
     </div>
   </div>
 </section>
@@ -649,7 +709,7 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
     <p class="eyebrow f">Client Voices</p>
     <h2 class="section-h f" style="margin-bottom:52px">What people <em>experience.</em></h2>
     <div class="testi-grid">
-      <blockquote class="testi-card f"><div class="testi-stars">★★★★★</div><p class="testi-text">"Even though they were representing the seller, they kept everything smooth and transparent throughout the whole process. After closing, they quickly found me a great tenant through their network. I would definitely work with them again."</p><footer class="site-footer" itemscope itemtype="https://schema.org/RealEstateAgent">
+      <blockquote class="testi-card f"><div class="testi-stars"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="testi-text">"Even though they were representing the seller, they kept everything smooth and transparent throughout the whole process. After closing, they quickly found me a great tenant through their network. I would definitely work with them again."</p><footer class="site-footer" itemscope itemtype="https://schema.org/RealEstateAgent">
   <meta itemprop="name" content="AMRE Real Estate Group">
   <meta itemprop="telephone" content="+13237198585">
   <div class="footer-grid">
@@ -698,8 +758,8 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
     <p class="footer-dre">Michael Abraham CA DRE# 02242095 &nbsp;·&nbsp; Ania De Pourbaix CA DRE# 01891438 &nbsp;·&nbsp; Compass DRE# 01991628</p>
   </div>
 </footer></blockquote>
-      <blockquote class="testi-card f d1"><div class="testi-stars">★★★★★</div><p class="testi-text">"Michael and Ania are true professionals. Very knowledgeable, they understand the market, and are just, all around, great to work with. Couldn't recommend them enough."</p><footer class="testi-author">— Ross Van Der W. &nbsp;·&nbsp; Buyer</footer></blockquote>
-      <blockquote class="testi-card f d2"><div class="testi-stars">★★★★★</div><p class="testi-text">"Their insightful vision and commitment to producing captivating results was remarkable. Their professionalism and collaborative approach made the process both efficient and enjoyable."</p><footer class="testi-author">— Jessica C. &nbsp;·&nbsp; Seller</footer></blockquote>
+      <blockquote class="testi-card f d1"><div class="testi-stars"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="testi-text">"Michael and Ania are true professionals. Very knowledgeable, they understand the market, and are just, all around, great to work with. Couldn't recommend them enough."</p><footer class="testi-author">— Ross Van Der W. &nbsp;·&nbsp; Buyer</footer></blockquote>
+      <blockquote class="testi-card f d2"><div class="testi-stars"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="#ffc13c" stroke="#ffc13c" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="testi-text">"Their insightful vision and commitment to producing captivating results was remarkable. Their professionalism and collaborative approach made the process both efficient and enjoyable."</p><footer class="testi-author">— Jessica C. &nbsp;·&nbsp; Seller</footer></blockquote>
     </div>
   </div>
 </section>
@@ -780,6 +840,26 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
   },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.f').forEach(function(el){io.observe(el)});
 })();
+
+  // ── Hamburger menu ──
+  (function(){
+    var btn=document.getElementById('hamBtn');
+    var drawer=document.getElementById('mobileDrawer');
+    if(!btn||!drawer)return;
+    btn.addEventListener('click',function(){
+      var open=btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      drawer.classList.toggle('open',open);
+      document.body.style.overflow=open?'hidden':'';
+    });
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        btn.classList.remove('open');
+        drawer.classList.remove('open');
+        document.body.style.overflow='';
+      });
+    });
+  })();
 </script>
 <style>
 .agent-profile{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
