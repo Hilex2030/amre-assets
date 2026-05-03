@@ -860,47 +860,10 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 
 
 /* ====================================================================
-   AMRE 2026 — high-specificity v2 overrides
+   AMRE 2026 — page-specific tweaks (sans-serif heading override removed
+   2026-05-03 to allow site-overrides.css to apply Playfair Display).
+   Cross-cutting visual tokens are now centralized in site-overrides.css.
    ==================================================================== */
-body .hero-h, body .section-h, body .page-hero h1, body .svc-title,
-body .agent-name, body .agent-display-name, body .compass-card-h,
-body .prop-cta-h, body .prop-price, body .form-box-title,
-body .statement-q, body .testi-text, body .value-title,
-body .step-title, body .calc-result-num, body .accordion-title,
-body .pillar-title, body .stat-num {
-  font-family: var(--sans) !important;
-  font-weight: 500 !important;
-  letter-spacing: -.015em !important;
-}
-body .hero-h em, body .section-h em, body .page-hero h1 em,
-body .prop-cta-h em, body .compass-card-h em {
-  font-style: italic !important; font-weight: 400 !important;
-}
-body .statement-q, body .testi-text {
-  font-weight: 400 !important; font-style: italic !important;
-}
-body .prop-price { font-weight: 600 !important; letter-spacing: 0 !important; }
-body .hero-h { line-height: 1.05 !important; font-size: clamp(44px,6.2vw,84px) !important; }
-body .page-hero h1 { line-height: 1.05 !important; }
-body .section-h { line-height: 1.12 !important; }
-body .lede { font-size: 18px !important; line-height: 1.7 !important; }
-body .svc-desc, body .compass-card-p, body .agent-bio,
-body .faq-a p, body .accordion-content p, body .step-desc,
-body .value-desc, body .pillar-desc {
-  font-size: 15px !important; line-height: 1.78 !important;
-}
-body .testi-text { font-size: 17px !important; line-height: 1.65 !important; }
-body .contact-val { font-size: 15px !important; }
-body .form-box-sub { font-size: 14px !important; }
-body .page-hero-sub, body .hero-sub {
-  font-size: clamp(15px, 1.7vw, 18px) !important; line-height: 1.7 !important;
-}
-body .footer-tagline { color: rgba(255,255,255,.62) !important; font-size: 13px !important; max-width: 260px !important; }
-body .footer-col-head { color: rgba(255,255,255,.55) !important; font-size: 10px !important; }
-body .footer-links a { color: rgba(255,255,255,.72) !important; font-size: 13px !important; }
-body .footer-links a:hover { color: #fff !important; }
-body .footer-legal { color: rgba(255,255,255,.50) !important; font-size: 11px !important; }
-body .footer-dre { color: rgba(255,255,255,.40) !important; font-size: 11px !important; }
 body .hero-content { max-width: 880px !important; }
 @media (max-width: 680px) { body .hero-content { max-width: 100% !important; } }
 </style>
