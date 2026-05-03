@@ -1,8 +1,8 @@
-/* AMRE Website — Site-wide Overrides
+/* AMRE Website â Site-wide Overrides
    Loaded after each page's inline <style> to standardize:
-   • Navigation styling (match home page across all pages)
-   • Playfair Display on all banner headings
-   • Legible body gray text contrast across light & dark sections
+   â¢ Navigation styling (match home page across all pages)
+   â¢ Playfair Display on all banner headings
+   â¢ Legible body gray text contrast across light & dark sections
 */
 
 /* ===== NAVIGATION CONSISTENCY =====
@@ -31,7 +31,7 @@
 .nav-links a.active{ color:#ffc13c !important; }
 .site-nav.is-light .nav-links a.active{ color:#1c3d31 !important; }
 
-/* CTA button — solid brass on every page */
+/* CTA button â solid brass on every page */
 .nav-cta{
   font-family:'Montserrat',-apple-system,sans-serif !important;
   font-size:11px !important;
@@ -100,7 +100,7 @@ h1.hero-h, h1.page-hero-h,
 }
 
 
-/* TEAM PAGE — force Apple-style stacked cards */
+/* TEAM PAGE â force Apple-style stacked cards */
 .team-cards-wrap{max-width:1200px;margin:0 auto;padding:80px 32px;display:grid !important;grid-template-columns:repeat(2,1fr) !important;gap:32px !important;background:transparent}
 @media (max-width:860px){.team-cards-wrap{grid-template-columns:1fr !important;padding:48px 20px;gap:24px !important}}
 .team-cards-wrap > section{background:transparent !important;padding:0 !important;min-height:0 !important}
@@ -119,3 +119,9 @@ h1.hero-h, h1.page-hero-h,
 .team-cards-wrap .agent-contacts a{font-family:'Montserrat',-apple-system,sans-serif !important;font-size:12px !important;font-weight:600 !important;letter-spacing:.08em !important;text-transform:uppercase !important;padding:11px 18px !important;border-radius:2px !important;text-decoration:none !important}
 .team-cards-wrap .agent-contacts a:first-child{background:#1c3d31 !important;color:#fff !important}
 .team-cards-wrap .agent-contacts a:nth-child(2){border:1px solid rgba(7,11,51,.18) !important;color:#070B33 !important}
+
+
+/* Force photo-on-top for the reversed (Ania) card */
+.team-cards-wrap .agent-profile{display:flex !important;flex-direction:column !important}
+.team-cards-wrap .agent-photo-col{order:0 !important}
+.team-cards-wrap .agent-content-col{order:1 !important}
