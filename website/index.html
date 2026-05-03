@@ -389,7 +389,25 @@ details[open] .faq-q::after{transform:rotate(45deg)}
 .lead-bar{background:var(--brass);padding:14px 24px;text-align:center;position:relative;z-index:100}
 .lead-bar p{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--navy)}
 .lead-bar a{color:var(--navy);font-weight:700;text-decoration:underline}
+
+/* Restored Featured Listing label box on hero */
+.hero-listing{
+  position:absolute;z-index:2;bottom:40px;right:44px;
+  background:rgba(7,11,51,0.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.12);
+  padding:16px 20px;border-radius:4px;
+  max-width:260px;
+}
+.hero-listing-label{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:6px}
+.hero-listing-addr{font-family:var(--serif);font-size:18px;font-weight:400;color:#fff;line-height:1.2;margin-bottom:4px}
+.hero-listing-detail{font-family:var(--sans);font-size:11px;font-weight:300;color:rgba(255,255,255,.6)}
+@media(max-width:680px){.hero-listing{display:none}}
+/* SVG illustrations replacing emoji icons */
+.compass-icon{color:var(--brass);margin-bottom:18px}
+.compass-icon svg{width:34px;height:34px;display:block}
+
 </style>
+<link rel="stylesheet" href="/amre-assets/website/assets/css/site-overrides.css">
 </head>
 <body>
 
@@ -426,13 +444,19 @@ details[open] .faq-q::after{transform:rotate(45deg)}
   </div>
   <div class="hero-content">
     <p class="hero-eyebrow">AMRE Real Estate Group &nbsp;·&nbsp; Compass Beverly Hills</p>
-    <h1 class="hero-h">Empowering clients<br>one home <em>at a time.</em></h1>
+    <h1 class="hero-h">Empowering clients one home <em>at a time.</em></h1>
     <p class="hero-sub">Expert advisory for sellers, buyers, and investors of Los Angeles's finest properties. 25 years of combined experience.</p>
     <div class="hero-btns">
       <a href="/amre-assets/website/#contact" class="btn btn-brass">Get a Free Valuation</a>
       <a href="/amre-assets/website/properties/fruitland-401/" class="btn btn-outline-white">Featured Property</a>
     </div>
   </div>
+  <div class="hero-listing" aria-label="Featured listing">
+    <div class="hero-listing-label">Featured Listing</div>
+    <div class="hero-listing-addr">11023 Fruitland Dr<br>Unit 401</div>
+    <div class="hero-listing-detail">Studio City · 3 Bed · 2.5 Bath · 1,705 SF</div>
+  </div>
+
   <div class="hero-scroll" aria-hidden="true">
     <div class="hero-scroll-bar"></div>
     <span>Scroll</span>
@@ -497,7 +521,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
 <!-- FEATURED PROPERTY TEASER -->
 <div class="prop-teaser" id="featured">
   <div class="prop-teaser-img">
-    <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85/https://media-production.lp-cdn.com/media/62a7a34f-5b0f-45a1-8546-ae02b0cac643" alt="11023 Fruitland Dr Unit 401 Studio City" loading="lazy">
+    <img src="https://mediaservice.themls.com/large/26659475/26659475_fcbfec99-c380-4ddb-b821-571d5be48cff.jpg" alt="11023 Fruitland Dr Unit 401 Studio City" loading="lazy">
   </div>
   <div class="prop-teaser-content">
     <div class="prop-teaser-badge">Featured Listing</div>
@@ -515,7 +539,7 @@ details[open] .faq-q::after{transform:rotate(45deg)}
 
 <!-- COMPASS ADVANTAGE -->
 <section class="compass-adv" id="compass">
-  <div class="compass-adv-bg" aria-hidden="true"><img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/e5f987f4-ec7a-4252-89fc-b2ccaf9afb70" alt="" loading="lazy"></div>
+  <div class="compass-adv-bg" aria-hidden="true"><img src="https://mediaservice.themls.com/large/26659475/26659475_01e37ef0-e266-48e9-a9b9-d89240a5c5bc.jpg" alt="" loading="lazy"></div>
   <div class="compass-adv-overlay" aria-hidden="true"></div>
   <div class="wrap" style="position:relative;z-index:2">
     <p class="eyebrow f" style="color:var(--brass)">The Compass Advantage</p>
@@ -523,17 +547,17 @@ details[open] .faq-q::after{transform:rotate(45deg)}
     <p class="lede lede-white f" style="margin-bottom:0">As Compass agents, Michael and Ania bring exclusive programs and $1.5B in technology investment unavailable through any other brokerage.</p>
     <div class="compass-grid">
       <div class="compass-card f">
-        <div class="compass-icon">🔒</div>
+        <div class="compass-icon"><svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="24" height="20" rx="1.5"/><circle cx="16" cy="17" r="5"/><line x1="16" y1="13.5" x2="16" y2="11"/><line x1="19.5" y1="17" x2="22" y2="17"/><line x1="16" y1="20.5" x2="16" y2="23"/><line x1="12.5" y1="17" x2="10" y2="17"/><line x1="7" y1="27" x2="7" y2="29"/><line x1="25" y1="27" x2="25" y2="29"/></svg></div>
         <h3 class="compass-card-h">Private Exclusive</h3>
         <p class="compass-card-p">Market your home to 34,000+ Compass agents before any public listing. No days-on-market. No price history. Complete discretion.</p>
       </div>
       <div class="compass-card f d1">
-        <div class="compass-icon">🏗</div>
+        <div class="compass-icon"><svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 27 L16 8 L27 27 Z"/><line x1="9" y1="20" x2="23" y2="20"/><line x1="11.5" y1="15.5" x2="20.5" y2="15.5"/><circle cx="16" cy="11" r="0.8" fill="currentColor"/></svg></div>
         <h3 class="compass-card-h">Compass Concierge</h3>
         <p class="compass-card-p">Cover upfront improvement costs — staging, paint, landscaping — with zero interest and zero fees. Pay only when your home sells.</p>
       </div>
       <div class="compass-card f d2">
-        <div class="compass-icon">📊</div>
+        <div class="compass-icon"><svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="24" height="20" rx="2"/><line x1="4" y1="11" x2="28" y2="11"/><circle cx="7.5" cy="8.5" r="0.6" fill="currentColor"/><circle cx="10" cy="8.5" r="0.6" fill="currentColor"/><polyline points="8,21 12,17 16,19 20,14 24,16"/></svg></div>
         <h3 class="compass-card-h">Compass One</h3>
         <p class="compass-card-p">A live dashboard connecting you and your agent through every phase — 24/7 transparency from offer to close.</p>
       </div>
