@@ -129,3 +129,78 @@ h1.hero-h, h1.page-hero-h,
 .team-cards-wrap .agent-profile{display:flex !important;flex-direction:column !important}
 .team-cards-wrap .agent-photo-col{order:0 !important}
 .team-cards-wrap .agent-content-col{order:1 !important}
+
+
+/* ===== UNIVERSAL FIXES — applied across all pages ===== */
+
+/* Centered eyebrow as the default. Use class .eyebrow-left to opt out (already supported). */
+.eyebrow:not(.eyebrow-left){ justify-content:center !important; }
+
+/* Section heading + lede: keep centered alignment unless explicitly opted out. */
+.section-h:not(.section-h-left){ text-align:center !important; }
+.lede:not(.lede-left){ text-align:center !important; margin-inline:auto !important; }
+
+/* Featured listing block sits on a dark navy background — every value & label must read white.
+   Earlier override forced color:inherit on .prop-spec-num which inherited dark ink — undo that. */
+.prop-teaser-content,
+.prop-teaser-content h3,
+.prop-teaser-content p,
+.prop-teaser-content .prop-teaser-addr{
+  color:#fff !important;
+}
+.prop-teaser-content p,
+.prop-teaser-addr{
+  color:rgba(255,255,255,0.78) !important;
+}
+.prop-spec-num{ color:#fff !important; opacity:1 !important; }
+.prop-spec-lbl{ color:rgba(255,255,255,0.65) !important; }
+
+/* Testimonial cards sit on a LIGHT background — the global "white text on dark" rule was
+   incorrectly catching .testi-text and making it invisible. Force dark ink for legibility. */
+.testi-text{
+  color:#1d1d1f !important;
+  font-style:italic;
+  opacity:1 !important;
+}
+.testi-author{ color:#3a3a3c !important; }
+
+/* ===== UNIVERSAL FOOTER DISCLOSURE =====
+   The legal disclaimer + EHO logo block that appears on every page footer. */
+.site-footer-disclosure{
+  max-width:1200px;
+  margin:24px auto 0;
+  padding:24px 0 0;
+  border-top:1px solid rgba(255,255,255,0.08);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:32px;
+  align-items:start;
+}
+.site-footer-disclosure-text{
+  font-family:'Montserrat',-apple-system,sans-serif;
+  font-size:11px;
+  font-weight:300;
+  line-height:1.7;
+  color:rgba(255,255,255,0.45);
+}
+.site-footer-disclosure-text a{
+  color:rgba(255,255,255,0.7);
+  text-decoration:underline;
+}
+.site-footer-disclosure-text a:hover{ color:#fff; }
+.site-footer-disclosure-eho{
+  flex-shrink:0;
+}
+.site-footer-disclosure-eho img{
+  height:54px;
+  width:auto;
+  opacity:0.7;
+  display:block;
+}
+@media (max-width:680px){
+  .site-footer-disclosure{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .site-footer-disclosure-eho img{ height:46px; }
+}
