@@ -74,8 +74,8 @@ button{font-family:var(--sf);cursor:pointer;border:none;background:none}
   position:fixed;top:0;left:0;right:0;z-index:500;
   height:var(--nav-h);
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 22px;
-  background:rgba(29,29,31,.8);
+  padding:0 24px;
+  background:rgba(7,11,51,0.88);
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(255,255,255,.08);
@@ -530,6 +530,52 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 [style*="background:var(--forest)"] p,[style*="background:var(--navy)"] p{
   color:rgba(255,255,255,.78)!important;font-size:clamp(14px,1.5vw,16px)!important;
 }
+
+/* ── HAMBURGER + MOBILE DRAWER ── */
+.nav-right{display:flex;align-items:center;gap:12px}
+.ham-btn{display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:32px;height:32px;cursor:pointer;background:none;border:none;padding:4px;
+  flex-shrink:0}
+.ham-btn span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;
+  transition:transform .25s,opacity .2s,width .25s}
+.ham-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham-btn.open span:nth-child(2){opacity:0;width:0}
+.ham-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-drawer{
+  position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;z-index:498;
+  background:rgba(7,11,51,0.97);
+  backdrop-filter:saturate(180%) blur(24px);
+  -webkit-backdrop-filter:saturate(180%) blur(24px);
+  display:flex;flex-direction:column;
+  padding:32px 24px 48px;
+  transform:translateY(-110%);opacity:0;
+  transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .3s;
+  pointer-events:none}
+.mobile-drawer.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.mobile-drawer ul{list-style:none;display:flex;flex-direction:column;gap:0;flex:1}
+.mobile-drawer li{border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-drawer a{
+  display:block;color:#fff;font-family:var(--sans);
+  font-size:clamp(20px,5vw,26px);font-weight:300;
+  letter-spacing:-.01em;padding:20px 0;
+  transition:color .2s,padding-left .2s}
+.mobile-drawer a:hover{color:var(--brass,#ffc13c);padding-left:8px}
+.mobile-drawer .drawer-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:32px;width:100%;
+  background:var(--blue,#0064e5);color:#fff!important;border-radius:980px;
+  font-size:16px!important;font-weight:500!important;padding:16px 32px!important;
+  border-bottom:none!important;letter-spacing:.02em}
+.mobile-drawer .drawer-cta:hover{background:#0049a8;padding-left:32px!important}
+@media(max-width:860px){
+  .nav-links{display:none!important}
+  .nav-cta{display:none!important}
+  .ham-btn{display:flex}
+}
+@media(min-width:861px){
+  .mobile-drawer{display:none!important}
+}
+
 </style>
 <link rel="stylesheet" href="/amre-assets/website/assets/css/site-overrides.css">
 </head>
@@ -548,8 +594,22 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
     <li><a href="/amre-assets/website/team/">Team</a></li>
     <li><a href="/amre-assets/website/contact/">Contact</a></li>
   </ul>
-  <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
+  <div class="nav-right">
+    <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
+    <button class="ham-btn" id="hamBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer"><span></span><span></span><span></span></button>
+  </div>
 </nav>
+
+<!-- Mobile navigation drawer -->
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <ul role="list">
+    <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+    <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
+    <li><a href="/amre-assets/website/team/">Team</a></li>
+    <li><a href="/amre-assets/website/contact/">Contact</a></li>
+    <li><a href="/amre-assets/website/contact/" class="drawer-cta">Get In Touch</a></li>
+  </ul>
+</div>
 <div class="page-hero" style="padding-bottom:60px">
   <div class="page-hero-inner">
     <p class="page-eyebrow">Current & Recent Listings</p>
@@ -769,5 +829,25 @@ function filterProps(status,btn){
     c.style.display=(status==='all'||c.dataset.status===status)?'':'none';
   });
 }
+
+  // ── Hamburger menu ──
+  (function(){
+    var btn=document.getElementById('hamBtn');
+    var drawer=document.getElementById('mobileDrawer');
+    if(!btn||!drawer)return;
+    btn.addEventListener('click',function(){
+      var open=btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      drawer.classList.toggle('open',open);
+      document.body.style.overflow=open?'hidden':'';
+    });
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        btn.classList.remove('open');
+        drawer.classList.remove('open');
+        document.body.style.overflow='';
+      });
+    });
+  })();
 </script>
 </body></html>
