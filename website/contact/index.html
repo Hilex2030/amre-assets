@@ -416,6 +416,46 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 .hero-content { max-width: 880px; }
 .hero-h { font-size: clamp(44px, 6.2vw, 84px); }
 @media (max-width: 680px) { .hero-content { max-width: 100%; } }
+
+/* Intent chips — functional buttons */
+.chip{
+  font-family:'Montserrat',-apple-system,sans-serif !important;
+  font-size:12px;font-weight:500;letter-spacing:.04em;
+  padding:8px 16px;
+  background:var(--white);border:1px solid var(--rule);
+  border-radius:980px;color:var(--mid);cursor:pointer;
+  transition:all .2s;
+}
+.chip:hover{border-color:var(--brass);color:var(--navy)}
+.chip.selected{background:var(--brass);border-color:var(--brass);color:var(--navy);font-weight:600}
+.intent-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+
+/* Agent mini cards */
+.contact-agent-mini{
+  background:var(--light-grey);
+  border-radius:8px;padding:16px 18px;
+  display:flex;align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;flex-wrap:wrap;
+}
+.cam-name{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-size:16px;font-weight:400;color:var(--ink);margin-bottom:3px;
+}
+.cam-role{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+.cam-links{display:flex;flex-direction:column;gap:5px}
+.cam-links a{font-size:12px;font-weight:300;color:var(--mid);transition:color .2s}
+.cam-links a:hover{color:var(--compass-blue)}
+
+/* Mobile: stack the split */
+@media(max-width:860px){
+  .contact-split{grid-template-columns:1fr !important;min-height:auto}
+  .split-left{padding:calc(var(--nav-h) + 40px) 24px 40px}
+  .split-right{padding:32px 24px 48px}
+  .split-right-inner{max-width:100%}
+  .contact-agent-mini{flex-direction:column;gap:10px}
+}
+
 </style>
 </head>
 <body>
@@ -468,16 +508,43 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   <!-- RIGHT -->
   <div class="split-right">
     <div class="split-right-inner">
-      <h2 class="f" style="font-family:var(--serif);font-size:28px;font-weight:400;color:var(--ink);margin-bottom:6px">Send a message</h2>
-      <p class="f" style="font-size:14px;font-weight:300;color:var(--mid);line-height:1.6;margin-bottom:32px">We typically respond within a few hours on business days. For urgent matters, call directly.</p>
-      <div class="intent-chips f">
-        <span class="chip">🏠 Buying</span>
-        <span class="chip">💰 Selling</span>
-        <span class="chip">📊 Investing</span>
-        <span class="chip">💬 Just exploring</span>
+
+      <!-- Agent cards stacked above form -->
+      <div class="contact-agent-cards f" style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
+        <div class="contact-agent-mini" itemscope itemtype="https://schema.org/Person">
+          <div class="cam-info">
+            <div class="cam-name" itemprop="name">Michael Abraham</div>
+            <div class="cam-role">Principal Agent &nbsp;·&nbsp; DRE# 02242095</div>
+          </div>
+          <div class="cam-links">
+            <a href="tel:3237198585" itemprop="telephone">📞 (323) 719-8585</a>
+            <a href="mailto:michael.abraham@compass.com" itemprop="email">✉ michael.abraham@compass.com</a>
+          </div>
+        </div>
+        <div class="contact-agent-mini" itemscope itemtype="https://schema.org/Person">
+          <div class="cam-info">
+            <div class="cam-name" itemprop="name">Ania De Pourbaix</div>
+            <div class="cam-role">Principal Agent &nbsp;·&nbsp; DRE# 01891438</div>
+          </div>
+          <div class="cam-links">
+            <a href="tel:3102703879" itemprop="telephone">📞 (310) 270-3879</a>
+            <a href="mailto:ania.d@compass.com" itemprop="email">✉ ania.d@compass.com</a>
+          </div>
+        </div>
       </div>
+
+      <h2 class="f" style="font-family:var(--serif);font-size:24px;font-weight:400;color:var(--ink);margin-bottom:6px">Send a message</h2>
+      <p class="f" style="font-size:13px;font-weight:300;color:var(--mid);line-height:1.6;margin-bottom:20px">We typically respond within a few hours on business days.</p>
+
+      <div class="intent-chips f" id="intentChips">
+        <button class="chip" onclick="selectIntent(this,'Buying')">🏠 Buying</button>
+        <button class="chip" onclick="selectIntent(this,'Selling')">💰 Selling</button>
+        <button class="chip" onclick="selectIntent(this,'Investing')">📊 Investing</button>
+        <button class="chip" onclick="selectIntent(this,'Just exploring')">💬 Just exploring</button>
+      </div>
+
       <div class="f d1">
-        <iframe data-tally-src="https://tally.so/embed/aQZxXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Contact AMRE Real Estate Group"></iframe>
+        <iframe data-tally-src="https://tally.so/embed/aQZxXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="480" frameborder="0" marginheight="0" marginwidth="0" title="Contact AMRE Real Estate Group"></iframe>
       </div>
     </div>
   </div>
