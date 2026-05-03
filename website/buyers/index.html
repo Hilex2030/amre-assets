@@ -366,7 +366,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 .stat-n{color:var(--forest) !important}
 .stat-n sup{color:var(--brass) !important}
 /* Valuation CTA bg */
-.valuation-cta{background:linear-gradient(135deg,var(--forest),#40493c) !important}
+.valuation-cta{background:var(--forest) !important}
 /* Filter pills */
 .filter-pill.active,.filter-btn.active{background:var(--forest) !important;border-color:var(--forest) !important}
 /* Prop badges */
@@ -524,6 +524,12 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   .testi-card{padding:22px 16px !important}
 }
 
+
+/* dark bg text — lighter, bigger */
+.section-dark p,.section-dark li,.compass-card-p,.phase-desc,.statement-q,
+[style*="background:var(--forest)"] p,[style*="background:var(--navy)"] p{
+  color:rgba(255,255,255,.78)!important;font-size:clamp(14px,1.5vw,16px)!important;
+}
 </style>
 </head>
 <body>
@@ -536,13 +542,12 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
     <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-black.png" alt="Compass" class="logo-dark nav-compass" width="70" height="15">
   </a>
   <ul class="nav-links">
-      <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
-      <li><a href="/amre-assets/website/buyers/" class="active">Buyers</a></li>
-      <li><a href="/amre-assets/website/properties/">Properties</a></li>
-      <li><a href="/amre-assets/website/team/">Team</a></li>
-      <li><a href="/amre-assets/website/contact/">Contact</a></li>
+    <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+    <li><a href="/amre-assets/website/buyers/" class="active">Buyers</a></li>
+    <li><a href="/amre-assets/website/team/">Team</a></li>
+    <li><a href="/amre-assets/website/contact/">Contact</a></li>
   </ul>
-  <a href="/amre-assets/website/contact/" class="nav-cta">Get In Touch</a>
+  <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
 </nav>
 <div class="page-hero">
   <div class="page-hero-bg-img" style="background-image:url('https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=900/https://media-production.lp-cdn.com/media/da69cef8-797b-4d84-b74e-4a5937adf975')"></div>
@@ -698,9 +703,9 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
       <ul class="footer-links">
         <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
         <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
-        <li><a href="/amre-assets/website/properties/">Properties</a></li>
         <li><a href="/amre-assets/website/team/">Team</a></li>
         <li><a href="/amre-assets/website/contact/">Contact</a></li>
+        <li><a href="/amre-assets/website/properties/fruitland-401/">Featured Property</a></li>
       </ul>
     </div>
     <div>
@@ -709,8 +714,8 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
         <li><a href="/amre-assets/website/sellers/#three-phase">3-Phase Marketing</a></li>
         <li><a href="/amre-assets/website/sellers/#concierge">Compass Concierge</a></li>
         <li><a href="/amre-assets/website/buyers/">Buyer Advisory</a></li>
-        <li><a href="/amre-assets/website/contact/">Home Valuation</a></li>
-        <li><a href="/amre-assets/website/contact/">Investment Advisory</a></li>
+        <li><a href="/amre-assets/website/#contact">Home Valuation</a></li>
+        <li><a href="/amre-assets/website/#contact">Investment Advisory</a></li>
       </ul>
     </div>
     <div>
@@ -718,15 +723,16 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
       <ul class="footer-links">
         <li><a href="tel:3237198585">(323) 719-8585</a></li>
         <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
-        <li><a href="https://www.instagram.com/michaelabraham.realtor/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.youtube.com/@MichaelAbraham.Realtor" target="_blank" rel="noopener">YouTube</a></li>
-        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/amre.group/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@AMRE_Real_Estate" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.facebook.com/amre.grp" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/company/amre-real-estate-group/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. Information deemed reliable but not guaranteed. Equal Housing Opportunity.</p>
-    <p class="footer-dre">Michael Abraham CA DRE# 02242095  ·  Ania De Pourbaix CA DRE# 01891438  ·  Compass DRE# 01991628</p>
+    <p class="footer-dre">Michael Abraham CA DRE# 02242095 &nbsp;·&nbsp; Ania De Pourbaix CA DRE# 01891438 &nbsp;·&nbsp; Compass DRE# 01991628</p>
   </div>
 </footer>
 <script>
