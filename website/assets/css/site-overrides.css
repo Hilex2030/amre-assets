@@ -164,37 +164,46 @@ h1.hero-h, h1.page-hero-h,
 }
 .testi-author{ color:#3a3a3c !important; }
 
-/* ===== UNIVERSAL FOOTER DISCLOSURE =====
-   The legal disclaimer + EHO logo block that appears on every page footer. */
+/* ===== UNIVERSAL FOOTER DISCLOSURE BAR =====
+   Sits BELOW the dark navy footer as a separate white strip. Contains the legal
+   disclaimer + REALTOR/Equal Housing logo. Black-on-white logo renders correctly here.
+   Appears on every page. */
+.site-footer-disclosure-bar{
+  background:#fff;
+  border-top:1px solid rgba(0,0,0,0.06);
+  padding:28px 24px;
+}
 .site-footer-disclosure{
   max-width:1200px;
-  margin:24px auto 0;
-  padding:24px 0 0;
-  border-top:1px solid rgba(255,255,255,0.08);
+  margin:0 auto;
   display:grid;
   grid-template-columns:1fr auto;
-  gap:32px;
-  align-items:start;
+  gap:40px;
+  align-items:center;
+  border:0;
+  padding:0;
 }
 .site-footer-disclosure-text{
   font-family:'Montserrat',-apple-system,sans-serif;
   font-size:11px;
-  font-weight:300;
+  font-weight:400;
   line-height:1.7;
-  color:rgba(255,255,255,0.45);
+  color:#3a3a3c;
+  margin:0;
 }
 .site-footer-disclosure-text a{
-  color:rgba(255,255,255,0.7);
+  color:#1c3d31;
   text-decoration:underline;
+  text-underline-offset:2px;
 }
-.site-footer-disclosure-text a:hover{ color:#fff; }
+.site-footer-disclosure-text a:hover{ color:#070B33; }
 .site-footer-disclosure-eho{
   flex-shrink:0;
 }
 .site-footer-disclosure-eho img{
-  height:54px;
+  height:60px;
   width:auto;
-  opacity:0.7;
+  opacity:1;
   display:block;
 }
 @media (max-width:680px){
@@ -202,5 +211,9 @@ h1.hero-h, h1.page-hero-h,
     grid-template-columns:1fr;
     gap:20px;
   }
-  .site-footer-disclosure-eho img{ height:46px; }
+  .site-footer-disclosure-eho{ justify-self:start; }
+  .site-footer-disclosure-eho img{ height:48px; }
 }
+
+/* Footer tagline — bright white instead of dim grey */
+.footer-tagline{ color:rgba(255,255,255,0.85) !important; }
