@@ -50,6 +50,10 @@
   transform:translateY(-1px);
 }
 
+/* Logo sizing â match home page: AMRE 22px, Compass 15px */
+.nav-amre{ height:22px !important; width:auto !important; }
+.nav-compass{ height:15px !important; width:auto !important; opacity:.85 !important; }
+
 @media (max-width:680px){
   .site-nav{ padding:0 20px !important; }
 }
