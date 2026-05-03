@@ -98,3 +98,72 @@ h1.hero-h, h1.page-hero-h,
 .hero-eyebrow, .page-hero-eyebrow{
   color:#ffc13c !important;
 }
+
+
+/* ===== TEAM PAGE — force Apple-style stacked cards =====
+   The original .agent-profile was a 2-column horizontal grid; force it into a vertical
+   stacked layout (photo on top, content below) within the .team-cards-wrap grid. */
+.team-cards-wrap{
+  max-width:1200px;margin:0 auto;padding:80px 32px;
+  display:grid !important;grid-template-columns:repeat(2,1fr) !important;gap:32px !important;
+  background:transparent;
+}
+@media (max-width:860px){
+  .team-cards-wrap{grid-template-columns:1fr !important;padding:48px 20px;gap:24px !important}
+}
+.team-cards-wrap > section{background:transparent !important;padding:0 !important;min-height:0 !important}
+.team-cards-wrap .agent-profile{
+  display:block !important;grid-template-columns:none !important;
+  background:#fff !important;border-radius:18px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(7,11,51,.04),0 12px 32px rgba(7,11,51,.06);
+  border:1px solid rgba(7,11,51,.04);
+  height:100%;min-height:0 !important;
+}
+.team-cards-wrap .agent-photo-col{
+  position:relative !important;width:100% !important;height:380px !important;
+  min-height:0 !important;flex:none !important;
+  background-size:cover !important;background-position:center top !important;
+}
+.team-cards-wrap .agent-photo-grad{display:none !important}
+.team-cards-wrap .agent-content-col{
+  padding:32px 36px 36px !important;display:flex !important;flex-direction:column !important;
+  gap:14px !important;background:#fff !important;
+}
+.team-cards-wrap .agent-role{
+  font-family:'Montserrat',-apple-system,sans-serif !important;
+  font-size:10px !important;font-weight:600 !important;letter-spacing:.18em !important;
+  text-transform:uppercase !important;color:#1c3d31 !important;margin:0 !important;
+}
+.team-cards-wrap .agent-name{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-size:32px !important;line-height:1.05 !important;color:#070B33 !important;
+  margin:0 !important;letter-spacing:-.01em !important;
+}
+.team-cards-wrap .agent-profile .divider{
+  width:36px !important;height:2px !important;background:#ffc13c !important;margin:4px 0 8px !important;
+}
+.team-cards-wrap .agent-bio{
+  font-family:'Montserrat',-apple-system,sans-serif !important;
+  font-size:14px !important;line-height:1.65 !important;color:#3a3a3c !important;margin:0 !important;
+}
+.team-cards-wrap .agent-bio strong{color:#1c3d31 !important;font-weight:600 !important}
+.team-cards-wrap .agent-creds{
+  display:grid !important;grid-template-columns:90px 1fr !important;gap:8px 16px !important;
+  padding:14px 16px !important;background:#f7edf0 !important;border-radius:10px !important;
+  font-size:12px !important;color:#3a3a3c !important;margin-top:6px !important;
+}
+.team-cards-wrap .agent-creds span{color:#1c3d31 !important;font-weight:600 !important;letter-spacing:.04em !important}
+.team-cards-wrap .agent-contacts{
+  display:flex !important;gap:12px !important;margin-top:8px !important;flex-wrap:wrap !important;
+}
+.team-cards-wrap .agent-contacts a{
+  font-family:'Montserrat',-apple-system,sans-serif !important;
+  font-size:12px !important;font-weight:600 !important;letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  padding:11px 18px !important;border-radius:2px !important;
+  text-decoration:none !important;
+}
+.team-cards-wrap .agent-contacts a:first-child{background:#1c3d31 !important;color:#fff !important}
+.team-cards-wrap .agent-contacts a:first-child:hover{background:#0f2820 !important}
+.team-cards-wrap .agent-contacts a:nth-child(2){border:1px solid rgba(7,11,51,.18) !important;color:#070B33 !important}
+.team-cards-wrap .agent-contacts a:nth-child(2):hover{background:#070B33 !important;color:#fff !important;border-color:#070B33 !important}
