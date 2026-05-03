@@ -530,7 +530,25 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 [style*="background:var(--forest)"] p,[style*="background:var(--navy)"] p{
   color:rgba(255,255,255,.78)!important;font-size:clamp(14px,1.5vw,16px)!important;
 }
+
+/* Apple-style self-contained team cards */
+.team-cards-wrap{max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:repeat(2,1fr);gap:32px;background:transparent}
+@media (max-width:860px){.team-cards-wrap{grid-template-columns:1fr;padding:48px 20px;gap:24px}}
+section#michael, section#ania{background:transparent !important;padding:0 !important}
+section#michael .agent-profile, section#ania .agent-profile{display:flex !important;flex-direction:column !important;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(7,11,51,.04),0 12px 32px rgba(7,11,51,.06);border:1px solid rgba(7,11,51,.04);height:100%;min-height:auto !important}
+.agent-photo-col{position:relative;width:100% !important;flex:none !important;height:380px !important;background-size:cover;background-position:center top;min-height:0 !important}
+.agent-content-col{padding:32px 36px 36px;display:flex;flex-direction:column;gap:14px}
+.agent-role{font-family:'Montserrat',-apple-system,sans-serif !important;font-size:10px !important;font-weight:600 !important;letter-spacing:.18em !important;text-transform:uppercase !important;color:#1c3d31 !important}
+.agent-name{font-family:'Playfair Display',Georgia,serif !important;font-size:34px !important;line-height:1.05 !important;color:#070B33 !important;margin:0 !important;letter-spacing:-.01em !important}
+.agent-profile .divider{width:36px;height:2px;background:#ffc13c;margin:4px 0 8px}
+.agent-bio{font-family:'Montserrat',-apple-system,sans-serif !important;font-size:14px !important;line-height:1.65 !important;color:#3a3a3c !important;margin:0 !important}
+.agent-bio strong{color:#1c3d31 !important;font-weight:600 !important}
+.agent-creds{display:grid;grid-template-columns:1fr;gap:6px;padding:14px 16px;background:#f7edf0;border-radius:10px;font-size:12px;color:#3a3a3c;margin-top:6px}
+.agent-creds span{color:#1c3d31;font-weight:600;letter-spacing:.04em}
+.agent-actions{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap}
+
 </style>
+<link rel="stylesheet" href="/amre-assets/website/assets/css/site-overrides.css">
 </head>
 <body>
 <nav class="site-nav" id="siteNav" role="navigation" aria-label="Main navigation">
@@ -550,7 +568,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   <a href="/amre-assets/website/#contact" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
 </nav>
 <div class="page-hero">
-  <div class="page-hero-bg-img" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg')"></div>
+  <div class="page-hero-bg-img" style="background-image:linear-gradient(135deg, #070B33 0%, #1c3d31 100%)"></div>
   <div class="page-hero-inner">
     <p class="page-eyebrow">The Team</p>
     <h1>People who<br><em>deliver results.</em></h1>
@@ -558,6 +576,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   </div>
 </div>
 
+<div class="team-cards-wrap">
 <!-- MICHAEL -->
 <section style="background:var(--white);padding:0" id="michael">
   <div class="agent-profile" itemscope itemtype="https://schema.org/Person">
@@ -607,6 +626,8 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
     </div>
   </div>
 </section>
+
+</div>
 
 <!-- VALUES -->
 <section style="background:var(--ink);padding:96px 24px">
