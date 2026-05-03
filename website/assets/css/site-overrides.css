@@ -197,8 +197,22 @@ html body .compass-card-h em,
 html body .agent-name em{
   font-style: italic !important;
 }
-.section-h em{ color: #1c3d31 !important; }       /* on light bg, em is forest */
-.section-h-white em{ color: #ffc13c !important; } /* on dark bg, em is brass */
+/* em accents: forest on light backgrounds, brass on dark backgrounds.
+   Scoped so dark-bg sections never get the forest (invisible) treatment. */
+section .section-h em,
+.section-h:not(.section-h-white) em{
+  color: #1c3d31;               /* forest — light bg default (no !important; overridable) */
+}
+.section-h-white em,
+.section-dark .section-h em,
+.page-hero .section-h em,
+[style*="background:var(--forest)"] .section-h em,
+[style*="background:var(--navy)"] .section-h em,
+[style*="background:var(--ink)"] .section-h em,
+[style*="background:#1c3d31"] .section-h em,
+[style*="background:#070B33"] .section-h em{
+  color: #ffc13c !important;    /* brass — any dark-bg section */
+}
 
 /* =====================================================================
    6) EYEBROWS — brass with line accent (home parity)
@@ -319,11 +333,11 @@ html body .agent-name em{
 /* =====================================================================
    8) LIGHT-SECTION BODY COPY — readable gray on white/cream
    ===================================================================== */
-.lede, .svc-desc, .agent-bio, .step-desc, .phase-desc,
+.lede, .svc-desc, .agent-bio, .step-desc,
 .team-member-bio, .testi-quote, .faq-a, .contact-val,
 .prop-teaser-content p, .prop-spec-lbl, .check-list li,
 .cb-row, .cb-row span, .cb-row p, .footer-tagline,
-.split-content p, .col p, p.lede, .bt-desc{
+.split-content p, .col p, p.lede{
   color: #3a3a3c !important;
 }
 
@@ -563,5 +577,11 @@ html body .testi-text{
   color: rgba(255,255,255,0.60) !important;
 }
 
-/* Seller page stat label (on dark bg) */
+/* Stat labels on dark stat bars */
 .stat-l{ color: rgba(255,255,255,0.70) !important; }
+
+/* Dark-section body copy — these classes live exclusively on dark backgrounds.
+   They were previously in the light-section list which made them charcoal-on-black. */
+.phase-desc{ color: rgba(255,255,255,0.82) !important; }
+.bt-desc   { color: rgba(255,255,255,0.78) !important; }
+.value-body{ color: rgba(255,255,255,0.75) !important; }
