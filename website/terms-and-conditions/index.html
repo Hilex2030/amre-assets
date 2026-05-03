@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy &amp; Terms of Use | AMRE Real Estate Group</title>
+<meta name="description" content="Privacy Policy and Terms of Use for AMRE Real Estate Group, a team of real estate agents affiliated with Compass.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sf:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Montserrat',-apple-system,sans-serif;
+  --navy:#070B33;--brass:#ffc13c;--brass-dk:#e6a800;--forest:#1c3d31;
+  --ink:#1d1d1f;--mid:#5A5A5A;--white:#fff;--light:#f7edf0;
+  --rule:#d2d2d7;
+  --nav-h:56px;
+  --ease:cubic-bezier(.32,.72,0,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;background:#fff;color:var(--ink);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* ── NAV ── */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;
+  background:rgba(7,11,51,0.88);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  transition:background .35s var(--ease),border-color .35s;
+}
+.site-nav.is-light{background:rgba(255,255,255,0.92);border-bottom-color:rgba(0,0,0,.1)}
+.nav-brand{display:flex;align-items:center;flex-shrink:0}
+.nav-amre{height:22px;width:auto}
+.nav-compass{height:15px;width:auto;opacity:.85}
+.logo-white{display:block}.logo-dark{display:none}
+.site-nav.is-light .logo-dark{display:block}
+.site-nav.is-light .logo-white{display:none}
+.nav-sep{width:1px;height:18px;background:rgba(255,255,255,.25);margin:0 14px}
+.site-nav.is-light .nav-sep{background:rgba(0,0,0,.15)}
+.nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:28px;list-style:none}
+.nav-links a{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:color .2s;white-space:nowrap}
+.site-nav.is-light .nav-links a{color:rgba(7,11,51,.65)}
+.nav-links a:hover{color:#fff}
+.site-nav.is-light .nav-links a:hover{color:var(--forest)}
+.nav-cta{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:9px 20px;border-radius:2px;background:var(--brass);color:var(--navy);transition:background .2s,transform .15s}
+.nav-cta:hover{background:var(--brass-dk);transform:translateY(-1px)}
+@media(max-width:860px){.nav-links{display:none}.site-nav{padding:0 20px}}
+
+/* ── HERO ── */
+.page-hero{padding:calc(var(--nav-h) + 100px) 32px 80px;text-align:center;background:#fafafa;border-bottom:1px solid rgba(0,0,0,.05)}
+.page-hero-eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:18px}
+.page-hero h1{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:400;line-height:1.05;letter-spacing:-.01em;color:var(--ink);margin-bottom:14px}
+.page-hero h1 em{font-style:italic;color:var(--forest)}
+.page-hero-sub{font-size:15px;font-weight:400;color:var(--mid);max-width:560px;margin:0 auto}
+
+/* ── DOC ── */
+.doc{max-width:760px;margin:0 auto;padding:80px 32px 100px}
+.doc h2{font-family:var(--serif);font-size:28px;font-weight:400;letter-spacing:-.005em;color:var(--ink);margin:48px 0 16px;line-height:1.2}
+.doc h3{font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--forest);margin:28px 0 10px;text-transform:uppercase}
+.doc h4{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin:20px 0 8px;font-style:italic}
+.doc p{font-size:15px;line-height:1.75;color:#3a3a3c;margin-bottom:14px}
+.doc ul,.doc ol{padding-left:22px;margin-bottom:14px}
+.doc ul li,.doc ol li{font-size:15px;line-height:1.75;color:#3a3a3c;margin-bottom:6px}
+.doc a{color:var(--forest);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.doc a:hover{color:var(--brass-dk)}
+.doc strong{font-weight:600;color:var(--ink)}
+.doc-toc{background:#fafafa;border:1px solid rgba(0,0,0,.05);border-radius:14px;padding:24px 28px;margin:0 0 40px}
+.doc-toc-title{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:12px}
+.doc-toc ol{padding-left:18px;margin:0;list-style-type:decimal}
+.doc-toc li{font-size:14px;margin-bottom:5px;color:var(--ink)}
+.doc-toc a{color:var(--ink);text-decoration:none}
+.doc-toc a:hover{color:var(--forest);text-decoration:underline}
+.doc-meta{font-size:12px;color:var(--mid);font-style:italic;margin-bottom:8px}
+.doc-intro{font-size:16px;line-height:1.7;color:var(--ink);margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid rgba(0,0,0,.06)}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--navy);padding:80px 24px 36px;color:rgba(255,255,255,.7);font-family:var(--sans)}
+.footer-grid{max-width:1200px;margin:0 auto 36px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-brand{display:flex;flex-direction:column;gap:8px}
+.footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.footer-logos img{height:16px;width:auto;opacity:.85}
+.footer-sep{width:1px;height:13px;background:rgba(255,255,255,.2)}
+.footer-tagline{font-size:12px;font-weight:300;line-height:1.6;color:rgba(255,255,255,.55);max-width:240px}
+.footer-col-head{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:12px;font-weight:300;color:rgba(255,255,255,.7);transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{max-width:1200px;margin-inline:auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-legal,.footer-dre{font-size:10px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.5}
+@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:24px}.footer-bottom{flex-direction:column}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="/amre-assets/website/assets/css/site-overrides.css">
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav" role="navigation" aria-label="Main navigation">
+  <a href="/amre-assets/website/" class="nav-brand" aria-label="AMRE Real Estate Group">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" class="logo-white nav-amre" width="80" height="22">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-black.svg" alt="AMRE Real Estate Group" class="logo-dark nav-amre" width="80" height="22">
+    <div class="nav-sep" aria-hidden="true"></div>
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" class="logo-white nav-compass" width="70" height="15">
+    <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-black.png" alt="Compass" class="logo-dark nav-compass" width="70" height="15">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+    <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
+    <li><a href="/amre-assets/website/team/">Team</a></li>
+    <li><a href="/amre-assets/website/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/amre-assets/website/contact/" class="nav-cta">Get&nbsp;In&nbsp;Touch</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <p class="page-hero-eyebrow">Legal</p>
+  <h1>Privacy Policy &amp; <em>Terms of Use.</em></h1>
+  <p class="page-hero-sub">How we collect, use, and protect your information.</p>
+</header>
+
+<main class="doc">
+  <p class="doc-meta">Last Updated: March 12, 2026</p>
+
+  <p class="doc-intro">This website (the "Site") offers information, products, and services related to real estate (the "Services") that we, AMRE Real Estate Group, provide. We operate this website and may use third-party contractors to support the delivery of the Services and the Site ("Service Providers"). If you are a visitor to this Site, this Privacy Policy and Terms of Use applies to you and describes the policies and practices regarding the collection, use, and disclosure of your personal information in connection with your use of the Site. We act as the controller of your personal data, and our Service Providers assist us in providing the Services solely in their capacities as service providers and data processors.</p>
+
+  <p>This Privacy Policy and Terms of Use does not apply to any websites, applications, or other online services that do not link to this Policy, including other services provided by us or by our Service Providers. If you have questions about our use of your personal information, please contact us using the information in Section 12 below.</p>
+
+  <div class="doc-toc" aria-label="Table of contents">
+    <div class="doc-toc-title">Contents</div>
+    <ol>
+      <li><a href="#s1">Personal Information We Collect</a></li>
+      <li><a href="#s2">How We May Use Your Personal Information</a></li>
+      <li><a href="#s3">Use of Artificial Intelligence</a></li>
+      <li><a href="#s4">How We Share Your Personal Information</a></li>
+      <li><a href="#s5">Advertising and Tracking Technologies</a></li>
+      <li><a href="#s6">Privacy Choices and Opt-Outs</a></li>
+      <li><a href="#s7">Data Retention</a></li>
+      <li><a href="#s8">Third Party Services</a></li>
+      <li><a href="#s9">Security</a></li>
+      <li><a href="#s10">Children</a></li>
+      <li><a href="#s11">SMS Text Messaging Terms of Use</a></li>
+      <li><a href="#s12">How to Contact Us</a></li>
+      <li><a href="#s13">Changes to this Policy</a></li>
+      <li><a href="#s14">Additional Rights for California Residents</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s1">1. Personal Information We Collect</h2>
+  <p>We collect information from you in various ways when you access or use the Site or otherwise interact with the Services. This information may include:</p>
+
+  <h4>Information You Provide to Us</h4>
+  <p>Contact information that you provide, such as your first and last name, email address, home address, and phone number; feedback or correspondence, such as information you provide when you contact us with questions, feedback, or other correspondence; marketing information, such as your preferences and/or consents for receiving communications about our activities, events, and publications, and details about how you engage with such communications; and other information which you may provide voluntarily or that is necessary in connection with your interactions with us through the Site or Services.</p>
+
+  <h4>Information We Obtain from Third Parties</h4>
+  <p><strong>Social media information:</strong> We may maintain pages on social media platforms, such as Facebook, LinkedIn, Instagram, and other third-party platforms. When you visit or interact with these pages, the platform providers' privacy policies will apply to your interactions and their collection, use, and processing of your personal information. You or the platforms may provide us with information through the platform, and we will treat such information in accordance with this Privacy Policy and Terms of Use.</p>
+  <p><strong>Data enrichment sources:</strong> We may obtain additional information about you from third-party data providers, including property records and public records databases, demographic and behavioral data providers, social media profile information (where publicly available), and other commercially available data sources. This information helps us provide more relevant services and communications.</p>
+  <p><strong>Other sources:</strong> We may obtain your personal information from other third parties, such as third-party analytics services, marketing partners, publicly-available sources, and data providers.</p>
+
+  <h4>CRM and Communication Data</h4>
+  <p>If you communicate with us via email, text message, or other electronic means, or if we use customer relationship management ("CRM") tools to manage our interactions with you, we may collect and process: email message content, headers, metadata, and attachments; text message content and metadata; communication timestamps, read receipts, and delivery status; contact information and communication history; and notes and records relating to our interactions with you.</p>
+  <p>Our CRM services may synchronize with email accounts to facilitate communication management. When email synchronization is enabled, information from emails exchanged with you may be processed and stored, including email content, sender and recipient information, timestamps, and attachments. This data is used to provide better service, maintain accurate records, and facilitate follow-up communications.</p>
+
+  <h4>Automatic Data Collection</h4>
+  <p>We and our Service Providers may automatically log information about you, your computer or mobile device, and your interaction over time with our Services, our communications, and other online services, such as: device data (including your computer's or mobile device's operating system type and version, manufacturer and model, browser type, screen resolution, device type, IP address, unique identifiers, language settings, mobile device carrier, and general location information such as city, state, or geographic area); and online activity data (such as pages or screens you viewed, how long you spent on a page or screen, browsing history, navigation paths between pages or screens, information about your activity on a page or screen, access times, and duration of access, and whether you have opened our marketing emails or clicked links within them).</p>
+  <p>We use the following tools for automatic data collection: cookies (text files that websites store on a visitor's device to uniquely identify the visitor's browser or to store information or settings in the browser); local storage technologies (like HTML5, that provide cookie-equivalent functionality but can store larger amounts of data); and web beacons (also known as pixel tags or clear GIFs, which are used to demonstrate that a webpage or email was accessed or opened, or that certain content was viewed or clicked).</p>
+
+  <h2 id="s2">2. How We (and Our Service Providers) May Use Your Personal Information</h2>
+  <p>We may use your personal information for the following purposes:</p>
+  <p><strong>To provide and operate our Services and our Site:</strong> We use your information to provide, operate, and improve our Services and Site; communicate with you about our Services and business including by sending announcements, updates, security alerts, and support and administrative messages; and provide support and respond to requests, questions, and feedback.</p>
+  <p><strong>To manage our relationship with you:</strong> We use CRM tools and services to maintain records of our communications, track your preferences and interests, and provide personalized service. This may include analyzing your interactions with us to better understand your needs and preferences.</p>
+  <p><strong>To send you follow-up communications:</strong> If you have opted into receiving follow-up communications, we (or our Service Providers) may from time to time send you follow-up communications as permitted by law, including through phone, email, and SMS text messages, some of which may use artificial or prerecorded voices. You may opt out of receiving such communications as set forth in Section 6 below.</p>
+  <p><strong>To send you marketing and promotional communications:</strong> If you have opted in to receive marketing and promotional communications, we (or our Service Providers) may from time-to-time send you direct marketing communications as permitted by law, including through phone, email, and SMS text messages, some of which may use artificial or prerecorded voices. Other than as set forth in Section 4 below, your information will not be shared with third parties for marketing or promotional purposes. You may opt out of receiving such communications as set forth in Section 6 below.</p>
+  <p><strong>To comply with law:</strong> As we or our Service Providers believe necessary or appropriate to comply with applicable laws, lawful requests, and legal process, such as to respond to subpoenas or requests from government authorities.</p>
+  <p><strong>For compliance, fraud prevention, and safety:</strong> To protect our, your, or others' rights, privacy, safety, or property (including by making and defending legal claims); enforce the terms and conditions that govern our Services; and protect, investigate, and deter against fraudulent, harmful, unauthorized, unethical, or illegal activity.</p>
+  <p><strong>To create anonymous data:</strong> We may create anonymous data from your personal information and other individuals whose personal information we collect. We make personal information into anonymous data by removing information that makes the data personally identifiable to you. We may use this anonymous data and share it with third parties for our lawful business purposes, including to analyze and improve our Services, conduct research, and promote our business.</p>
+
+  <h2 id="s3">3. Use of Artificial Intelligence</h2>
+  <p>We use artificial intelligence ("AI") and machine learning technologies to provide and improve our Services. This section describes how AI is used in connection with the Site and Services.</p>
+
+  <h4>AI-Generated Content</h4>
+  <p>We may use AI technologies to generate, assist with, or enhance content displayed on the Site or provided through our Services, including: property descriptions and listing information; blog posts, articles, and other written content; social media posts and marketing materials; email communications and newsletters; and advertising copy and promotional content.</p>
+  <p>AI-generated content is created using large language models and other machine learning systems. While we review AI-generated content for accuracy and appropriateness, such content may contain errors, omissions, or inaccuracies. You should not rely solely on AI-generated content for important decisions, including real estate transactions, without independent verification.</p>
+
+  <h4>AI-Assisted Communications</h4>
+  <p>We may use AI to assist with communications, including: drafting and suggesting responses to inquiries; analyzing communication patterns to improve service; providing automated responses to common questions; and prioritizing and categorizing incoming communications.</p>
+  <p>When AI assists with communications, a human may review and approve messages before they are sent, though some automated responses may be sent without individual human review.</p>
+
+  <h4>AI-Based Analysis and Recommendations</h4>
+  <p>We may use AI to analyze data and provide recommendations, including: identifying potential opportunities based on your stated preferences and behavior; suggesting properties that may match your criteria; analyzing market trends and conditions; and optimizing the timing and content of communications.</p>
+  <p>These AI-based analyses and recommendations are provided for informational purposes and should not be considered professional advice. Important decisions should be made in consultation with qualified professionals.</p>
+
+  <h4>Your Rights Regarding AI</h4>
+  <p>You have the right to: request information about whether AI was used to generate specific content; request human review of significant decisions that were made with AI assistance; opt out of certain AI-powered features where technically feasible; and provide feedback on AI-generated content or recommendations. To exercise these rights or ask questions about our use of AI, please contact us using the information in Section 12 below.</p>
+
+  <h2 id="s4">4. How We Share Your Personal Information</h2>
+  <p>We do not "sell" any personal information (as defined under applicable laws), but we may share your personal information as described below and as described elsewhere in this Privacy Policy and Terms of Use. We may share your personal information with:</p>
+  <p><strong>Internal Team, Partners, and Affiliates:</strong> Our employees and contractors, partners, and affiliates, including to facilitate your interactions with us.</p>
+  <p><strong>Our Service Providers:</strong> Companies and individuals that provide services on our behalf or to help us provide the Services, the Site, or our business (such as hosting, information technology, CRM services, email delivery, AI and machine learning services, and website analytics services).</p>
+  <p><strong>Professional advisors:</strong> We may disclose your personal information to professional advisors, such as lawyers, bankers, auditors, and insurers, where necessary in the course of the professional services that they render to us or our Service Providers.</p>
+  <p><strong>For compliance, fraud prevention, and safety:</strong> We or our Service Providers may share your personal information for the compliance, fraud prevention, and safety purposes described above.</p>
+  <p><strong>Business transfers:</strong> We (or our Service Providers) may sell, transfer, or otherwise share some or all of our (or our Service Providers') business or assets, including your personal information, in connection with a business transaction (or potential business transaction) such as a corporate divestiture, merger, consolidation, acquisition, reorganization, or sale of assets, or in the event of bankruptcy or dissolution. In such a case, we will make reasonable efforts to require the recipient to honor this Privacy Policy and Terms of Use.</p>
+  <p>Other than as set forth herein, data will not be shared with third parties for marketing or promotional purposes. We will never disclose any personal information such as phone numbers and SMS consent with any third parties for marketing purposes.</p>
+
+  <h2 id="s5">5. Advertising and Tracking Technologies</h2>
+  <p>We may use advertising and tracking technologies to deliver relevant advertising and measure the effectiveness of our marketing efforts.</p>
+
+  <h4>Third-Party Advertising Platforms</h4>
+  <p>We may share certain information with third-party advertising platforms, including Meta (Facebook/Instagram), Google, and other advertising networks, to: deliver targeted advertisements to you based on your interests and interactions with our Site; measure the effectiveness of our advertising campaigns; create audiences of similar users for advertising purposes ("lookalike audiences"); and track conversions and attribute advertising performance.</p>
+  <p>When you interact with our Site, third-party advertising platforms may collect information through cookies, pixels, and similar technologies. This information may include your device identifiers, browsing behavior, and interactions with our advertisements.</p>
+
+  <h4>Tracking Pixels and Conversion Events</h4>
+  <p>We use tracking pixels (also known as web beacons or clear GIFs) on our Site to: track when you view or interact with our content; measure the effectiveness of our email campaigns; attribute conversions to specific advertising campaigns; and analyze user behavior on our Site.</p>
+  <p>These tracking technologies may transmit information to third-party platforms, including information about the pages you visit, actions you take on our Site, and information about your device.</p>
+
+  <h4>Interest-Based Advertising</h4>
+  <p>We participate in interest-based advertising, which means that you may see our advertisements on third-party websites and platforms based on your browsing behavior and inferred interests. Third-party advertising platforms use cookies and similar technologies to collect information about your online activities across different websites and services to provide you with more relevant advertisements.</p>
+
+  <h2 id="s6">6. Privacy Choices and Opt-Outs</h2>
+  <p>You have the following choices regarding our collection and use of your personal information:</p>
+
+  <h4>Online Tracking Opt-Out</h4>
+  <p>There are a number of ways to opt out of having your online activity and device data collected through our Services: blocking cookies in your browser (most browsers let you remove or reject cookies, including cookies used for interest-based advertising; for more information about cookies, including how to see what cookies have been set on your device and how to manage and delete them, visit <a href="https://allaboutcookies.org" target="_blank" rel="noopener">allaboutcookies.org</a>); blocking advertising ID use in your mobile settings; and using privacy plug-ins or browsers (you can block our Services from setting cookies used for third-party analytics or interest-based ads by using a browser with privacy features, like Brave, or installing browser plugins like Privacy Badger, DuckDuckGo, Ghostery, or uBlock Origin).</p>
+
+  <h4>Platform Opt-Outs</h4>
+  <p>The following advertising partners offer opt-out features that let you opt out of use of your information for interest-based advertising: <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google</a>, <a href="http://www.facebook.com/about/ads" target="_blank" rel="noopener">Facebook</a>, and <a href="https://twitter.com/settings/account/personalization" target="_blank" rel="noopener">Twitter</a>.</p>
+
+  <h4>Advertising Industry Opt-Out Tools</h4>
+  <p>You can also use these opt-out options to limit use of your information for interest-based advertising by participating companies: <a href="http://optout.aboutads.info/" target="_blank" rel="noopener">Digital Advertising Alliance</a> and <a href="http://optout.networkadvertising.org/" target="_blank" rel="noopener">Network Advertising Initiative</a>. Note that because these opt-out mechanisms are specific to the device or browser on which they are exercised, you will need to opt out on every browser and device that you use.</p>
+
+  <h4>Do Not Track</h4>
+  <p>Some Internet browsers may be configured to send "Do Not Track" signals to the online services that you visit. We currently do not respond to "Do Not Track" or similar signals.</p>
+
+  <h4>SMS Communications Opt-Out</h4>
+  <p>To opt out of receiving SMS communications, reply <strong>STOP</strong> to any SMS communication sent to you.</p>
+
+  <h4>Email Communications Opt-Out</h4>
+  <p>You may unsubscribe from email updates sent by us at any time by following the unsubscribe link in the email.</p>
+
+  <h4>Privacy Rights</h4>
+  <p>You have the right to submit requests about your personal information, depending on your location and the nature of your interactions with the Site and our Services. These rights may include: information about how we have collected and used your personal information; access to a copy of the personal information that we have collected about you; correction of personal information that is inaccurate or out of date; deletion of personal information that we no longer need to provide our services or for other lawful purposes; and additional rights, such as to object to and request that we restrict our use of your personal information, and where applicable, you may withdraw your consent. If you wish to exercise your rights, please contact us using the information in Section 12 below.</p>
+
+  <h2 id="s7">7. Data Retention</h2>
+  <p>We retain personal information for as long as necessary to fulfill the purposes for which it was collected, including to satisfy any legal, accounting, or reporting requirements, and to provide you with the Services.</p>
+  <p>The retention period for personal information depends on the context and our relationship with you: contact information and communication records are generally retained for the duration of our relationship with you and for a reasonable period thereafter to allow for follow-up communications and to comply with legal requirements; CRM data, including email synchronization data, is retained for as long as you maintain an active relationship with us, unless longer retention is required by law; transactional records may be retained to comply with legal and regulatory requirements; and marketing preferences are retained until you update them or opt out.</p>
+  <p>When personal information is no longer necessary for the purposes for which it was collected, we will securely delete or anonymize it. In some cases, we may retain certain information in anonymized or aggregated form for analytical purposes.</p>
+
+  <h2 id="s8">8. Third Party Services</h2>
+  <p>The Site and Services may contain links to websites and other online services operated by third parties. In addition, our content may be integrated into web pages or other online services that are not associated with us. These links and integrations are not an endorsement of, or representation that we are affiliated with, any third party. We do not control websites or online services operated by third parties, and we are not responsible for their actions.</p>
+
+  <h2 id="s9">9. Security</h2>
+  <p>We employ a number of technical, organizational, and physical safeguards designed to protect the personal information we collect. We take appropriate technical and organizational measures that provide a level of security appropriate to the risk of processing your personal data. We follow generally accepted industry standards to protect the personal data and information submitted to us, both during transmission and in storage. However, no method of transmission over the Internet, or method of electronic storage, is 100% secure. Therefore, while we strive to use commercially acceptable means to protect personal data, we cannot guarantee its absolute security.</p>
+
+  <h2 id="s10">10. Children</h2>
+  <p>Our Services are not intended for use by children under 18 years of age. If we learn that we have collected personal information through the Services from a child under 18 without the consent of the child's parent or guardian as required by law, we will delete it.</p>
+
+  <h2 id="s11">11. SMS Text Messaging Terms of Use</h2>
+  <h4>(i) Use of SMS Text Messaging</h4>
+  <p>AMRE Real Estate Group uses SMS Text Messaging to confirm appointments, send reminders, and notify clients of schedule updates or important changes. We also use SMS Text Messaging for marketing and promotional purposes, including providing you with new listing alerts, price reduction notifications, invitations to upcoming open houses, and periodic real estate market updates tailored to your interests.</p>
+  <h4>(ii) Unsubscribing from SMS Text Messaging</h4>
+  <p>You can cancel the SMS service at any time. Just text <strong>STOP</strong>. After you send the SMS message <strong>STOP</strong> to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time, and we will start sending SMS messages to you again.</p>
+  <h4>(iii) Assistance</h4>
+  <p>If you are experiencing issues with the messaging program, you can reply with the keyword <strong>HELP</strong> for more assistance, or you can get help directly at <a href="mailto:michael.abraham@compass.com">michael.abraham@compass.com</a>.</p>
+  <h4>(iv) Carrier Liability</h4>
+  <p>Carriers are not liable for delayed or undelivered messages.</p>
+  <h4>(v) Frequency and Data Rates</h4>
+  <p>Message and data rates may apply for any messages sent to you from us and to us from you. Message frequency may vary. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.</p>
+  <h4>(vi) Other Privacy Questions</h4>
+  <p>If you have any questions regarding privacy, please read this Privacy Policy and Terms of Use.</p>
+
+  <h2 id="s12">12. How to Contact Us</h2>
+  <p>You may contact us at:</p>
+  <p>AMRE Real Estate Group<br>
+  9454 Wilshire Blvd, Suite 100<br>
+  Beverly Hills, CA 90212<br>
+  Phone: <a href="tel:3237198585">(323) 719-8585</a><br>
+  Email: <a href="mailto:michael.abraham@compass.com">michael.abraham@compass.com</a></p>
+
+  <h2 id="s13">13. Changes to this Privacy Policy and Terms of Use</h2>
+  <p>We reserve the right to modify this Privacy Policy and Terms of Use at any time. If we make material changes to this Privacy Policy and Terms of Use, we will notify you by updating the date of this Privacy Policy and Terms of Use and posting it on this website.</p>
+
+  <h2 id="s14">14. Notice of Collection and Additional Rights for California Residents</h2>
+  <p>If you are a California resident, the California Consumer Privacy Act as amended by the California Privacy Rights Act ("CCPA") permits you to request information, no more than once per calendar year, regarding the disclosure of your Personal Data by us to third parties, including for the third parties' direct marketing purposes. Furthermore, California residents have the following rights with respect to Personal Data we may have collected about them:</p>
+
+  <h4>Categories of Personal Information Collected</h4>
+  <p>In the preceding 12 months, we may have collected the following categories of personal information: identifiers (such as name, email address, phone number, and IP address); commercial information (such as property preferences and transaction history); internet or electronic network activity (such as browsing history and interactions with our Site); geolocation data (such as city and state derived from IP address); professional or employment-related information (if provided); inferences drawn from the above (such as preferences and characteristics); and sensitive personal information (only if voluntarily provided, such as account credentials).</p>
+
+  <h4>(i) Requests to Know</h4>
+  <p>You have the right to request that we disclose to you: the categories of Personal Data we have collected about you; the categories of Personal Data about you we have sold or disclosed for a business purpose; the categories of sources from which we have collected Personal Data about you; the business or commercial purposes for selling or collecting Personal Data about you; the categories of Personal Data sold or shared about you, as well as the categories of third parties to whom the Personal Data was sold; the specific pieces of Personal Data collected; and how long your Personal Data is retained.</p>
+  <p>You may submit a request to know to the address or email address indicated in Section 12. The delivery of our response may take place electronically or by mail. We are not required to respond to requests to know more than twice in a 12-month period.</p>
+
+  <h4>(ii) Requests to Delete or Correct</h4>
+  <p>You have the right to request that we delete any Personal Data about you that we have collected, or correct Personal Data that we have about you that is inaccurate. Upon receiving a verified request to delete personal data, we will do so unless otherwise authorized by law.</p>
+
+  <h4>(iii) Authorized Agents</h4>
+  <p>You may designate an authorized agent to make requests on your behalf. You must provide an authorized agent written permission to submit a request on your behalf, and we may require that you verify your identity directly with us. Alternatively, an authorized agent that has been provided power of attorney pursuant to Probate Code sections 4000-4465 may submit a request on your behalf.</p>
+
+  <h4>(iv) Methods for Submitting Consumer Requests and Our Response</h4>
+  <p>You may submit a request to know and requests to delete Personal Data about you via the email address or mailing address provided in Section 12. Upon receipt of a request, we may ask you for additional information to verify your identity. Any additional information you provide will be used only to verify your identity and not for any other purpose. We will acknowledge the receipt of your request within ten (10) business days of receipt. Subject to our ability to verify your identity, we will respond to your request within 45 calendar days of receipt. If we require more time (up to 90 days), we will inform you of the reason and extension period in writing.</p>
+  <p>Any disclosures we provide will only cover the 12-month period preceding the verifiable consumer request's receipt. The response we provide will also explain the reasons we cannot comply with a request, if applicable. We do not charge a fee to process or respond to your verifiable consumer request unless it is excessive, repetitive, or manifestly unfounded. If we determine that the request warrants a fee, we will tell you why we made that decision and provide you with a cost estimate before completing your request.</p>
+
+  <h4>(v) The Right to Non-Discrimination</h4>
+  <p>You have the right not to be discriminated against for the exercise of your California privacy rights described above.</p>
+
+  <h4>(vi) Selling and Sharing of Personal Data</h4>
+  <p>We may use your Personal Data for the purposes described in Section 2 of this Policy, and may share your Personal Data as further described in Section 4 of this Policy. California law places certain obligations on businesses that "sell" Personal Data to third parties or "share" Personal Data with third parties for "cross-context behavioral advertising" as those terms are defined under the CCPA. We may "share" certain personal information (such as device identifiers and browsing activity) with advertising partners for cross-context behavioral advertising purposes as described in Section 5. You have the right to opt out of this sharing. To opt out, you may contact us using the information in Section 12. We do not "sell" Personal Data as that term is defined under the CCPA.</p>
+
+  <h4>(vii) Sensitive Personal Data</h4>
+  <p>Some Personal Data may be considered sensitive personal information under certain privacy laws, including the CCPA. The CCPA provides consumers with the "right to limit" the use of their sensitive personal information to certain business purposes. We do not request sensitive personal information in connection with the use of the Site, except for account credentials which are used only to provide and secure your account.</p>
+
+  <h4>(viii) How We Respond to Do Not Track Signals</h4>
+  <p>We do not track Site users over time and across third party websites to provide targeted advertising. Accordingly, we do not currently respond or take any action with respect to web browser "do not track" signals. However, we do honor Global Privacy Control (GPC) signals as valid opt-out requests under the CCPA.</p>
+</main>
+
+<footer class="site-footer" itemscope itemtype="https://schema.org/RealEstateAgent">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logos">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" loading="lazy">
+        <span class="footer-sep" aria-hidden="true"></span>
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" loading="lazy">
+      </div>
+      <p class="footer-tagline">Empowering clients to achieve their real estate dreams, one home at a time. Compass Beverly Hills.</p>
+    </div>
+    <div>
+      <div class="footer-col-head">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="/amre-assets/website/sellers/">Sellers</a></li>
+        <li><a href="/amre-assets/website/buyers/">Buyers</a></li>
+        <li><a href="/amre-assets/website/team/">Team</a></li>
+        <li><a href="/amre-assets/website/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Connect</div>
+      <ul class="footer-links">
+        <li><a href="tel:3237198585">(323) 719-8585</a></li>
+        <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
+        <li><a href="https://www.instagram.com/amre.group/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/amre-real-estate-group/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Office</div>
+      <ul class="footer-links">
+        <li>9454 Wilshire Blvd<br>Suite 100<br>Beverly Hills, CA 90212</li>
+        <li>Mon – Sat<br>9 AM – 7 PM PT</li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer-disclosure">
+    <p class="site-footer-disclosure-text">
+      AMRE Real Estate Group is a team of real estate agents affiliated with Compass. <a href="https://www.compass.com/" target="_blank" rel="noopener">Compass</a> is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number 01991628. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to the accuracy of any description. All measurements and square footage are approximate. If your property is currently listed for sale this is not a solicitation.
+    </p>
+    <div class="site-footer-disclosure-eho">
+      <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/logos/realtor-eho-dark.png" alt="REALTOR® and Equal Housing Opportunity" loading="lazy">
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. <a href="/amre-assets/website/terms-and-conditions/" style="color:inherit;text-decoration:underline">Privacy Policy</a></p>
+    <p class="footer-dre">Michael Abraham CA DRE# 02242095 &nbsp;·&nbsp; Ania De Pourbaix CA DRE# 01891438 &nbsp;·&nbsp; Compass DRE# 01991628</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('siteNav');
+  if(!nav)return;
+  function upd(){nav.classList.toggle('is-light',window.scrollY>40)}
+  upd();
+  window.addEventListener('scroll',upd,{passive:true});
+})();
+</script>
+</body>
+</html>
