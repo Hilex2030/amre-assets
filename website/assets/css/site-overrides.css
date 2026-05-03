@@ -1,0 +1,100 @@
+/* AMRE Website — Site-wide Overrides
+   Loaded after each page's inline <style> to standardize:
+   • Navigation styling (match home page across all pages)
+   • Playfair Display on all banner headings
+   • Legible body gray text contrast across light & dark sections
+*/
+
+/* ===== NAVIGATION CONSISTENCY =====
+   Force every page's nav to match the home-page styling. */
+.site-nav{
+  padding:0 32px !important;
+  background:rgba(7,11,51,0.80) !important;
+  border-bottom:1px solid rgba(255,255,255,0.08) !important;
+}
+.site-nav.is-light{
+  background:rgba(255,255,255,0.92) !important;
+  border-bottom:1px solid rgba(7,11,51,0.06) !important;
+}
+.nav-links{ gap:28px !important; }
+.nav-links a{
+  font-family:'Montserrat',-apple-system,sans-serif !important;
+  font-size:11px !important;
+  font-weight:500 !important;
+  letter-spacing:.1em !important;
+  text-transform:uppercase !important;
+  color:rgba(255,255,255,.82) !important;
+}
+.site-nav.is-light .nav-links a{ color:rgba(7,11,51,.65) !important; }
+.nav-links a:hover{ color:#fff !important; }
+.site-nav.is-light .nav-links a:hover{ color:#1c3d31 !important; }
+.nav-links a.active{ color:#ffc13c !important; }
+.site-nav.is-light .nav-links a.active{ color:#1c3d31 !important; }
+
+/* CTA button — solid brass on every page */
+.nav-cta{
+  font-family:'Montserrat',-apple-system,sans-serif !important;
+  font-size:11px !important;
+  font-weight:600 !important;
+  letter-spacing:.1em !important;
+  text-transform:uppercase !important;
+  padding:9px 20px !important;
+  border-radius:2px !important;
+  background:#ffc13c !important;
+  color:#070B33 !important;
+  transition:background .2s, transform .15s !important;
+}
+.nav-cta:hover{
+  background:#e6a800 !important;
+  color:#070B33 !important;
+  transform:translateY(-1px);
+}
+
+@media (max-width:680px){
+  .site-nav{ padding:0 20px !important; }
+}
+
+/* ===== PLAYFAIR ON ALL BANNER HEADINGS ===== */
+.hero-h, .page-hero-h, .section-h, .stmt-h,
+h1.hero-h, h1.page-hero-h,
+.banner-h, .hero h1, .page-hero h1{
+  font-family:'Playfair Display', Georgia, serif !important;
+  font-weight:400 !important;
+  letter-spacing:-0.01em !important;
+}
+
+/* ===== LEGIBLE GRAY TEXT =====
+   Darken light gray body copy so it is readable on white & cream backgrounds.
+   Lift faint white text so it is readable on dark / brand-color backgrounds. */
+
+/* Light sections: bring grays closer to ink */
+.lede, .svc-desc, .agent-bio, .step-desc, .phase-desc,
+.team-member-bio, .testi-quote, .faq-a, .contact-val,
+.prop-teaser-content p, .prop-spec-lbl, .check-list li,
+.cb-row, .cb-row span, .cb-row p, .footer-tagline,
+.split-content p, .col p, p.lede{
+  color:#3a3a3c !important;
+}
+.eyebrow, .page-eyebrow, .section-label{
+  color:#1c3d31 !important;
+}
+
+/* Dark sections: lift faint whites to readable */
+.hero-sub, .page-hero-sub,
+.compass-adv .lede, .compass-adv .lede-white,
+.compass-card-p, .valuation-cta p, .stat-lbl,
+.footer-col p, .footer-links a, .footer-legal, .footer-dre{
+  color:rgba(255,255,255,0.85) !important;
+}
+.lede-white{ color:rgba(255,255,255,0.9) !important; }
+
+/* Statistic numbers shouldn't be ghosted */
+.stat-num, .prop-spec-num{
+  color:inherit !important;
+  opacity:1 !important;
+}
+
+/* Subtle refinements for the brass on dark hero subtitles */
+.hero-eyebrow, .page-hero-eyebrow{
+  color:#ffc13c !important;
+}
