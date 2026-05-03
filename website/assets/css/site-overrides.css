@@ -522,3 +522,46 @@ html body .testi-text{
 
 /* Footer tagline — bright white instead of dim grey */
 .footer-tagline{ color: rgba(255,255,255,0.85) !important; }
+
+/* =====================================================================
+   13) DARK-SECTION TEXT LEGIBILITY — universal rule
+   Every element on a dark background MUST have light text.
+   Minimum: rgba(255,255,255,0.72) for supporting copy.
+   Targets page-specific dark components that use raw RGBA values below
+   that threshold. These classes appear across buyers, sellers, contact,
+   team pages on dark (--ink / navy / forest) section backgrounds.
+   ===================================================================== */
+
+/* Contact page split-left (dark half) */
+.split-agent-role{ color: rgba(255,255,255,0.75) !important; }
+.split-agent-link{ color: rgba(255,255,255,0.72) !important; }
+.split-office{ color: rgba(255,255,255,0.72) !important; }
+.split-office-label{ color: rgba(255,255,255,0.55) !important; }
+.split-left h1 em{ color: #ffc13c !important; }
+
+/* Buyers page dark "Who We Work With" cards */
+.bt-desc{ color: rgba(255,255,255,0.75) !important; }
+.bt-list li{ color: rgba(255,255,255,0.72) !important; }
+.bt-list li::before{ color: #ffc13c !important; }
+
+/* Compass advantage cards (navy section on all pages) */
+.compass-card-p{ color: rgba(255,255,255,0.78) !important; }
+
+/* Team page values-grid cards (dark section) */
+.value-body{ color: rgba(255,255,255,0.75) !important; }
+
+/* Buyers calc result (dark box) */
+.calc-result-label{ color: rgba(255,255,255,0.65) !important; }
+
+/* Valuation CTA section (forest green bg) */
+.valuation-cta p,
+[style*="background:var(--forest)"] p,
+[style*="background:var(--forest)"] .lede{
+  color: rgba(255,255,255,0.82) !important;
+}
+[style*="background:var(--forest)"] .eyebrow{
+  color: rgba(255,255,255,0.60) !important;
+}
+
+/* Seller page stat label (on dark bg) */
+.stat-l{ color: rgba(255,255,255,0.70) !important; }
