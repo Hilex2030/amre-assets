@@ -628,7 +628,7 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
   </ul>
 </div>
 <div class="page-hero">
-  <div class="page-hero-bg-img" style="background-image:linear-gradient(135deg, #070B33 0%, #1c3d31 100%)"></div>
+  <div class="page-hero-bg-img" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/team-hero.jpg')"></div>
   <div class="page-hero-inner">
     <p class="page-eyebrow">The Team</p>
     <h1>People who<br><em>deliver results.</em></h1>
@@ -833,7 +833,8 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
 .agent-contacts{display:flex;gap:12px;flex-wrap:wrap}
 .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .value-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);padding:28px 22px;border-radius:14px}
-.value-icon{font-size:26px;display:block;margin-bottom:14px}
+.value-icon{font-size:26px;display:block;margin-bottom:14px;color:rgba(255,255,255,.70)}
+.value-icon svg,.value-icon .ico{color:rgba(255,255,255,.70)}
 .value-title{font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;margin-bottom:10px}
 .value-body{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.42)}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -849,5 +850,14 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
   .agent-photo-grad{background:linear-gradient(to bottom,transparent 60%,var(--white))}
   .values-grid{grid-template-columns:1fr 1fr}
   .testi-grid{grid-template-columns:1fr}
+}
+/* ── TEAM BANNER ── */
+.page-hero::before{
+  background-image: none !important;
+  background: rgba(0,0,0,0.30) !important;
+}
+.page-hero-bg-img{
+  opacity: 0.88 !important;
+  background-position: center 30% !important;
 }
 </style></body></html>
