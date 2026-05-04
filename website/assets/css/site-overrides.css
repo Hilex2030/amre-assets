@@ -585,7 +585,9 @@ html body .testi-text{
 .value-body{ color: rgba(255,255,255,0.75) !important; }
 
 /* =====================================================================
-   NAV ADDITIONS — Client Dashboard (plain text) + Home Valuation (outline)
+   NAV ADDITIONS — plain-text link style for Client Dashboard
+   (Home Valuation reuses the existing .nav-cta brass button so it is
+   visually identical to "Get In Touch" — same padding, font, color.)
    ===================================================================== */
 .nav-link-text{
   font-family: 'Montserrat', -apple-system, sans-serif !important;
@@ -601,46 +603,10 @@ html body .testi-text{
 .site-nav.is-light .nav-link-text{ color: rgba(7,11,51,.65) !important; }
 .site-nav.is-light .nav-link-text:hover{ color: #1c3d31 !important; }
 
-/* Outline brass — IDENTICAL outer dimensions to .nav-cta
-   (.nav-cta = padding 9px 20px solid; here = padding 8px 19px + 1px border) */
-.nav-cta-outline{
-  font-family: 'Montserrat', -apple-system, sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 600 !important;
-  letter-spacing: .1em !important;
-  text-transform: uppercase !important;
-  padding: 8px 19px !important;
-  border-radius: 2px !important;
-  background: transparent !important;
-  color: #ffc13c !important;
-  border: 1px solid #ffc13c !important;
-  white-space: nowrap;
-  transition: background .2s, color .2s, transform .15s !important;
-}
-.nav-cta-outline:hover{
-  background: #ffc13c !important;
-  color: #070B33 !important;
-  transform: translateY(-1px);
-}
-.site-nav.is-light .nav-cta-outline{
-  color: #1c3d31 !important;
-  border-color: #1c3d31 !important;
-}
-.site-nav.is-light .nav-cta-outline:hover{
-  background: #1c3d31 !important;
-  color: #fff !important;
-}
+/* Make sure .nav-right gives the two CTAs + plain link an even gap */
+.nav-right{ display:flex !important; align-items:center !important; gap: 14px !important; }
 
 @media(max-width:860px){
   .nav-link-text{display:none !important}
-  .nav-cta-outline{display:none !important}
+  .nav-right .nav-cta{display:none !important}
 }
-
-/* Home valuation section — darker copy on light background */
-#valuation .eyebrow,
-#valuation .lede {
-     color: #1a1a1a !important;
-     text-shadow: none !important;
-}
-#valuation .eyebrow{ color:#1a1a1a !important; opacity:1 !important; }
-#valuation .lede{ color:#1a1a1a !important; opacity:1 !important; }
