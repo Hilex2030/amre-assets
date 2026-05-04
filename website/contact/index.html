@@ -800,6 +800,13 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   document.querySelectorAll('.f').forEach(function(el){io.observe(el)});
 })();
 
+  // ── Intent chips ──
+  function selectIntent(btn, label) {
+    document.querySelectorAll('#intentChips .chip').forEach(function(c){ c.classList.remove('selected'); });
+    btn.classList.add('selected');
+  }
+  window.selectIntent = selectIntent;
+
   // ── Hamburger menu ──
   (function(){
     var btn=document.getElementById('hamBtn');
