@@ -583,3 +583,55 @@ html body .testi-text{
 .phase-desc{ color: rgba(255,255,255,0.82) !important; }
 .bt-desc   { color: rgba(255,255,255,0.78) !important; }
 .value-body{ color: rgba(255,255,255,0.75) !important; }
+
+/* =====================================================================
+   NAV ADDITIONS — Client Dashboard (plain text) + Home Valuation (outline)
+   ===================================================================== */
+.nav-link-text{
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.82) !important;
+  white-space: nowrap;
+  transition: color .2s !important;
+}
+.nav-link-text:hover{ color: #fff !important; }
+.site-nav.is-light .nav-link-text{ color: rgba(7,11,51,.65) !important; }
+.site-nav.is-light .nav-link-text:hover{ color: #1c3d31 !important; }
+
+/* Outline brass — IDENTICAL outer dimensions to .nav-cta
+   (.nav-cta = padding 9px 20px solid; here = padding 8px 19px + 1px border) */
+.nav-cta-outline{
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+  padding: 8px 19px !important;
+  border-radius: 2px !important;
+  background: transparent !important;
+  color: #ffc13c !important;
+  border: 1px solid #ffc13c !important;
+  white-space: nowrap;
+  transition: background .2s, color .2s, transform .15s !important;
+}
+.nav-cta-outline:hover{
+  background: #ffc13c !important;
+  color: #070B33 !important;
+  transform: translateY(-1px);
+}
+.site-nav.is-light .nav-cta-outline{
+  color: #1c3d31 !important;
+  border-color: #1c3d31 !important;
+}
+.site-nav.is-light .nav-cta-outline:hover{
+  background: #1c3d31 !important;
+  color: #fff !important;
+}
+
+@media(max-width:860px){
+  .nav-link-text{display:none !important}
+  .nav-cta-outline{display:none !important}
+}
