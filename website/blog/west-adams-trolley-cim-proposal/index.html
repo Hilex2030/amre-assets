@@ -327,6 +327,54 @@ button{font-family:'Montserrat',sans-serif;cursor:pointer;border:none;background
 @media(max-width:680px){.article-related-section{padding:48px 20px 64px}}
 
 </style>
+
+<style>
+/* ─── Bolder infographic system ─────────────────────────────────── */
+.ig-block{position:relative;cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease;border-radius:14px}
+.ig-block:hover{transform:translateY(-2px)}
+.ig-block:hover .ig-expand{opacity:1;background:#ffc13c;color:#070B33}
+.ig-expand{position:absolute;top:14px;right:14px;z-index:2;background:rgba(255,255,255,0.92);color:#070B33;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;padding:7px 11px;border-radius:6px;opacity:.9;transition:all .2s ease;pointer-events:none;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.12)}
+.ig-block.dark .ig-expand{background:rgba(255,193,60,0.95);color:#070B33}
+.ig-expand svg{width:11px;height:11px}
+
+.ig-stat-label{font-family:'Montserrat',sans-serif;font-size:11px;color:#5A5A5A;margin:0 0 6px;letter-spacing:.04em}
+.ig-stat-value{font-family:'Montserrat',sans-serif;font-size:38px;font-weight:600;color:#1a1a1a;margin:0;letter-spacing:-.02em;line-height:1}
+.ig-stat-sub{font-family:'Montserrat',sans-serif;font-size:10px;color:#86868b;margin:6px 0 0;line-height:1.4}
+.ig-block.dark .ig-stat-label{color:#a8c4ba}
+.ig-block.dark .ig-stat-value{color:#fff}
+.ig-block.dark .ig-stat-sub{color:#7fa896}
+
+.ig-eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.20em;text-transform:uppercase;color:#1c3d31;margin:0 0 8px}
+.ig-block.dark .ig-eyebrow{color:#ffc13c}
+.ig-block.navy .ig-eyebrow{color:#ffc13c}
+.ig-h{font-family:'Playfair Display',serif;font-size:26px;font-weight:500;color:#1a1a1a;margin:0 0 26px;line-height:1.25;letter-spacing:-.01em}
+.ig-block.dark .ig-h, .ig-block.navy .ig-h{color:#fff}
+.ig-sub{font-family:'Montserrat',sans-serif;font-size:14px;color:#5A5A5A;margin:0 0 24px;line-height:1.5}
+.ig-block.dark .ig-sub, .ig-block.navy .ig-sub{color:#cfe1d8}
+
+@media(max-width:680px){
+  .ig-stat-value{font-size:30px}
+  .ig-h{font-size:21px;margin-bottom:18px}
+  .ig-expand{font-size:9px;padding:6px 9px}
+}
+
+/* ─── Lightbox modal ────────────────────────────────────────────── */
+.ig-modal{position:fixed;inset:0;background:rgba(7,11,51,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:9999;display:none;align-items:center;justify-content:center;padding:32px;overflow-y:auto;animation:igFadeIn .2s ease-out}
+.ig-modal.active{display:flex}
+.ig-modal-inner{position:relative;width:100%;max-width:1100px;margin:auto}
+.ig-modal-content{transform-origin:top center}
+.ig-modal-close{position:fixed;top:24px;right:24px;width:46px;height:46px;border-radius:50%;background:#ffc13c;color:#070B33;border:0;font-size:22px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);z-index:10001;transition:transform .15s ease}
+.ig-modal-close:hover{transform:scale(1.08)}
+.ig-modal-hint{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:#cfe1d8;letter-spacing:.10em;text-transform:uppercase;background:rgba(255,255,255,0.08);padding:10px 18px;border-radius:20px;backdrop-filter:blur(8px)}
+@keyframes igFadeIn{from{opacity:0}to{opacity:1}}
+@media(max-width:680px){
+  .ig-modal{padding:16px}
+  .ig-modal-close{top:14px;right:14px;width:40px;height:40px;font-size:20px}
+  .ig-modal-hint{display:none}
+}
+body.ig-locked{overflow:hidden}
+</style>
+
 </head>
 <body>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://amre.group/"}, {"@type": "ListItem", "position": 2, "name": "Journal", "item": "https://amre.group/blog/"}, {"@type": "ListItem", "position": 3, "name": "The Power of Duplex Ownership in Los Angeles", "item": "https://amre.group/blog/power-duplex-ownership-los-angeles/"}]}</script>
@@ -373,56 +421,113 @@ button{font-family:'Montserrat',sans-serif;cursor:pointer;border:none;background
 
 <h2>The Problem CIM Just Built for Itself.</h2>
 
-<p>By the time the projects already filed or under construction are delivered, the Adams Boulevard corridor between Crenshaw and La Cienega will host roughly <strong>550 new apartment units</strong>, <strong>85,000+ square feet of ground-floor retail</strong>, a <strong>78-key boutique hotel</strong>, and the <strong>23,000-square-foot Museum of Ice Cream flagship</strong> — a destination that, based on the operator's other locations, will draw upwards of <strong>700,000 visitors a year</strong>.</p>
+<p>By the time the projects already filed or under construction are delivered, the Adams Boulevard corridor between Crenshaw and La Cienega will host roughly <strong>550 new apartment units</strong>, <strong>85,000+ square feet of ground-floor retail</strong>, a <strong>48-unit short-term-stay building</strong> (Alsace Living, the former Alsace LA hotel), and the <strong>23,000-square-foot Museum of Ice Cream flagship</strong> — a destination that, based on the operator's other locations, will draw upwards of <strong>700,000 visitors a year</strong>.</p>
 
 <p>That foot traffic is concentrated along a 3.3-mile stretch of a single boulevard, in a part of Los Angeles that the Metro Expo Line technically serves but practically does not. The Expo Line runs along Exposition Boulevard, two long blocks south of Adams, with stations at Crenshaw, Farmdale, Expo/La Brea, and La Cienega/Jefferson — none of which deliver you within walking distance of the actual Adams retail corridor. The 37 bus runs on Adams. It is fine. It is not the kind of service that lets a family with two kids and a stroller reasonably plan to spend Saturday afternoon visiting Maydan Market for lunch, the museum for the kids, and Cento for dinner without driving and parking three separate times.</p>
 
 <p>And then there's the parking problem. New West Adams residential buildings are entitled with one space per unit at most — 0.5 in some cases. The retail in those buildings carries minimal off-street parking under the city's Transit Oriented Communities provisions. The 5217 W. Adams project added 74 units and ~9,000 square feet of retail with significantly under-parked entitlements; the proposed 5451 W. Adams project will add 142 units and 8,000 square feet of retail. The math, conservatively, looks like this:</p>
 
 <!-- INFOGRAPHIC 1: The Parking Math -->
-<div style="margin:36px 0;padding:32px 32px 24px;background:#f5f5f7;border-radius:12px">
-  <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#1c3d31;margin:0 0 6px">The corridor's parking gap</p>
-  <p style="font-family:'Montserrat',sans-serif;font-size:13px;color:#5A5A5A;margin:0 0 22px;line-height:1.5">Daytime parking demand vs. on-corridor supply for the existing &amp; entitled CIM portfolio plus the Museum of Ice Cream's projected attendance, on a typical Saturday.</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px">
-    <div style="background:#fff;border-radius:10px;padding:18px 18px 16px;border-left:3px solid #1c3d31">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#5A5A5A;margin:0 0 6px">Resident vehicles</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:500;color:#1a1a1a;margin:0">~480</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#86868b;margin:4px 0 0">Built &amp; entitled · ~0.85/unit</p>
+<div class="ig-block" data-lightbox style="margin:36px 0;padding:36px 36px 28px;background:#f5f5f7;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+  <div class="ig-expand" aria-hidden="true">View larger <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M9 21H3v-6"/><path d="M3 21l11-11"/></svg></div>
+  <p class="ig-eyebrow">The corridor's parking gap</p>
+  <p class="ig-h">A Saturday peak demand of 1,790 spaces. The corridor has 720.</p>
+  <p class="ig-sub">Daytime parking demand vs. on-corridor supply for the existing &amp; entitled CIM portfolio plus the Museum of Ice Cream's projected attendance, on a typical Saturday.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:26px">
+    <div style="background:#fff;border-radius:12px;padding:22px 22px 20px;border-left:4px solid #1c3d31">
+      <p class="ig-stat-label">Resident vehicles</p>
+      <p class="ig-stat-value">~480</p>
+      <p class="ig-stat-sub">Built &amp; entitled · ~0.85/unit</p>
     </div>
-    <div style="background:#fff;border-radius:10px;padding:18px 18px 16px;border-left:3px solid #1c3d31">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#5A5A5A;margin:0 0 6px">Restaurant patrons</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:500;color:#1a1a1a;margin:0">~350</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#86868b;margin:4px 0 0">Sat. peak · 8 active venues</p>
+    <div style="background:#fff;border-radius:12px;padding:22px 22px 20px;border-left:4px solid #1c3d31">
+      <p class="ig-stat-label">Restaurant patrons</p>
+      <p class="ig-stat-value">~350</p>
+      <p class="ig-stat-sub">Sat. peak · 8 active venues</p>
     </div>
-    <div style="background:#fff;border-radius:10px;padding:18px 18px 16px;border-left:3px solid #ffc13c">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#5A5A5A;margin:0 0 6px">Museum visitors</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:500;color:#1a1a1a;margin:0">~900</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#86868b;margin:4px 0 0">Avg Sat. · ~2,000 visitors</p>
+    <div style="background:#fff;border-radius:12px;padding:22px 22px 20px;border-left:4px solid #ff79b0">
+      <p class="ig-stat-label">Museum visitors</p>
+      <p class="ig-stat-value">~900</p>
+      <p class="ig-stat-sub">Avg Sat. · ~2,000 visitors</p>
     </div>
-    <div style="background:#fff;border-radius:10px;padding:18px 18px 16px;border-left:3px solid #1c3d31">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#5A5A5A;margin:0 0 6px">Hotel guests</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:500;color:#1a1a1a;margin:0">~60</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#86868b;margin:4px 0 0">Alsace · 78 keys</p>
-    </div>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-    <div style="background:#1c3d31;color:#fff;border-radius:10px;padding:20px 20px 18px">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#cfe1d8;margin:0 0 6px;letter-spacing:.06em;text-transform:uppercase">Total demand</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:32px;font-weight:500;margin:0">1,790 spaces</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#a8c4ba;margin:4px 0 0">Saturday peak, conservative</p>
-    </div>
-    <div style="background:#fff;border-radius:10px;padding:20px 20px 18px;border:2px solid #d4a814">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#8a6c00;margin:0 0 6px;letter-spacing:.06em;text-transform:uppercase">On-corridor supply</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:32px;font-weight:500;color:#1a1a1a;margin:0">~720 spaces</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#86868b;margin:4px 0 0">Off-street + metered street</p>
+    <div style="background:#fff;border-radius:12px;padding:22px 22px 20px;border-left:4px solid #1c3d31">
+      <p class="ig-stat-label">STR guests</p>
+      <p class="ig-stat-value">~50</p>
+      <p class="ig-stat-sub">Alsace Living · 48 units</p>
     </div>
   </div>
-  <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#86868b;margin:14px 0 0;line-height:1.5">Estimated deficit on a peak Saturday: <strong style="color:#1a1a1a">~1,070 spaces</strong>. Demand figures based on entitlement filings, restaurant capacity averages, and Museum of Ice Cream attendance at comparable flagships. Supply estimate excludes residential garages reserved for tenants.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+    <div style="background:#1c3d31;color:#fff;border-radius:12px;padding:24px 24px 22px">
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#cfe1d8;margin:0 0 8px;letter-spacing:.10em;text-transform:uppercase;font-weight:600">Total demand</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:46px;font-weight:600;margin:0;letter-spacing:-.02em;line-height:1">1,790</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:12px;color:#a8c4ba;margin:6px 0 0">spaces · Saturday peak</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:24px 24px 22px;border:2px solid #d4a814">
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#8a6c00;margin:0 0 8px;letter-spacing:.10em;text-transform:uppercase;font-weight:600">On-corridor supply</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:46px;font-weight:600;color:#1a1a1a;margin:0;letter-spacing:-.02em;line-height:1">~720</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:12px;color:#86868b;margin:6px 0 0">spaces · off-street + metered</p>
+    </div>
+  </div>
+
+  <div style="background:#070B33;color:#ffc13c;border-radius:12px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div>
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#a8b0d8;margin:0 0 4px;letter-spacing:.10em;text-transform:uppercase;font-weight:600">Public parking structures on the corridor</p>
+      <p style="font-family:'Playfair Display',serif;font-size:32px;font-weight:500;color:#ffc13c;margin:0;line-height:1">Zero.</p>
+    </div>
+    <p style="font-family:'Montserrat',sans-serif;font-size:12px;color:#cfe1d8;margin:0;max-width:420px;line-height:1.5">No public garage exists between Crenshaw and La Cienega. Existing developments rely entirely on small basement decks (e.g., Alsace had 31 spaces).</p>
+  </div>
+
+  <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#86868b;margin:18px 0 0;line-height:1.5">Estimated deficit on a peak Saturday: <strong style="color:#1a1a1a">~1,070 spaces</strong>. Demand figures based on entitlement filings, restaurant capacity averages, and Museum of Ice Cream attendance at comparable flagships. Supply estimate excludes residential garages reserved for tenants.</p>
 </div>
 
 <p>That deficit doesn't show up tomorrow. It shows up the day Museum of Ice Cream opens. And the corridor's response — at the trajectory it's currently on — will be the same response every Los Angeles neighborhood has had to that problem: ad-hoc valet on the sidewalks, residents calling parking enforcement, restaurant guests circling for twenty minutes and leaving, and a slow erosion of the foot-traffic environment that made the corridor desirable in the first place.</p>
 
 <p>This is a solvable problem. It has a known solution. And the developer most exposed to its downside is the developer best positioned to fund it.</p>
+
+<p>And the demand for the solution is not theoretical. It's already showing up on CIM's own balance sheet. As of this writing, CIM Group's leasing portal lists at least <strong>nine actively available retail and office spaces</strong> on the corridor — a combined ~28,000 square feet of unleased commercial inventory. These are spaces that, by CIM's own marketing materials, target "restaurant, service, entertainment, grocery, and fitness" tenants. The category that consistently signs leases on those terms is the category that requires reliable, walkable foot traffic.</p>
+
+<!-- INFOGRAPHIC 5: Available Retail -->
+<div class="ig-block" data-lightbox style="margin:36px 0;padding:36px 36px 30px;background:#fff;border:1px solid #e7e7ea;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+  <div class="ig-expand" aria-hidden="true">View larger <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M9 21H3v-6"/><path d="M3 21l11-11"/></svg></div>
+  <p class="ig-eyebrow">CIM's empty retail · today</p>
+  <p class="ig-h">~28,000 sq ft of unleased space, waiting for foot traffic.</p>
+  <p class="ig-sub">Retail and office spaces actively listed on CIM's own leasing portal along Adams Boulevard, May 2026.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:24px">
+    <div style="background:#f5f5f7;border-radius:12px;padding:22px 22px 20px;text-align:center">
+      <p style="font-family:'Playfair Display',serif;font-size:54px;font-weight:600;color:#1c3d31;margin:0;letter-spacing:-.02em;line-height:1">9+</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#5A5A5A;margin:8px 0 0;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Spaces available</p>
+    </div>
+    <div style="background:#f5f5f7;border-radius:12px;padding:22px 22px 20px;text-align:center">
+      <p style="font-family:'Playfair Display',serif;font-size:54px;font-weight:600;color:#1c3d31;margin:0;letter-spacing:-.02em;line-height:1">~28K</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#5A5A5A;margin:8px 0 0;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Sq ft unleased</p>
+    </div>
+    <div style="background:#070B33;color:#fff;border-radius:12px;padding:22px 22px 20px;text-align:center">
+      <p style="font-family:'Playfair Display',serif;font-size:54px;font-weight:600;color:#ffc13c;margin:0;letter-spacing:-.02em;line-height:1">~33%</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#cfe1d8;margin:8px 0 0;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Of CIM's listed retail</p>
+    </div>
+  </div>
+
+  <div style="background:#f5f5f7;border-radius:12px;padding:22px 24px">
+    <p style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#1c3d31;letter-spacing:.10em;text-transform:uppercase;margin:0 0 14px">Currently listed (selection)</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;font-family:'Montserrat',sans-serif;font-size:13px;color:#1a1a1a">
+      <div style="padding:8px 0;border-bottom:1px solid #e0e0e3"><strong>4321 W. Adams</strong> · 10,128 sf</div>
+      <div style="padding:8px 0;border-bottom:1px solid #e0e0e3"><strong>4501 W. Adams</strong> · 5,325 sf</div>
+      <div style="padding:8px 0;border-bottom:1px solid #e0e0e3"><strong>4967–4971 W. Adams</strong> · 1,400 sf</div>
+      <div style="padding:8px 0;border-bottom:1px solid #e0e0e3"><strong>5160 W. Adams</strong> · 4,070 sf</div>
+      <div style="padding:8px 0;border-bottom:1px solid #e0e0e3"><strong>5201 W. Adams</strong> · 1,171 sf</div>
+      <div style="padding:8px 0;border-bottom:1px solid #e0e0e3"><strong>5263–5267 W. Adams</strong> · 2,285 sf</div>
+      <div style="padding:8px 0;border-bottom:1px solid #e0e0e3"><strong>5300 W. Adams</strong> · 1,205 sf</div>
+      <div style="padding:8px 0;border-bottom:1px solid #e0e0e3"><strong>5350 W. Adams</strong> · 2,444 sf</div>
+    </div>
+  </div>
+
+  <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#86868b;margin:18px 0 0;line-height:1.5">Source: CIM Group leasing portal (cimgroup.propertycapsule.com), accessed May 2026. Excludes spaces below 1,000 sq ft and partially-leased multi-tenant suites.</p>
+</div>
+
+<p>Every empty storefront is forgone NOI. The trolley would directly address why those spaces aren't leasing — operators do not sign leases on a corridor where customers can't reasonably get to the door. <strong>The trolley is also the leasing strategy.</strong></p>
+
 
 <h2>The Plan.</h2>
 
@@ -431,88 +536,75 @@ button{font-family:'Montserrat',sans-serif;cursor:pointer;border:none;background
 <p>The route would have approximately twelve stops, deliberately positioned at the corridor's anchors: every CIM building with ground-floor retail, every major restaurant, the Museum of Ice Cream entrance, and — critically — a central parking hub at the 5451 W. Adams site that lets people park once and explore the rest of the corridor without ever moving their car.</p>
 
 <!-- INFOGRAPHIC 2: The Route Map -->
-<div style="margin:36px 0;padding:32px 32px 28px;background:#070B33;color:#fff;border-radius:12px;overflow:hidden">
-  <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#ffc13c;margin:0 0 6px">The proposed route</p>
-  <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:#fff;margin:0 0 24px;line-height:1.3">3.3 miles · 12 stops · ~7-minute wait time</p>
+<div class="ig-block dark" data-lightbox style="margin:36px 0;padding:36px 36px 32px;background:#070B33;color:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(7,11,51,0.18)">
+  <div class="ig-expand" aria-hidden="true">View larger <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M9 21H3v-6"/><path d="M3 21l11-11"/></svg></div>
+  <p class="ig-eyebrow">The proposed route</p>
+  <p class="ig-h">3.3 miles · 12 stops · ~7-minute wait time.</p>
 
-  <div style="position:relative;background:rgba(255,255,255,0.04);border-radius:10px;padding:32px 24px 28px;margin-bottom:18px">
-    <!-- The boulevard line -->
+  <div style="position:relative;background:rgba(255,255,255,0.04);border-radius:12px;padding:36px 24px 32px;margin-bottom:22px">
     <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" role="img" aria-label="Map showing 12 stops along the proposed West Adams trolley route from Crenshaw to La Cienega, with the 5451 W. Adams parking hub at the center.">
-      <!-- Roadway -->
       <line x1="40" y1="110" x2="760" y2="110" stroke="#2a3160" stroke-width="14" stroke-linecap="round"/>
       <line x1="40" y1="110" x2="760" y2="110" stroke="#ffc13c" stroke-width="2" stroke-dasharray="6 8"/>
 
-      <!-- Endpoint: Crenshaw -->
       <circle cx="40" cy="110" r="11" fill="#ffc13c" stroke="#070B33" stroke-width="2"/>
-      <text x="40" y="80" font-family="Montserrat,sans-serif" font-size="11" font-weight="600" fill="#ffc13c" text-anchor="middle">CRENSHAW</text>
+      <text x="40" y="80" font-family="Montserrat,sans-serif" font-size="11" font-weight="700" fill="#ffc13c" text-anchor="middle">CRENSHAW</text>
       <text x="40" y="145" font-family="Montserrat,sans-serif" font-size="9" fill="#a8b0d8" text-anchor="middle">Terminus</text>
 
-      <!-- Stop 2: 4301 Maydan / Jefferson -->
       <circle cx="120" cy="110" r="6" fill="#fff"/>
-      <text x="120" y="92" font-family="Montserrat,sans-serif" font-size="9" fill="#fff" text-anchor="middle">Maydan Mkt</text>
+      <text x="120" y="92" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Maydan Mkt</text>
       <text x="120" y="135" font-family="Montserrat,sans-serif" font-size="8" fill="#7a82a8" text-anchor="middle">4301 Jefferson</text>
 
-      <!-- Stop 3: Alta Adams -->
       <circle cx="195" cy="110" r="6" fill="#fff"/>
-      <text x="195" y="92" font-family="Montserrat,sans-serif" font-size="9" fill="#fff" text-anchor="middle">Alta Adams</text>
+      <text x="195" y="92" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Alta Adams</text>
 
-      <!-- Stop 4: The Jayne -->
       <circle cx="265" cy="110" r="6" fill="#cfe1d8"/>
-      <text x="265" y="135" font-family="Montserrat,sans-serif" font-size="9" fill="#cfe1d8" text-anchor="middle">The Jayne</text>
+      <text x="265" y="135" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#cfe1d8" text-anchor="middle">The Jayne</text>
       <text x="265" y="148" font-family="Montserrat,sans-serif" font-size="8" fill="#7a82a8" text-anchor="middle">2555 Mansfield</text>
 
-      <!-- Stop 5: Cento + Cento Raw -->
       <circle cx="335" cy="110" r="6" fill="#fff"/>
-      <text x="335" y="92" font-family="Montserrat,sans-serif" font-size="9" fill="#fff" text-anchor="middle">Cento</text>
+      <text x="335" y="92" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Cento</text>
       <text x="335" y="80" font-family="Montserrat,sans-serif" font-size="8" fill="#7a82a8" text-anchor="middle">+ Raw Bar</text>
 
-      <!-- Stop 6: 5217 W Adams -->
       <circle cx="395" cy="110" r="6" fill="#cfe1d8"/>
-      <text x="395" y="135" font-family="Montserrat,sans-serif" font-size="9" fill="#cfe1d8" text-anchor="middle">5217 Adams</text>
+      <text x="395" y="135" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#cfe1d8" text-anchor="middle">The Read</text>
+      <text x="395" y="148" font-family="Montserrat,sans-serif" font-size="8" fill="#7a82a8" text-anchor="middle">5217 Adams</text>
 
-      <!-- Stop 7: HUB - 5451 -->
-      <circle cx="460" cy="110" r="16" fill="#ffc13c" stroke="#070B33" stroke-width="3"/>
-      <text x="460" y="106" font-family="Montserrat,sans-serif" font-size="10" font-weight="700" fill="#070B33" text-anchor="middle">P</text>
-      <text x="460" y="116" font-family="Montserrat,sans-serif" font-size="6" font-weight="700" fill="#070B33" text-anchor="middle">HUB</text>
-      <text x="460" y="68" font-family="Playfair Display,serif" font-size="13" font-weight="500" fill="#ffc13c" text-anchor="middle" font-style="italic">The Hub</text>
-      <text x="460" y="84" font-family="Montserrat,sans-serif" font-size="10" font-weight="600" fill="#fff" text-anchor="middle">5451 W. Adams</text>
-      <text x="460" y="148" font-family="Montserrat,sans-serif" font-size="9" fill="#fff" text-anchor="middle">300-space structure</text>
-      <text x="460" y="160" font-family="Montserrat,sans-serif" font-size="8" fill="#7a82a8" text-anchor="middle">142 units · 8K sq ft retail</text>
+      <circle cx="460" cy="110" r="18" fill="#ffc13c" stroke="#070B33" stroke-width="3"/>
+      <text x="460" y="106" font-family="Montserrat,sans-serif" font-size="11" font-weight="800" fill="#070B33" text-anchor="middle">P</text>
+      <text x="460" y="118" font-family="Montserrat,sans-serif" font-size="6" font-weight="800" fill="#070B33" text-anchor="middle">HUB</text>
+      <text x="460" y="60" font-family="Playfair Display,serif" font-size="14" font-weight="600" fill="#ffc13c" text-anchor="middle" font-style="italic">The Hub</text>
+      <text x="460" y="78" font-family="Montserrat,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">5451 W. Adams</text>
+      <text x="460" y="151" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">300-space structure</text>
+      <text x="460" y="163" font-family="Montserrat,sans-serif" font-size="8" fill="#7a82a8" text-anchor="middle">142 units · 8K sq ft retail</text>
 
-      <!-- Stop 8: Museum of Ice Cream -->
-      <circle cx="525" cy="110" r="9" fill="#ff79b0"/>
-      <text x="525" y="92" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#ff79b0" text-anchor="middle">Museum of</text>
-      <text x="525" y="80" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#ff79b0" text-anchor="middle">Ice Cream</text>
+      <circle cx="525" cy="110" r="10" fill="#ff79b0"/>
+      <text x="525" y="92" font-family="Montserrat,sans-serif" font-size="10" font-weight="700" fill="#ff79b0" text-anchor="middle">Museum of</text>
+      <text x="525" y="80" font-family="Montserrat,sans-serif" font-size="10" font-weight="700" fill="#ff79b0" text-anchor="middle">Ice Cream</text>
       <text x="525" y="135" font-family="Montserrat,sans-serif" font-size="8" fill="#7a82a8" text-anchor="middle">5252 W. Adams</text>
 
-      <!-- Stop 9: Mizlala / Highly Likely -->
       <circle cx="590" cy="110" r="6" fill="#fff"/>
-      <text x="590" y="135" font-family="Montserrat,sans-serif" font-size="9" fill="#fff" text-anchor="middle">Mizlala</text>
+      <text x="590" y="135" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Mizlala</text>
       <text x="590" y="148" font-family="Montserrat,sans-serif" font-size="8" fill="#7a82a8" text-anchor="middle">Highly Likely</text>
 
-      <!-- Stop 10: Alsace Hotel -->
       <circle cx="650" cy="110" r="6" fill="#cfe1d8"/>
-      <text x="650" y="92" font-family="Montserrat,sans-serif" font-size="9" fill="#cfe1d8" text-anchor="middle">Alsace Hotel</text>
+      <text x="650" y="92" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#cfe1d8" text-anchor="middle">Alsace Living</text>
 
-      <!-- Stop 11: The Little Room -->
       <circle cx="710" cy="110" r="6" fill="#fff"/>
-      <text x="710" y="135" font-family="Montserrat,sans-serif" font-size="9" fill="#fff" text-anchor="middle">Little Room</text>
+      <text x="710" y="135" font-family="Montserrat,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Little Room</text>
 
-      <!-- Endpoint: La Cienega -->
       <circle cx="760" cy="110" r="11" fill="#ffc13c" stroke="#070B33" stroke-width="2"/>
-      <text x="760" y="80" font-family="Montserrat,sans-serif" font-size="11" font-weight="600" fill="#ffc13c" text-anchor="middle">LA CIENEGA</text>
+      <text x="760" y="80" font-family="Montserrat,sans-serif" font-size="11" font-weight="700" fill="#ffc13c" text-anchor="middle">LA CIENEGA</text>
       <text x="760" y="145" font-family="Montserrat,sans-serif" font-size="9" fill="#a8b0d8" text-anchor="middle">Terminus</text>
 
-      <!-- Direction arrows -->
-      <text x="400" y="200" font-family="Montserrat,sans-serif" font-size="10" fill="#7a82a8" text-anchor="middle" letter-spacing="0.1em">← BOTH DIRECTIONS · EVERY 12–15 MIN ·  →</text>
+      <text x="400" y="200" font-family="Montserrat,sans-serif" font-size="10" font-weight="600" fill="#7a82a8" text-anchor="middle" letter-spacing="0.10em">← BOTH DIRECTIONS · EVERY 12–15 MIN ·  →</text>
     </svg>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;font-family:'Montserrat',sans-serif;font-size:11px">
-    <div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ffc13c"></span><span style="color:#cfe1d8">Terminus / hub</span></div>
-    <div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ff79b0"></span><span style="color:#cfe1d8">Museum of Ice Cream</span></div>
-    <div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cfe1d8"></span><span style="color:#cfe1d8">CIM residential</span></div>
-    <div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#fff"></span><span style="color:#cfe1d8">Restaurant / retail</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500">
+    <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#ffc13c"></span><span style="color:#cfe1d8">Terminus / hub</span></div>
+    <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#ff79b0"></span><span style="color:#cfe1d8">Museum of Ice Cream</span></div>
+    <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#cfe1d8"></span><span style="color:#cfe1d8">CIM residential</span></div>
+    <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#fff"></span><span style="color:#cfe1d8">Restaurant / retail</span></div>
   </div>
 </div>
 
@@ -529,24 +621,25 @@ button{font-family:'Montserrat',sans-serif;cursor:pointer;border:none;background
 <p>The famous "Balloon Route" trolley tour that ran from Downtown to the beach in the early 1900s was, openly and explicitly, a real estate marketing engine. The route was designed by Sherman and Clark of the Los Angeles Pacific Railway specifically to deliver Sunday families past the lots they had for sale. The brochures didn't hide it. <em>The streetcar was the listing tour.</em></p>
 
 <!-- INFOGRAPHIC 3: Historical Precedent -->
-<div style="margin:36px 0;padding:32px 32px 24px;background:#fff;border:1px solid #e7e7ea;border-radius:12px">
-  <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#1c3d31;margin:0 0 6px">A Los Angeles tradition</p>
-  <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:#1a1a1a;margin:0 0 24px;line-height:1.3">Developer-funded transit built modern LA. It can rebuild this corridor.</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
-    <div style="padding:18px 20px 16px;background:#f5f5f7;border-radius:10px;border-top:3px solid #1c3d31">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:#1c3d31;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px">1901–1925</p>
-      <p style="font-family:'Playfair Display',serif;font-size:17px;font-weight:500;color:#1a1a1a;margin:0 0 8px">Pacific Electric Railway</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:13px;color:#5A5A5A;margin:0;line-height:1.55">Henry Huntington's red car system reached <strong>1,100+ miles</strong> at its peak. Built to move buyers to the lots his syndicate was selling. The largest electric railway in the world — funded by real estate.</p>
+<div class="ig-block" data-lightbox style="margin:36px 0;padding:36px 36px 32px;background:#fff;border:1px solid #e7e7ea;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+  <div class="ig-expand" aria-hidden="true">View larger <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M9 21H3v-6"/><path d="M3 21l11-11"/></svg></div>
+  <p class="ig-eyebrow">A Los Angeles tradition</p>
+  <p class="ig-h">Developer-funded transit built modern LA. It can rebuild this corridor.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+    <div style="padding:24px 24px 22px;background:#f5f5f7;border-radius:12px;border-top:4px solid #1c3d31">
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#1c3d31;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px">1901–1925</p>
+      <p style="font-family:'Playfair Display',serif;font-size:21px;font-weight:500;color:#1a1a1a;margin:0 0 12px;line-height:1.2">Pacific Electric Railway</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:14px;color:#5A5A5A;margin:0;line-height:1.6">Henry Huntington's red car system reached <strong style="color:#1a1a1a">1,100+ miles</strong> at its peak. Built to move buyers to the lots his syndicate was selling. The largest electric railway in the world — funded by real estate.</p>
     </div>
-    <div style="padding:18px 20px 16px;background:#f5f5f7;border-radius:10px;border-top:3px solid #1c3d31">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:#1c3d31;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px">1901–1933</p>
-      <p style="font-family:'Playfair Display',serif;font-size:17px;font-weight:500;color:#1a1a1a;margin:0 0 8px">The Balloon Route</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:13px;color:#5A5A5A;margin:0;line-height:1.55">Sherman &amp; Clark's developer-owned trolley tour from Downtown to the beach. Designed as a real estate sales engine — a rolling open house that turned weekend riders into homeowners.</p>
+    <div style="padding:24px 24px 22px;background:#f5f5f7;border-radius:12px;border-top:4px solid #1c3d31">
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#1c3d31;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px">1901–1933</p>
+      <p style="font-family:'Playfair Display',serif;font-size:21px;font-weight:500;color:#1a1a1a;margin:0 0 12px;line-height:1.2">The Balloon Route</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:14px;color:#5A5A5A;margin:0;line-height:1.6">Sherman &amp; Clark's developer-owned trolley tour from Downtown to the beach. Designed as a real estate sales engine — a rolling open house that turned weekend riders into homeowners.</p>
     </div>
-    <div style="padding:18px 20px 16px;background:#f5f5f7;border-radius:10px;border-top:3px solid #ffc13c">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:#1c3d31;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px">2003–today</p>
-      <p style="font-family:'Playfair Display',serif;font-size:17px;font-weight:500;color:#1a1a1a;margin:0 0 8px">The WeHo PickUp</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:13px;color:#5A5A5A;margin:0;line-height:1.55">A free, six-mile shuttle loop along Santa Monica Boulevard with stops every 2–3 blocks. Funded by the City of West Hollywood specifically to drive retail foot traffic. Still running, still free, still working.</p>
+    <div style="padding:24px 24px 22px;background:#f5f5f7;border-radius:12px;border-top:4px solid #ffc13c">
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#1c3d31;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px">2003–today</p>
+      <p style="font-family:'Playfair Display',serif;font-size:21px;font-weight:500;color:#1a1a1a;margin:0 0 12px;line-height:1.2">The WeHo PickUp</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:14px;color:#5A5A5A;margin:0;line-height:1.6">A free, six-mile shuttle loop along Santa Monica Boulevard with stops every 2–3 blocks. Funded by the City of West Hollywood specifically to drive retail foot traffic. <strong style="color:#1a1a1a">Still running, still free, still working.</strong></p>
     </div>
   </div>
 </div>
@@ -562,61 +655,62 @@ button{font-family:'Montserrat',sans-serif;cursor:pointer;border:none;background
 <p>Now compare that to the asset base it serves.</p>
 
 <!-- INFOGRAPHIC 4: Cost vs Value -->
-<div style="margin:36px 0;padding:32px 32px 24px;background:#1c3d31;color:#fff;border-radius:12px">
-  <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#ffc13c;margin:0 0 6px">The math on CIM's portfolio</p>
-  <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:#fff;margin:0 0 24px;line-height:1.3">The trolley costs less than 1% of the rent lift it would generate.</p>
+<div class="ig-block dark" data-lightbox style="margin:36px 0;padding:36px 36px 30px;background:#1c3d31;color:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(28,61,49,0.18)">
+  <div class="ig-expand" aria-hidden="true">View larger <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M9 21H3v-6"/><path d="M3 21l11-11"/></svg></div>
+  <p class="ig-eyebrow">The math on CIM's portfolio</p>
+  <p class="ig-h">The trolley costs less than 1% of the rent lift it would generate.</p>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px">
-    <div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:16px 18px">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#a8c4ba;margin:0 0 4px">Annual operating cost</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:500;color:#fff;margin:0">~$1.0M</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#7fa896;margin:4px 0 0">2 vehicles · 60 hrs/wk</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:28px">
+    <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:22px 22px 20px">
+      <p class="ig-stat-label">Annual operating cost</p>
+      <p class="ig-stat-value">~$1.0M</p>
+      <p class="ig-stat-sub">2 vehicles · 60 hrs/wk</p>
     </div>
-    <div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:16px 18px">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#a8c4ba;margin:0 0 4px">CIM rentable units</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:500;color:#fff;margin:0">~550</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#7fa896;margin:4px 0 0">Built + entitled pipeline</p>
+    <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:22px 22px 20px">
+      <p class="ig-stat-label">CIM rentable units</p>
+      <p class="ig-stat-value">~550</p>
+      <p class="ig-stat-sub">Built + entitled pipeline</p>
     </div>
-    <div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:16px 18px">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#a8c4ba;margin:0 0 4px">CIM retail / commercial</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:500;color:#fff;margin:0">~85K sf</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#7fa896;margin:4px 0 0">Plus 78 hotel keys</p>
+    <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:22px 22px 20px">
+      <p class="ig-stat-label">CIM retail sq ft</p>
+      <p class="ig-stat-value">~85K</p>
+      <p class="ig-stat-sub">Plus 48 STR units</p>
     </div>
-    <div style="background:#ffc13c;color:#1c3d31;border-radius:10px;padding:16px 18px">
-      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#5a4400;margin:0 0 4px;font-weight:600">Required rent lift to break even</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:600;color:#1c3d31;margin:0">&lt; 0.8%</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#5a4400;margin:4px 0 0">across full portfolio</p>
+    <div style="background:#ffc13c;color:#1c3d31;border-radius:12px;padding:22px 22px 20px">
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#5a4400;margin:0 0 6px;font-weight:700;letter-spacing:.04em">Breakeven rent lift</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:38px;font-weight:700;color:#1c3d31;margin:0;letter-spacing:-.02em;line-height:1">&lt;0.8%</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#5a4400;margin:6px 0 0">across full portfolio</p>
     </div>
   </div>
 
-  <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ffc13c;margin:0 0 12px">If the trolley delivers a rent premium of:</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px">
-    <div style="text-align:center;padding:14px 10px;background:rgba(255,255,255,0.04);border-radius:8px">
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#a8c4ba;margin:0">Premium</p>
-      <p style="font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin:4px 0">+1%</p>
+  <p style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#ffc13c;margin:0 0 14px">If the trolley delivers a rent premium of:</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px">
+    <div style="text-align:center;padding:18px 12px;background:rgba(255,255,255,0.04);border-radius:10px">
+      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#a8c4ba;margin:0;letter-spacing:.06em;text-transform:uppercase">Premium</p>
+      <p style="font-family:'Playfair Display',serif;font-size:30px;color:#fff;margin:6px 0;font-weight:500">+1%</p>
       <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#7fa896;margin:0">Net annual</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:14px;color:#fff;font-weight:600;margin:2px 0 0">+$220K</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:18px;color:#fff;font-weight:700;margin:4px 0 0">+$220K</p>
     </div>
-    <div style="text-align:center;padding:14px 10px;background:rgba(255,255,255,0.04);border-radius:8px">
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#a8c4ba;margin:0">Premium</p>
-      <p style="font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin:4px 0">+2%</p>
+    <div style="text-align:center;padding:18px 12px;background:rgba(255,255,255,0.04);border-radius:10px">
+      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#a8c4ba;margin:0;letter-spacing:.06em;text-transform:uppercase">Premium</p>
+      <p style="font-family:'Playfair Display',serif;font-size:30px;color:#fff;margin:6px 0;font-weight:500">+2%</p>
       <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#7fa896;margin:0">Net annual</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:14px;color:#fff;font-weight:600;margin:2px 0 0">+$440K</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:18px;color:#fff;font-weight:700;margin:4px 0 0">+$440K</p>
     </div>
-    <div style="text-align:center;padding:14px 10px;background:rgba(255,193,60,0.18);border-radius:8px;border:1px solid #ffc13c">
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#ffc13c;margin:0;font-weight:600">Premium</p>
-      <p style="font-family:'Playfair Display',serif;font-size:22px;color:#ffc13c;margin:4px 0">+5%</p>
+    <div style="text-align:center;padding:18px 12px;background:rgba(255,193,60,0.18);border-radius:10px;border:2px solid #ffc13c">
+      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#ffc13c;margin:0;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Premium</p>
+      <p style="font-family:'Playfair Display',serif;font-size:30px;color:#ffc13c;margin:6px 0;font-weight:600">+5%</p>
       <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#a8c4ba;margin:0">Net annual</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:14px;color:#fff;font-weight:600;margin:2px 0 0">+$1.1M</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:18px;color:#fff;font-weight:700;margin:4px 0 0">+$1.1M</p>
     </div>
-    <div style="text-align:center;padding:14px 10px;background:rgba(255,255,255,0.04);border-radius:8px">
-      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#a8c4ba;margin:0">Cap rate gain*</p>
-      <p style="font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin:4px 0">$22M+</p>
+    <div style="text-align:center;padding:18px 12px;background:rgba(255,255,255,0.04);border-radius:10px">
+      <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#a8c4ba;margin:0;letter-spacing:.06em;text-transform:uppercase">Cap rate gain*</p>
+      <p style="font-family:'Playfair Display',serif;font-size:30px;color:#fff;margin:6px 0;font-weight:500">$22M+</p>
       <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#7fa896;margin:0">Implied portfolio</p>
       <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#7fa896;margin:2px 0 0">value lift @ 5% cap</p>
     </div>
   </div>
-  <p style="font-family:'Montserrat',sans-serif;font-size:10px;color:#7fa896;margin:14px 0 0;line-height:1.5">*Implied value lift assumes a +$1.1M annual NOI improvement (5% rent premium scenario) capitalized at a 5% cap rate. Net of the $1M annual operating cost, the cap rate gain alone would be in the high eight figures over a 7-year vehicle lifecycle.</p>
+  <p style="font-family:'Montserrat',sans-serif;font-size:11px;color:#7fa896;margin:18px 0 0;line-height:1.55">*Implied value lift assumes a +$1.1M annual NOI improvement (5% rent premium scenario) capitalized at a 5% cap rate. Net of the $1M annual operating cost, the cap rate gain alone would be in the high eight figures over a 7-year vehicle lifecycle.</p>
 </div>
 
 <p>That math should be obvious to a firm with CIM's sophistication. A boutique, branded, named-after-the-corridor trolley becomes a marketing asset — every leasing brochure for every CIM property on the street can say "complimentary trolley to all corridor amenities." Rent premiums for amenitized buildings are well-documented. A 1% lift on the portfolio covers the cost. A 5% lift — entirely defensible in a market where Silver Lake and Highland Park comparables sustain meaningful rent premiums for walkability — generates returns that would make the trolley one of the best NOI investments in the company's portfolio.</p>
@@ -666,6 +760,58 @@ button{font-family:'Montserrat',sans-serif;cursor:pointer;border:none;background
     </div>
   </div>
 </section>
+
+
+<!-- Lightbox: click any infographic to enlarge -->
+<div class="ig-modal" id="igModal" aria-hidden="true">
+  <button type="button" class="ig-modal-close" aria-label="Close" onclick="window.igClose()">×</button>
+  <div class="ig-modal-inner"><div class="ig-modal-content" id="igModalContent"></div></div>
+  <div class="ig-modal-hint">Click anywhere outside to close · ESC also works</div>
+</div>
+<script>
+(function(){
+  var modal = document.getElementById('igModal');
+  var content = document.getElementById('igModalContent');
+  if(!modal || !content) return;
+
+  function open(node){
+    var clone = node.cloneNode(true);
+    // Strip the click hint inside the clone
+    var ex = clone.querySelector('.ig-expand'); if(ex) ex.remove();
+    clone.style.cursor = 'default';
+    clone.style.boxShadow = '0 20px 60px rgba(0,0,0,0.5)';
+    content.innerHTML = '';
+    content.appendChild(clone);
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('ig-locked');
+  }
+  function close(){
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('ig-locked');
+    setTimeout(function(){ content.innerHTML = ''; }, 200);
+  }
+  window.igClose = close;
+
+  document.querySelectorAll('[data-lightbox]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      // Don't trigger on link clicks inside
+      if(e.target.closest('a, button')) return;
+      e.preventDefault();
+      open(el);
+    });
+  });
+
+  modal.addEventListener('click', function(e){
+    // Close if click is outside the inner content box
+    if(e.target === modal || e.target.classList.contains('ig-modal-inner')) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('active')) close();
+  });
+})();
+</script>
 
 </article>
 
