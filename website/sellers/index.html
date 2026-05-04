@@ -612,7 +612,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   </ul>
 </div>
 <div class="page-hero">
-  <div class="page-hero-bg-img" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/sellers-hero.jpg')"></div>
+  <div class="page-hero-bg-img" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/sellers-hero.jpg?v=2')"></div>
   <div class="page-hero-inner">
     <p class="page-eyebrow">Seller Advisory</p>
     <h1>Sell on your terms.<br>Not the <em>market's.</em></h1>
@@ -853,11 +853,21 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 }
 .page-hero::before{
   background-image: none !important;    /* remove brass-grid pattern */
-  background: rgba(0,0,0,0.20) !important;   /* additional 20% darkening layer */
+  background: rgba(0,0,0,0.30) !important;   /* 30% darkening layer for text legibility */
 }
 .page-hero-bg-img{
   opacity: 0.88 !important;             /* photo shows clearly */
 }
+/* ── TEXT LEGIBILITY ON DARK SECTIONS ── */
+.phase-title{color:#fff !important}
+.phase-desc{color:rgba(255,255,255,.88) !important}
+.lede-white{color:rgba(255,255,255,.80) !important}
+/* Concierge box text */
+.cb-label{color:rgba(255,255,255,.80) !important}
+.cb-row{color:rgba(255,255,255,.88) !important}
+.cb-row span{color:rgba(255,255,255,.88) !important}
+.cb-row strong{color:#fff !important}
+.cb-note{color:rgba(255,255,255,.78) !important}
 
 /* ── PHASE CARDS (on dark ink section) ── */
 .phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0}
