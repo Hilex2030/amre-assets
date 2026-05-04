@@ -169,7 +169,12 @@ button{font-family:var(--sf);cursor:pointer;border:none;background:none}
 .page-hero-bg-img{
   position:absolute;inset:0;
   background-size:cover;background-position:center;
-  opacity:.18;
+  opacity:1;
+}
+.page-hero-bg-img::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:1;
 }
 .page-hero-inner{position:relative;z-index:2;max-width:800px}
 .page-eyebrow{
