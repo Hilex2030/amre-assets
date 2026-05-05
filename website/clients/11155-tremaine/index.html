@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>11155 S Tremaine Â· Seller Analysis Â· AMRE</title>
+<title>11155 S Tremaine · Seller Analysis · AMRE</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
@@ -25,7 +25,7 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:o
 a{color:var(--blue);text-decoration:none;}
 [id]{scroll-margin-top:58px;}
 
-/* ââ GATE ââ */
+/* ── GATE ── */
 #gate{position:fixed;inset:0;z-index:1000;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
 #gate .gate-brand{font-size:13px;letter-spacing:0.3em;color:var(--muted);text-transform:uppercase;margin-bottom:36px;}
 #gate .gate-brand b{color:var(--ink);font-weight:600;letter-spacing:0.3em;}
@@ -44,7 +44,7 @@ a{color:var(--blue);text-decoration:none;}
 .gate-error{color:var(--red);font-size:14px;margin-top:16px;min-height:20px;}
 body.unlocked #gate{display:none;}
 
-/* ââ TOP NAV ââ */
+/* ── TOP NAV ── */
 .topnav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--hairline);}
 .topnav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:54px;}
 .nav-brand{font-size:13px;letter-spacing:0.3em;color:var(--muted);text-transform:uppercase;font-weight:500;flex-shrink:0;}
@@ -60,7 +60,7 @@ body.unlocked #gate{display:none;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.4;}}
 @media(max-width:980px){.nav-anchors{display:none;}}
 
-/* ââ HERO ââ */
+/* ── HERO ── */
 .hero{padding:96px 24px 64px;text-align:center;background:linear-gradient(to bottom,var(--white) 0%,var(--gray-50) 100%);}
 .hero-eyebrow{font-size:13px;letter-spacing:0.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
 .hero h1{font-size:clamp(52px,7vw,88px);font-weight:600;letter-spacing:-0.04em;line-height:1.04;margin:0 0 16px;max-width:1100px;margin-left:auto;margin-right:auto;}
@@ -71,7 +71,7 @@ body.unlocked #gate{display:none;}
 .pill-value{font-size:28px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);}
 .pill-meta{font-size:13px;color:var(--secondary);margin-top:4px;}
 
-/* ââ SECTIONS ââ */
+/* ── SECTIONS ── */
 section{padding:88px 24px;}
 .section-gray{background:var(--gray-100);}
 .section-dark{background:var(--ink);color:white;}
@@ -84,14 +84,14 @@ h2{font-size:clamp(32px,4vw,52px);font-weight:600;letter-spacing:-0.022em;line-h
 .lede{font-size:19px;color:var(--secondary);max-width:600px;margin:0 auto 56px;text-align:center;line-height:1.4;}
 .section-dark .lede{color:rgba(255,255,255,0.6);}
 
-/* ââ GRID ââ */
+/* ── GRID ── */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-200);border-radius:var(--r);overflow:hidden;border:1px solid var(--gray-200);}
 @media(max-width:980px){.grid-3{grid-template-columns:1fr 1fr;}.grid-2{grid-template-columns:1fr;}.grid-4{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:640px){.grid-3{grid-template-columns:1fr;}}
 
-/* ââ CARDS ââ */
+/* ── CARDS ── */
 .card{background:var(--white);border-radius:var(--r);padding:28px;border:1px solid var(--gray-200);}
 .card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:28px;color:white;}
 .card-green{background:var(--green-bg);border:1px solid rgba(36,138,61,0.18);border-radius:var(--r);padding:28px;}
@@ -110,17 +110,17 @@ h2{font-size:clamp(32px,4vw,52px);font-weight:600;letter-spacing:-0.022em;line-h
 .card-body{font-size:15px;color:var(--secondary);line-height:1.55;}
 .card-dark .card-body{color:rgba(255,255,255,0.6);}
 
-/* ââ INCOME TABLE ââ */
+/* ── INCOME TABLE ── */
 .income-tbl{width:100%;border-collapse:collapse;}
 .income-tbl th{font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);padding:8px 12px;text-align:left;border-bottom:1px solid var(--hairline);}
 .income-tbl td{padding:13px 12px;font-size:15px;border-bottom:1px solid var(--gray-200);}
 .income-tbl tr:last-child td{border-bottom:none;font-weight:600;font-size:16px;background:var(--gray-50);}
 .g{color:var(--muted);font-size:13px;}
 
-/* ââ MAP ââ */
+/* ── MAP ── */
 #map{height:500px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--hairline);margin-bottom:32px;}
 
-/* ââ PHASE STEPS ââ */
+/* ── PHASE STEPS ── */
 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(255,255,255,0.12);}
 .phase{padding:32px 28px;border-right:1px solid rgba(255,255,255,0.1);}
 .phase:last-child{border-right:none;}
@@ -130,7 +130,7 @@ h2{font-size:clamp(32px,4vw,52px);font-weight:600;letter-spacing:-0.022em;line-h
 .phase-stat{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:white;background:rgba(255,255,255,0.1);border-radius:980px;padding:4px 10px;margin-top:14px;}
 @media(max-width:980px){.phases{grid-template-columns:1fr;}.phase{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}.phase:last-child{border-bottom:none;}}
 
-/* ââ PROFILE ROWS ââ */
+/* ── PROFILE ROWS ── */
 .p-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--gray-200);font-size:14px;}
 .p-row:last-child{border-bottom:none;}
 .p-key{color:var(--secondary);}
@@ -138,13 +138,13 @@ h2{font-size:clamp(32px,4vw,52px);font-weight:600;letter-spacing:-0.022em;line-h
 .p-val.g{color:var(--green);font-weight:600;}
 .p-val.b{color:var(--blue);font-weight:600;}
 
-/* ââ BUYER PROFILES ââ */
+/* ── BUYER PROFILES ── */
 .buyer{background:var(--white);border-radius:var(--r-lg);padding:32px;border:1px solid var(--gray-200);}
 .buyer-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;}
 .buyer-title{font-size:21px;font-weight:600;letter-spacing:-0.01em;margin-bottom:4px;}
 .buyer-sub{font-size:14px;color:var(--secondary);margin-bottom:20px;}
 
-/* ââ CONTACTS ââ */
+/* ── CONTACTS ── */
 .contact{background:var(--white);border-radius:var(--r);padding:28px;border:1px solid var(--gray-200);}
 .contact-name{font-size:19px;font-weight:600;margin-bottom:2px;}
 .contact-role{font-size:13px;color:var(--muted);margin-bottom:16px;}
@@ -153,7 +153,7 @@ h2{font-size:clamp(32px,4vw,52px);font-weight:600;letter-spacing:-0.022em;line-h
 .cta-btn{display:inline-block;padding:16px 40px;background:var(--blue);color:white;border-radius:980px;font-size:17px;font-weight:500;transition:background .15s,transform .1s;}
 .cta-btn:hover{background:var(--blue-dark);}
 
-/* ââ FOOTER ââ */
+/* ── FOOTER ── */
 footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--hairline);}
 .footer-inner{max-width:1240px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:20px;}
 .footer-brand{font-size:13px;letter-spacing:0.3em;color:var(--muted);text-transform:uppercase;font-weight:500;}
@@ -161,35 +161,35 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
 .footer-meta{font-size:12px;color:var(--muted);text-align:right;line-height:1.7;}
 .disclaimer{max-width:1240px;margin:24px auto 0;padding-top:20px;border-top:1px solid var(--hairline);font-size:12px;color:var(--muted);line-height:1.6;}
 
-/* ââ UTILS ââ */
+/* ── UTILS ── */
 .mt-8{margin-top:8px;} .mt-16{margin-top:16px;} .mt-24{margin-top:24px;} .mt-32{margin-top:32px;} .mt-40{margin-top:40px;}
 .text-green{color:var(--green);} .text-blue{color:var(--blue);} .text-amber{color:var(--amber);}
 </style>
 </head>
 <body>
 
-<!-- âââ GATE âââ -->
+<!-- ═══ GATE ═══ -->
 <div id="gate">
   <div class="gate-shell" id="gShell">
-    <div class="gate-brand"><b>AMRE</b> &nbsp;Â·&nbsp; compass</div>
-    <div class="eyebrow">New Opportunity Â· Seller Analysis</div>
+    <div class="gate-brand"><b>AMRE</b> &nbsp;·&nbsp; compass</div>
+    <div class="eyebrow">New Opportunity · Seller Analysis</div>
     <h1>11155 S Tremaine.</h1>
     <p>Confidential property analysis prepared by AMRE Real Estate Group. Enter your access code to continue.</p>
     <div id="gate-form">
       <input id="gate-input" type="password" placeholder="Access code" autocomplete="off">
-      <button id="gate-submit" onclick="unlock()">View â</button>
+      <button id="gate-submit" onclick="unlock()">View →</button>
     </div>
     <div class="gate-error" id="gate-error"></div>
   </div>
 </div>
 
-<!-- âââ DASHBOARD âââ -->
+<!-- ═══ DASHBOARD ═══ -->
 <div id="dashboard" style="display:none;">
 
 <!-- NAV -->
 <nav class="topnav">
   <div class="topnav-inner">
-    <div class="nav-brand"><b>AMRE</b> &nbsp;Â·&nbsp; compass</div>
+    <div class="nav-brand"><b>AMRE</b> &nbsp;·&nbsp; compass</div>
     <div class="nav-anchors">
       <a href="#income">Income</a>
       <a href="#valuation">Valuation</a>
@@ -205,9 +205,9 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-eyebrow">Compass Private Exclusive Â· Seller Presentation Â· May 2026</div>
+  <div class="hero-eyebrow">Compass Private Exclusive · Seller Presentation · May 2026</div>
   <h1>11155 S Tremaine Ave.</h1>
-  <p class="sub">Three-unit income property Â· Los Angeles Â· Prepared by Michael Abraham &amp; Ania de Pourbaix Â· AMRE Real Estate Group at Compass</p>
+  <p class="sub">Three-unit income property · Los Angeles · Prepared by Michael Abraham &amp; Ania de Pourbaix · AMRE Real Estate Group at Compass</p>
   <div class="stat-pills">
     <div class="pill">
       <div class="pill-label">List Price</div>
@@ -232,7 +232,7 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
     <div class="pill">
       <div class="pill-label">Cap Rate</div>
       <div class="pill-value">~3.75%</div>
-      <div class="pill-meta">As-is Â· pro forma 4.5%+</div>
+      <div class="pill-meta">As-is · pro forma 4.5%+</div>
     </div>
   </div>
 </section>
@@ -257,13 +257,13 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
         </table>
       </div>
       <div class="card">
-        <div class="tag tag-blue">Pro Forma Â· Upside Scenario</div>
+        <div class="tag tag-blue">Pro Forma · Upside Scenario</div>
         <table class="income-tbl">
           <thead><tr><th>Unit</th><th>Market Rent</th><th>Monthly Gain</th><th>Trigger</th></tr></thead>
           <tbody>
             <tr><td>Unit 1</td><td>$6,500+</td><td class="text-green">+$300</td><td class="g">Near market</td></tr>
             <tr><td>Unit 2</td><td>$4,400+</td><td class="text-green">+$306</td><td class="g">At renewal</td></tr>
-            <tr><td>Unit 3</td><td>$2,800â$3,000</td><td class="text-green">+$1,100â$1,300</td><td class="g">On turnover</td></tr>
+            <tr><td>Unit 3</td><td>$2,800–$3,000</td><td class="text-green">+$1,100–$1,300</td><td class="g">On turnover</td></tr>
             <tr><td><strong>Pro Forma</strong></td><td><strong>$13,700+/mo</strong></td><td class="text-green"><strong>+$1,706+/mo</strong></td><td></td></tr>
           </tbody>
         </table>
@@ -273,7 +273,7 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
     <div class="grid-4 mt-24">
       <div class="card-stat"><div class="stat-val">$143,928</div><div class="stat-lbl">Gross Annual Income</div></div>
       <div class="card-stat"><div class="stat-val text-green">~$93,500</div><div class="stat-lbl">Est. NOI (35% exp.)</div></div>
-      <div class="card-stat"><div class="stat-val">17.3Ã</div><div class="stat-lbl">Gross Rent Multiplier</div></div>
+      <div class="card-stat"><div class="stat-val">17.3×</div><div class="stat-lbl">Gross Rent Multiplier</div></div>
       <div class="card-stat"><div class="stat-val text-blue">3.75%</div><div class="stat-lbl">Cap Rate at Ask</div></div>
     </div>
   </div>
@@ -290,33 +290,33 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
         <div class="tag tag-green">Seller's Objective</div>
         <div style="font-size:36px;font-weight:600;letter-spacing:-0.02em;margin-bottom:6px;">$2,200,000</div>
         <div style="font-size:13px;color:var(--secondary);">Target net proceeds</div>
-        <div class="mt-16" style="font-size:14px;line-height:1.6;color:var(--secondary);">At $2.495M list with 2.5% commission ($62,375) and estimated closing costs (~$30Kâ$40K), the seller nets approximately <strong>$2.39M gross</strong>. After all costs, the $2.2M target is well within reach.</div>
+        <div class="mt-16" style="font-size:14px;line-height:1.6;color:var(--secondary);">At $2.495M list with 2.5% commission ($62,375) and estimated closing costs (~$30K–$40K), the seller nets approximately <strong>$2.39M gross</strong>. After all costs, the $2.2M target is well within reach.</div>
         <div class="mt-16 p-row" style="border-top:1px solid rgba(36,138,61,0.15);">
           <span class="p-key">List price</span><span class="p-val">$2,495,000</span>
         </div>
-        <div class="p-row"><span class="p-key">AMRE commission (2.5%)</span><span class="p-val">â$62,375</span></div>
-        <div class="p-row"><span class="p-key">Est. closing costs</span><span class="p-val">â$30,000â$40,000</span></div>
+        <div class="p-row"><span class="p-key">AMRE commission (2.5%)</span><span class="p-val">−$62,375</span></div>
+        <div class="p-row"><span class="p-key">Est. closing costs</span><span class="p-val">−$30,000–$40,000</span></div>
         <div class="p-row" style="border-bottom:none;"><span class="p-key"><strong>Est. net proceeds</strong></span><span class="p-val" style="color:var(--green);"><strong>~$2.39M+</strong></span></div>
       </div>
       <div class="card">
         <div class="tag tag-blue">Income Approach</div>
         <div style="font-size:22px;font-weight:600;margin-bottom:16px;">What the income supports</div>
-        <div class="p-row"><span class="p-key">GRM valuation (17â18Ã)</span><span class="p-val">$2.45Mâ$2.59M</span></div>
+        <div class="p-row"><span class="p-key">GRM valuation (17–18×)</span><span class="p-val">$2.45M–$2.59M</span></div>
         <div class="p-row"><span class="p-key">Cap rate 3.5% (NOI $93.5K)</span><span class="p-val">$2.67M</span></div>
         <div class="p-row"><span class="p-key">Cap rate 4.0% (NOI $93.5K)</span><span class="p-val">$2.34M</span></div>
         <div class="p-row"><span class="p-key">$/door (3 units)</span><span class="p-val">$831,667/door</span></div>
         <div class="p-row" style="border-bottom:none;"><span class="p-key">Pro forma cap (4.5%+)</span><span class="p-val text-green">Buyer upside story</span></div>
-        <p class="card-body mt-16">The income supports a price range of <strong>$2.35Mâ$2.65M</strong> depending on cap rate expectations. $2.495M is positioned squarely in the middle â defensible and realistic.</p>
+        <p class="card-body mt-16">The income supports a price range of <strong>$2.35M–$2.65M</strong> depending on cap rate expectations. $2.495M is positioned squarely in the middle — defensible and realistic.</p>
       </div>
       <div class="card">
-        <div class="tag tag-ink">Comparable Sales Â· 90047</div>
+        <div class="tag tag-ink">Comparable Sales · 90047</div>
         <div style="font-size:22px;font-weight:600;margin-bottom:16px;">What the market says</div>
-        <div class="p-row"><span class="p-key">9301 S Western Ave (triplex)</span><span class="p-val">Active Â· $1.1M</span></div>
-        <div class="p-row"><span class="p-key">1954 W Manchester (triplex)</span><span class="p-val">Sold Â· $875K</span></div>
-        <div class="p-row"><span class="p-key">1715 W 64th St (9-unit)</span><span class="p-val">Active Â· $1.1M</span></div>
+        <div class="p-row"><span class="p-key">9301 S Western Ave (triplex)</span><span class="p-val">Active · $1.1M</span></div>
+        <div class="p-row"><span class="p-key">1954 W Manchester (triplex)</span><span class="p-val">Sold · $875K</span></div>
+        <div class="p-row"><span class="p-key">1715 W 64th St (9-unit)</span><span class="p-val">Active · $1.1M</span></div>
         <div class="p-row"><span class="p-key">90047 multi-family median</span><span class="p-val">~$820K</span></div>
-        <div class="p-row" style="border-bottom:none;"><span class="p-key">$/door range (90047)</span><span class="p-val">$250Kâ$400K</span></div>
-        <p class="card-body mt-16">11155 S Tremaine commands a premium over typical 90047 inventory due to its significantly higher income profile â $11,994/mo vs. the $3,000â$5,000/mo typical range for comparables.</p>
+        <div class="p-row" style="border-bottom:none;"><span class="p-key">$/door range (90047)</span><span class="p-val">$250K–$400K</span></div>
+        <p class="card-body mt-16">11155 S Tremaine commands a premium over typical 90047 inventory due to its significantly higher income profile — $11,994/mo vs. the $3,000–$5,000/mo typical range for comparables.</p>
       </div>
     </div>
   </div>
@@ -333,7 +333,7 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
       <div class="card">
         <div class="tag tag-green">Active Comp</div>
         <div class="card-title">9301 S Western Ave</div>
-        <div class="card-body">Triplex on 10,536 sq ft lot â all units with separate car garages. Active in 90047. Strong investor appeal near the SoFi/Intuit corridor.</div>
+        <div class="card-body">Triplex on 10,536 sq ft lot — all units with separate car garages. Active in 90047. Strong investor appeal near the SoFi/Intuit corridor.</div>
       </div>
       <div class="card">
         <div class="tag tag-green">Active Comp</div>
@@ -343,22 +343,22 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
       <div class="card">
         <div class="tag tag-blue">Area Tailwind</div>
         <div class="card-title">2028 LA Olympics</div>
-        <div class="card-body">SoFi Stadium (70K cap.) is ~1.5 mi west. Intuit Dome, Kia Forum, and Hollywood Park drive year-round demand. LA28 infrastructure is elevating valuations throughout the 90047/90044 corridor â and the runway is still ahead.</div>
+        <div class="card-body">SoFi Stadium (70K cap.) is ~1.5 mi west. Intuit Dome, Kia Forum, and Hollywood Park drive year-round demand. LA28 infrastructure is elevating valuations throughout the 90047/90044 corridor — and the runway is still ahead.</div>
       </div>
       <div class="card">
         <div class="tag tag-ink">Submarket Data</div>
         <div class="card-title">90047 at a Glance</div>
-        <div class="card-body">32 multi-family units for sale in the past month. Median listing price: ~$820K. Avg. days on market: 57â80 days. Sale-to-list ratio: ~100%. Vacancy rates below 4%.</div>
+        <div class="card-body">32 multi-family units for sale in the past month. Median listing price: ~$820K. Avg. days on market: 57–80 days. Sale-to-list ratio: ~100%. Vacancy rates below 4%.</div>
       </div>
       <div class="card">
         <div class="tag tag-amber">RSO Context</div>
         <div class="card-title">Tenant-Occupied = Stability</div>
-        <div class="card-body">LA RSO applies. We position existing tenants as an asset â verified income from day one with no lease-up risk. Investor buyers value occupancy certainty. 1031 buyers especially value immediate income protection.</div>
+        <div class="card-body">LA RSO applies. We position existing tenants as an asset — verified income from day one with no lease-up risk. Investor buyers value occupancy certainty. 1031 buyers especially value immediate income protection.</div>
       </div>
       <div class="card">
         <div class="tag tag-green">AMRE Advantage</div>
         <div class="card-title">2 Nearby Listings Active</div>
-        <div class="card-body">AMRE has two additional listings in the immediate area generating active buyer inquiries right now. That buyer traffic redirects to your property the moment we launch â built-in demand before day one.</div>
+        <div class="card-body">AMRE has two additional listings in the immediate area generating active buyer inquiries right now. That buyer traffic redirects to your property the moment we launch — built-in demand before day one.</div>
       </div>
     </div>
   </div>
@@ -369,47 +369,47 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
   <div class="container">
     <div class="sec-eyebrow">Compass 3-Phase Marketing Strategy</div>
     <h2>Sell on your terms.<br>Not the market's.</h2>
-    <p class="lede">The same playbook used by professional homebuilders and real estate developers â now available to every Compass seller.</p>
+    <p class="lede">The same playbook used by professional homebuilders and real estate developers — now available to every Compass seller.</p>
 
     <div class="phases mt-40">
       <div class="phase" style="background:rgba(255,255,255,0.04);">
         <div class="phase-num">PHASE 01</div>
         <div class="phase-title">Private Exclusive</div>
-        <div class="phase-body">Your property is quietly marketed to Compass's nationwide network of 34,000+ top agents and their qualified buyers. No public MLS. No days on market accumulating. No public price drops. Test pricing, gather real feedback, and sometimes find a buyer willing to pay a premium for certainty and early access. All inquiries route directly to Michael &amp; Ania â no lead diversion to third-party agents.<br><br><strong style="color:white;">This is where we start for 11155 S Tremaine.</strong> Tenant-occupied status makes discretion the right call.</div>
+        <div class="phase-body">Your property is quietly marketed to Compass's nationwide network of 34,000+ top agents and their qualified buyers. No public MLS. No days on market accumulating. No public price drops. Test pricing, gather real feedback, and sometimes find a buyer willing to pay a premium for certainty and early access. All inquiries route directly to Michael &amp; Ania — no lead diversion to third-party agents.<br><br><strong style="color:white;">This is where we start for 11155 S Tremaine.</strong> Tenant-occupied status makes discretion the right call.</div>
         <div class="phase-stat">34,000+ Compass agents</div>
       </div>
       <div class="phase" style="background:rgba(255,255,255,0.06);">
         <div class="phase-num">PHASE 02</div>
         <div class="phase-title">Compass Coming Soon</div>
-        <div class="phase-body">The listing moves to Compass.com â publicly visible to all agents and buyers on the internet, but still <em>not</em> on the MLS. No days-on-market clock running. No price drop history visible. You get the buzz and urgency of a full public launch without the downside risk. Engagement data flows back to us â how many agents viewed it, bookmarked it, shared it â letting us fine-tune pricing and presentation before the big launch.</div>
+        <div class="phase-body">The listing moves to Compass.com — publicly visible to all agents and buyers on the internet, but still <em>not</em> on the MLS. No days-on-market clock running. No price drop history visible. You get the buzz and urgency of a full public launch without the downside risk. Engagement data flows back to us — how many agents viewed it, bookmarked it, shared it — letting us fine-tune pricing and presentation before the big launch.</div>
         <div class="phase-stat">60M+ buyers on Compass.com</div>
       </div>
       <div class="phase" style="background:rgba(255,255,255,0.04);">
         <div class="phase-num">PHASE 03</div>
         <div class="phase-title">Full MLS Launch</div>
-        <div class="phase-body">Armed with feedback from Phases 1 &amp; 2, we launch on the MLS and all major platforms â Zillow, Redfin, Realtor.com â with a market-tested price and pre-established demand. Your listing enters the public market with momentum. For 11155 S Tremaine, this phase is triggered if a unit becomes vacant or you decide to maximize exposure. The listing agreement amendment clause is already structured to make this seamless.</div>
+        <div class="phase-body">Armed with feedback from Phases 1 &amp; 2, we launch on the MLS and all major platforms — Zillow, Redfin, Realtor.com — with a market-tested price and pre-established demand. Your listing enters the public market with momentum. For 11155 S Tremaine, this phase is triggered if a unit becomes vacant or you decide to maximize exposure. The listing agreement amendment clause is already structured to make this seamless.</div>
         <div class="phase-stat">MLS + all portals</div>
       </div>
     </div>
 
     <div class="grid-3 mt-32">
       <div class="card-dark">
-        <div class="tag tag-ink" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Compass Data Â· 2024</div>
+        <div class="tag tag-ink" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Compass Data · 2024</div>
         <div style="font-size:36px;font-weight:600;color:white;margin-bottom:4px;">+2.9%</div>
         <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:12px;">Higher closing prices vs. direct-to-MLS</div>
         <div style="font-size:14px;color:rgba(255,255,255,0.6);">Homes pre-marketed through Phases 1 &amp; 2 before going on MLS achieved 2.9% higher closing prices on average nationally in 2024.</div>
       </div>
       <div class="card-dark">
-        <div class="tag tag-ink" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Compass Data Â· 2024</div>
+        <div class="tag tag-ink" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Compass Data · 2024</div>
         <div style="font-size:36px;font-weight:600;color:white;margin-bottom:4px;">20% Faster</div>
         <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:12px;">Time to accepted offer</div>
-        <div style="font-size:14px;color:rgba(255,255,255,0.6);">Pre-marketed homes received accepted offers an average of 8 days sooner than those listed directly on the MLS â critical when buyer momentum matters.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.6);">Pre-marketed homes received accepted offers an average of 8 days sooner than those listed directly on the MLS — critical when buyer momentum matters.</div>
       </div>
       <div class="card-dark">
-        <div class="tag tag-ink" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Compass Data Â· 2024</div>
+        <div class="tag tag-ink" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Compass Data · 2024</div>
         <div style="font-size:36px;font-weight:600;color:white;margin-bottom:4px;">30% Less</div>
         <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:12px;">Likely to take a price cut</div>
-        <div style="font-size:14px;color:rgba(255,255,255,0.6);">Sellers who pre-market are significantly less likely to drop their price â because they've already validated demand and pricing before going public.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.6);">Sellers who pre-market are significantly less likely to drop their price — because they've already validated demand and pricing before going public.</div>
       </div>
     </div>
   </div>
@@ -420,12 +420,12 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
   <div class="container">
     <div class="sec-eyebrow">Compass Concierge</div>
     <h2>Make updates. Pay nothing until closing.</h2>
-    <p class="lede">Compass fronts the cost of pre-sale improvements â interest-free â so you can maximize your sale price without out-of-pocket expenses today.</p>
+    <p class="lede">Compass fronts the cost of pre-sale improvements — interest-free — so you can maximize your sale price without out-of-pocket expenses today.</p>
     <div class="grid-2 mt-32">
       <div class="card-blue card">
         <div class="tag tag-blue">How It Works</div>
         <div class="card-title">Zero-cost pre-sale improvements</div>
-        <div class="card-body mt-8">Compass Concierge covers the upfront costs of improvements that help your home sell faster and for more. Fresh paint, deep clean, landscaping, minor repairs â Compass pays the vendors directly. You repay only when the home sells, with <strong>zero interest and zero fees</strong>. If the home doesn't sell, the debt is forgiven per program terms.</div>
+        <div class="card-body mt-8">Compass Concierge covers the upfront costs of improvements that help your home sell faster and for more. Fresh paint, deep clean, landscaping, minor repairs — Compass pays the vendors directly. You repay only when the home sells, with <strong>zero interest and zero fees</strong>. If the home doesn't sell, the debt is forgiven per program terms.</div>
         <div class="mt-24">
           <div class="p-row" style="border-top:1px solid rgba(0,113,227,0.12);">
             <span class="p-key">Interest rate</span><span class="p-val text-blue">0%</span>
@@ -448,7 +448,7 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
           <li>Roof, gutters, or exterior repairs</li>
           <li>Unit 3 improvements if delivered vacant (maximizes turnover value)</li>
         </ul>
-        <div class="card-body mt-16" style="font-size:13px;background:var(--green-bg);padding:12px;border-radius:10px;color:var(--green);">Even small improvements â fresh exterior paint, cleaned common areas â can meaningfully improve first impressions for investor buyers touring the property. This is especially impactful for Compass Private Exclusive showings where the first impression is everything.</div>
+        <div class="card-body mt-16" style="font-size:13px;background:var(--green-bg);padding:12px;border-radius:10px;color:var(--green);">Even small improvements — fresh exterior paint, cleaned common areas — can meaningfully improve first impressions for investor buyers touring the property. This is especially impactful for Compass Private Exclusive showings where the first impression is everything.</div>
       </div>
     </div>
   </div>
@@ -459,10 +459,10 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
   <div class="container">
     <div class="sec-eyebrow">Buyer Profiles</div>
     <h2>We're not just listing.<br>We're targeting.</h2>
-    <p class="lede">Three buyer archetypes for this property. Each one has a different reason to pay full price â or above it.</p>
+    <p class="lede">Three buyer archetypes for this property. Each one has a different reason to pay full price — or above it.</p>
     <div class="grid-3 mt-32">
       <div class="buyer">
-        <div class="buyer-icon" style="background:var(--blue-bg);">ð </div>
+        <div class="buyer-icon" style="background:var(--blue-bg);">🏠</div>
         <div class="buyer-title">Owner-Occupant</div>
         <div class="buyer-sub">Live in Unit 1. Let Units 2 &amp; 3 pay the mortgage.</div>
         <div class="p-row"><span class="p-key">Owner's unit</span><span class="p-val">Unit 1 (market ~$6,500/mo)</span></div>
@@ -470,10 +470,10 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
         <div class="p-row"><span class="p-key">20% down</span><span class="p-val">$499,000</span></div>
         <div class="p-row"><span class="p-key">Est. PITI (30yr @ ~7%)</span><span class="p-val">~$13,300/mo</span></div>
         <div class="p-row"><span class="p-key">Net monthly carry</span><span class="p-val text-green">~$7,500/mo</span></div>
-        <p style="font-size:13px;color:var(--secondary);margin-top:14px;line-height:1.6;">Effectively paying ~$7,500/mo to live in a full income property with equity upside â less than what a comparable standalone unit rents for in this submarket.</p>
+        <p style="font-size:13px;color:var(--secondary);margin-top:14px;line-height:1.6;">Effectively paying ~$7,500/mo to live in a full income property with equity upside — less than what a comparable standalone unit rents for in this submarket.</p>
       </div>
       <div class="buyer">
-        <div class="buyer-icon" style="background:var(--green-bg);">ð</div>
+        <div class="buyer-icon" style="background:var(--green-bg);">📊</div>
         <div class="buyer-title">Income Investor</div>
         <div class="buyer-sub">Pure cash-flow play. Hold and collect.</div>
         <div class="p-row"><span class="p-key">Gross income</span><span class="p-val">$143,928/yr</span></div>
@@ -481,18 +481,18 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
         <div class="p-row"><span class="p-key">Cap rate today</span><span class="p-val">~3.75%</span></div>
         <div class="p-row"><span class="p-key">Cap rate (pro forma)</span><span class="p-val text-green">~4.5%+</span></div>
         <div class="p-row"><span class="p-key">Key upside lever</span><span class="p-val">Unit 3 on turnover</span></div>
-        <p style="font-size:13px;color:var(--secondary);margin-top:14px;line-height:1.6;">Unit 3 at $1,700/mo is the clear opportunity â market rent of $2,800â$3,000 adds ~$1,100/mo on turnover, improving cap rate to 4.5%+ at the ask price.</p>
+        <p style="font-size:13px;color:var(--secondary);margin-top:14px;line-height:1.6;">Unit 3 at $1,700/mo is the clear opportunity — market rent of $2,800–$3,000 adds ~$1,100/mo on turnover, improving cap rate to 4.5%+ at the ask price.</p>
       </div>
       <div class="buyer">
-        <div class="buyer-icon" style="background:var(--amber-bg);">ð</div>
+        <div class="buyer-icon" style="background:var(--amber-bg);">🔁</div>
         <div class="buyer-title">1031 Exchange Buyer</div>
         <div class="buyer-sub">Deferring capital gains. Under the clock.</div>
-        <div class="p-row"><span class="p-key">Asset class</span><span class="p-val">Multifamily â</span></div>
-        <div class="p-row"><span class="p-key">Like-kind eligibility</span><span class="p-val">Confirmed â</span></div>
+        <div class="p-row"><span class="p-key">Asset class</span><span class="p-val">Multifamily ✓</span></div>
+        <div class="p-row"><span class="p-key">Like-kind eligibility</span><span class="p-val">Confirmed ✓</span></div>
         <div class="p-row"><span class="p-key">ID window</span><span class="p-val">45 days from prior close</span></div>
         <div class="p-row"><span class="p-key">Price flexibility</span><span class="p-val text-green">Above-ask likely</span></div>
         <div class="p-row"><span class="p-key">Cash probability</span><span class="p-val">High</span></div>
-        <p style="font-size:13px;color:var(--secondary);margin-top:14px;line-height:1.6;">1031 buyers on a 45-day ID deadline are often the strongest and fastest bidders. Compass Private Exclusive is specifically designed to surface this buyer type first â before the MLS brings in price-anchored retail buyers.</p>
+        <p style="font-size:13px;color:var(--secondary);margin-top:14px;line-height:1.6;">1031 buyers on a 45-day ID deadline are often the strongest and fastest bidders. Compass Private Exclusive is specifically designed to surface this buyer type first — before the MLS brings in price-anchored retail buyers.</p>
       </div>
     </div>
   </div>
@@ -507,37 +507,37 @@ footer{padding:48px 24px;background:var(--gray-100);border-top:1px solid var(--h
     <div class="grid-2 mt-32">
       <div class="contact">
         <div class="contact-name">Michael Abraham</div>
-        <div class="contact-role">REALTORÂ® Â· DRE# 02242095 Â· AMRE Real Estate Group</div>
-        <div class="contact-link">ð <a href="tel:3237198585">(323) 719-8585</a></div>
-        <div class="contact-link">â <a href="mailto:michael.abraham@compass.com">michael.abraham@compass.com</a></div>
-        <div class="contact-link">ð <a href="https://amre.group" target="_blank">amre.group</a></div>
-        <div class="contact-link">ð 9454 Wilshire Blvd, Beverly Hills CA 90212</div>
+        <div class="contact-role">REALTOR® · DRE# 02242095 · AMRE Real Estate Group</div>
+        <div class="contact-link">📞 <a href="tel:3237198585">(323) 719-8585</a></div>
+        <div class="contact-link">✉ <a href="mailto:michael.abraham@compass.com">michael.abraham@compass.com</a></div>
+        <div class="contact-link">🌐 <a href="https://amre.group" target="_blank">amre.group</a></div>
+        <div class="contact-link">📍 9454 Wilshire Blvd, Beverly Hills CA 90212</div>
       </div>
       <div class="contact">
         <div class="contact-name">Ania de Pourbaix</div>
-        <div class="contact-role">Principal Agent Â· DRE# 01891438 Â· AMRE Real Estate Group at Compass</div>
-        <div class="contact-link">ð <a href="tel:3102703879">(310) 270-3879</a></div>
-        <div class="contact-link">â <a href="mailto:ania.d@compass.com">ania.d@compass.com</a></div>
-        <div class="contact-link">ð 9454 Wilshire Blvd, Beverly Hills CA 90212</div>
+        <div class="contact-role">Principal Agent · DRE# 01891438 · AMRE Real Estate Group at Compass</div>
+        <div class="contact-link">📞 <a href="tel:3102703879">(310) 270-3879</a></div>
+        <div class="contact-link">✉ <a href="mailto:ania.d@compass.com">ania.d@compass.com</a></div>
+        <div class="contact-link">📍 9454 Wilshire Blvd, Beverly Hills CA 90212</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:48px;">
-      <a class="cta-btn" href="mailto:michael.abraham@compass.com?cc=ania.d@compass.com&subject=11155%20S%20Tremaine%20%E2%80%94%20Ready%20to%20Proceed&body=Hi%20Michael%20and%20Ania%2C%20I%27m%20ready%20to%20move%20forward%20on%20listing%2011155%20S%20Tremaine.">Ready to list? Contact Michael &amp; Ania â</a>
+      <a class="cta-btn" href="mailto:michael.abraham@compass.com?cc=ania.d@compass.com&subject=11155%20S%20Tremaine%20%E2%80%94%20Ready%20to%20Proceed&body=Hi%20Michael%20and%20Ania%2C%20I%27m%20ready%20to%20move%20forward%20on%20listing%2011155%20S%20Tremaine.">Ready to list? Contact Michael &amp; Ania →</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand"><b>AMRE</b> &nbsp;Â·&nbsp; compass</div>
+    <div class="footer-brand"><b>AMRE</b> &nbsp;·&nbsp; compass</div>
     <div class="footer-meta">
-      <div>11155 S Tremaine Ave Â· Los Angeles Â· Seller Opportunity Analysis</div>
-      <div>AMRE Real Estate Group Â· 9454 Wilshire Blvd, Beverly Hills CA 90212</div>
-      <div>Updated May 2026 Â· Confidential â not for distribution</div>
+      <div>11155 S Tremaine Ave · Los Angeles · Seller Opportunity Analysis</div>
+      <div>AMRE Real Estate Group · 9454 Wilshire Blvd, Beverly Hills CA 90212</div>
+      <div>Updated May 2026 · Confidential — not for distribution</div>
     </div>
   </div>
   <div class="disclaimer">
-    Prepared by Michael Abraham (DRE# 02242095) &amp; Ania de Pourbaix (DRE# 01891438) Â· Compass DRE# 01991628 Â· 9454 Wilshire Blvd, Beverly Hills CA 90212. All valuations are estimates based on current market data, comparable sales, and income projections. Rental upside and cap rate scenarios are forward-looking and not guaranteed. This is not a formal appraisal. Compass Concierge and 3-Phased Marketing Strategy availability subject to Compass program terms and eligibility.
+    Prepared by Michael Abraham (DRE# 02242095) &amp; Ania de Pourbaix (DRE# 01891438) · Compass DRE# 01991628 · 9454 Wilshire Blvd, Beverly Hills CA 90212. All valuations are estimates based on current market data, comparable sales, and income projections. Rental upside and cap rate scenarios are forward-looking and not guaranteed. This is not a formal appraisal. Compass Concierge and 3-Phased Marketing Strategy availability subject to Compass program terms and eligibility.
   </div>
 </footer>
 
@@ -551,7 +551,7 @@ function unlock(auto) {
   if (!auto) {
     const v = document.getElementById('gate-input').value.trim().toLowerCase();
     if (v !== CODE) {
-      document.getElementById('gate-error').textContent = 'Incorrect code â try again.';
+      document.getElementById('gate-error').textContent = 'Incorrect code — try again.';
       const g = document.getElementById('gate');
       g.classList.remove('shake'); void g.offsetWidth; g.classList.add('shake');
       return;
@@ -569,7 +569,7 @@ function unlock(auto) {
 document.getElementById('gate-input').addEventListener('keydown', e => { if (e.key === 'Enter') unlock(); });
 if (sessionStorage.getItem(SK) === '1') unlock(true);
 
-/* ââ MAP ââ */
+/* ── MAP ── */
 function initMap() {
   const el = document.getElementById('map');
   if (!el || el._leaflet_id) return;
@@ -577,7 +577,7 @@ function initMap() {
   const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([33.944, -118.305], 14);
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: 'Â© OpenStreetMap contributors Â© CartoDB', maxZoom: 19
+    attribution: '© OpenStreetMap contributors © CartoDB', maxZoom: 19
   }).addTo(map);
 
   function icon(color, size, border) {
@@ -592,18 +592,18 @@ function initMap() {
   // Subject property
   L.marker([33.944, -118.302], { icon: icon('#0071E3', 26, '#fff') })
     .addTo(map)
-    .bindPopup('<div style="font-family:system-ui;"><b style="font-size:14px;">11155 S Tremaine Ave</b><br><span style="color:#6E6E73;font-size:13px;">3-unit Â· $2.495M Â· <em>AMRE Listing</em></span><br><span style="color:#248A3D;font-size:13px;font-weight:600;">$11,994/mo income</span></div>', { maxWidth: 220 })
+    .bindPopup('<div style="font-family:system-ui;"><b style="font-size:14px;">11155 S Tremaine Ave</b><br><span style="color:#6E6E73;font-size:13px;">3-unit · $2.495M · <em>AMRE Listing</em></span><br><span style="color:#248A3D;font-size:13px;font-weight:600;">$11,994/mo income</span></div>', { maxWidth: 220 })
     .openPopup();
 
   // Nearby active listings
   const actives = [
-    { lat: 33.9368, lng: -118.3116, name: '9301 S Western Ave', detail: 'Triplex Â· 10,536 sq ft lot Â· Active', price: '' },
-    { lat: 33.9518, lng: -118.3092, name: '1954 W Manchester Ave', detail: 'Triplex Â· 6bd/3ba Â· Near SoFi', price: 'Sold ~$875K' },
-    { lat: 33.9610, lng: -118.3050, name: '1715 W 64th St', detail: 'Multi-family 9bd/5ba Â· $1.1M', price: '$1,100,000' },
-    { lat: 33.9680, lng: -118.2980, name: '9321 S Western Ave', detail: 'Multi-family 6bd/5ba Â· 4,076 sq ft', price: '$1,000,000' },
-    { lat: 33.9420, lng: -118.3200, name: '1626 W 81st St', detail: 'Triplex Â· Renovated 2018', price: 'Active' },
-    { lat: 33.9740, lng: -118.3080, name: 'AMRE Nearby Listing', detail: 'Active buyer interest Â· Ask AMRE', price: 'AMRE listing' },
-    { lat: 33.9540, lng: -118.3150, name: 'AMRE Nearby Listing 2', detail: 'Pre-market Â· Buyer inquiries active', price: 'AMRE listing' },
+    { lat: 33.9368, lng: -118.3116, name: '9301 S Western Ave', detail: 'Triplex · 10,536 sq ft lot · Active', price: '' },
+    { lat: 33.9518, lng: -118.3092, name: '1954 W Manchester Ave', detail: 'Triplex · 6bd/3ba · Near SoFi', price: 'Sold ~$875K' },
+    { lat: 33.9610, lng: -118.3050, name: '1715 W 64th St', detail: 'Multi-family 9bd/5ba · $1.1M', price: '$1,100,000' },
+    { lat: 33.9680, lng: -118.2980, name: '9321 S Western Ave', detail: 'Multi-family 6bd/5ba · 4,076 sq ft', price: '$1,000,000' },
+    { lat: 33.9420, lng: -118.3200, name: '1626 W 81st St', detail: 'Triplex · Renovated 2018', price: 'Active' },
+    { lat: 33.9740, lng: -118.3080, name: 'AMRE Nearby Listing', detail: 'Active buyer interest · Ask AMRE', price: 'AMRE listing' },
+    { lat: 33.9540, lng: -118.3150, name: 'AMRE Nearby Listing 2', detail: 'Pre-market · Buyer inquiries active', price: 'AMRE listing' },
   ];
 
   actives.forEach(p => {
@@ -616,7 +616,7 @@ function initMap() {
   // Landmarks
   L.marker([33.9535, -118.3390], { icon: icon('#6E6E73', 12) })
     .addTo(map)
-    .bindPopup('<b>SoFi Stadium</b><br>LA Rams + Chargers Â· 70K cap Â· 1.5mi W');
+    .bindPopup('<b>SoFi Stadium</b><br>LA Rams + Chargers · 70K cap · 1.5mi W');
   L.marker([33.9576, -118.3413], { icon: icon('#6E6E73', 12) })
     .addTo(map)
     .bindPopup('<b>Intuit Dome</b><br>LA Clippers Arena');
@@ -637,7 +637,7 @@ function initMap() {
   legend.addTo(map);
 }
 
-/* ââ SCROLL SPY ââ */
+/* ── SCROLL SPY ── */
 function initScrollSpy() {
   const links = Array.from(document.querySelectorAll('.nav-anchors a'));
   const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
