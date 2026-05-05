@@ -169,6 +169,74 @@ main{max-width:1080px;margin:0 auto;padding:80px 32px 120px}
   font-size:12px;color:var(--gray-2);
 }
 
+/* ====== BRIEFING BANNER ====== */
+.banner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;
+  background:var(--card);
+  border:1px solid var(--hairline-2);
+  border-radius:14px;
+  padding:14px 20px;
+  margin-bottom:48px;
+  font-size:13.5px;
+  transition:background 0.2s, border-color 0.2s;
+}
+.banner.hidden{display:none}
+.banner-left{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;min-width:0}
+.banner-date{
+  font-size:11px;font-weight:600;color:var(--gray-2);
+  text-transform:uppercase;letter-spacing:0.12em;
+  white-space:nowrap;
+}
+.banner-title{
+  font-weight:600;color:var(--ink);letter-spacing:-0.01em;font-size:14.5px;
+}
+.banner-detail{color:var(--gray-1);font-size:13px}
+.banner-cta{
+  font-size:13px;font-weight:500;color:var(--accent);white-space:nowrap;
+}
+.banner-cta:hover{text-decoration:underline}
+/* Critical state — milestone within 7 days */
+.banner.critical{
+  background:rgba(255,159,10,0.08);
+  border-color:rgba(255,159,10,0.28);
+}
+.banner.critical .banner-title{color:#9A6300}
+.banner.critical .banner-date{color:#9A6300;opacity:0.85}
+/* Urgent state — milestone within 2 days */
+.banner.urgent{
+  background:rgba(255,59,48,0.06);
+  border-color:rgba(255,59,48,0.28);
+}
+.banner.urgent .banner-title{color:#B50F00}
+.banner.urgent .banner-date{color:#B50F00;opacity:0.85}
+
+/* ====== CARD STATUS ROW ====== */
+.card-status{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;flex-wrap:wrap;
+  margin:0 0 14px;
+  padding:14px 0 0;
+  border-top:1px solid var(--hairline-2);
+  font-size:12px;
+  color:var(--gray-1);
+  min-height:14px;
+  font-weight:500;
+}
+.card-status .status-countdown{font-weight:500}
+.card-status .status-countdown b{color:var(--ink);font-weight:600}
+.card-status .status-countdown.critical{color:#9A6300}
+.card-status .status-countdown.critical b{color:#9A6300}
+.card-status .status-countdown.urgent{color:#B50F00}
+.card-status .status-countdown.urgent b{color:#B50F00}
+.card-status .status-updated{
+  color:var(--gray-2);
+  font-size:11.5px;
+}
+.card-status:empty{display:none}
+/* When card-status is present, the existing card-foot loses its top border so we don't get a double rule */
+.card-status + .card-foot{border-top:none;padding-top:0}
+
 @media (max-width:680px){
   main{padding:48px 20px 80px}
   .bar{padding:0 18px}
@@ -208,6 +276,15 @@ main{max-width:1080px;margin:0 auto;padding:80px 32px 120px}
   </div>
 
   <main>
+
+    <a class="banner hidden" id="banner">
+      <div class="banner-left">
+        <span class="banner-date" id="banner-date"></span>
+        <span class="banner-title" id="banner-title">All clear.</span>
+        <span class="banner-detail" id="banner-detail"></span>
+      </div>
+      <span class="banner-cta" id="banner-cta">View deal →</span>
+    </a>
 
     <section class="hero">
       <div class="hero-eyebrow">Internal Hub</div>
@@ -255,50 +332,66 @@ main{max-width:1080px;margin:0 auto;padding:80px 32px 120px}
 
       <div class="grid">
 
-        <a class="card" href="../clients/4248-lasalle/" target="_blank" rel="noopener">
+        <a class="card" data-slug="4248-lasalle" href="../clients/4248-lasalle/" target="_blank" rel="noopener">
           <div class="card-row">
             <span class="tag green"><span class="tag-dot"></span>Buy-Side · In Escrow</span>
             <span class="card-arrow">→</span>
           </div>
           <div class="card-title">4248 La Salle Avenue</div>
           <div class="card-sub">Culver City · Muthyala (VICZ-LA LLC) · COE Jun 5, 2026</div>
+          <div class="card-status">
+            <span class="status-countdown"></span>
+            <span class="status-updated"></span>
+          </div>
           <div class="card-foot">
             <span>Code <b>lasalle2026</b></span>
             <span>Escrow 5852-KM</span>
           </div>
         </a>
 
-        <a class="card" href="../clients/11023-fruitland-401/" target="_blank" rel="noopener">
+        <a class="card" data-slug="11023-fruitland-401" href="../clients/11023-fruitland-401/" target="_blank" rel="noopener">
           <div class="card-row">
             <span class="tag blue"><span class="tag-dot"></span>List-Side · Active</span>
             <span class="card-arrow">→</span>
           </div>
           <div class="card-title">11023 Fruitland Drive #401</div>
           <div class="card-sub">Studio City · Modern courtyard penthouse · Listed by AMRE @ Compass</div>
+          <div class="card-status">
+            <span class="status-countdown"></span>
+            <span class="status-updated"></span>
+          </div>
           <div class="card-foot">
             <span>Listing</span>
           </div>
         </a>
 
-        <a class="card" href="../clients/janiszewski-estate/" target="_blank" rel="noopener">
+        <a class="card" data-slug="janiszewski-estate" href="../clients/janiszewski-estate/" target="_blank" rel="noopener">
           <div class="card-row">
             <span class="tag purple"><span class="tag-dot"></span>Estate Planning</span>
             <span class="card-arrow">→</span>
           </div>
           <div class="card-title">Janiszewski Estate</div>
           <div class="card-sub">Estate planning engagement · advisory file</div>
+          <div class="card-status">
+            <span class="status-countdown"></span>
+            <span class="status-updated"></span>
+          </div>
           <div class="card-foot">
             <span>Advisory</span>
           </div>
         </a>
 
-        <a class="card" href="../clients/11155-tremaine/" target="_blank" rel="noopener">
+        <a class="card" data-slug="11155-tremaine" href="../clients/11155-tremaine/" target="_blank" rel="noopener">
           <div class="card-row">
             <span class="tag amber"><span class="tag-dot"></span>Opportunity</span>
             <span class="card-arrow">→</span>
           </div>
           <div class="card-title">11155 S Tremaine Ave</div>
           <div class="card-sub">Seller analysis · pre-engagement opportunity</div>
+          <div class="card-status">
+            <span class="status-countdown"></span>
+            <span class="status-updated"></span>
+          </div>
           <div class="card-foot">
             <span>Pre-engagement</span>
           </div>
@@ -380,7 +473,7 @@ main{max-width:1080px;margin:0 auto;padding:80px 32px 120px}
 
   <div class="foot">
     <span>AMRE Real Estate Group · Compass · Private — not indexed.</span>
-    <span id="last-updated">Last updated May 5, 2026 at 1:32 PM PT</span>
+    <span id="last-updated">Last updated May 5, 2026 at 1:54 PM PT</span>
   </div>
 
 </div>
@@ -388,6 +481,34 @@ main{max-width:1080px;margin:0 auto;padding:80px 32px 120px}
 <script>
 const ACCESS_CODE = 'amre2026';
 
+// ────────────────────────────────────────────────────────────
+// DEAL DATA — single source of truth for milestones.
+// Add/edit dates here when something changes.
+// Dates are LA-local (interpreted as midnight Pacific).
+// ────────────────────────────────────────────────────────────
+const DEALS = {
+  '4248-lasalle': {
+    address: '4248 La Salle Avenue',
+    milestones: {
+      acceptance:  '2026-04-28',
+      contingency: '2026-05-08',
+      coe:         '2026-06-05'
+    }
+  },
+  '11023-fruitland-401': { address: '11023 Fruitland Drive #401' },
+  'janiszewski-estate':  { address: 'Janiszewski Estate' },
+  '11155-tremaine':      { address: '11155 S Tremaine Ave' }
+};
+
+const MILESTONE_LABELS = {
+  acceptance:  'Acceptance',
+  contingency: 'Contingency removal',
+  coe:         'Close of escrow'
+};
+
+// ────────────────────────────────────────────────────────────
+// GATE
+// ────────────────────────────────────────────────────────────
 function checkGate(){
   const v = document.getElementById('gate-input').value.trim().toLowerCase();
   if(v === ACCESS_CODE){
@@ -408,6 +529,203 @@ if(sessionStorage.getItem('amre-access') === '1'){
   document.getElementById('gate').style.display='none';
   document.getElementById('app').classList.add('unlocked');
 }
+
+// ────────────────────────────────────────────────────────────
+// DATE / COUNTDOWN HELPERS — Pacific Time anchored
+// ────────────────────────────────────────────────────────────
+function ptTodayMidnight(){
+  // Today's date in LA, returned as a Date object at LA midnight (in UTC terms that's offset).
+  // We just need a date-only anchor for day-counting; using the LA date string parsed back is fine.
+  const ymd = new Intl.DateTimeFormat('en-CA', {
+    timeZone:'America/Los_Angeles', year:'numeric', month:'2-digit', day:'2-digit'
+  }).format(new Date());
+  return new Date(ymd + 'T00:00:00');
+}
+
+function parseISODate(s){ return new Date(s + 'T00:00:00'); }
+
+function daysBetween(a, b){ return Math.round((b - a) / 86400000); }
+
+function dayLabel(days){
+  if(days < 0)  return `${Math.abs(days)}d ago`;
+  if(days === 0) return 'today';
+  if(days === 1) return 'tomorrow';
+  return `in ${days} days`;
+}
+
+function shortDayLabel(days){
+  if(days === 0) return 'today';
+  if(days === 1) return '1 day';
+  return `${days} days`;
+}
+
+function fmtDate(d){
+  return d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+}
+
+// Returns next non-past milestone for a given deal, or null
+function nextMilestone(slug){
+  const deal = DEALS[slug];
+  if(!deal || !deal.milestones) return null;
+  const today = ptTodayMidnight();
+  const upcoming = Object.entries(deal.milestones)
+    .map(([name, dateStr]) => ({
+      name, label: MILESTONE_LABELS[name] || name,
+      date: parseISODate(dateStr),
+      days: daysBetween(today, parseISODate(dateStr))
+    }))
+    .filter(m => m.days >= 0)
+    .sort((a, b) => a.days - b.days);
+  return upcoming[0] || null;
+}
+
+// Soonest milestone across the entire pipeline
+function nextMilestoneAcrossAll(){
+  let best = null;
+  for(const [slug, deal] of Object.entries(DEALS)){
+    const m = nextMilestone(slug);
+    if(m && (!best || m.days < best.days)){
+      best = { ...m, slug, address: deal.address };
+    }
+  }
+  return best;
+}
+
+// ────────────────────────────────────────────────────────────
+// BANNER
+// ────────────────────────────────────────────────────────────
+function renderBanner(){
+  const banner   = document.getElementById('banner');
+  const dateEl   = document.getElementById('banner-date');
+  const titleEl  = document.getElementById('banner-title');
+  const detailEl = document.getElementById('banner-detail');
+  const ctaEl    = document.getElementById('banner-cta');
+
+  // Date line — always show
+  const now = new Date();
+  const dayStr = now.toLocaleString('en-US', {
+    timeZone:'America/Los_Angeles',
+    weekday:'long', month:'long', day:'numeric'
+  });
+  const timeStr = now.toLocaleString('en-US', {
+    timeZone:'America/Los_Angeles',
+    hour:'numeric', minute:'2-digit'
+  });
+  dateEl.textContent = `${dayStr} · ${timeStr} PT`;
+
+  const m = nextMilestoneAcrossAll();
+  if(!m){
+    titleEl.textContent = 'All clear — no upcoming milestones.';
+    detailEl.textContent = '';
+    ctaEl.style.display = 'none';
+    banner.classList.remove('hidden','critical','urgent');
+    banner.removeAttribute('href');
+    return;
+  }
+
+  banner.classList.remove('hidden','critical','urgent');
+  if(m.days <= 2) banner.classList.add('urgent');
+  else if(m.days <= 7) banner.classList.add('critical');
+
+  titleEl.textContent = `${m.label} ${dayLabel(m.days)}.`;
+  detailEl.textContent = `${m.address} — ${fmtDate(m.date)}`;
+  ctaEl.style.display = '';
+  banner.dataset.targetSlug = m.slug;
+  banner.href = `../clients/${m.slug}/`;
+  banner.target = '_blank';
+}
+
+// Banner click: anchor href is set by renderBanner; native browser behavior handles open
+
+// ────────────────────────────────────────────────────────────
+// PER-CARD COUNTDOWNS
+// ────────────────────────────────────────────────────────────
+function renderCardCountdowns(){
+  document.querySelectorAll('[data-slug]').forEach(card => {
+    const slug = card.dataset.slug;
+    const m = nextMilestone(slug);
+    const el = card.querySelector('.status-countdown');
+    if(!el) return;
+
+    if(m){
+      el.classList.remove('critical','urgent');
+      if(m.days <= 2) el.classList.add('urgent');
+      else if(m.days <= 7) el.classList.add('critical');
+      el.innerHTML = `${m.label} <b>${shortDayLabel(m.days)}</b>`;
+    } else {
+      el.textContent = '';
+    }
+  });
+}
+
+// ────────────────────────────────────────────────────────────
+// PER-CARD "UPDATED Xd AGO" — GitHub commits API + localStorage cache
+// ────────────────────────────────────────────────────────────
+const CACHE_TTL_MS = 10 * 60 * 1000; // 10 min
+
+async function fetchLastCommitDate(path){
+  const cacheKey = `lastcommit:${path}`;
+  try {
+    const raw = localStorage.getItem(cacheKey);
+    if(raw){
+      const { ts, iso } = JSON.parse(raw);
+      if(Date.now() - ts < CACHE_TTL_MS) return new Date(iso);
+    }
+  } catch(e){}
+
+  try {
+    const url = `https://api.github.com/repos/Hilex2030/amre-assets/commits?path=${encodeURIComponent(path)}&per_page=1`;
+    const r = await fetch(url);
+    if(!r.ok) return null;
+    const data = await r.json();
+    if(!Array.isArray(data) || !data[0]) return null;
+    const iso = data[0].commit.committer.date;
+    try { localStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), iso })); } catch(e){}
+    return new Date(iso);
+  } catch(e){
+    return null;
+  }
+}
+
+function relativeTime(date){
+  if(!date) return '';
+  const now = new Date();
+  const seconds = Math.round((now - date) / 1000);
+  if(seconds < 60)         return 'just now';
+  const minutes = Math.round(seconds / 60);
+  if(minutes < 60)         return `${minutes}m ago`;
+  const hours = Math.round(minutes / 60);
+  if(hours < 24)           return `${hours}h ago`;
+  const days = Math.round(hours / 24);
+  if(days === 1)           return 'yesterday';
+  if(days < 7)             return `${days}d ago`;
+  if(days < 30)            return `${Math.floor(days / 7)}w ago`;
+  if(days < 365)           return `${Math.floor(days / 30)}mo ago`;
+  return `${Math.floor(days / 365)}y ago`;
+}
+
+async function renderCardUpdated(){
+  const cards = Array.from(document.querySelectorAll('[data-slug]'));
+  // Stagger the requests slightly so we don't hammer the API in a single tick
+  await Promise.all(cards.map(async (card, i) => {
+    const slug = card.dataset.slug;
+    const path = `website/clients/${slug}`;
+    const date = await fetchLastCommitDate(path);
+    const el = card.querySelector('.status-updated');
+    if(el && date){
+      el.textContent = `Updated ${relativeTime(date)}`;
+    }
+  }));
+}
+
+// ────────────────────────────────────────────────────────────
+// INIT — runs once on load (gate state doesn't block JS execution)
+// ────────────────────────────────────────────────────────────
+renderBanner();
+renderCardCountdowns();
+renderCardUpdated();
+// Refresh banner clock every 60s in case the page is left open
+setInterval(renderBanner, 60000);
 </script>
 
 </body>
