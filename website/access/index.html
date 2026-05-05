@@ -5,279 +5,185 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>AMRE · Access</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap">
 <style>
 :root{
-  --forest:#1c3d31;
-  --navy:#070B33;
-  --brass:#ffc13c;
-  --ink:#1a1a1a;
-  --gray-50:#fafaf9;
-  --gray-100:#f5f5f4;
-  --gray-200:#e7e5e4;
-  --gray-300:#d6d3d1;
-  --gray-500:#78716c;
-  --gray-700:#44403c;
-  --white:#ffffff;
+  --bg:#FBFBFD;
+  --section:#F5F5F7;
+  --card:#FFFFFF;
+  --ink:#1D1D1F;
+  --gray-1:#6E6E73;
+  --gray-2:#86868B;
+  --gray-3:#AEAEB2;
+  --hairline:#D2D2D7;
+  --hairline-2:#E5E5EA;
+  --accent:#0071E3;
+  --accent-hover:#0077ED;
+  --green:#34C759;
+  --amber:#FF9F0A;
+  --red:#FF3B30;
+  --radius:18px;
+  --radius-sm:12px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}
 body{
-  font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  background:var(--gray-50);
+  font-family:var(--font);
+  background:var(--bg);
   color:var(--ink);
-  line-height:1.5;
+  line-height:1.47;
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  letter-spacing:-0.01em;
 }
+a{color:inherit;text-decoration:none}
 
-/* Gate */
+/* GATE */
 .gate{
   position:fixed;inset:0;
-  background:var(--navy);
+  background:var(--section);
   display:flex;align-items:center;justify-content:center;
-  z-index:1000;
-  padding:24px;
+  z-index:1000;padding:24px;
 }
 .gate-card{
-  background:var(--white);
-  border-radius:16px;
-  padding:48px 40px;
-  max-width:380px;width:100%;
-  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  background:var(--card);
+  border-radius:22px;
+  padding:56px 44px 44px;
+  max-width:400px;width:100%;
+  box-shadow:0 1px 0 rgba(0,0,0,0.04), 0 24px 60px rgba(0,0,0,0.10);
   text-align:center;
 }
-.gate-logo{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:32px;font-weight:600;
-  color:var(--navy);margin-bottom:6px;
-  letter-spacing:-0.025em;
-}
-.gate-sub{
-  font-size:12px;color:var(--gray-500);
-  text-transform:uppercase;letter-spacing:0.16em;
-  margin-bottom:32px;
-}
+.gate-mark{font-size:13px;font-weight:600;color:var(--gray-1);text-transform:uppercase;letter-spacing:0.16em;margin-bottom:14px}
+.gate-title{font-size:32px;font-weight:600;color:var(--ink);letter-spacing:-0.03em;margin-bottom:8px}
+.gate-sub{font-size:14px;color:var(--gray-1);margin-bottom:36px}
 .gate input{
-  width:100%;
-  padding:14px 16px;
-  border:1px solid var(--gray-300);
-  border-radius:10px;
-  font-size:15px;
-  font-family:inherit;
-  margin-bottom:12px;
-  outline:none;
-  transition:border-color 0.15s;
+  width:100%;padding:14px 16px;
+  border:1px solid var(--hairline);border-radius:12px;
+  font-size:15px;font-family:inherit;margin-bottom:10px;
+  outline:none;transition:border-color 0.15s, box-shadow 0.15s;
+  background:var(--card);color:var(--ink);
 }
-.gate input:focus{border-color:var(--forest)}
+.gate input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,113,227,0.15)}
 .gate button{
-  width:100%;
-  padding:14px;
-  background:var(--forest);
-  color:var(--white);
-  border:none;border-radius:10px;
-  font-size:15px;font-weight:500;
-  cursor:pointer;
-  font-family:inherit;
-  transition:background 0.15s;
-  letter-spacing:0.02em;
+  width:100%;padding:14px;background:var(--accent);color:#fff;
+  border:none;border-radius:12px;
+  font-size:15px;font-weight:500;cursor:pointer;font-family:inherit;
+  transition:background 0.15s;letter-spacing:-0.01em;
 }
-.gate button:hover{background:#143025}
-.gate-error{
-  color:#b91c1c;font-size:13px;
-  margin-top:12px;
-  min-height:18px;
-}
+.gate button:hover{background:var(--accent-hover)}
+.gate-error{color:var(--red);font-size:13px;margin-top:14px;min-height:18px;font-weight:500}
 
-/* App */
+/* APP */
 .app{display:none}
 .app.unlocked{display:block}
 
 .bar{
-  background:var(--white);
-  border-bottom:1px solid var(--gray-200);
-  padding:16px 32px;
-  display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;z-index:100;
-  backdrop-filter:saturate(180%) blur(12px);
-  background:rgba(255,255,255,0.85);
+  position:sticky;top:0;z-index:100;height:48px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 22px;
+  background:rgba(251,251,253,0.72);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  font-size:13px;
 }
-.bar-brand{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:20px;font-weight:600;
-  color:var(--navy);
-  letter-spacing:-0.01em;
-}
-.bar-meta{
-  font-size:11px;color:var(--gray-500);
-  text-transform:uppercase;letter-spacing:0.12em;
-}
+.bar-left{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
+.bar-left span{color:var(--gray-2);font-weight:400;margin-left:6px}
+.bar-right{display:inline-flex;align-items:center;gap:6px;color:var(--gray-1);font-size:12px;font-weight:500}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(52,199,89,0.18)}
 
-main{
-  max-width:1100px;
-  margin:0 auto;
-  padding:64px 32px 96px;
-}
+main{max-width:1080px;margin:0 auto;padding:80px 32px 120px}
 
-.page-head{margin-bottom:56px}
-.page-title{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(40px,5.5vw,60px);
-  font-weight:600;
-  color:var(--navy);
-  letter-spacing:-0.03em;
-  line-height:1;
-  margin-bottom:14px;
-}
-.page-sub{
-  font-size:16px;color:var(--gray-500);
-  max-width:580px;
-  line-height:1.55;
-}
+.hero{margin-bottom:96px}
+.hero-eyebrow{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px}
+.hero-title{font-size:clamp(48px,7vw,72px);font-weight:600;letter-spacing:-0.035em;line-height:1;color:var(--ink);margin-bottom:18px}
+.hero-sub{font-size:19px;color:var(--gray-1);max-width:560px;letter-spacing:-0.012em;line-height:1.45}
 
-.section{margin-bottom:56px}
-.section-head{
-  display:flex;align-items:baseline;justify-content:space-between;
-  margin-bottom:20px;
-  padding-bottom:14px;
-  border-bottom:1px solid var(--gray-200);
-}
-.section-title{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:24px;font-weight:600;
-  color:var(--ink);
-  letter-spacing:-0.01em;
-}
-.section-count{
-  font-size:11px;color:var(--gray-500);
-  text-transform:uppercase;letter-spacing:0.12em;
-}
+.section{margin-bottom:88px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px}
+.section-eyebrow{font-size:11px;font-weight:600;color:var(--gray-2);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:10px}
+.section-title{font-size:40px;font-weight:600;letter-spacing:-0.028em;line-height:1.05;color:var(--ink)}
+.section-link{font-size:14px;color:var(--accent);font-weight:500;white-space:nowrap}
+.section-link:hover{text-decoration:underline}
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-  gap:14px;
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  background:var(--card);border:1px solid var(--hairline-2);
+  border-radius:var(--radius);padding:28px 8px;margin-bottom:24px;
+  box-shadow:0 1px 0 rgba(0,0,0,0.02);
 }
+.stat{text-align:center;padding:8px 16px;border-right:1px solid var(--hairline-2)}
+.stat:last-child{border-right:none}
+.stat-num{font-size:40px;font-weight:600;letter-spacing:-0.03em;color:var(--ink);line-height:1;margin-bottom:8px}
+.stat-num small{font-size:0.55em;color:var(--gray-2);font-weight:500;letter-spacing:0;margin-left:2px}
+.stat-label{font-size:11px;font-weight:600;color:var(--gray-2);text-transform:uppercase;letter-spacing:0.1em}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
 
 .card{
-  background:var(--white);
-  border:1px solid var(--gray-200);
-  border-radius:14px;
-  padding:24px;
-  text-decoration:none;
-  color:inherit;
-  display:block;
-  transition:all 0.18s ease;
+  background:var(--card);border:1px solid var(--hairline-2);
+  border-radius:var(--radius);padding:22px 22px 20px;display:block;
   position:relative;
+  transition:border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  overflow:hidden;
 }
-.card:hover{
-  border-color:var(--forest);
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+.card:hover{border-color:var(--hairline);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+.card-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;padding:4px 9px;border-radius:999px}
+.tag.green{color:#1A7F37;background:rgba(52,199,89,0.14)}
+.tag.blue{color:#0040DD;background:rgba(0,113,227,0.10)}
+.tag.amber{color:#9A6300;background:rgba(255,159,10,0.16)}
+.tag.gray{color:var(--gray-1);background:var(--section)}
+.tag.purple{color:#5E47C8;background:rgba(94,71,200,0.12)}
+.tag-dot{width:5px;height:5px;border-radius:50%;background:currentColor}
+.card-arrow{color:var(--gray-3);font-size:18px;font-weight:300;transition:transform 0.18s ease, color 0.18s ease;line-height:1}
+.card:hover .card-arrow{color:var(--ink);transform:translateX(3px)}
+.card-title{font-size:19px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);margin-bottom:4px;line-height:1.25}
+.card-sub{font-size:13.5px;color:var(--gray-1);margin-bottom:16px;line-height:1.45}
+.card-foot{
+  display:flex;flex-wrap:wrap;gap:14px;
+  font-size:11.5px;color:var(--gray-2);
+  padding-top:14px;border-top:1px solid var(--hairline-2);
+  text-transform:uppercase;letter-spacing:0.06em;font-weight:500;
 }
-.card-tag{
-  display:inline-block;
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:0.12em;
-  color:var(--forest);
-  background:rgba(28,61,49,0.08);
-  padding:4px 8px;
-  border-radius:4px;
-  margin-bottom:14px;
-  font-weight:600;
-}
-.card-tag.draft{color:#92400e;background:rgba(255,193,60,0.22)}
-.card-tag.internal{color:var(--navy);background:rgba(7,11,51,0.08)}
-.card-title{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:20px;font-weight:600;
-  color:var(--ink);
-  letter-spacing:-0.01em;
-  margin-bottom:6px;
-  line-height:1.2;
-}
-.card-sub{
-  font-size:13px;
-  color:var(--gray-500);
-  margin-bottom:14px;
-  line-height:1.5;
-}
-.card-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  font-size:12px;
-  color:var(--gray-500);
-  padding-top:12px;
-  border-top:1px solid var(--gray-100);
-}
-.card-meta b{
-  color:var(--gray-700);
-  font-weight:600;
-  font-family:'SF Mono',Menlo,Consolas,monospace;
-  font-size:11.5px;
-}
-.card-arrow{
-  position:absolute;
-  top:24px;right:24px;
-  color:var(--gray-300);
-  font-size:18px;
-  transition:transform 0.18s ease, color 0.18s ease;
-  line-height:1;
-}
-.card:hover .card-arrow{
-  color:var(--forest);
-  transform:translateX(3px);
-}
+.card-foot b{color:var(--ink);font-family:"SF Mono",Menlo,Consolas,monospace;font-weight:500;font-size:11.5px;letter-spacing:0;text-transform:none}
 
-.empty{
-  background:var(--white);
-  border:1px dashed var(--gray-300);
-  border-radius:14px;
-  padding:36px 28px;
-  text-align:center;
-  color:var(--gray-500);
-  font-size:14px;
-  line-height:1.5;
+.feature{
+  display:block;background:var(--ink);color:#fff;
+  border-radius:var(--radius);padding:36px 36px 32px;
+  position:relative;overflow:hidden;
+  transition:transform 0.18s ease, box-shadow 0.18s ease;
 }
+.feature:hover{transform:translateY(-1px);box-shadow:0 12px 32px rgba(0,0,0,0.18)}
+.feature::before{content:"";position:absolute;top:-40%;right:-15%;width:420px;height:420px;background:radial-gradient(circle, rgba(0,113,227,0.55), transparent 65%);pointer-events:none}
+.feature-eyebrow{font-size:11px;font-weight:600;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:14px;position:relative}
+.feature-title{font-size:32px;font-weight:600;letter-spacing:-0.025em;line-height:1.1;margin-bottom:10px;position:relative}
+.feature-sub{font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:24px;max-width:520px;position:relative}
+.feature-go{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#fff;position:relative}
+.feature-go::after{content:"→";transition:transform 0.18s ease}
+.feature:hover .feature-go::after{transform:translateX(4px)}
 
-footer{
-  max-width:1100px;
-  margin:0 auto;
-  padding:28px 32px 56px;
-  font-size:12px;
-  color:var(--gray-500);
-  border-top:1px solid var(--gray-200);
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:8px;
-}
-.lock-pill{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:3px 10px;
-  background:rgba(28,61,49,0.08);
-  color:var(--forest);
-  border-radius:999px;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:0.1em;
-  font-weight:600;
-}
-.lock-pill::before{
-  content:'';
-  width:6px;height:6px;
-  background:var(--forest);
-  border-radius:50%;
+.foot{
+  max-width:1080px;margin:0 auto;padding:32px 32px 56px;
+  border-top:1px solid var(--hairline-2);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  font-size:12px;color:var(--gray-2);
 }
 
 @media (max-width:680px){
-  main{padding:40px 20px 64px}
-  .bar{padding:14px 20px}
+  main{padding:48px 20px 80px}
+  .bar{padding:0 18px}
   .grid{grid-template-columns:1fr}
-  footer{padding:24px 20px 40px;flex-direction:column}
+  .stats{padding:18px 0}
+  .stat{padding:4px 8px}
+  .stat-num{font-size:28px;margin-bottom:6px}
+  .stat-label{font-size:9.5px}
+  .feature{padding:28px 24px 24px}
+  .feature-title{font-size:26px}
+  .section{margin-bottom:64px}
+  .hero{margin-bottom:64px}
+  .section-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .section-title{font-size:32px}
+  .foot{padding:24px 20px 40px;flex-direction:column}
 }
 </style>
 </head>
@@ -285,9 +191,10 @@ footer{
 
 <div class="gate" id="gate">
   <div class="gate-card">
-    <div class="gate-logo">AMRE</div>
-    <div class="gate-sub">Access</div>
-    <input type="password" id="gate-input" placeholder="Enter access code" autocomplete="off" autofocus>
+    <div class="gate-mark">AMRE</div>
+    <div class="gate-title">Access.</div>
+    <div class="gate-sub">Internal navigation hub.</div>
+    <input type="password" id="gate-input" placeholder="Access code" autocomplete="off" autofocus>
     <button onclick="checkGate()">Unlock</button>
     <div class="gate-error" id="gate-error"></div>
   </div>
@@ -296,63 +203,185 @@ footer{
 <div class="app" id="app">
 
   <div class="bar">
-    <div class="bar-brand">AMRE · Access</div>
-    <div class="bar-meta"><span class="lock-pill">Private</span></div>
+    <div class="bar-left">AMRE<span>· Access</span></div>
+    <div class="bar-right"><span class="dot"></span> Private</div>
   </div>
 
   <main>
 
-    <div class="page-head">
-      <h1 class="page-title">Access.</h1>
-      <p class="page-sub">Quick navigation to every active client tracker, internal tool, and staged page across AMRE. Not indexed, not linked from amre.group.</p>
-    </div>
+    <section class="hero">
+      <div class="hero-eyebrow">Internal Hub</div>
+      <h1 class="hero-title">Access.</h1>
+      <p class="hero-sub">One private door to every AMRE surface — the operations dashboard, every active client file, and the public site.</p>
+    </section>
 
-    <!-- CLIENT TRACKERS -->
+    <!-- AMRE DASHBOARD -->
     <section class="section">
       <div class="section-head">
-        <div class="section-title">Client Trackers</div>
-        <div class="section-count">1 active</div>
+        <div>
+          <div class="section-eyebrow">01 — Operations</div>
+          <h2 class="section-title">AMRE Dashboard.</h2>
+        </div>
       </div>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-num">1</div><div class="stat-label">Live Tool</div></div>
+        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Files Tracked</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--green)">●</div><div class="stat-label">Active</div></div>
+      </div>
+
+      <a class="feature" href="https://hilex2030.github.io/amre-assets/artifacts/dashboard/" target="_blank" rel="noopener">
+        <div class="feature-eyebrow">Client Summary Dashboard</div>
+        <div class="feature-title">Every deal.<br>One view.</div>
+        <div class="feature-sub">Active transactions, key milestones, and direct links to each client's tracker — kept current across every file in the pipeline.</div>
+        <span class="feature-go">Open dashboard</span>
+      </a>
+    </section>
+
+    <!-- CLIENTS -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">02 — Pipeline</div>
+          <h2 class="section-title">Clients.</h2>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Client Files</div></div>
+        <div class="stat"><div class="stat-num">2</div><div class="stat-label">In Escrow</div></div>
+        <div class="stat"><div class="stat-num">Jun 5</div><div class="stat-label">Next COE</div></div>
+      </div>
+
       <div class="grid">
 
         <a class="card" href="https://hilex2030.github.io/amre-assets/artifacts/tracker-4248-lasalle/" target="_blank" rel="noopener">
-          <span class="card-arrow">→</span>
-          <span class="card-tag">Buy-Side · Active</span>
+          <div class="card-row">
+            <span class="tag green"><span class="tag-dot"></span>Buy-Side · In Escrow</span>
+            <span class="card-arrow">→</span>
+          </div>
           <div class="card-title">4248 La Salle Avenue</div>
           <div class="card-sub">Culver City · Muthyala (VICZ-LA LLC) · COE Jun 5, 2026</div>
-          <div class="card-meta">
+          <div class="card-foot">
             <span>Code <b>lasalle2026</b></span>
             <span>Escrow 5852-KM</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://hilex2030.github.io/amre-assets/artifacts/tracker-11023-fruitland-401/" target="_blank" rel="noopener">
+          <div class="card-row">
+            <span class="tag blue"><span class="tag-dot"></span>List-Side · Active</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <div class="card-title">11023 Fruitland Drive #401</div>
+          <div class="card-sub">Studio City · Modern courtyard penthouse · Listed by AMRE @ Compass</div>
+          <div class="card-foot">
+            <span>Listing</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://hilex2030.github.io/amre-assets/artifacts/tracker-janiszewski-estate/" target="_blank" rel="noopener">
+          <div class="card-row">
+            <span class="tag purple"><span class="tag-dot"></span>Estate Planning</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <div class="card-title">Janiszewski Estate</div>
+          <div class="card-sub">Estate planning engagement · advisory file</div>
+          <div class="card-foot">
+            <span>Advisory</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://hilex2030.github.io/amre-assets/artifacts/opportunity-11155-tremaine/" target="_blank" rel="noopener">
+          <div class="card-row">
+            <span class="tag amber"><span class="tag-dot"></span>Opportunity</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <div class="card-title">11155 S Tremaine Ave</div>
+          <div class="card-sub">Seller analysis · pre-engagement opportunity</div>
+          <div class="card-foot">
+            <span>Pre-engagement</span>
           </div>
         </a>
 
       </div>
     </section>
 
-    <!-- INTERNAL TOOLS -->
+    <!-- WEBSITE -->
     <section class="section">
       <div class="section-head">
-        <div class="section-title">Internal Tools</div>
-        <div class="section-count">0 active</div>
+        <div>
+          <div class="section-eyebrow">03 — Public Site</div>
+          <h2 class="section-title">Website.</h2>
+        </div>
+        <a class="section-link" href="https://amre.group/" target="_blank" rel="noopener">Open amre.group ↗</a>
       </div>
-      <div class="empty">Internal dashboards, briefs, and admin pages will appear here as they're built.</div>
-    </section>
 
-    <!-- DRAFTS & STAGING -->
-    <section class="section">
-      <div class="section-head">
-        <div class="section-title">Drafts &amp; Staging</div>
-        <div class="section-count">0 active</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">11</div><div class="stat-label">Live Pages</div></div>
+        <div class="stat"><div class="stat-num">0</div><div class="stat-label">Drafts</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--green)">●</div><div class="stat-label">Live</div></div>
       </div>
-      <div class="empty">In-progress pages and unpublished drafts will land here before going live on amre.group.</div>
+
+      <div class="grid">
+
+        <a class="card" href="https://amre.group/" target="_blank" rel="noopener">
+          <div class="card-row"><span class="tag gray"><span class="tag-dot"></span>Home</span><span class="card-arrow">→</span></div>
+          <div class="card-title">amre.group</div>
+          <div class="card-sub">The public landing page — hero, services, team, contact CTA.</div>
+        </a>
+
+        <a class="card" href="https://amre.group/buyers/" target="_blank" rel="noopener">
+          <div class="card-row"><span class="tag gray"><span class="tag-dot"></span>Section</span><span class="card-arrow">→</span></div>
+          <div class="card-title">Buyers</div>
+          <div class="card-sub">Buyer-side service page — process, search, representation.</div>
+        </a>
+
+        <a class="card" href="https://amre.group/sellers/" target="_blank" rel="noopener">
+          <div class="card-row"><span class="tag gray"><span class="tag-dot"></span>Section</span><span class="card-arrow">→</span></div>
+          <div class="card-title">Sellers</div>
+          <div class="card-sub">Sell-side service page — pricing, marketing, listing strategy.</div>
+        </a>
+
+        <a class="card" href="https://amre.group/team/" target="_blank" rel="noopener">
+          <div class="card-row"><span class="tag gray"><span class="tag-dot"></span>Section</span><span class="card-arrow">→</span></div>
+          <div class="card-title">Team</div>
+          <div class="card-sub">Michael &amp; Ania — bios, credentials, contact.</div>
+        </a>
+
+        <a class="card" href="https://amre.group/properties/" target="_blank" rel="noopener">
+          <div class="card-row"><span class="tag gray"><span class="tag-dot"></span>Section</span><span class="card-arrow">→</span></div>
+          <div class="card-title">Properties</div>
+          <div class="card-sub">Active and recent listings.</div>
+        </a>
+
+        <a class="card" href="https://amre.group/blog/" target="_blank" rel="noopener">
+          <div class="card-row"><span class="tag gray"><span class="tag-dot"></span>Section</span><span class="card-arrow">→</span></div>
+          <div class="card-title">Journal</div>
+          <div class="card-sub">Long-form posts on market and process.</div>
+        </a>
+
+        <a class="card" href="https://amre.group/home-valuation/" target="_blank" rel="noopener">
+          <div class="card-row"><span class="tag gray"><span class="tag-dot"></span>Tool</span><span class="card-arrow">→</span></div>
+          <div class="card-title">Home Valuation</div>
+          <div class="card-sub">Lead-gen valuation request flow.</div>
+        </a>
+
+        <a class="card" href="https://amre.group/contact/" target="_blank" rel="noopener">
+          <div class="card-row"><span class="tag gray"><span class="tag-dot"></span>Section</span><span class="card-arrow">→</span></div>
+          <div class="card-title">Contact</div>
+          <div class="card-sub">Inquiry form and direct contact details.</div>
+        </a>
+
+      </div>
     </section>
 
   </main>
 
-  <footer>
-    <span>Private — not indexed. AMRE Real Estate Group · Compass.</span>
-    <span id="last-updated">Last updated May 5, 2026 at 9:44 AM PT</span>
-  </footer>
+  <div class="foot">
+    <span>AMRE Real Estate Group · Compass · Private — not indexed.</span>
+    <span id="last-updated">Last updated May 5, 2026 at 9:52 AM PT</span>
+  </div>
 
 </div>
 
