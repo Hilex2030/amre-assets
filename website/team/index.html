@@ -29,25 +29,91 @@
 <!-- Tally -->
 <script async src="https://tally.so/widgets/embed.js"></script>
 <!-- Schema.org -->
-<script type="application/ld+json">{
-  "@context":"https://schema.org",
-  "@type":"RealEstateAgent",
-  "name":"AMRE Real Estate Group",
-  "url":"https://amre.group",
-  "logo":"https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-black.svg",
-  "image":"https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg",
-  "description":"Elite Los Angeles real estate advisory for sellers, buyers, and investors.",
-  "telephone":"+13237198585",
-  "email":"michael.abraham@compass.com",
-  "address":{"@type":"PostalAddress","streetAddress":"9454 Wilshire Blvd, Suite 100","addressLocality":"Beverly Hills","addressRegion":"CA","postalCode":"90212","addressCountry":"US"},
-  "areaServed":["Los Angeles","Beverly Hills","Santa Monica","Malibu","Studio City","Bel Air","Brentwood"],
-  "priceRange":"$$$",
-  "employee":[
-    {"@type":"Person","name":"Michael Abraham","jobTitle":"Real Estate Agent","identifier":"CA DRE# 02242095"},
-    {"@type":"Person","name":"Ania De Pourbaix","jobTitle":"Real Estate Agent","identifier":"CA DRE# 01891438"}
-  ],
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"3","bestRating":"5"}
-}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["RealEstateAgent","LocalBusiness"],
+      "@id": "https://amre.group/#organization",
+      "name": "AMRE Real Estate Group",
+      "url": "https://amre.group/",
+      "logo": "https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-black.svg",
+      "image": "https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg",
+      "description": "Elite Los Angeles real estate advisory for sellers, buyers, and investors at Compass Beverly Hills.",
+      "telephone": "+13237198585",
+      "email": "michael.abraham@compass.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9454 Wilshire Blvd, Suite 100",
+        "addressLocality": "Beverly Hills",
+        "addressRegion": "CA",
+        "postalCode": "90212",
+        "addressCountry": "US"
+      },
+      "areaServed": ["Los Angeles","Beverly Hills","Santa Monica","Malibu","Studio City","Bel Air","Brentwood","Culver City"],
+      "priceRange": "$$$",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Compass",
+        "url": "https://www.compass.com/",
+        "identifier": "CA DRE #01991628"
+      },
+      "employee": [
+        { "@id": "https://amre.group/team/#michael-abraham" },
+        { "@id": "https://amre.group/team/#ania-de-pourbaix" }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/amre.group/",
+        "https://www.linkedin.com/company/amre-real-estate-group/",
+        "https://www.facebook.com/amre.grp",
+        "https://www.youtube.com/@AMRE_Real_Estate"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://amre.group/team/#michael-abraham",
+      "name": "Michael Abraham",
+      "jobTitle": "Real Estate Agent, Realtor\u00ae",
+      "image": "https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-michael-stairs-suit.jpg",
+      "url": "https://amre.group/team/",
+      "email": "michael.abraham@compass.com",
+      "telephone": "+13237198585",
+      "identifier": "CA DRE# 02242095",
+      "hasCredential": [
+        {"@type":"EducationalOccupationalCredential","credentialCategory":"License","name":"California Real Estate Salesperson License #02242095"},
+        {"@type":"EducationalOccupationalCredential","credentialCategory":"Professional Membership","name":"National Association of Realtors\u00ae"},
+        {"@type":"EducationalOccupationalCredential","credentialCategory":"Professional Background","name":"Licensed Architect"}
+      ],
+      "knowsAbout": ["Luxury residential real estate","Architecturally significant homes","Multifamily investment","1031 exchanges","Los Angeles property markets"],
+      "worksFor": { "@id": "https://amre.group/#organization" },
+      "memberOf": { "@type": "Organization", "name": "National Association of Realtors\u00ae" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://amre.group/team/#ania-de-pourbaix",
+      "name": "Ania De Pourbaix",
+      "jobTitle": "Real Estate Agent, Realtor\u00ae",
+      "image": "https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-ania-stairs-dress.jpg",
+      "url": "https://amre.group/team/",
+      "email": "ania.d@compass.com",
+      "telephone": "+13102703879",
+      "identifier": "CA DRE# 01891438",
+      "hasCredential": [
+        {"@type":"EducationalOccupationalCredential","credentialCategory":"License","name":"California Real Estate Salesperson License #01891438"}
+      ],
+      "knowsAbout": ["Luxury residential real estate","Buyer representation","Seller advisory","Los Angeles property markets"],
+      "worksFor": { "@id": "https://amre.group/#organization" }
+    }
+  ]
+}
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -625,7 +691,7 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
     </div>
     <div class="agent-content-col">
       <span class="agent-role" itemprop="jobTitle">Principal Agent · Architect · NAR Member</span>
-      <h2 class="agent-name f" itemprop="name">Michael Abraham</h2>
+      <h2 class="agent-name f" itemprop="name" id="michael-abraham">Michael Abraham</h2>
       <div class="divider f"></div>
       <p class="agent-bio f" itemprop="description">Michael Abraham is a distinguished Los Angeles real estate professional, <strong>licensed Realtor®, architect, and proud member of the National Association of Realtors®.</strong> Known for his integrity, strategic thinking, and client-first approach, Michael leads with a deep understanding of the local market and a consistent track record of exceptional results.</p>
       <p class="agent-bio f">With over a decade of experience investing in Los Angeles multifamily properties, Michael specializes in <strong>value-add strategies that unlock hidden potential and maximize returns.</strong> His architectural background provides a unique advantage when evaluating properties, optimizing layouts, and advising clients on how to enhance value through strategic design.</p>
@@ -643,7 +709,7 @@ section#michael .agent-profile, section#ania .agent-profile{display:flex !import
   <div class="agent-profile agent-profile-rev" itemscope itemtype="https://schema.org/Person">
     <div class="agent-content-col" style="background:var(--light)">
       <span class="agent-role" itemprop="jobTitle">Principal Agent · Compass Beverly Hills</span>
-      <h2 class="agent-name f" itemprop="name">Ania De Pourbaix</h2>
+      <h2 class="agent-name f" itemprop="name" id="ania-de-pourbaix">Ania De Pourbaix</h2>
       <div class="divider f"></div>
       <p class="agent-bio f" itemprop="description">Ania De Pourbaix is a seasoned Los Angeles real estate professional with deep expertise in the luxury market and a reputation for <strong>meticulous attention to detail and exceptional client service.</strong></p>
       <p class="agent-bio f">As Principal Agent at AMRE Real Estate Group, Ania brings a collaborative and strategic approach to every transaction. Her commitment to her clients — and her deep knowledge of the Los Angeles market — makes her an invaluable partner for buyers and sellers at every price point.</p>

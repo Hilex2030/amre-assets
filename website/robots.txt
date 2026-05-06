@@ -1,4 +1,141 @@
+# AMRE Real Estate Group — robots
+# https://amre.group/robots.txt
+
+# ─── Default: allow marketing, block private areas ───
 User-agent: *
 Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
 
-Sitemap: https://amre.group/sitemap.xml<!-- Cutover deploy 2026-05-06T23:09:35Z -->
+# ─── AI crawlers — explicitly welcome on marketing pages, blocked from private areas ───
+User-agent: GPTBot
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: CCBot
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /clients/
+Disallow: /admin/
+Disallow: /access/
+Disallow: /dashboard/
+Disallow: /artifacts/
+Disallow: /portal/
+
+Sitemap: https://amre.group/sitemap.xml
