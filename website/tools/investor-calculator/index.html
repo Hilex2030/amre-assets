@@ -68,6 +68,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--mist);color:var(--ink)
 .tip:hover .tip-box{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
 .tip-box{position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%) translateY(4px);background:var(--tip);color:white;font-size:11px;line-height:1.55;padding:10px 13px;border-radius:8px;width:220px;white-space:normal;opacity:0;pointer-events:none;transition:all .2s;z-index:100;box-shadow:0 4px 16px rgba(0,0,0,.25)}
 .tip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--tip)}
+.tip-inline{margin-left:6px;vertical-align:middle}
+.tip-inline .tip-box{width:280px;font-size:11px}
 
 /* INPUTS */
 .irow{display:flex;align-items:center}
@@ -148,13 +150,18 @@ input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-
 .yr-pill.active{background:var(--b);border-color:var(--b);color:var(--n)}
 
 /* Cash flow bar chart */
-.cf-chart{padding:20px 24px 4px}
-.cf-chart-title{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a9e92;margin-bottom:12px}
-.cf-bars{display:flex;gap:6px;align-items:flex-end;height:80px}
-.cf-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;height:100%}
-.cf-bar-col{width:100%;border-radius:3px 3px 0 0;transition:all .3s ease;min-height:4px;margin-top:auto}
-.cf-bar-wrap.active .cf-bar-col{filter:brightness(1.15)}
-.cf-bar-lbl{font-size:9px;font-weight:600;color:#8a9e92}
+.cf-chart{padding:20px 24px 8px}
+.cf-chart-title{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a9e92;margin-bottom:4px}
+.cf-chart-sub{font-size:10px;color:#8a9e92;margin-bottom:14px;line-height:1.4}
+.cf-bars{display:flex;gap:6px;align-items:stretch;height:120px;position:relative;margin-bottom:6px}
+.cf-zeroline{position:absolute;left:0;right:0;height:1px;background:rgba(28,61,49,.25);pointer-events:none;z-index:1}
+.cf-zeroline::before{content:'$0';position:absolute;left:0;top:-8px;font-size:9px;color:#8a9e92;font-weight:600;background:white;padding:0 4px}
+.cf-bar-wrap{flex:1;display:flex;flex-direction:column;cursor:pointer;position:relative}
+.cf-bar-slot{flex:1;position:relative}
+.cf-bar-col{position:absolute;left:10%;right:10%;border-radius:3px 3px 0 0;transition:all .3s ease;background:var(--pos);min-height:2px}
+.cf-bar-col.neg{background:var(--neg);border-radius:0 0 3px 3px}
+.cf-bar-wrap.active .cf-bar-col{background:var(--b);filter:brightness(1.05)}
+.cf-bar-lbl{font-size:9px;font-weight:600;color:#8a9e92;text-align:center;padding:6px 0 0 0}
 .cf-bar-wrap.active .cf-bar-lbl{color:var(--f);font-weight:700}
 
 /* Exit breakdown */
@@ -605,6 +612,7 @@ input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-
       <!-- Cash flow bar chart -->
       <div class="cf-chart">
         <div class="cf-chart-title">Annual Cash Flow by Year</div>
+        <div class="cf-chart-sub">Rent grows ~3%/yr, mortgage payment is frozen for 30 years — so the gap between income and debt service widens every year.</div>
         <div class="cf-bars" id="cfBars"></div>
       </div>
 
@@ -615,7 +623,7 @@ input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-
           <div class="exit-stat-val" id="ex-saleprice">—</div>
         </div>
         <div class="exit-stat">
-          <div class="exit-stat-lbl">Cumul. Cash Flow</div>
+          <div class="exit-stat-lbl">Cumul. Net CF</div>
           <div class="exit-stat-val" id="ex-cumcf">—</div>
         </div>
         <div class="exit-stat">
@@ -649,7 +657,11 @@ input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-
           <span class="exit-row-val pos" id="ex-netequity">—</span>
         </div>
         <div class="exit-row">
-          <span class="exit-row-lbl">+ Cumulative Cash Flow Collected</span>
+          <span class="exit-row-lbl">+ Cumulative Net Cash Flow
+            <span class="tip tip-inline" tabindex="0"><span>?</span>
+              <div class="tip-box">This is <strong>not</strong> total rent. It's what hits your bank account each year after every deduction:<br><br>Gross Rent − Vacancy − Property Taxes − Insurance − Maintenance − Property Management − Mortgage Payment = <strong>Net Cash Flow</strong><br><br>Then summed across every year of the hold (with rent growing 3%/yr, taxes growing 2%/yr per Prop 13, mortgage frozen for 30 years).</div>
+            </span>
+          </span>
           <span class="exit-row-val pos" id="ex-cumcf2">—</span>
         </div>
         <div class="exit-row deduct">
@@ -987,20 +999,35 @@ function updateExit() {
 
   document.getElementById('src-total-val').textContent = f(grossReturn);
 
-  // Bar chart
-  var maxCF = Math.max.apply(null, yearCFs.map(Math.abs)) || 1;
+  // Bar chart — signed values around a zero baseline
+  var maxPos = Math.max(0, Math.max.apply(null, yearCFs));
+  var maxNeg = Math.min(0, Math.min.apply(null, yearCFs));
+  var range  = (maxPos - maxNeg) || 1;
+  // Zero-line position: % from top of chart area
+  var zeroPct = (maxPos / range) * 100;
+
   var barsEl = document.getElementById('cfBars');
-  barsEl.innerHTML = '';
+  barsEl.innerHTML = '<div class="cf-zeroline" style="top:' + zeroPct.toFixed(2) + '%"></div>';
+
   yearCFs.forEach(function(v, i) {
     var y = i + 1;
-    var pct = Math.max(4, Math.abs(v) / maxCF * 100);
-    var color = v >= 0 ? 'var(--f)' : 'var(--neg)';
-    if (y === yr) color = 'var(--b)';
+    var barPct = Math.abs(v) / range * 100;
+    var top, height;
+    if (v >= 0) {
+      height = barPct;
+      top    = zeroPct - barPct;
+    } else {
+      top    = zeroPct;
+      height = barPct;
+    }
+    var negClass = v < 0 ? ' neg' : '';
     var wrap = document.createElement('div');
     wrap.className = 'cf-bar-wrap' + (y === yr ? ' active' : '');
     wrap.onclick = (function(yy){ return function(){ setYear(yy); }; })(y);
     wrap.innerHTML =
-      '<div class="cf-bar-col" style="height:' + pct + '%;background:' + color + '"></div>' +
+      '<div class="cf-bar-slot">' +
+        '<div class="cf-bar-col' + negClass + '" style="top:' + top.toFixed(2) + '%;height:' + Math.max(1, height).toFixed(2) + '%"></div>' +
+      '</div>' +
       '<div class="cf-bar-lbl">Y' + y + '</div>';
     barsEl.appendChild(wrap);
   });
