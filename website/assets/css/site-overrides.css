@@ -658,3 +658,26 @@ html body .testi-text{
   justify-content: center !important;
   min-width: 0 !important;
 }
+
+/* =====================================================================
+   18) FAQ — shared FAQ block styling (used on all public pages)
+   ===================================================================== */
+.faq-section{background:#fff;padding:96px 24px;}
+.faq-section .faq-eyebrow{text-align:center;color:var(--forest);font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:0 0 16px;}
+.faq-section .faq-h2{text-align:center;margin:0 0 48px;font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,4.4vw,56px);font-weight:400;line-height:1.1;color:var(--ink, #1a1a1a);}
+.faq-section .faq-h2 em{color:var(--forest);font-style:italic;}
+.faq-section .faq-list{max-width:880px;margin:0 auto;border:1px solid var(--rule, #d2d2d7);border-radius:6px;overflow:hidden;background:#fff;}
+.faq-section .faq-item{border-bottom:1px solid var(--rule, #d2d2d7);}
+.faq-section .faq-item:last-child{border-bottom:none;}
+.faq-section .faq-q{list-style:none;padding:20px 24px;font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;font-size:15px;font-weight:500;color:var(--ink, #1a1a1a) !important;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none;}
+.faq-section .faq-q::-webkit-details-marker{display:none;}
+.faq-section .faq-q::after{content:'+';font-size:22px;font-weight:300;color:var(--brass);flex-shrink:0;transition:transform .25s ease;line-height:1;}
+.faq-section details[open] .faq-q::after{transform:rotate(45deg);}
+.faq-section .faq-a{padding:0 24px 22px;}
+.faq-section .faq-a p{margin:0;font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;font-size:14.5px;font-weight:300;line-height:1.75;color:#3a3a3c !important;}
+@media (max-width: 680px){
+  .faq-section{padding:64px 20px;}
+  .faq-section .faq-q{padding:18px 18px;font-size:14px;}
+  .faq-section .faq-a{padding:0 18px 18px;}
+  .faq-section .faq-a p{font-size:14px;}
+}
