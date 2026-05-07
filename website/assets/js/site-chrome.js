@@ -32,7 +32,7 @@
   var LINKS = [
     { href: BASE + '/sellers/', label: 'Sellers',  match: /\/sellers\// },
     { href: BASE + '/buyers/',  label: 'Buyers',   match: /\/buyers\//  },
-    { href: BASE + '/team/',    label: 'Team',     match: /\/team\//    },
+    { href: BASE + '/about/',   label: 'About',    match: /\/about\//   },
     { href: BASE + '/contact/', label: 'Contact',  match: /\/contact\// },
      { href: BASE + '/properties/mulholland-14423/', label: 'OUR PROCESS', match: /\/properties\/mulholland-14423\// }
   ];
