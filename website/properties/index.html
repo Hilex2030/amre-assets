@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- amre-favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1c3d31">
+
 <!-- amre-preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +30,10 @@
 <meta property="og:title" content="Los Angeles Properties | AMRE Real Estate Group | Luxury Homes & Investment Properties">
 <meta property="og:description" content="Browse current AMRE Real Estate Group listings in Los Angeles, Beverly Hills, Malibu, Venice, Santa Monica and more. Luxury homes, multifamily investments, and Private Exclusives.">
 <meta property="og:image" content="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:image" content="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg">
 <meta property="og:url" content="https://amre.group/properties/">
 <meta property="og:site_name" content="AMRE Real Estate Group">
 <!-- Twitter Card -->
@@ -38,25 +51,7 @@
 <!-- Tally -->
 <script async src="https://tally.so/widgets/embed.js"></script>
 <!-- Schema.org -->
-<script type="application/ld+json">{
-  "@context":"https://schema.org",
-  "@type":"RealEstateAgent",
-  "name":"AMRE Real Estate Group",
-  "url":"https://amre.group",
-  "logo":"https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-black.svg",
-  "image":"https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg",
-  "description":"Elite Los Angeles real estate advisory for sellers, buyers, and investors.",
-  "telephone":"+13237198585",
-  "email":"michael.abraham@compass.com",
-  "address":{"@type":"PostalAddress","streetAddress":"9454 Wilshire Blvd, Suite 100","addressLocality":"Beverly Hills","addressRegion":"CA","postalCode":"90212","addressCountry":"US"},
-  "areaServed":["Los Angeles","Beverly Hills","Santa Monica","Malibu","Studio City","Bel Air","Brentwood"],
-  "priceRange":"$$$",
-  "employee":[
-    {"@type":"Person","name":"Michael Abraham","jobTitle":"Real Estate Agent","identifier":"CA DRE# 02242095"},
-    {"@type":"Person","name":"Ania De Pourbaix","jobTitle":"Real Estate Agent","identifier":"CA DRE# 01891438"}
-  ],
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"3","bestRating":"5"}
-}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://amre.group/properties/#webpage","url":"https://amre.group/properties/","name":"Properties Represented by AMRE Real Estate Group","description":"Active listings, sold properties, and exclusive Compass Private Exclusives represented by AMRE Real Estate Group across Los Angeles County.","isPartOf":{"@id":"https://amre.group/#website"},"about":{"@id":"https://amre.group/#organization"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".page-hero-sub"]}},{"@type":"ItemList","@id":"https://amre.group/properties/#featured","name":"Featured Case Studies","description":"Detailed case studies of recent AMRE-represented transactions.","itemListOrder":"ItemListUnordered","numberOfItems":2,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://amre.group/properties/mulholland-14423/","name":"14423 Mulholland Drive \u2014 Bel Air","item":{"@type":"Product","@id":"https://amre.group/properties/mulholland-14423/#listing","name":"14423 Mulholland Drive, Bel Air","url":"https://amre.group/properties/mulholland-14423/","image":"https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/properties/mulholland-14423/photos/deck-dining-valley.jpg","description":"Bel Air ranch with sweeping San Fernando Valley views. Sold $1,721,000 \u2014 1.5% over asking \u2014 in 8 days on market for an out-of-state seller.","category":"Single Family Home","offers":{"@type":"Offer","price":"1721000","priceCurrency":"USD","availability":"https://schema.org/SoldOut"}}},{"@type":"ListItem","position":2,"url":"https://amre.group/properties/fruitland-401/","name":"11023 Fruitland Drive #401 \u2014 Studio City","item":{"@type":"Product","@id":"https://amre.group/properties/fruitland-401/#listing","name":"11023 Fruitland Drive Unit 401, Studio City","url":"https://amre.group/properties/fruitland-401/","image":"https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg","description":"Buyer-side representation in Studio City.","category":"Condominium"}}]}]}</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -602,6 +597,46 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   </div>
 </div>
 
+<!-- ════════════════ FEATURED CASE STUDIES ════════════════ -->
+<section style="background:var(--white);padding:64px 44px 24px" aria-label="Featured case studies">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;gap:24px;flex-wrap:wrap">
+      <div>
+        <p style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#1c3d31;margin-bottom:8px">Case Studies</p>
+        <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.4vw,40px);font-weight:400;color:#1a1a1a;line-height:1.1">Featured <em style="color:#1c3d31">transactions.</em></h2>
+      </div>
+      <p style="font-size:14px;line-height:1.65;color:#5a5a5a;max-width:420px">Deep-dive write-ups of representative AMRE deals — strategy, timeline, marketing, outcome.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px">
+      <a href="/properties/mulholland-14423/" style="display:block;border-radius:12px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 40px rgba(0,0,0,.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="aspect-ratio:16/10;background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/properties/mulholland-14423/photos/deck-dining-valley.jpg');background-size:cover;background-position:center;position:relative">
+          <span style="position:absolute;top:16px;left:16px;background:#ffc13c;color:#070B33;padding:6px 12px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase">Sold · Case Study</span>
+        </div>
+        <div style="padding:24px 24px 28px">
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:400;color:#1a1a1a;margin-bottom:6px">14423 Mulholland Drive</h3>
+          <p style="font-size:13px;color:#5a5a5a;margin-bottom:16px">Bel Air, CA · Single-Family</p>
+          <div style="display:flex;gap:24px;flex-wrap:wrap;font-size:12px;color:#5a5a5a">
+            <div><strong style="color:#1c3d31;font-size:18px;font-family:'Playfair Display',Georgia,serif">$1.72M</strong><br>Sale price</div>
+            <div><strong style="color:#1c3d31;font-size:18px;font-family:'Playfair Display',Georgia,serif">+1.5%</strong><br>Over asking</div>
+            <div><strong style="color:#1c3d31;font-size:18px;font-family:'Playfair Display',Georgia,serif">8 days</strong><br>On market</div>
+          </div>
+        </div>
+      </a>
+      <a href="/properties/fruitland-401/" style="display:block;border-radius:12px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 40px rgba(0,0,0,.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="aspect-ratio:16/10;background-image:url('https://res.cloudinary.com/luxuryp/videos/f_auto,q_auto/so_0,eo_0/woxa6oigeefrvm3lrso0/11023-fruitland-dr-branded-3.jpg');background-size:cover;background-position:center;position:relative">
+          <span style="position:absolute;top:16px;left:16px;background:#1c3d31;color:#fff;padding:6px 12px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase">Buyer-Side · Case Study</span>
+        </div>
+        <div style="padding:24px 24px 28px">
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:400;color:#1a1a1a;margin-bottom:6px">11023 Fruitland Drive #401</h3>
+          <p style="font-size:13px;color:#5a5a5a;margin-bottom:16px">Studio City, CA · Condominium</p>
+          <p style="font-size:14px;line-height:1.65;color:#5a5a5a">Buyer-side representation. View the full case study →</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <!-- FILTER -->
 <div style="background:var(--white);border-bottom:1px solid var(--rule);padding:16px 44px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;position:sticky;top:var(--nav-h);z-index:100">
   <span style="font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--subtle);margin-right:4px">Filter:</span>
@@ -724,9 +759,9 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   <div class="footer-grid">
     <div>
       <div class="footer-logos">
-        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" width="70">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" width="70" decoding="async" loading="lazy">
         <div class="footer-sep"></div>
-        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64" decoding="async" loading="lazy">
       </div>
       <p class="footer-tagline">Empowering clients to achieve their real estate dreams, one home at a time. Compass Beverly Hills.</p>
     </div>
@@ -773,7 +808,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
       AMRE Real Estate Group is a team of real estate agents affiliated with Compass. <a href="https://www.compass.com/" target="_blank" rel="noopener">Compass</a> is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number 01991628. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to the accuracy of any description. All measurements and square footage are approximate. If your property is currently listed for sale this is not a solicitation.
     </p>
     <div class="site-footer-disclosure-eho">
-      <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/logos/realtor-eho-dark.jpg" alt="REALTOR® and Equal Housing Opportunity" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/logos/realtor-eho-dark.jpg" alt="REALTOR® and Equal Housing Opportunity" loading="lazy" decoding="async">
     </div>
   </div>
 </div>

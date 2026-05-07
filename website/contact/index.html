@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- amre-favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1c3d31">
+
 <!-- amre-preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +30,10 @@
 <meta property="og:title" content="Contact AMRE Real Estate Group | Los Angeles | (323) 719-8585">
 <meta property="og:description" content="Contact Michael Abraham and Ania De Pourbaix at AMRE Real Estate Group. Compass Beverly Hills. (323) 719-8585 · michael.abraham@compass.com · 9454 Wilshire Blvd Suite 100.">
 <meta property="og:image" content="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/e5f987f4-ec7a-4252-89fc-b2ccaf9afb70">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:image" content="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/e5f987f4-ec7a-4252-89fc-b2ccaf9afb70">
 <meta property="og:url" content="https://amre.group/contact/">
 <meta property="og:site_name" content="AMRE Real Estate Group">
 <!-- Twitter Card -->
@@ -627,6 +640,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
 
 </style>
 <link rel="stylesheet" href="/assets/css/site-overrides.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://amre.group/contact/#faq","mainEntity":[{"@type":"Question","name":"How quickly will you respond if I send a message?","acceptedAnswer":{"@type":"Answer","text":"We respond to every message personally within a few hours during business days. After-hours messages typically get a reply by 9am the next business morning."}},{"@type":"Question","name":"Can I just have an exploratory conversation before committing to anything?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. The first call or coffee is on us \u2014 no obligation, no pressure. We'd rather have a useful 30-minute conversation about your goals than a transactional one about ours."}},{"@type":"Question","name":"Do you work with first-time buyers or only luxury / investment clients?","acceptedAnswer":{"@type":"Answer","text":"Both. We represent first-time owner-occupant buyers, seasoned investors, sellers preparing for retirement, and architectural-significant transactions. Every client gets the same level of service regardless of price point."}},{"@type":"Question","name":"How do I get a free home valuation?","acceptedAnswer":{"@type":"Answer","text":"Submit the contact form below or email us directly. We'll schedule a brief walkthrough (in-person or virtual) and follow up with a comparative market analysis tailored to your home and neighborhood."}},{"@type":"Question","name":"Can we meet in person, or is everything done remotely?","acceptedAnswer":{"@type":"Answer","text":"Both options work. Our office is at Compass Beverly Hills (9454 Wilshire Blvd, Suite 100). We're equally happy to meet at your home, on-site at a property, or over Zoom \u2014 whichever fits your schedule."}}]}</script>
 </head>
 <body>
 <div id="site-nav-mount"></div>
@@ -677,15 +691,43 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
   </div>
 </div>
 
+
+<!-- ════════════════ FAQ ════════════════ -->
+<section style="background:#f7edf0;padding:96px 24px" aria-label="Contact FAQ" id="faq">
+  <div style="max-width:880px;margin:0 auto">
+    <div class="eyebrow f" style="text-align:center;margin-bottom:16px;color:#1c3d31;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500">FAQ</div>
+    <h2 class="f" style="text-align:center;margin-bottom:48px;font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,4.2vw,52px);font-weight:400;color:#1a1a1a;line-height:1.1">Common <em style="color:#1c3d31">questions.</em></h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary class="faq-q">How quickly will you respond if I send a message?</summary><div class="faq-a"><p>We respond to every message personally within a few hours during business days. After-hours messages typically get a reply by 9am the next business morning.</p></div></details>
+      <details class="faq-item"><summary class="faq-q">Can I just have an exploratory conversation before committing to anything?</summary><div class="faq-a"><p>Absolutely. The first call or coffee is on us — no obligation, no pressure. We'd rather have a useful 30-minute conversation about your goals than a transactional one about ours.</p></div></details>
+      <details class="faq-item"><summary class="faq-q">Do you work with first-time buyers or only luxury / investment clients?</summary><div class="faq-a"><p>Both. We represent first-time owner-occupant buyers, seasoned investors, sellers preparing for retirement, and architectural-significant transactions. Every client gets the same level of service regardless of price point.</p></div></details>
+      <details class="faq-item"><summary class="faq-q">How do I get a free home valuation?</summary><div class="faq-a"><p>Submit the contact form below or email us directly. We'll schedule a brief walkthrough (in-person or virtual) and follow up with a comparative market analysis tailored to your home and neighborhood.</p></div></details>
+      <details class="faq-item"><summary class="faq-q">Can we meet in person, or is everything done remotely?</summary><div class="faq-a"><p>Both options work. Our office is at Compass Beverly Hills (9454 Wilshire Blvd, Suite 100). We're equally happy to meet at your home, on-site at a property, or over Zoom — whichever fits your schedule.</p></div></details>
+    </div>
+  </div>
+</section>
+<style>
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-top:1px solid rgba(0,0,0,.08);padding:0}
+.faq-item:last-child{border-bottom:1px solid rgba(0,0,0,.08)}
+.faq-q{cursor:pointer;list-style:none;padding:24px 0;font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:400;color:#1a1a1a;display:flex;justify-content:space-between;align-items:center;gap:24px;transition:color .2s}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:"+";font-family:'Montserrat',sans-serif;font-size:24px;font-weight:300;color:#1c3d31;transition:transform .25s}
+.faq-item[open] .faq-q::after{content:"−"}
+.faq-q:hover{color:#1c3d31}
+.faq-a{padding:0 0 24px;font-size:15px;line-height:1.78;color:#5a5a5a}
+.faq-a p{margin:0}
+</style>
+
 <footer class="site-footer" itemscope itemtype="https://schema.org/RealEstateAgent">
   <meta itemprop="name" content="AMRE Real Estate Group">
   <meta itemprop="telephone" content="+13237198585">
   <div class="footer-grid">
     <div>
       <div class="footer-logos">
-        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" width="70">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" width="70" decoding="async" loading="lazy">
         <div class="footer-sep"></div>
-        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64" decoding="async" loading="lazy">
       </div>
       <p class="footer-tagline">Empowering clients to achieve their real estate dreams, one home at a time. Compass Beverly Hills.</p>
     </div>
@@ -732,7 +774,7 @@ body{font-family:'Montserrat',-apple-system,sans-serif}
       AMRE Real Estate Group is a team of real estate agents affiliated with Compass. <a href="https://www.compass.com/" target="_blank" rel="noopener">Compass</a> is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number 01991628. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to the accuracy of any description. All measurements and square footage are approximate. If your property is currently listed for sale this is not a solicitation.
     </p>
     <div class="site-footer-disclosure-eho">
-      <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/logos/realtor-eho-dark.jpg" alt="REALTOR® and Equal Housing Opportunity" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/logos/realtor-eho-dark.jpg" alt="REALTOR® and Equal Housing Opportunity" loading="lazy" decoding="async">
     </div>
   </div>
 </div>
