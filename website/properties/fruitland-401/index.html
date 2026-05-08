@@ -19,7 +19,10 @@
 <link rel="preconnect" href="https://raw.githubusercontent.com">
 <link rel="preconnect" href="https://res.cloudinary.com">
 <link rel="dns-prefetch" href="https://media-production.lp-cdn.com">
-<link rel="dns-prefetch" href="https://tally.so">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="/assets/forms/forms.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="/assets/forms/forms.js" defer></script>
 
 <title>11023 Fruitland Dr Unit 401 | Studio City Penthouse | AMRE Real Estate Group</title>
 <meta name="description" content="Rare top-floor corner penthouse in Studio City. 3 bed, 2.5 bath, 1,705 sq ft. Listed at $1,150,000. AMRE Real Estate Group at Compass. Call (323) 719-8585.">
@@ -690,8 +693,58 @@ body,p,span,a,button,input,label,
     <p style="text-align:center;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#86868b;margin-bottom:8px">Schedule a Showing</p>
     <h2 style="text-align:center;font-family:var(--serif);font-size:clamp(26px,4vw,38px);font-weight:400;color:#1a1a1a;margin-bottom:8px">Interested in This Home?</h2>
     <p style="text-align:center;color:#5a5a5a;margin-bottom:40px;font-size:15px">We'll arrange a private showing at your convenience.</p>
-    <div data-tally-src="https://tally.so/embed/aQZxXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" data-tally-overlay="0" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" style="width:100%"></div>
-    <script async src="https://tally.so/widgets/embed.js"></script>
+    <form class="amre-form" data-amre-form data-form-type="contact" data-source="amre.group/properties/fruitland-401/" data-property="11023 Fruitland Dr Unit 401, Studio City CA 91602" novalidate>
+
+        <input type="hidden" name="inquiry_type" value="">
+
+        <div class="amre-prop-context">
+          <strong>Inquiry about:</strong> 11023 Fruitland Dr Unit 401, Studio City CA 91602
+        </div>
+        <div class="amre-row-2">
+          <div class="amre-field">
+            <label class="amre-label" for="cf-fruitland401-fname">First name <span class="amre-required">*</span></label>
+            <input class="amre-input" id="cf-fruitland401-fname" name="first_name" type="text" required autocomplete="given-name">
+          </div>
+          <div class="amre-field">
+            <label class="amre-label" for="cf-fruitland401-lname">Last name</label>
+            <input class="amre-input" id="cf-fruitland401-lname" name="last_name" type="text" autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="amre-field">
+          <label class="amre-label" for="cf-fruitland401-email">Email <span class="amre-required">*</span></label>
+          <input class="amre-input" id="cf-fruitland401-email" name="email" type="email" required autocomplete="email" inputmode="email">
+        </div>
+
+        <div class="amre-field">
+          <label class="amre-label" for="cf-fruitland401-phone">Phone</label>
+          <input class="amre-input" id="cf-fruitland401-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(optional)">
+        </div>
+
+        <div class="amre-field">
+          <label class="amre-label" for="cf-fruitland401-message">Message</label>
+          <textarea class="amre-textarea" id="cf-fruitland401-message" name="message" rows="5" placeholder="Tell us about your goals, timing, or any questions…"></textarea>
+        </div>
+
+        <label class="amre-consent">
+          <input type="checkbox" name="optin" required>
+          <span>I agree to be contacted by AMRE Real Estate Group via call, email, and text for real estate services. Reply ‘stop’ to opt out at any time. Message and data rates may apply. <a href="/terms-and-conditions/">Privacy Policy</a>.</span>
+        </label>
+
+        <button type="submit" class="amre-submit">
+          <span class="amre-btn-text">Send inquiry</span>
+        </button>
+
+        <div class="amre-error" role="alert">
+          Something went wrong sending your message. Please try again, call <a href="tel:3237198585">(323) 719-8585</a>, or email <a href="mailto:michael.abraham@compass.com">michael.abraham@compass.com</a> directly.
+        </div>
+      </form>
+
+      <div class="amre-success" role="status" aria-live="polite">
+        <div class="amre-success-icon" aria-hidden="true">✓</div>
+        <h3 class="amre-success-h">Inquiry sent.</h3>
+        <p class="amre-success-p">Thanks for your interest in 11023 Fruitland Dr. We’ll be in touch within a few hours to schedule a private showing or answer your questions.</p>
+      </div>
   </div>
 </section>
 
