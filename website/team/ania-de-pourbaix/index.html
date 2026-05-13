@@ -141,45 +141,43 @@ img{display:block;max-width:100%}
 button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 [id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 
-/* ── HERO (split layout: dark text panel + seated photo) ── */
+/* ── HERO (full-width banner with location/architecture imagery) ── */
 .bio-hero{
   position:relative;
-  background:#0a0a0c;
-  display:grid;
-  grid-template-columns:1fr 1fr;
   min-height:clamp(440px,58vh,560px);
   padding-top:var(--nav-h);
   overflow:hidden;
-  align-items:stretch;
+  background:#0a0a0c;
 }
-.bio-hero-text{
-  position:relative;
-  z-index:3;
-  padding:48px clamp(28px,4.5vw,64px);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  color:#fff;
-}
-.bio-hero-photo{
-  position:relative;
-  background-size:contain;
-  background-position:right center;
-  background-repeat:no-repeat;
-  background-color:#0a0a0c;
-}
-.bio-hero-photo::before{
-  content:'';
+.bio-hero-bg{
   position:absolute;
   inset:0;
-  z-index:1;
-  background:linear-gradient(to right,
-    #0a0a0c 0%,
-    rgba(10,10,12,.92) 18%,
-    rgba(10,10,12,.45) 36%,
-    rgba(10,10,12,.1) 58%,
-    transparent 78%);
-  pointer-events:none;
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+.bio-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,
+    rgba(7,11,51,.42) 0%,
+    rgba(7,11,51,.18) 32%,
+    rgba(7,11,51,.12) 50%,
+    rgba(20,43,34,.55) 78%,
+    rgba(20,43,34,.92) 100%);
+}
+.bio-hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:0 auto;
+  padding:80px clamp(24px,4vw,40px) 56px;
+  height:100%;
+  min-height:inherit;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  color:#fff;
 }
 .bio-hero-eyebrow{
   display:inline-block;
@@ -189,50 +187,32 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
   font-weight:500;
   color:var(--brass);
   margin-bottom:20px;
+  text-shadow:0 1px 2px rgba(0,0,0,.4);
 }
 .bio-hero-name{
   font-family:var(--serif);
   font-weight:500;
   font-style:italic;
-  font-size:clamp(36px,4.6vw,64px);
-  line-height:1.05;
-  margin:0 0 20px;
+  font-size:clamp(44px,7vw,88px);
+  line-height:1.02;
+  margin:0 0 24px;
   letter-spacing:-.01em;
+  text-shadow:0 2px 24px rgba(0,0,0,.35);
 }
 .bio-hero-role{
   font-family:var(--sans);
-  font-size:clamp(14px,1.05vw,16px);
+  font-size:clamp(14px,1.1vw,17px);
   font-weight:300;
   letter-spacing:.01em;
-  color:rgba(255,255,255,.84);
-  max-width:460px;
+  color:rgba(255,255,255,.9);
+  max-width:640px;
   line-height:1.65;
+  text-shadow:0 1px 8px rgba(0,0,0,.35);
 }
 @media(max-width:860px){
-  .bio-hero{
-    grid-template-columns:1fr;
-    grid-template-rows:340px auto;
-    min-height:auto;
-    padding-top:0;
-  }
-  .bio-hero-photo{
-    order:1;
-    background-position:center center;
-    background-size:contain;
-    margin-top:var(--nav-h);
-  }
-  .bio-hero-photo::before{
-    background:linear-gradient(to bottom,
-      transparent 0%,
-      rgba(10,10,12,.05) 55%,
-      rgba(10,10,12,.78) 88%,
-      #0a0a0c 100%);
-  }
-  .bio-hero-text{
-    order:2;
-    padding:40px 24px 48px;
-  }
-  .bio-hero-name{font-size:clamp(36px,10vw,56px)}
+  .bio-hero{min-height:clamp(380px,62vh,520px)}
+  .bio-hero-inner{padding:64px 20px 40px}
+  .bio-hero-name{font-size:clamp(40px,11vw,64px)}
 }
 
 /* ── QUICK FACTS BAR ── */
@@ -320,6 +300,45 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .bio-section.dark .bio-prose strong,.bio-section.navy .bio-prose strong{color:#fff}
 @media(max-width:680px){
   .bio-section{padding:64px 20px}
+}
+
+/* ── BIO with portrait card (added between hero and credentials) ── */
+.bio-with-photo{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:64px;
+  max-width:1080px;
+  margin:0 auto;
+  align-items:start;
+}
+.bio-with-photo .bio-prose-col{min-width:0}
+.bio-portrait{
+  position:sticky;
+  top:calc(var(--nav-h) + 32px);
+}
+.bio-portrait-img{
+  width:100%;
+  aspect-ratio:4/5;
+  background-size:cover;
+  background-position:center 18%;
+  border-radius:14px;
+  box-shadow:0 1px 2px rgba(7,11,51,.04),0 18px 40px rgba(7,11,51,.10);
+}
+.bio-portrait-caption{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--subtle);
+  margin-top:14px;
+  font-weight:500;
+  text-align:center;
+}
+@media(max-width:860px){
+  .bio-with-photo{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+  .bio-portrait{position:static;max-width:300px;margin:0 auto}
 }
 
 /* ── CREDENTIALS GRID ── */
@@ -837,12 +856,13 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 
 <!-- ══════════ HERO ══════════ -->
 <section class="bio-hero" aria-label="Ania De Pourbaix">
-  <div class="bio-hero-text">
+  <div class="bio-hero-bg" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/sellers-hero.jpg')"></div>
+  <div class="bio-hero-overlay"></div>
+  <div class="bio-hero-inner">
     <span class="bio-hero-eyebrow">AMRE Real Estate Group · Compass Beverly Hills</span>
     <h1 class="bio-hero-name">Ania De Pourbaix</h1>
     <p class="bio-hero-role">Principal Agent and Realtor® with deep expertise across the LA Westside luxury market — and a reputation for meticulous client service from first showing through close.</p>
   </div>
-  <div class="bio-hero-photo" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-ania-sofa-green.jpg')"></div>
 </section>
 
 <!-- ══════════ QUICK FACTS ══════════ -->
@@ -869,14 +889,22 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 
 <!-- ══════════ BIO ══════════ -->
 <section class="bio-section" id="bio">
-  <div class="bio-section-inner">
-    <span class="bio-eyebrow f">About Ania</span>
+  <div class="bio-section-inner wide">
+    <div class="bio-with-photo">
+      <div class="bio-prose-col">
+        <span class="bio-eyebrow f">About Ania</span>
     <h2 class="bio-h2 f">A <em>different lens</em> on Los Angeles real estate.</h2>
     <div class="bio-prose f">
         <p><strong>Ania De Pourbaix</strong> is a seasoned Los Angeles Realtor® whose calm command of the transaction has earned her a deeply loyal client base across the city's most competitive markets. As Principal Agent at AMRE Real Estate Group at Compass Beverly Hills, Ania anchors every deal with meticulous attention to detail, strategic negotiation, and the kind of concierge-level service most clients have never experienced before.</p>
         <p>Her expertise spans the <strong>LA Westside luxury corridor</strong> — Beverly Hills, Bel Air, Brentwood, Santa Monica, and Malibu — where she's guided buyers and sellers through some of the most consequential transactions of their lives. Whether the property is a first home or a generational estate, Ania brings the same standard: she reads the room, she reads the contract, and she advocates relentlessly until the door is closed.</p>
         <p>Following the <strong>Palisades Fire</strong>, Ania became a trusted advisor to displaced families navigating the most difficult chapter of their housing history. She combined early off-market lead generation with patient, emotionally intelligent guidance — finding homes for clients who had lost everything, and doing it with grace.</p>
         <p>Ania partners with <strong>Michael Abraham</strong> on every transaction. Clients get two principal-level agents on every deal — Ania's intuition and negotiation expertise paired with Michael's architectural eye and investment fluency. The two operate as one team with one shared standard: <strong>clarity, integrity, and unrelenting advocacy on behalf of the families and investors who trust them.</strong></p>
+    </div>
+      </div>
+      <aside class="bio-portrait" aria-label="Ania's portrait">
+        <div class="bio-portrait-img" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-ania-sofa-green.jpg')" role="img" aria-label="Ania De Pourbaix"></div>
+        <div class="bio-portrait-caption">Ania De Pourbaix · DRE #01891438</div>
+      </aside>
     </div>
   </div>
 </section>
