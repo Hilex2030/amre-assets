@@ -144,45 +144,43 @@ img{display:block;max-width:100%}
 button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 [id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 
-/* ── HERO (split layout: dark text panel + seated photo) ── */
+/* ── HERO (full-width banner with location/architecture imagery) ── */
 .bio-hero{
   position:relative;
-  background:#0a0a0c;
-  display:grid;
-  grid-template-columns:1fr 1fr;
   min-height:clamp(440px,58vh,560px);
   padding-top:var(--nav-h);
   overflow:hidden;
-  align-items:stretch;
+  background:#0a0a0c;
 }
-.bio-hero-text{
-  position:relative;
-  z-index:3;
-  padding:48px clamp(28px,4.5vw,64px);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  color:#fff;
-}
-.bio-hero-photo{
-  position:relative;
-  background-size:contain;
-  background-position:right center;
-  background-repeat:no-repeat;
-  background-color:#0a0a0c;
-}
-.bio-hero-photo::before{
-  content:'';
+.bio-hero-bg{
   position:absolute;
   inset:0;
-  z-index:1;
-  background:linear-gradient(to right,
-    #0a0a0c 0%,
-    rgba(10,10,12,.92) 18%,
-    rgba(10,10,12,.45) 36%,
-    rgba(10,10,12,.1) 58%,
-    transparent 78%);
-  pointer-events:none;
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+.bio-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,
+    rgba(7,11,51,.42) 0%,
+    rgba(7,11,51,.18) 32%,
+    rgba(7,11,51,.12) 50%,
+    rgba(20,43,34,.55) 78%,
+    rgba(20,43,34,.92) 100%);
+}
+.bio-hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:0 auto;
+  padding:80px clamp(24px,4vw,40px) 56px;
+  height:100%;
+  min-height:inherit;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  color:#fff;
 }
 .bio-hero-eyebrow{
   display:inline-block;
@@ -192,50 +190,32 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
   font-weight:500;
   color:var(--brass);
   margin-bottom:20px;
+  text-shadow:0 1px 2px rgba(0,0,0,.4);
 }
 .bio-hero-name{
   font-family:var(--serif);
   font-weight:500;
   font-style:italic;
-  font-size:clamp(36px,4.6vw,64px);
-  line-height:1.05;
-  margin:0 0 20px;
+  font-size:clamp(44px,7vw,88px);
+  line-height:1.02;
+  margin:0 0 24px;
   letter-spacing:-.01em;
+  text-shadow:0 2px 24px rgba(0,0,0,.35);
 }
 .bio-hero-role{
   font-family:var(--sans);
-  font-size:clamp(14px,1.05vw,16px);
+  font-size:clamp(14px,1.1vw,17px);
   font-weight:300;
   letter-spacing:.01em;
-  color:rgba(255,255,255,.84);
-  max-width:460px;
+  color:rgba(255,255,255,.9);
+  max-width:640px;
   line-height:1.65;
+  text-shadow:0 1px 8px rgba(0,0,0,.35);
 }
 @media(max-width:860px){
-  .bio-hero{
-    grid-template-columns:1fr;
-    grid-template-rows:340px auto;
-    min-height:auto;
-    padding-top:0;
-  }
-  .bio-hero-photo{
-    order:1;
-    background-position:center center;
-    background-size:contain;
-    margin-top:var(--nav-h);
-  }
-  .bio-hero-photo::before{
-    background:linear-gradient(to bottom,
-      transparent 0%,
-      rgba(10,10,12,.05) 55%,
-      rgba(10,10,12,.78) 88%,
-      #0a0a0c 100%);
-  }
-  .bio-hero-text{
-    order:2;
-    padding:40px 24px 48px;
-  }
-  .bio-hero-name{font-size:clamp(36px,10vw,56px)}
+  .bio-hero{min-height:clamp(380px,62vh,520px)}
+  .bio-hero-inner{padding:64px 20px 40px}
+  .bio-hero-name{font-size:clamp(40px,11vw,64px)}
 }
 
 /* ── QUICK FACTS BAR ── */
@@ -323,6 +303,45 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .bio-section.dark .bio-prose strong,.bio-section.navy .bio-prose strong{color:#fff}
 @media(max-width:680px){
   .bio-section{padding:64px 20px}
+}
+
+/* ── BIO with portrait card (added between hero and credentials) ── */
+.bio-with-photo{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:64px;
+  max-width:1080px;
+  margin:0 auto;
+  align-items:start;
+}
+.bio-with-photo .bio-prose-col{min-width:0}
+.bio-portrait{
+  position:sticky;
+  top:calc(var(--nav-h) + 32px);
+}
+.bio-portrait-img{
+  width:100%;
+  aspect-ratio:4/5;
+  background-size:cover;
+  background-position:center 18%;
+  border-radius:14px;
+  box-shadow:0 1px 2px rgba(7,11,51,.04),0 18px 40px rgba(7,11,51,.10);
+}
+.bio-portrait-caption{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--subtle);
+  margin-top:14px;
+  font-weight:500;
+  text-align:center;
+}
+@media(max-width:860px){
+  .bio-with-photo{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+  .bio-portrait{position:static;max-width:300px;margin:0 auto}
 }
 
 /* ── CREDENTIALS GRID ── */
@@ -840,12 +859,13 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 
 <!-- ══════════ HERO ══════════ -->
 <section class="bio-hero" aria-label="Michael Abraham">
-  <div class="bio-hero-text">
+  <div class="bio-hero-bg" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/bel-air/neighborhood-hero.jpg')"></div>
+  <div class="bio-hero-overlay"></div>
+  <div class="bio-hero-inner">
     <span class="bio-hero-eyebrow">AMRE Real Estate Group · Compass Beverly Hills</span>
     <h1 class="bio-hero-name">Michael Abraham</h1>
     <p class="bio-hero-role">Principal Agent, Licensed Architect, and member of the National Association of Realtors®, advising clients across Los Angeles from Compass Beverly Hills.</p>
   </div>
-  <div class="bio-hero-photo" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-michael-couch-white.jpg')"></div>
 </section>
 
 <!-- ══════════ QUICK FACTS ══════════ -->
@@ -872,14 +892,22 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 
 <!-- ══════════ BIO ══════════ -->
 <section class="bio-section" id="bio">
-  <div class="bio-section-inner">
-    <span class="bio-eyebrow f">About Michael</span>
+  <div class="bio-section-inner wide">
+    <div class="bio-with-photo">
+      <div class="bio-prose-col">
+        <span class="bio-eyebrow f">About Michael</span>
     <h2 class="bio-h2 f">A <em>different lens</em> on Los Angeles real estate.</h2>
     <div class="bio-prose f">
         <p><strong>Michael Abraham</strong> brings a rare combination to Los Angeles real estate: the eye of a licensed architect and the instincts of a seasoned investor. As Principal Agent of AMRE Real Estate Group at Compass Beverly Hills, Michael advises sellers, buyers, and investors across the city's most sought-after neighborhoods — and is known for integrity, strategic thinking, and a client-first approach that runs deeper than the transaction.</p>
         <p>His architectural training shapes everything from how he reads a floor plan to how he evaluates the long-term value of a Los Angeles home. Where most agents see square footage, Michael sees structural integrity, light, flow, renovation potential, and the design decisions that quietly determine resale value years from now. For buyers, that means honest counsel on what's worth pursuing — and what isn't. For sellers, it means a marketing strategy grounded in the property's actual architectural merits.</p>
         <p>Beyond single-family advisory, Michael has spent over a decade investing in <strong>Los Angeles multifamily real estate</strong>, specializing in <strong>value-add and 1031-exchange strategies</strong> that unlock hidden upside. He counsels investor clients on rent control compliance, deferred-maintenance underwriting, and the long-game arithmetic of cash-on-cash versus appreciation — the kind of analysis that turns a marginal deal into a generational one.</p>
         <p>Michael partners with <strong>Ania De Pourbaix</strong> on every transaction. Clients get two senior agents on every deal — never a junior assistant. The pair operates with one shared belief: <strong>the most important real estate decisions deserve advisors who think like clients, not just transact like agents.</strong></p>
+    </div>
+      </div>
+      <aside class="bio-portrait" aria-label="Michael's portrait">
+        <div class="bio-portrait-img" style="background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-michael-couch-white.jpg')" role="img" aria-label="Michael Abraham"></div>
+        <div class="bio-portrait-caption">Michael Abraham · DRE #02242095</div>
+      </aside>
     </div>
   </div>
 </section>
