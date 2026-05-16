@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1c3d31">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://raw.githubusercontent.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap">
+
+<title>Sample Maximum Price Report — 2810 S Harcourt Ave | AMRE Real Estate Group</title>
+<meta name="description" content="An example of the five-part Maximum Price Report AMRE Real Estate Group personally prepares for sellers — featuring a sample West Adams property.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://amre.group/sample-report/">
+
+<style>
+:root{
+  --forest:  #1c3d31;
+  --forest-dk:#163328;
+  --navy:    #070B33;
+  --brass:   #ffc13c;
+  --brass-dk:#e6a800;
+  --cream:   #efdbc0;
+  --offwhite:#faf7f2;
+  --paper:   #f5f0e8;
+  --ink:     #1a1a1a;
+  --mid:     #5A5A5A;
+  --subtle:  #86868b;
+  --rule:    #e5e0d8;
+  --good:    #2b7a4b;
+  --warn:    #c97d2a;
+
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
+  --nav-h:56px;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{font-family:var(--sans);font-weight:300;background:var(--offwhite);color:var(--ink);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{font-family:var(--sans);cursor:pointer;border:none;background:none}
+
+/* ── SAMPLE BANNER ── */
+.sample-banner{
+  position:sticky;top:0;z-index:100;
+  background:var(--brass);
+  color:var(--navy);
+  padding:9px 28px;
+  text-align:center;
+  font-family:var(--sans);
+  font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;
+  border-bottom:1px solid rgba(7,11,51,.15);
+  box-shadow:0 2px 12px rgba(7,11,51,.08);
+}
+.sample-banner strong{font-weight:700}
+.sample-banner a{text-decoration:underline;text-underline-offset:2px;margin-left:8px}
+
+/* ── DOCUMENT LAYOUT ── */
+.doc{
+  max-width:980px;
+  margin:0 auto;
+  background:#fff;
+  box-shadow:0 4px 40px rgba(28,61,49,.06);
+  padding:0;
+}
+
+/* ── COVER ── */
+.cover{
+  position:relative;
+  padding:48px 56px 56px;
+  background:linear-gradient(160deg,var(--forest) 0%,var(--forest-dk) 100%);
+  color:#fff;
+  overflow:hidden;
+}
+.cover-bg{
+  position:absolute;inset:0;
+  background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/properties-hero-sunset.jpg');
+  background-size:cover;background-position:center;
+  opacity:.18;filter:grayscale(.1);
+}
+.cover-inner{position:relative;z-index:2}
+.cover-brand{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:48px;
+}
+.cover-brand img.amre{height:24px;width:auto}
+.cover-brand .sep{width:1px;height:18px;background:rgba(255,255,255,.3)}
+.cover-brand img.compass{height:15px;width:auto;opacity:.85}
+
+.cover-eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:18px;
+}
+.cover-title{
+  font-family:var(--serif);
+  font-size:clamp(36px,5.5vw,56px);
+  font-weight:400;line-height:1.05;
+  margin-bottom:18px;
+}
+.cover-title em{font-style:italic;color:var(--brass)}
+.cover-property{
+  font-family:var(--serif);
+  font-size:clamp(20px,2.6vw,26px);
+  font-weight:400;font-style:italic;
+  color:rgba(255,255,255,.85);
+  margin-bottom:36px;
+}
+.cover-meta{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+  padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.18);
+}
+.cover-meta-label{
+  font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  margin-bottom:6px;
+}
+.cover-meta-val{
+  font-family:var(--serif);
+  font-size:16px;font-weight:400;
+  color:#fff;
+}
+@media(max-width:680px){
+  .cover{padding:36px 24px 40px}
+  .cover-meta{grid-template-columns:1fr;gap:18px}
+}
+
+/* ── EXEC SUMMARY ── */
+.exec{
+  padding:48px 56px;
+  background:var(--paper);
+  border-bottom:1px solid var(--rule);
+}
+.exec-h{
+  font-family:var(--serif);
+  font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--forest);
+  margin-bottom:18px;
+}
+.exec-headline{
+  font-family:var(--serif);
+  font-size:clamp(22px,3vw,28px);
+  font-weight:400;line-height:1.35;
+  color:var(--ink);
+  margin-bottom:28px;
+}
+.exec-headline em{font-style:italic;color:var(--forest)}
+.exec-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+.exec-stat-label{
+  font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mid);margin-bottom:6px;
+}
+.exec-stat-val{
+  font-family:var(--serif);
+  font-size:clamp(26px,3.5vw,32px);
+  font-weight:400;
+  color:var(--forest);
+  line-height:1;
+  margin-bottom:4px;
+}
+.exec-stat-val em{font-style:italic}
+.exec-stat-sub{
+  font-size:11px;font-weight:400;
+  color:var(--mid);
+  line-height:1.5;
+}
+@media(max-width:680px){
+  .exec{padding:36px 24px}
+  .exec-grid{grid-template-columns:1fr;gap:24px}
+}
+
+/* ── SECTION ── */
+.sec{padding:56px 56px}
+.sec+.sec{border-top:1px solid var(--rule)}
+.sec-eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--forest);
+  margin-bottom:14px;
+}
+.sec-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--forest);opacity:.5}
+.sec-num{
+  font-family:var(--serif);
+  font-size:12px;font-weight:400;font-style:italic;
+  color:var(--brass);
+}
+.sec-h{
+  font-family:var(--serif);
+  font-size:clamp(26px,3.4vw,34px);
+  font-weight:400;line-height:1.15;
+  color:var(--ink);
+  margin-bottom:14px;
+}
+.sec-h em{font-style:italic;color:var(--forest)}
+.sec-sub{
+  font-size:15px;font-weight:300;line-height:1.65;
+  color:var(--mid);
+  margin-bottom:32px;
+  max-width:680px;
+}
+@media(max-width:680px){
+  .sec{padding:40px 24px}
+  .sec-sub{margin-bottom:24px}
+}
+
+/* ── PROPERTY OVERVIEW ── */
+.prop-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0;
+  border:1px solid var(--rule);
+  border-radius:6px;
+  overflow:hidden;
+}
+.prop-row{
+  padding:18px 24px;
+  border-bottom:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.prop-row:nth-child(odd){border-right:1px solid var(--rule)}
+.prop-row:last-child,.prop-row:nth-last-child(2){border-bottom:none}
+.prop-label{
+  font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mid);
+}
+.prop-val{
+  font-family:var(--serif);
+  font-size:15px;font-weight:400;
+  color:var(--ink);
+}
+@media(max-width:680px){
+  .prop-grid{grid-template-columns:1fr}
+  .prop-row:nth-child(odd){border-right:none}
+  .prop-row{border-bottom:1px solid var(--rule)}
+}
+
+/* ── CMA TABLE ── */
+.cma-table{
+  width:100%;
+  border-collapse:collapse;
+  border:1px solid var(--rule);
+  border-radius:6px;
+  overflow:hidden;
+  font-size:13px;
+  background:#fff;
+}
+.cma-table thead{background:var(--paper)}
+.cma-table th{
+  text-align:left;
+  padding:14px 12px;
+  font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mid);
+  border-bottom:1px solid var(--rule);
+}
+.cma-table td{
+  padding:14px 12px;
+  border-bottom:1px solid var(--rule);
+  font-size:13px;font-weight:300;
+  color:var(--ink);
+  line-height:1.4;
+}
+.cma-table tr:last-child td{border-bottom:none}
+.cma-table tr:hover td{background:rgba(245,240,232,.5)}
+.cma-table .addr{font-weight:400}
+.cma-table .price{font-family:var(--serif);font-weight:400;color:var(--forest);white-space:nowrap}
+.cma-table .ppsf{color:var(--mid);font-size:12px}
+.cma-table .status-active{color:var(--warn);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.cma-table .status-sold{color:var(--good);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.cma-table-wrap{overflow-x:auto;margin-bottom:24px}
+.cma-summary{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  padding:24px;background:var(--paper);border-radius:6px;
+}
+.cma-sum-label{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
+.cma-sum-val{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--forest);line-height:1}
+.cma-sum-sub{font-size:11px;color:var(--mid);margin-top:4px}
+@media(max-width:680px){
+  .cma-summary{grid-template-columns:1fr;gap:14px}
+  .cma-table th,.cma-table td{padding:10px 8px;font-size:12px}
+}
+
+/* ── FORECAST ── */
+.forecast-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+  margin-bottom:24px;
+}
+.forecast-card{
+  padding:24px;
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:6px;
+}
+.forecast-card-h{
+  font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mid);margin-bottom:10px;
+}
+.forecast-card-v{
+  font-family:var(--serif);
+  font-size:28px;font-weight:400;
+  color:var(--forest);line-height:1;
+  margin-bottom:8px;
+}
+.forecast-card-v .trend{
+  font-size:14px;
+  font-style:italic;
+  margin-left:6px;
+}
+.trend-down{color:var(--warn)}
+.trend-up{color:var(--good)}
+.forecast-card-p{
+  font-size:13px;font-weight:300;line-height:1.6;
+  color:var(--mid);
+}
+.forecast-prediction{
+  padding:28px 32px;
+  background:linear-gradient(120deg,var(--paper) 0%,#fff 100%);
+  border-left:3px solid var(--brass);
+  border-radius:0 6px 6px 0;
+  margin-top:8px;
+}
+.forecast-prediction-label{
+  font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--forest);margin-bottom:10px;
+}
+.forecast-prediction-text{
+  font-family:var(--serif);
+  font-size:17px;font-weight:400;font-style:italic;
+  line-height:1.55;color:var(--ink);
+}
+@media(max-width:680px){
+  .forecast-grid{grid-template-columns:1fr}
+  .forecast-prediction{padding:20px}
+}
+
+/* ── PUNCH LIST ── */
+.punch-list{display:flex;flex-direction:column;gap:14px}
+.punch-item{
+  display:grid;
+  grid-template-columns:40px 1fr auto;
+  gap:18px;
+  padding:22px 24px;
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:6px;
+  align-items:flex-start;
+  transition:border-color .2s,box-shadow .2s;
+}
+.punch-item:hover{border-color:var(--brass);box-shadow:0 4px 16px rgba(28,61,49,.05)}
+.punch-num{
+  font-family:var(--serif);
+  font-size:30px;font-weight:400;font-style:italic;
+  color:var(--brass);
+  line-height:1;
+}
+.punch-content{display:flex;flex-direction:column;gap:6px}
+.punch-title{
+  font-family:var(--serif);
+  font-size:18px;font-weight:500;
+  color:var(--ink);
+  line-height:1.3;
+}
+.punch-desc{
+  font-size:13px;font-weight:300;line-height:1.6;
+  color:var(--mid);
+}
+.punch-roi{
+  display:flex;flex-direction:column;align-items:flex-end;gap:4px;
+  text-align:right;
+  flex-shrink:0;
+  min-width:90px;
+}
+.punch-cost{
+  font-family:var(--serif);
+  font-size:13px;font-weight:400;
+  color:var(--mid);
+}
+.punch-return{
+  font-family:var(--serif);
+  font-size:16px;font-weight:500;
+  color:var(--good);
+  white-space:nowrap;
+}
+.punch-return-label{
+  font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mid);
+}
+.punch-total{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  padding:24px 28px;
+  background:var(--forest);
+  color:#fff;
+  border-radius:6px;
+  margin-top:8px;
+}
+.punch-total-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:8px}
+.punch-total-val{font-family:var(--serif);font-size:24px;font-weight:400;color:#fff;line-height:1}
+.punch-total-val em{color:var(--brass);font-style:italic}
+@media(max-width:680px){
+  .punch-item{grid-template-columns:auto 1fr;padding:18px}
+  .punch-roi{grid-column:1 / -1;flex-direction:row;justify-content:space-between;align-items:center;text-align:left;padding-top:8px;border-top:1px solid var(--rule);margin-top:4px}
+  .punch-total{grid-template-columns:1fr;gap:14px}
+}
+
+/* ── PRICE STRATEGY ── */
+.price-card{
+  padding:40px;
+  background:linear-gradient(150deg,var(--forest) 0%,var(--forest-dk) 100%);
+  color:#fff;
+  border-radius:8px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.price-card-eyebrow{
+  font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--brass);margin-bottom:14px;
+}
+.price-card-label{
+  font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  margin-bottom:10px;
+}
+.price-card-val{
+  font-family:var(--serif);
+  font-size:clamp(44px,7vw,72px);
+  font-weight:400;
+  color:#fff;
+  line-height:1;
+  margin-bottom:6px;
+}
+.price-card-val em{color:var(--brass);font-style:italic}
+.price-card-vs{
+  font-size:13px;font-weight:400;font-style:italic;
+  color:rgba(255,255,255,.6);
+  margin-bottom:32px;
+}
+.price-band{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  padding-top:28px;border-top:1px solid rgba(255,255,255,.18);
+  text-align:left;
+}
+.price-band-label{font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px}
+.price-band-val{font-family:var(--serif);font-size:22px;font-weight:400;color:#fff;line-height:1.2}
+.price-rationale{
+  margin-top:32px;
+  padding:28px 32px;
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:6px;
+}
+.price-rat-h{
+  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--forest);
+  margin-bottom:14px;
+}
+.price-rat-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.price-rat-list li{
+  display:flex;gap:14px;
+  font-size:14px;font-weight:300;line-height:1.6;
+  color:var(--ink);
+}
+.price-rat-list li::before{
+  content:'›';color:var(--brass);font-size:22px;line-height:1;flex-shrink:0;margin-top:-2px;
+}
+@media(max-width:680px){
+  .price-card{padding:28px 22px}
+  .price-band{grid-template-columns:1fr;gap:14px}
+  .price-rationale{padding:20px}
+}
+
+/* ── NEXT STEP ── */
+.next-step{
+  padding:56px;
+  background:var(--paper);
+  text-align:center;
+}
+.next-step-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--forest);margin-bottom:16px;
+}
+.next-step h2{
+  font-family:var(--serif);
+  font-size:clamp(26px,3.4vw,34px);
+  font-weight:400;line-height:1.2;
+  color:var(--ink);
+  margin-bottom:18px;
+}
+.next-step h2 em{font-style:italic;color:var(--forest)}
+.next-step p{
+  font-size:15px;font-weight:300;line-height:1.65;
+  color:var(--mid);
+  max-width:540px;
+  margin:0 auto 32px;
+}
+.next-step .btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--brass);color:var(--navy);
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:18px 36px;border-radius:4px;
+  transition:transform .18s,background .18s;
+  box-shadow:0 8px 24px rgba(255,193,60,.25);
+}
+.next-step .btn:hover{background:var(--brass-dk);transform:translateY(-2px)}
+@media(max-width:680px){.next-step{padding:40px 24px}}
+
+/* ── SIGNATURE ── */
+.signoff{
+  padding:48px 56px;
+  background:#fff;
+  border-top:1px solid var(--rule);
+}
+.signoff-letter{
+  font-family:var(--serif);
+  font-size:16px;font-weight:400;font-style:italic;
+  line-height:1.7;
+  color:var(--ink);
+  margin-bottom:24px;
+  max-width:640px;
+}
+.signoff-sig{
+  display:flex;align-items:center;gap:16px;
+  padding-top:20px;
+  border-top:1px solid var(--rule);
+}
+.signoff-name{
+  font-family:var(--serif);
+  font-size:18px;font-weight:500;font-style:italic;
+  color:var(--forest);
+}
+.signoff-role{
+  font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mid);
+  margin-top:4px;
+}
+@media(max-width:680px){.signoff{padding:36px 24px}}
+
+/* ── FOOTER (locked) ── */
+.site-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:64px 44px 36px}
+.footer-grid{
+  max-width:1200px;margin-inline:auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
+  padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:28px;
+}
+.footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.footer-logos img{height:16px;width:auto;opacity:.55}
+.footer-sep{width:1px;height:13px;background:rgba(255,255,255,.2)}
+.footer-tagline{font-family:var(--sans);font-size:12px;font-weight:300;line-height:1.6;color:#fff;max-width:240px}
+.footer-col-head{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(255,255,255,.45);transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.9)}
+.footer-bottom{max-width:1200px;margin-inline:auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-legal,.footer-dre{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(255,255,255,.22);line-height:1.5}
+.site-footer-disclosure-bar{background:#fff;border-top:1px solid var(--rule);padding:32px 44px}
+.site-footer-disclosure{max-width:1200px;margin-inline:auto;display:flex;gap:32px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.site-footer-disclosure-text{font-family:var(--sans);font-size:11px;font-weight:300;line-height:1.7;color:#5a5a5a;flex:1;min-width:280px}
+.site-footer-disclosure-text a{color:var(--forest);text-decoration:underline}
+.site-footer-disclosure-eho{flex-shrink:0}
+.site-footer-disclosure-eho img{height:60px;width:auto;opacity:.85}
+@media(max-width:860px){
+  .footer-grid{grid-template-columns:1fr 1fr !important;gap:24px}
+  .site-footer{padding:48px 20px 28px}
+  .footer-bottom{flex-direction:column}
+  .site-footer-disclosure-bar{padding:24px 20px}
+  .site-footer-disclosure-eho img{height:48px}
+}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr !important}}
+</style>
+</head>
+<body>
+
+<!-- ═══ SAMPLE BANNER ═══ -->
+<div class="sample-banner">
+  <strong>Sample Report</strong> — example based on a real West Adams property
+  <a href="/start/">Request yours →</a>
+</div>
+
+<div class="doc">
+
+<!-- ═══ COVER ═══ -->
+<section class="cover">
+  <div class="cover-bg" aria-hidden="true"></div>
+  <div class="cover-inner">
+    <div class="cover-brand">
+      <img class="amre" src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group">
+      <span class="sep"></span>
+      <img class="compass" src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass">
+    </div>
+    <div class="cover-eyebrow">Maximum Price Report</div>
+    <h1 class="cover-title">What this home could<br>sell for <em>in 2026.</em></h1>
+    <p class="cover-property">2810 S Harcourt Avenue · West Adams · Los Angeles, CA 90016</p>
+    <div class="cover-meta">
+      <div>
+        <div class="cover-meta-label">Prepared By</div>
+        <div class="cover-meta-val">Michael Abraham &amp; Ania De Pourbaix</div>
+      </div>
+      <div>
+        <div class="cover-meta-label">Date</div>
+        <div class="cover-meta-val">May 15, 2026</div>
+      </div>
+      <div>
+        <div class="cover-meta-label">Confidential</div>
+        <div class="cover-meta-val">Prepared for the homeowner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXEC SUMMARY ═══ -->
+<section class="exec">
+  <div class="exec-h">Executive Summary</div>
+  <p class="exec-headline">Based on a one-mile-radius analysis of <em>twelve recent sales and active listings</em>, this home is currently positioned to sell between <em>$895,000 and $985,000</em> — meaningfully above the public algorithmic estimate.</p>
+  <div class="exec-grid">
+    <div>
+      <div class="exec-stat-label">AMRE Recommended List</div>
+      <div class="exec-stat-val">$949,000</div>
+      <div class="exec-stat-sub">Target net sale: $925K – $975K</div>
+    </div>
+    <div>
+      <div class="exec-stat-label">Zillow Zestimate</div>
+      <div class="exec-stat-val">$723,300</div>
+      <div class="exec-stat-sub">Algorithmic — declined $95K in last 30 days</div>
+    </div>
+    <div>
+      <div class="exec-stat-label">Delta to Zestimate</div>
+      <div class="exec-stat-val">+$226K</div>
+      <div class="exec-stat-sub">What hands-on positioning unlocks</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROPERTY OVERVIEW ═══ -->
+<section class="sec">
+  <div class="sec-eyebrow"><span class="sec-num">00</span><span>The Subject Property</span></div>
+  <h2 class="sec-h">2810 S Harcourt Avenue</h2>
+  <p class="sec-sub">A 1923 single-family home on a historic Craftsman block in West Adams — one of the most architecturally significant neighborhoods west of the Mississippi, and one of LA's fastest-appreciating markets over the past decade.</p>
+
+  <div class="prop-grid">
+    <div class="prop-row"><span class="prop-label">Bedrooms</span><span class="prop-val">2</span></div>
+    <div class="prop-row"><span class="prop-label">Bathrooms</span><span class="prop-val">2</span></div>
+    <div class="prop-row"><span class="prop-label">Living Area</span><span class="prop-val">1,250 sqft</span></div>
+    <div class="prop-row"><span class="prop-label">Lot Size</span><span class="prop-val">~5,200 sqft (typical for block)</span></div>
+    <div class="prop-row"><span class="prop-label">Year Built</span><span class="prop-val">c. 1923</span></div>
+    <div class="prop-row"><span class="prop-label">Architecture</span><span class="prop-val">Craftsman era</span></div>
+    <div class="prop-row"><span class="prop-label">Property Type</span><span class="prop-val">Single Family Residence</span></div>
+    <div class="prop-row"><span class="prop-label">Neighborhood</span><span class="prop-val">West Adams · 90016</span></div>
+    <div class="prop-row"><span class="prop-label">Transit Access</span><span class="prop-val">Metro Expo Line · steps away</span></div>
+    <div class="prop-row"><span class="prop-label">Block Character</span><span class="prop-val">8 of 10 neighbors built 1922–1923</span></div>
+  </div>
+</section>
+
+<!-- ═══ 01 CMA ═══ -->
+<section class="sec">
+  <div class="sec-eyebrow"><span class="sec-num">01</span><span>Comparative Market Analysis</span></div>
+  <h2 class="sec-h">Twelve comparables <em>within one mile.</em></h2>
+  <p class="sec-sub">We pulled every active listing, pending sale, and recent close within one mile of the subject property, then normalized for square footage, lot size, bed/bath count, and condition. The bracketed range below is what the data actually says — not what an algorithm guesses.</p>
+
+  <div class="cma-table-wrap">
+    <table class="cma-table">
+      <thead>
+        <tr>
+          <th>Address</th>
+          <th>Status</th>
+          <th>Price</th>
+          <th>Beds / Baths</th>
+          <th>Sqft</th>
+          <th>$ / Sqft</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="addr">2941 Redondo Blvd</td>
+          <td><span class="status-active">Active</span></td>
+          <td class="price">$649,000</td>
+          <td>2 / 2</td>
+          <td>1,200</td>
+          <td class="ppsf">$541</td>
+        </tr>
+        <tr>
+          <td class="addr">2818 Hillcrest Dr</td>
+          <td><span class="status-active">Active</span></td>
+          <td class="price">$699,000</td>
+          <td>2 / 2</td>
+          <td>1,315</td>
+          <td class="ppsf">$532</td>
+        </tr>
+        <tr>
+          <td class="addr">5415 Westhaven St</td>
+          <td><span class="status-active">Pending</span></td>
+          <td class="price">$690,000</td>
+          <td>2 / 1</td>
+          <td>1,092</td>
+          <td class="ppsf">$632</td>
+        </tr>
+        <tr>
+          <td class="addr">2627 S Cloverdale Ave</td>
+          <td><span class="status-active">Active</span></td>
+          <td class="price">$899,999</td>
+          <td>3 / 1.5</td>
+          <td>1,175</td>
+          <td class="ppsf">$766</td>
+        </tr>
+        <tr>
+          <td class="addr">5326 Smiley Dr</td>
+          <td><span class="status-active">Active</span></td>
+          <td class="price">$950,000</td>
+          <td>2 / 1</td>
+          <td>872</td>
+          <td class="ppsf">$1,089</td>
+        </tr>
+        <tr>
+          <td class="addr">5330 Smiley Dr</td>
+          <td><span class="status-active">Active</span></td>
+          <td class="price">$950,000</td>
+          <td>2 / 1</td>
+          <td>817</td>
+          <td class="ppsf">$1,163</td>
+        </tr>
+        <tr>
+          <td class="addr">2536 S Dunsmuir Ave</td>
+          <td><span class="status-active">Active</span></td>
+          <td class="price">$975,000</td>
+          <td>2 / 1</td>
+          <td>1,083</td>
+          <td class="ppsf">$900</td>
+        </tr>
+        <tr>
+          <td class="addr">5506 Smiley Dr</td>
+          <td><span class="status-sold">Sold Jan '26</span></td>
+          <td class="price">$700,000</td>
+          <td>2 / 1</td>
+          <td>536</td>
+          <td class="ppsf">$1,306</td>
+        </tr>
+        <tr>
+          <td class="addr">2620 S Longwood Ave</td>
+          <td><span class="status-active">Active</span></td>
+          <td class="price">$1,150,000</td>
+          <td>4 / 4</td>
+          <td>1,694</td>
+          <td class="ppsf">$679</td>
+        </tr>
+        <tr>
+          <td class="addr">3031 Vineyard Ave #2</td>
+          <td><span class="status-sold">Sold Dec '25</span></td>
+          <td class="price">$1,330,000</td>
+          <td>6 / 4</td>
+          <td>2,200</td>
+          <td class="ppsf">$605</td>
+        </tr>
+        <tr>
+          <td class="addr">2821 S Harcourt Ave</td>
+          <td><span class="status-sold">Off-market est.</span></td>
+          <td class="price">$1,054,500</td>
+          <td>3 / 2</td>
+          <td>1,162</td>
+          <td class="ppsf">$907</td>
+        </tr>
+        <tr>
+          <td class="addr">2809 S Harcourt Ave</td>
+          <td><span class="status-sold">Off-market est.</span></td>
+          <td class="price">$939,150</td>
+          <td>3 / 2</td>
+          <td>1,394</td>
+          <td class="ppsf">$674</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cma-summary">
+    <div>
+      <div class="cma-sum-label">Median $/Sqft</div>
+      <div class="cma-sum-val">$697</div>
+      <div class="cma-sum-sub">Across 12 comps</div>
+    </div>
+    <div>
+      <div class="cma-sum-label">Adjusted for Subject (1,250 sqft)</div>
+      <div class="cma-sum-val">$871K</div>
+      <div class="cma-sum-sub">Baseline before condition / 2BA premium</div>
+    </div>
+    <div>
+      <div class="cma-sum-label">Two-Block Median</div>
+      <div class="cma-sum-val">$996K</div>
+      <div class="cma-sum-sub">2800–2900 S Harcourt &amp; Cochran corridor</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02 FORECAST ═══ -->
+<section class="sec">
+  <div class="sec-eyebrow"><span class="sec-num">02</span><span>90-Day Neighborhood Forecast</span></div>
+  <h2 class="sec-h">Where this market <em>is heading.</em></h2>
+  <p class="sec-sub">West Adams has been one of LA's most volatile neighborhoods over the last 24 months — premium-priced renovations are still moving quickly, but unrenovated stock is sitting longer. Here's the real picture for your specific block.</p>
+
+  <div class="forecast-grid">
+    <div class="forecast-card">
+      <div class="forecast-card-h">West Adams Median Price (May '26)</div>
+      <div class="forecast-card-v">$1.097M <span class="trend trend-down">−3.1%</span></div>
+      <p class="forecast-card-p">Median down ~3% YoY, but median $/sqft has compressed harder (−14.9%). Translation: bigger homes are softening more than smaller, well-positioned homes.</p>
+    </div>
+    <div class="forecast-card">
+      <div class="forecast-card-h">Days on Market</div>
+      <div class="forecast-card-v">35 <span class="trend trend-up">▲ from 28</span></div>
+      <p class="forecast-card-p">Median DOM has crept up from 28 to 35 days YoY. Hot homes (under $1M, renovated, well-staged) still go pending in 14–21 days.</p>
+    </div>
+    <div class="forecast-card">
+      <div class="forecast-card-h">Active Inventory</div>
+      <div class="forecast-card-v">104 <span class="trend trend-up">▲ from 74</span></div>
+      <p class="forecast-card-p">Inventory has grown ~40% YoY. More competition on the way. The window for a confidently-priced spring/summer listing closes by July.</p>
+    </div>
+    <div class="forecast-card">
+      <div class="forecast-card-h">Sale-to-List on Hot Homes</div>
+      <div class="forecast-card-v">+5% <span class="trend trend-up">over list</span></div>
+      <p class="forecast-card-p">Properties priced correctly and presented well are still selling above list. Mispriced or unstaged homes are sitting 60+ days and seeing price cuts.</p>
+    </div>
+  </div>
+
+  <div class="forecast-prediction">
+    <div class="forecast-prediction-label">Our Forecast</div>
+    <p class="forecast-prediction-text">A correctly-priced, well-presented listing on this block should expect 18–25 days on market with multiple offers, and a final sale 2–5% over list. A mispriced listing will sit 60+ days, require a price reduction, and close 3–6% under list. The difference between those two outcomes is, on this property, approximately $80,000–$120,000.</p>
+  </div>
+</section>
+
+<!-- ═══ 03 PUNCH LIST ═══ -->
+<section class="sec">
+  <div class="sec-eyebrow"><span class="sec-num">03</span><span>Pre-Listing Punch List</span></div>
+  <h2 class="sec-h">The five moves <em>worth making.</em></h2>
+  <p class="sec-sub">Not every improvement returns more than it costs. These five, on this specific home, do. Listed in order of ROI per dollar spent.</p>
+
+  <div class="punch-list">
+    <div class="punch-item">
+      <div class="punch-num">01</div>
+      <div class="punch-content">
+        <div class="punch-title">Curb appeal &amp; front landscaping refresh</div>
+        <div class="punch-desc">Drought-tolerant native bed, repainted entry door in a saturated accent color, new house numbers, replaced porch light, and a power-wash on the front walk. The first 8 seconds when buyers pull up control the next 80 minutes inside.</div>
+      </div>
+      <div class="punch-roi">
+        <div class="punch-cost">~$2,500</div>
+        <div class="punch-return">+$25K–$40K</div>
+        <div class="punch-return-label">Est. Return</div>
+      </div>
+    </div>
+
+    <div class="punch-item">
+      <div class="punch-num">02</div>
+      <div class="punch-content">
+        <div class="punch-title">Interior repaint (full home, neutral palette)</div>
+        <div class="punch-desc">Single neutral white throughout, satin trim, accent door in matte black. Erases years of micro-wear and lets the original Craftsman bones photograph cleanly. Two-day job for a three-person crew.</div>
+      </div>
+      <div class="punch-roi">
+        <div class="punch-cost">~$4,800</div>
+        <div class="punch-return">+$20K–$35K</div>
+        <div class="punch-return-label">Est. Return</div>
+      </div>
+    </div>
+
+    <div class="punch-item">
+      <div class="punch-num">03</div>
+      <div class="punch-content">
+        <div class="punch-title">Refinish original hardwood floors</div>
+        <div class="punch-desc">If the original 1923 oak is under the carpet or current finish (we'll confirm during walkthrough), refinishing reveals a feature buyers will pay a meaningful premium for. Craftsman buyers in West Adams specifically search for "original hardwood."</div>
+      </div>
+      <div class="punch-roi">
+        <div class="punch-cost">~$3,500</div>
+        <div class="punch-return">+$15K–$30K</div>
+        <div class="punch-return-label">Est. Return</div>
+      </div>
+    </div>
+
+    <div class="punch-item">
+      <div class="punch-num">04</div>
+      <div class="punch-content">
+        <div class="punch-title">Professional staging (lite package)</div>
+        <div class="punch-desc">Compass Concierge can front the cost. We'd recommend a curated lite-stage of just the three rooms that photograph hardest — living, primary bedroom, and dining — using mid-century pieces that complement the Craftsman architecture.</div>
+      </div>
+      <div class="punch-roi">
+        <div class="punch-cost">~$3,800</div>
+        <div class="punch-return">+$30K–$60K</div>
+        <div class="punch-return-label">Est. Return</div>
+      </div>
+    </div>
+
+    <div class="punch-item">
+      <div class="punch-num">05</div>
+      <div class="punch-content">
+        <div class="punch-title">Kitchen hardware &amp; counter refresh</div>
+        <div class="punch-desc">Replace cabinet hardware, refinish the existing counter (if laminate, consider quartz remnant overlay), new faucet, and undermount lighting. Avoids a full kitchen remodel ROI trap while still hitting the photo-critical surfaces.</div>
+      </div>
+      <div class="punch-roi">
+        <div class="punch-cost">~$3,200</div>
+        <div class="punch-return">+$10K–$22K</div>
+        <div class="punch-return-label">Est. Return</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="punch-total">
+    <div>
+      <div class="punch-total-label">Total Estimated Cost</div>
+      <div class="punch-total-val">~$17,800</div>
+    </div>
+    <div>
+      <div class="punch-total-label">Estimated Net Return</div>
+      <div class="punch-total-val">+$100K – $187K <em>over baseline</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 PRICE STRATEGY ═══ -->
+<section class="sec">
+  <div class="sec-eyebrow"><span class="sec-num">04</span><span>Maximum Price Strategy</span></div>
+  <h2 class="sec-h">Our recommendation &amp; <em>why.</em></h2>
+  <p class="sec-sub">After accounting for comps, current market velocity, and the upside unlocked by the punch list, here's the specific pricing strategy we'd take this home to market with.</p>
+
+  <div class="price-card">
+    <div class="price-card-eyebrow">AMRE Recommended List Price</div>
+    <div class="price-card-label">List at</div>
+    <div class="price-card-val">$949,000</div>
+    <div class="price-card-vs">vs. $723,300 Zillow Zestimate &nbsp;·&nbsp; +31% premium</div>
+
+    <div class="price-band">
+      <div>
+        <div class="price-band-label">Aggressive Floor</div>
+        <div class="price-band-val">$899,000</div>
+      </div>
+      <div>
+        <div class="price-band-label">Stretch Ceiling</div>
+        <div class="price-band-val">$985,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="price-rationale">
+    <div class="price-rat-h">Why $949,000 (not $899K, not $999K)</div>
+    <ul class="price-rat-list">
+      <li><strong>$899K leaves money on the table.</strong> Comps with comparable square footage and a true 2BA (rare on this block — most are 2/1) support a ~$760+/sqft baseline, which is $950K before condition adjustments.</li>
+      <li><strong>$999K pushes past the search-filter ceiling.</strong> Most West Adams buyers in your price tier filter "under $1M" — listing at $949K keeps you in every search result while signaling premium positioning.</li>
+      <li><strong>The 2-bath is your differentiator.</strong> Seven of the twelve comps above are 2/1. A true 2/2 in a 1923 Craftsman is structurally uncommon and warrants the $20–30K premium baked into the recommendation.</li>
+      <li><strong>The block is appreciating around you.</strong> 2821 S Harcourt (your immediate neighbor) is currently estimated at $1,054,500. Even at our stretch ceiling, you'd still be priced below your direct comp.</li>
+      <li><strong>$949K invites multiple-offer dynamics.</strong> Priced ~3–4% under the stretch ceiling creates room for buyer competition without setting up a price reduction. We expect 4–8 offers in the first 10 days at this list.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 05 NEXT STEP ═══ -->
+<section class="next-step">
+  <div class="next-step-eyebrow">05 · Your Private Strategy Call</div>
+  <h2>Walk through this in <em>thirty minutes.</em></h2>
+  <p>The fifth piece of every Maximum Price Report is a 30-minute call with both of us — Zoom or in-person at our Beverly Hills office — to walk through your specific home, answer anything, and help you decide what (if anything) to do next. On your timeline. Zero pressure to ever list with us.</p>
+  <a href="/start/" class="btn">Book My Strategy Call →</a>
+</section>
+
+<!-- ═══ SIGNATURE ═══ -->
+<section class="signoff">
+  <p class="signoff-letter">
+    This is the depth of work we'd build for any home we're invited to analyze — from a $700,000 starter on Harcourt to a $5M architectural in the hills. If it's helpful, we'd love to put real eyes on your real home and do the same. Either way, no pressure, ever. That's not how we work.
+  </p>
+  <div class="signoff-sig">
+    <div>
+      <div class="signoff-name">— Michael &amp; Ania</div>
+      <div class="signoff-role">AMRE Real Estate Group · Compass Beverly Hills · DRE #02242095 &amp; #01891438</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.doc -->
+
+<!-- ═══ FOOTER (locked) ═══ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logos">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE" width="70" loading="lazy">
+        <div class="footer-sep"></div>
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64" loading="lazy">
+      </div>
+      <p class="footer-tagline">Empowering clients to achieve their real estate dreams, one home at a time. Compass Beverly Hills.</p>
+    </div>
+    <div>
+      <div class="footer-col-head">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="/sellers/">Sellers</a></li>
+        <li><a href="/buyers/">Buyers</a></li>
+        <li><a href="/about/">Team</a></li>
+        <li><a href="/blog/">Journal</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Services</div>
+      <ul class="footer-links">
+        <li><a href="/sellers/#three-phase">3-Phase Marketing</a></li>
+        <li><a href="/sellers/#concierge">Compass Concierge</a></li>
+        <li><a href="/buyers/">Buyer Advisory</a></li>
+        <li><a href="/start/">Free Valuation</a></li>
+        <li><a href="/tools/investor-calculator/">Investor Calculator</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Connect</div>
+      <ul class="footer-links">
+        <li><a href="tel:3237198585">(323) 719-8585</a></li>
+        <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
+        <li><a href="https://www.instagram.com/amre.group/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@AMRE_Real_Estate" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/company/amre-real-estate-group/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved.</p>
+    <p class="footer-dre">Michael Abraham CA DRE# 02242095 &nbsp;·&nbsp; Ania De Pourbaix CA DRE# 01891438 &nbsp;·&nbsp; Compass DRE# 01991628</p>
+  </div>
+</footer>
+<div class="site-footer-disclosure-bar">
+  <div class="site-footer-disclosure">
+    <p class="site-footer-disclosure-text">
+      <strong>Sample Report Disclosure:</strong> This document is a sample / demonstration prepared by AMRE Real Estate Group to illustrate the format and depth of analysis included in a personally-prepared Maximum Price Report. Property data sourced from public records and MLS. All valuations are estimates based on currently available comparable sales and reflect market conditions as of May 2026. Actual valuations on individual properties depend on physical inspection, condition, and current market dynamics at the time of analysis. AMRE Real Estate Group is a team of real estate agents affiliated with Compass. <a href="https://www.compass.com/" target="_blank" rel="noopener">Compass</a> is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number 01991628. All material is intended for informational purposes only. If your property is currently listed for sale this is not a solicitation.
+    </p>
+    <div class="site-footer-disclosure-eho">
+      <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/logos/realtor-eho-dark.jpg" alt="REALTOR® and Equal Housing Opportunity" loading="lazy">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
