@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1c3d31">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://raw.githubusercontent.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/forms/forms.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="/assets/forms/forms.js" defer></script>
+
+<title>Buying or Selling in LA? | AMRE Real Estate Group · Compass Beverly Hills</title>
+<meta name="description" content="Start with a 15-minute conversation. AMRE Real Estate Group at Compass Beverly Hills — Licensed Architect & Realtor team serving buyers, sellers, and investors across Los Angeles. Call (323) 719-8585.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://amre.group/start/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Buying or Selling in LA? | Start with AMRE">
+<meta property="og:description" content="A 15-minute conversation could change your move. Architect-led real estate advisory at Compass Beverly Hills.">
+<meta property="og:url" content="https://amre.group/start/">
+<meta property="og:image" content="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg">
+
+<style>
+/* ════════════════════════════════════════════════════════════════════
+   AMRE Squeeze Page — /start/
+   No nav. One CTA. Modal capture. Brand-locked.
+   ════════════════════════════════════════════════════════════════════ */
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ── Top bar (minimal, no nav links) ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(7,11,51,.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:background .3s ease}
+.topbar.scrolled{background:rgba(255,255,255,.94);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.topbar-logo{display:flex;align-items:center;gap:10px;height:32px}
+.topbar-logo img.amre{height:24px;filter:brightness(0) invert(1);transition:filter .3s}
+.topbar-logo span.sep{width:1px;height:18px;background:rgba(255,255,255,.4);transition:background .3s}
+.topbar-logo img.compass{height:14px;filter:brightness(0) invert(1);transition:filter .3s}
+.topbar.scrolled .topbar-logo img.amre,.topbar.scrolled .topbar-logo img.compass{filter:none}
+.topbar.scrolled .topbar-logo span.sep{background:rgba(0,0,0,.2)}
+.topbar-phone{font-size:13px;font-weight:500;letter-spacing:.04em;color:#fff;transition:color .3s}
+.topbar.scrolled .topbar-phone{color:#1c3d31}
+@media(max-width:520px){
+  .topbar{padding:12px 18px}
+  .topbar-phone{font-size:12px}
+}
+
+/* ── Hero ── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:linear-gradient(135deg,#1c3d31 0%,#0e2a23 45%,#070B33 100%);color:#fff;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,rgba(255,193,60,.08) 0%,transparent 55%);pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;padding:0 40px;width:100%;position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.22em;color:#ffc13c;text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(40px,5.6vw,72px);line-height:1.04;letter-spacing:-.02em;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:#ffc13c}
+.hero-sub{font-size:clamp(16px,1.4vw,19px);line-height:1.65;color:rgba(255,255,255,.85);margin-bottom:40px;max-width:540px;font-weight:300}
+.cta-primary{display:inline-flex;align-items:center;gap:10px;background:#ffc13c;color:#1a1a1a;border:none;padding:18px 36px;border-radius:999px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease;box-shadow:0 14px 40px -10px rgba(255,193,60,.45)}
+.cta-primary:hover{transform:translateY(-2px);box-shadow:0 18px 50px -10px rgba(255,193,60,.6);background:#ffcb5a}
+.cta-primary:active{transform:translateY(0)}
+.cta-primary .arrow{transition:transform .25s ease}
+.cta-primary:hover .arrow{transform:translateX(4px)}
+.hero-trust{display:flex;gap:28px;align-items:center;margin-top:32px;flex-wrap:wrap}
+.hero-trust-item{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.hero-trust-stars{color:#ffc13c;letter-spacing:.04em;font-size:13px}
+.hero-trust-dot{width:3px;height:3px;background:rgba(255,255,255,.3);border-radius:50%}
+.hero-photo{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px -20px rgba(0,0,0,.5);transform:rotate(1.5deg)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(7,11,51,.35) 100%);pointer-events:none}
+.hero-photo-caption{position:absolute;left:18px;bottom:18px;font-size:11px;letter-spacing:.16em;color:#fff;text-transform:uppercase;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,.4);z-index:2}
+@media(max-width:900px){
+  .hero{min-height:auto;padding:110px 0 70px}
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero-photo{max-width:380px;margin:0 auto;aspect-ratio:1/1;transform:none}
+  .hero-trust{gap:20px}
+}
+@media(max-width:520px){
+  .hero-inner{padding:0 24px}
+  .hero-sub{font-size:15px;margin-bottom:32px}
+  .cta-primary{width:100%;justify-content:center;padding:18px 28px}
+  .hero-trust{gap:16px;font-size:11px}
+  .hero-trust-dot{display:none}
+}
+
+/* ── Pillars ── */
+.pillars{background:#faf8f4;padding:96px 0}
+.pillars-inner{max-width:1180px;margin:0 auto;padding:0 40px}
+.pillars-header{text-align:center;margin-bottom:64px}
+.pillars-eyebrow{font-size:11px;font-weight:500;letter-spacing:.22em;color:#1c3d31;text-transform:uppercase;margin-bottom:16px}
+.pillars-header h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(30px,3.2vw,40px);line-height:1.15;letter-spacing:-.01em;color:#1a1a1a;max-width:680px;margin:0 auto}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.pillar{background:#fff;border:1px solid #ece7dc;border-radius:16px;padding:36px 32px;transition:transform .25s ease,box-shadow .25s ease}
+.pillar:hover{transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(28,61,49,.18)}
+.pillar-num{font-family:'Playfair Display',serif;font-size:13px;font-weight:500;color:#ffc13c;letter-spacing:.18em;margin-bottom:18px}
+.pillar h3{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:22px;line-height:1.2;color:#1c3d31;margin-bottom:14px;letter-spacing:-.005em}
+.pillar p{font-size:14.5px;line-height:1.7;color:#4a4a4a;font-weight:400}
+@media(max-width:860px){
+  .pillars{padding:72px 0}
+  .pillars-grid{grid-template-columns:1fr;gap:20px}
+  .pillars-inner{padding:0 24px}
+  .pillar{padding:28px 24px}
+}
+
+/* ── Stats band ── */
+.stats{background:#070B33;color:#fff;padding:64px 0}
+.stats-inner{max-width:1180px;margin:0 auto;padding:0 40px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat-item{padding:8px 4px}
+.stat-num{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(34px,3.6vw,46px);color:#ffc13c;line-height:1;margin-bottom:10px;letter-spacing:-.01em}
+.stat-label{font-size:11.5px;letter-spacing:.16em;color:rgba(255,255,255,.7);text-transform:uppercase;font-weight:500;line-height:1.5}
+@media(max-width:860px){
+  .stats{padding:48px 0}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:32px 16px}
+  .stats-inner{padding:0 24px}
+}
+
+/* ── Voice / quote section ── */
+.voice{padding:96px 0;background:#fff}
+.voice-inner{max-width:840px;margin:0 auto;padding:0 40px;text-align:center}
+.voice-quote{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-style:italic;font-size:clamp(22px,2.4vw,30px);line-height:1.5;color:#1a1a1a;margin-bottom:28px;letter-spacing:-.005em}
+.voice-attr{font-size:12px;letter-spacing:.18em;color:#1c3d31;text-transform:uppercase;font-weight:500}
+.voice-attr-name{color:#1a1a1a;font-weight:600}
+@media(max-width:860px){
+  .voice{padding:72px 0}
+  .voice-inner{padding:0 28px}
+}
+
+/* ── Final CTA ── */
+.final{background:linear-gradient(135deg,#1c3d31 0%,#0e2a23 100%);color:#fff;padding:96px 0;text-align:center;position:relative;overflow:hidden}
+.final::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,rgba(255,193,60,.1) 0%,transparent 60%);pointer-events:none}
+.final-inner{max-width:760px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+.final h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,54px);line-height:1.1;letter-spacing:-.015em;margin-bottom:20px}
+.final h2 em{font-style:italic;color:#ffc13c}
+.final p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.82);margin-bottom:40px;font-weight:300}
+.final-trust{margin-top:36px;font-size:11.5px;letter-spacing:.16em;color:rgba(255,255,255,.55);text-transform:uppercase;font-weight:500}
+@media(max-width:860px){
+  .final{padding:72px 0}
+  .final-inner{padding:0 28px}
+  .final p{font-size:15px;margin-bottom:32px}
+}
+
+/* ── Modal ── */
+.modal-backdrop{position:fixed;inset:0;background:rgba(7,11,51,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:1000;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease;display:flex;align-items:center;justify-content:center;padding:24px;overflow-y:auto}
+.modal-backdrop.is-open{opacity:1;visibility:visible}
+.modal{background:#fff;border-radius:20px;max-width:520px;width:100%;max-height:calc(100vh - 48px);overflow-y:auto;position:relative;transform:translateY(20px) scale(.98);transition:transform .3s cubic-bezier(.22,1,.36,1);box-shadow:0 40px 100px -20px rgba(0,0,0,.5)}
+.modal-backdrop.is-open .modal{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:#f5f0e8;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#1a1a1a;transition:background .18s ease;z-index:2}
+.modal-close:hover{background:#e8dfce}
+.modal-close svg{width:14px;height:14px}
+.modal-header{padding:40px 36px 24px;text-align:center;border-bottom:1px solid #f0ebe0}
+.modal-eyebrow{font-size:11px;font-weight:500;letter-spacing:.22em;color:#1c3d31;text-transform:uppercase;margin-bottom:14px}
+.modal-header h3{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:28px;line-height:1.15;color:#1a1a1a;margin-bottom:10px;letter-spacing:-.01em}
+.modal-header p{font-size:14px;line-height:1.6;color:#5a5a5a;max-width:380px;margin:0 auto}
+.modal-body{padding:28px 36px 36px}
+@media(max-width:520px){
+  .modal{border-radius:16px}
+  .modal-header{padding:36px 24px 22px}
+  .modal-header h3{font-size:24px}
+  .modal-body{padding:24px 24px 28px}
+}
+
+/* ── Modal success state ── */
+.modal .amre-success{margin:0;background:#fff;border:none;padding:48px 28px}
+
+/* ── Sticky mobile CTA (appears on scroll) ── */
+.sticky-cta{position:fixed;bottom:18px;left:18px;right:18px;z-index:90;display:none;animation:slideUp .35s ease}
+.sticky-cta.visible{display:block}
+.sticky-cta button{width:100%;background:#ffc13c;color:#1a1a1a;border:none;padding:16px 24px;border-radius:999px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 40px -10px rgba(0,0,0,.4)}
+@keyframes slideUp{from{transform:translateY(80px);opacity:0}to{transform:translateY(0);opacity:1}}
+@media(min-width:861px){.sticky-cta{display:none!important}}
+
+/* ── Locked footer (verbatim from amre.group homepage) ── */
+.site-footer{background:#070B33;color:#fff;padding:72px 40px 40px}
+.footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-logos{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.footer-sep{width:1px;height:24px;background:rgba(255,255,255,.25)}
+.footer-tagline{font-size:13.5px;line-height:1.65;color:#fff;font-weight:300;max-width:300px}
+.footer-col-head{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;color:#ffc13c;margin-bottom:18px;letter-spacing:.04em}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:10px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.75);transition:color .18s ease}
+.footer-links a:hover{color:#ffc13c}
+.footer-bottom{max-width:1180px;margin:32px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+.footer-legal,.footer-dre{font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;letter-spacing:.02em}
+@media(max-width:860px){
+  .site-footer{padding:56px 24px 32px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;padding-bottom:36px}
+  .footer-bottom{flex-direction:column;text-align:center;gap:10px}
+}
+@media(max-width:520px){
+  .footer-grid{grid-template-columns:1fr}
+}
+
+.site-footer-disclosure-bar{background:#fff;padding:32px 40px}
+.site-footer-disclosure{max-width:1180px;margin:0 auto;display:flex;gap:32px;align-items:center}
+.site-footer-disclosure-text{font-size:11px;line-height:1.7;color:#5a5a5a;flex:1}
+.site-footer-disclosure-text a{color:#1c3d31;text-decoration:underline}
+.site-footer-disclosure-eho img{height:60px;width:auto}
+@media(max-width:860px){
+  .site-footer-disclosure-bar{padding:24px}
+  .site-footer-disclosure{flex-direction:column;gap:20px;text-align:center}
+  .site-footer-disclosure-eho img{height:48px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     MINIMAL TOP BAR (logo + phone only — NO nav links by design)
+     ═══════════════════════════════════════════════════════════════════ -->
+<header class="topbar" id="topbar">
+  <a class="topbar-logo" href="https://amre.group/" aria-label="AMRE Real Estate Group home">
+    <img class="amre" src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE">
+    <span class="sep"></span>
+    <img class="compass" src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass">
+  </a>
+  <a class="topbar-phone" href="tel:3237198585">(323) 719-8585</a>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     HERO — one CTA, opens modal
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-eyebrow">AMRE · Compass Beverly Hills</div>
+        <h1>Buying or selling in <em>LA?</em></h1>
+        <p class="hero-sub">Start with a 15-minute conversation. No pressure — just clarity from a Licensed Architect &amp; Realtor team that's been quietly closing deals across Los Angeles for over 25 years.</p>
+        <button class="cta-primary" onclick="openModal()" aria-label="Open contact form">
+          Let's Talk <span class="arrow">→</span>
+        </button>
+        <div class="hero-trust">
+          <span class="hero-trust-item"><span class="hero-trust-stars">★★★★★</span> 5-star reviewed</span>
+          <span class="hero-trust-dot"></span>
+          <span class="hero-trust-item">25+ years combined</span>
+          <span class="hero-trust-dot"></span>
+          <span class="hero-trust-item">Architect-led</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo">
+          <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg" alt="Michael Abraham and Ania De Pourbaix — AMRE Real Estate Group at Compass Beverly Hills" loading="eager" fetchpriority="high">
+          <div class="hero-photo-caption">Michael &amp; Ania · AMRE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     THREE PILLARS — addresses both buyers + sellers + investors
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="pillars">
+  <div class="pillars-inner">
+    <div class="pillars-header">
+      <div class="pillars-eyebrow">Why AMRE</div>
+      <h2>One conversation. Three ways we work for you.</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-num">01 · IF YOU'RE SELLING</div>
+        <h3>An architect's eye for value.</h3>
+        <p>We see your home the way a designer would — staging, light, flow, finish. Small decisions compound into a stronger sale price. Then Compass Concierge funds the upgrades so you don't pay until close.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02 · IF YOU'RE BUYING</div>
+        <h3>Off-market access, real answers.</h3>
+        <p>The Compass network surfaces homes before they hit MLS. And because Michael is a Licensed Architect, you get honest answers on every property: what to fix, what to walk away from, what's worth the stretch.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03 · IF YOU'RE INVESTING</div>
+        <h3>Strategy across LA's strongest submarkets.</h3>
+        <p>Multifamily, value-add, and portfolio plays across Malibu, Culver City, Beverly Hills, West Adams, and beyond. We underwrite with real numbers, not optimism.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     STATS BAND
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">25+</div>
+        <div class="stat-label">Years<br>Combined</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">8+</div>
+        <div class="stat-label">LA Submarkets<br>Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Compass</div>
+        <div class="stat-label">Beverly Hills<br>Network</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Licensed</div>
+        <div class="stat-label">Architect +<br>Realtor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     VOICE / QUOTE
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="voice">
+  <div class="voice-inner">
+    <p class="voice-quote">"The smartest move you can make in LA real estate is talking to someone who isn't trying to sell you on talking to them. Just a 15-minute call. We'll tell you what we actually think."</p>
+    <div class="voice-attr"><span class="voice-attr-name">Michael Abraham &amp; Ania De Pourbaix</span> · AMRE Real Estate Group</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     FINAL CTA
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="final">
+  <div class="final-inner">
+    <h2>Ready when <em>you</em> are.</h2>
+    <p>One short call. No commitment. Real answers about your next move.</p>
+    <button class="cta-primary" onclick="openModal()" aria-label="Open contact form">
+      Let's Talk <span class="arrow">→</span>
+    </button>
+    <div class="final-trust">No spam · No pressure · Replies within the hour</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     STICKY MOBILE CTA (only shows on scroll, mobile only)
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="sticky-cta" id="stickyCta">
+  <button onclick="openModal()" aria-label="Open contact form">Let's Talk →</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     MODAL — opens on CTA click. Uses shared forms.js auto-wiring.
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" role="document">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close form">
+      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="modal-header">
+      <div class="modal-eyebrow">Let's Talk</div>
+      <h3 id="modalTitle">Tell us a little about your move.</h3>
+      <p>We'll be in touch within the hour. No pressure, no spam — just real answers.</p>
+    </div>
+    <div class="modal-body">
+      <form class="amre-form" data-amre-form data-form-type="contact" data-source="amre.group/start/" novalidate>
+
+        <div class="amre-chips">
+          <label class="amre-chips-label">I'm thinking about <span class="amre-chips-optional">(optional)</span></label>
+          <div class="amre-chips-row" role="group" aria-label="Inquiry type">
+            <button type="button" class="amre-chip" data-value="Selling" aria-pressed="false">Selling</button>
+            <button type="button" class="amre-chip" data-value="Buying" aria-pressed="false">Buying</button>
+            <button type="button" class="amre-chip" data-value="Both" aria-pressed="false">Both</button>
+            <button type="button" class="amre-chip" data-value="Investing" aria-pressed="false">Investing</button>
+          </div>
+          <input type="hidden" name="inquiry_type" value="">
+        </div>
+
+        <div class="amre-row-2">
+          <div class="amre-field">
+            <label class="amre-label" for="sq-first">First name <span class="amre-required">*</span></label>
+            <input class="amre-input" id="sq-first" name="first_name" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="amre-field">
+            <label class="amre-label" for="sq-last">Last name</label>
+            <input class="amre-input" id="sq-last" name="last_name" type="text" autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="amre-row-2">
+          <div class="amre-field">
+            <label class="amre-label" for="sq-email">Email <span class="amre-required">*</span></label>
+            <input class="amre-input" id="sq-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="amre-field">
+            <label class="amre-label" for="sq-phone">Phone</label>
+            <input class="amre-input" id="sq-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="amre-field">
+          <label class="amre-label" for="sq-message">Anything else? <span style="color:#9a9a9a;font-weight:400">(optional)</span></label>
+          <textarea class="amre-textarea" id="sq-message" name="message" rows="3" placeholder="Neighborhood you're eyeing, timeline, address, questions…"></textarea>
+        </div>
+
+        <label class="amre-consent">
+          <input type="checkbox" name="optin" required>
+          <span>I agree to be contacted by AMRE Real Estate Group about my inquiry. We never sell or share your info. <a href="/terms-and-conditions/" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+        </label>
+
+        <div class="amre-error">Something went wrong sending your message. Please try again, or call us directly at <a href="tel:3237198585">(323) 719-8585</a>.</div>
+
+        <button type="submit" class="amre-submit">
+          <span class="amre-btn-text">Send Message</span>
+        </button>
+      </form>
+
+      <div class="amre-success">
+        <div class="amre-success-icon">✓</div>
+        <h4 class="amre-success-h">Thank you — talk soon.</h4>
+        <p class="amre-success-p">We received your message and one of us will be in touch within the hour. In the meantime, feel free to call (323) 719-8585.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     LOCKED FOOTER — verbatim from amre.group homepage
+     ═══════════════════════════════════════════════════════════════════ -->
+<footer class="site-footer" itemscope itemtype="https://schema.org/RealEstateAgent">
+  <meta itemprop="name" content="AMRE Real Estate Group">
+  <meta itemprop="telephone" content="+13237198585">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logos">
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/amre-white.svg" alt="AMRE Real Estate Group" width="70" decoding="async" loading="lazy">
+        <div class="footer-sep"></div>
+        <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" width="64" decoding="async" loading="lazy">
+      </div>
+      <p class="footer-tagline">Empowering clients to achieve their real estate dreams, one home at a time. Compass Beverly Hills.</p>
+    </div>
+    <div>
+      <div class="footer-col-head">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="/sellers/">Sellers</a></li>
+        <li><a href="/buyers/">Buyers</a></li>
+        <li><a href="/about/">Team</a></li>
+        <li><a href="/blog/">Journal</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Services</div>
+      <ul class="footer-links">
+        <li><a href="/sellers/#three-phase">3-Phase Marketing</a></li>
+        <li><a href="/sellers/#concierge">Compass Concierge</a></li>
+        <li><a href="/buyers/">Buyer Advisory</a></li>
+        <li><a href="/tools/investor-calculator/">Investor Calculator</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Connect</div>
+      <ul class="footer-links">
+        <li><a href="tel:3237198585">(323) 719-8585</a></li>
+        <li><a href="mailto:michael.abraham@compass.com">Email Us</a></li>
+        <li><a href="https://www.instagram.com/amre.group/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@AMRE_Real_Estate" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/company/amre-real-estate-group/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2026 AMRE Real Estate Group. All rights reserved. <a href="/terms-and-conditions/" style="color:inherit;text-decoration:underline">Privacy Policy</a></p>
+    <p class="footer-dre">Michael Abraham CA DRE# 02242095 &nbsp;·&nbsp; Ania De Pourbaix CA DRE# 01891438 &nbsp;·&nbsp; Compass DRE# 01991628</p>
+  </div>
+</footer>
+
+<div class="site-footer-disclosure-bar">
+  <div class="site-footer-disclosure">
+    <p class="site-footer-disclosure-text">
+      AMRE Real Estate Group is a team of real estate agents affiliated with Compass. <a href="https://www.compass.com/" target="_blank" rel="noopener">Compass</a> is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number 01991628. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to the accuracy of any description. All measurements and square footage are approximate. If your property is currently listed for sale this is not a solicitation.
+    </p>
+    <div class="site-footer-disclosure-eho">
+      <img src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/website/assets/logos/realtor-eho-dark.jpg" alt="REALTOR® and Equal Housing Opportunity" loading="lazy" decoding="async">
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     INTERACTION SCRIPTS
+     ═══════════════════════════════════════════════════════════════════ -->
+<script>
+(function(){
+  // ── Top bar scroll state ──
+  var topbar = document.getElementById('topbar');
+  function updateTopbar(){
+    topbar.classList.toggle('scrolled', window.scrollY > 60);
+  }
+  updateTopbar();
+  window.addEventListener('scroll', updateTopbar, {passive:true});
+
+  // ── Sticky mobile CTA ──
+  var sticky = document.getElementById('stickyCta');
+  function updateSticky(){
+    sticky.classList.toggle('visible', window.scrollY > 400);
+  }
+  window.addEventListener('scroll', updateSticky, {passive:true});
+
+  // ── Modal open/close ──
+  var modal = document.getElementById('modalBackdrop');
+  var lastFocus = null;
+
+  window.openModal = function(){
+    lastFocus = document.activeElement;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){
+      var firstField = modal.querySelector('#sq-first');
+      if (firstField) firstField.focus();
+    }, 280);
+  };
+
+  window.closeModal = function(){
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+
+  // Close on backdrop click
+  modal.addEventListener('click', function(e){
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on ESC
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
