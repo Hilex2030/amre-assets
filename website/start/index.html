@@ -17,12 +17,12 @@
 <script src="/assets/forms/forms.js" defer></script>
 
 <title>The 48-Hour Maximum Price Report | What's Your LA Home Worth — AMRE</title>
-<meta name="description" content="Michael Abraham and Ania De Pourbaix personally deliver a five-part Maximum Price Report on your LA home within 48 hours. Free this quarter. Compass Beverly Hills.">
+<meta name="description" content="Michael Abraham and Ania De Pourbaix personally deliver a five-part Maximum Price Report on your LA home within 48 hours. Compass Beverly Hills.">
 <meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://amre.group/start/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The 48-Hour Maximum Price Report — AMRE">
-<meta property="og:description" content="What's the most your LA home could sell for in 2026? A personal, five-part report from Michael & Ania at Compass Beverly Hills. Free this quarter.">
+<meta property="og:description" content="What's the most your LA home could sell for in 2026? A personal, five-part report from Michael & Ania at Compass Beverly Hills.">
 <meta property="og:url" content="https://amre.group/start/">
 <meta property="og:image" content="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-sofa-conversation.jpg">
 
@@ -70,15 +70,19 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .squeeze-nav-brand img.amre-logo{height:22px;width:auto}
 .squeeze-nav-brand .sep{width:1px;height:16px;background:rgba(255,255,255,.25)}
 .squeeze-nav-brand img.compass-logo{height:14px;width:auto;opacity:.85}
-.squeeze-nav-phone{
-  font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.06em;
-  color:rgba(255,255,255,.85);transition:color .2s;
+.squeeze-nav-cta{
+  font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:9px 18px;border-radius:2px;
+  background:var(--brass);color:var(--navy);
+  transition:background .18s,transform .15s,box-shadow .18s;
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(255,193,60,.18);
 }
-.squeeze-nav-phone:hover{color:var(--brass)}
-.squeeze-nav-phone .label{display:inline;color:rgba(255,255,255,.55);font-weight:400;margin-right:8px}
+.squeeze-nav-cta:hover{background:var(--brass-dk);transform:translateY(-1px);box-shadow:0 6px 18px rgba(255,193,60,.26)}
 @media(max-width:520px){
   .squeeze-nav{padding:0 18px}
-  .squeeze-nav-phone .label{display:none}
+  .squeeze-nav-cta{padding:8px 14px;font-size:10.5px}
 }
 
 /* ── HERO ── */
@@ -93,15 +97,22 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 }
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-sofa-conversation.jpg');
+  background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/properties-hero-sunset.jpg');
   background-size:cover;
-  background-position:center 40%;
-  opacity:.14;
-  filter:grayscale(.15);
+  background-position:center center;
+  opacity:.32;
+  filter:saturate(1.05);
+  animation:heroDrift 28s var(--ease) infinite alternate;
+}
+@keyframes heroDrift{
+  from{transform:scale(1) translateX(0)}
+  to{transform:scale(1.05) translateX(-1%)}
 }
 .hero-grad{
   position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(28,61,49,.65) 0%,rgba(28,61,49,.88) 70%,rgba(28,61,49,.96) 100%);
+  background:
+    radial-gradient(ellipse at 50% 100%,rgba(28,61,49,.4) 0%,rgba(28,61,49,.85) 60%),
+    linear-gradient(180deg,rgba(7,11,51,.5) 0%,rgba(28,61,49,.75) 40%,rgba(28,61,49,.95) 100%);
 }
 .hero-inner{
   position:relative;z-index:2;
@@ -627,9 +638,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
     <span class="sep"></span>
     <img class="compass-logo" src="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/logos/compass-white.png" alt="Compass" decoding="async">
   </a>
-  <a href="tel:3237198585" class="squeeze-nav-phone">
-    <span class="label">Call</span>(323) 719-8585
-  </a>
+  <button class="squeeze-nav-cta" type="button" onclick="openValuationModal()" aria-haspopup="dialog">Get In Touch</button>
 </nav>
 
 <!-- ═══ HERO ═══ -->
@@ -639,7 +648,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
   <div class="hero-inner">
     <div class="hero-eyebrow f">The 48-Hour Maximum Price Report</div>
     <h1 class="f d1">What's the <em>most</em> your LA home could sell for in 2026?</h1>
-    <p class="hero-sub f d2">We're <strong>Michael &amp; Ania</strong>. In the next 48 hours, we'll personally analyze your home, your block, and your competition — then deliver a five-part report showing exactly what we'd list it for, why, and how to push that number higher. No phone call required. No pressure to list with us. Free this quarter.</p>
+    <p class="hero-sub f d2">We're <strong>Michael &amp; Ania</strong>. In the next 48 hours, we'll personally analyze your home, your block, and your competition — then deliver a five-part report showing exactly what we'd list it for, why, and how to push that number higher. No phone call required. No pressure to ever list with us.</p>
 
     <div class="hero-cta-wrap f d3">
       <button class="cta-primary" type="button" onclick="openValuationModal()" aria-haspopup="dialog">
@@ -661,8 +670,8 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
         <span>Combined Experience</span>
       </div>
       <div class="trust-item">
-        <strong>$250M+</strong>
-        <span>Closed Volume</span>
+        <strong>$60M+</strong>
+        <span>In Transactions</span>
       </div>
       <div class="trust-item">
         <strong>Compass</strong>
@@ -723,23 +732,24 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 
     <div class="stack-total f d3">
       <div class="stack-total-label">Total Estimated Value</div>
-      <div class="stack-total-line">$1,500+ in research and strategy — <em>yours free this quarter.</em></div>
+      <div class="stack-total-line">$1,500+ in research and strategy — <em>yours, free.</em></div>
       <div class="stack-total-fine">No credit card. No commitment to list. We only deliver these reports to homeowners we'd genuinely like to work with someday.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══ REASON WHY (letter) ═══ -->
+<!-- ═══ NOTE FROM US (service commitment) ═══ -->
 <section class="letter">
   <div class="letter-inner">
     <span class="letter-quote" aria-hidden="true">"</span>
-    <div class="section-eyebrow section-eyebrow-left f">Why We Do This</div>
-    <h2 class="section-h section-h-left f d1">A short note from <em>both of us.</em></h2>
+    <div class="section-eyebrow section-eyebrow-left f">A Note From Us</div>
+    <h2 class="section-h section-h-left f d1">Service that goes <em>above and beyond.</em></h2>
 
     <div class="letter-body f d2">
-      <p>We only take on five new sellers per quarter. That's how we deliver the level of attention every listing deserves — full-page magazine spreads, professional video, architecturally-considered staging, and the two of us personally negotiating every offer.</p>
-      <p>Five slots means we'd rather invest 90 minutes building something genuinely useful for you than spend weeks chasing leads we haven't earned. If our report is the best you've ever received and you'd like to interview us when you're ready, wonderful. If not, you still walk away with real value — and we keep our quarter open for the right fit.</p>
-      <p>Either way, no one pressures you. That's not how we work.</p>
+      <p>At AMRE, we believe selling your home should never feel like a transaction. It should feel like having two people in your corner who genuinely care about getting it right — for your timeline, your privacy, your family, and your final number.</p>
+      <p>That's the standard we hold ourselves to with every client, whether the home is an $800,000 starter in West Adams or a $5M architectural in the hills. Full-page magazine spreads. Cinematic video. Architecturally-considered staging. Both of us — personally — negotiating every offer that comes in.</p>
+      <p>We didn't build AMRE on volume. We built it on the relationships that turn into referrals, and then into clients for life. That's the only kind of business we want to run.</p>
+      <p>If we can ever help — with a valuation, a question, or just a coffee — that's exactly why we're here.</p>
     </div>
 
     <div class="letter-sig f d3">
@@ -763,16 +773,16 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
       <p class="proof-attr f d2">— A.M., West Adams · Sold March 2026</p>
       <div class="proof-stats f d3">
         <div>
-          <div class="proof-stat-n">18</div>
-          <div class="proof-stat-l">Avg Days on Market<br><span class="proof-stat-sub">vs 47 LA avg</span></div>
+          <div class="proof-stat-n">50+</div>
+          <div class="proof-stat-l">Transactions Closed</div>
         </div>
         <div>
-          <div class="proof-stat-n">102.3%</div>
-          <div class="proof-stat-l">Sale-to-List Ratio</div>
+          <div class="proof-stat-n">$60M+</div>
+          <div class="proof-stat-l">In Transactions</div>
         </div>
         <div>
-          <div class="proof-stat-n">$250M+</div>
-          <div class="proof-stat-l">Total Closed Volume</div>
+          <div class="proof-stat-n">25 yrs</div>
+          <div class="proof-stat-l">Combined Experience</div>
         </div>
       </div>
     </div>
@@ -807,7 +817,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
           <span>Why is this free? What's the catch?</span>
           <span class="faq-icon" aria-hidden="true">+</span>
         </summary>
-        <div class="faq-a">No catch. We accept five new listings per quarter, and we'd rather earn your business by giving you something genuinely valuable up front than by cold-calling you. If we earn your trust, hopefully you'll interview us when you're ready to list. If not, you still walk away with a real report. Fair trade.</div>
+        <div class="faq-a">No catch. We'd rather earn your business by giving you something genuinely valuable up front than by cold-calling you. If we earn your trust, hopefully you'll think of us when you're ready to list. If not, you still walk away with a real report. Fair trade.</div>
       </details>
 
       <details class="faq-item f d1">
@@ -831,7 +841,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
           <span>Is this AI-generated or done by a junior?</span>
           <span class="faq-icon" aria-hidden="true">+</span>
         </summary>
-        <div class="faq-a">Neither. Every report is personally written by Michael (Licensed Architect, DRE #02242095) and Ania (DRE #01891438). That's exactly why we limit it to five sellers per quarter — we won't sacrifice depth for scale.</div>
+        <div class="faq-a">Neither. Every report is personally written by Michael (Licensed Architect, DRE #02242095) and Ania (DRE #01891438). That's the entire point — we don't sacrifice depth for scale, ever.</div>
       </details>
 
       <details class="faq-item f d3">
@@ -848,8 +858,8 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 <!-- ═══ BOTTOM CTA ═══ -->
 <section class="bottom-cta">
   <div class="bottom-cta-inner">
-    <div class="bottom-cta-eyebrow f">Q2 2026 · Limited Capacity</div>
-    <h2 class="f d1">Five reports per quarter.<br><em>Worth claiming yours?</em></h2>
+    <div class="bottom-cta-eyebrow f">Your Maximum Price Report</div>
+    <h2 class="f d1">Curious is enough.<br><em>Find out where you stand.</em></h2>
     <p class="f d2">Even if you're not selling for a year — or three — knowing where your equity actually sits today changes how you plan everything else. Take 60 seconds to request your report. We'll do the rest.</p>
     <button class="cta-primary f d3" type="button" onclick="openValuationModal()" aria-haspopup="dialog">
       Send Me My Maximum Price Report
