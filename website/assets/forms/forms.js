@@ -156,28 +156,17 @@
               window.scrollTo({ top: window.scrollY + rect.top - 100, behavior: 'smooth' });
             } catch(_){}
           }
-          // ── Analytics: Lead event ──
-          var leadValue = (type === 'valuation') ? 1500 : 500;
+          // ── Analytics: push lead_submit to dataLayer (GTM handles routing to Meta, GA4, Ads) ──
+          var leadValue = (type === 'valuation') ? 1500 : (type === 'buyer') ? 750 : 500;
           try {
-            if (typeof gtag === 'function') {
-              gtag('event', 'generate_lead', {
-                event_category: 'engagement',
-                event_label: type,
-                form_source: params.source || '',
-                value: leadValue,
-                currency: 'USD'
-              });
-            }
-          } catch(_){}
-          try {
-            if (typeof fbq === 'function') {
-              fbq('track', 'Lead', {
-                content_category: type,
-                content_name: form.dataset.source || type + '_form',
-                value: leadValue,
-                currency: 'USD'
-              });
-            }
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              event: 'lead_submit',
+              form_type: type,
+              form_source: params.source || form.dataset.source || '',
+              lead_value: leadValue,
+              currency: 'USD'
+            });
           } catch(_){}
         })
         .catch(function(err){
