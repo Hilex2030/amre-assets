@@ -6,19 +6,19 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#1c3d31">
+<meta name="theme-color" content="#070B33">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://raw.githubusercontent.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800&display=swap">
 
-<title>Buying or Selling in LA? | Get Started — AMRE Real Estate Group</title>
-<meta name="description" content="Tell us where you are. Michael Abraham and Ania De Pourbaix will send the right LA real estate toolkit — free, no obligation. Compass Beverly Hills.">
+<title>Buying or Selling in Los Angeles? | Get Started — AMRE Real Estate Group</title>
+<meta name="description" content="Tell us where you are. Michael Abraham and Ania De Pourbaix will send the right Los Angeles real estate toolkit — free, no obligation. Compass Beverly Hills.">
 <meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://amre.group/start/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Buying or Selling in LA? — AMRE">
+<meta property="og:title" content="Buying or Selling in Los Angeles? — AMRE">
 <meta property="og:description" content="Two paths. One question. Tell us where you are and we'll send the right toolkit.">
 <meta property="og:url" content="https://amre.group/start/">
 <meta property="og:image" content="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/properties-hero-sunset.jpg">
@@ -26,13 +26,13 @@
 <style>
 :root{
   --forest:  #1c3d31;
-  --forest-dk:#163328;
   --navy:    #070B33;
+  --navy-dk: #050828;
+  --navy-lt: #101743;
   --brass:   #ffc13c;
   --brass-dk:#e6a800;
-  --cream:   #efdbc0;
-  --offwhite:#faf7f2;
   --paper:   #f5f0e8;
+  --offwhite:#faf7f2;
   --ink:     #1a1a1a;
   --mid:     #5A5A5A;
   --subtle:  #86868b;
@@ -51,15 +51,13 @@ body{font-family:var(--sans);font-weight:300;background:#fff;color:var(--ink);
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 
-/* ── STRIPPED NAV ── */
+/* ── STRIPPED NAV (navy bar) ── */
 .squeeze-nav{
   position:fixed;top:0;left:0;right:0;z-index:500;
   height:var(--nav-h);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 28px;
-  background:rgba(7,11,51,.88);
-  backdrop-filter:saturate(180%) blur(20px);
-  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  background:var(--navy);
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .squeeze-nav-brand{display:flex;align-items:center;gap:12px}
@@ -77,138 +75,134 @@ img{display:block;max-width:100%}
   .squeeze-nav-phone .label{display:none}
 }
 
-/* ── HERO / CHOICE ── */
+/* ── CHOICE HERO (white bg, navy text) ── */
 .choice{
   position:relative;
   min-height:100svh;
   display:flex;align-items:center;justify-content:center;
-  padding:calc(var(--nav-h) + 56px) 28px 64px;
-  background:var(--forest);
-  color:#fff;
+  padding:calc(var(--nav-h) + 72px) 28px 80px;
+  background:#fff;
+  color:var(--ink);
   overflow:hidden;
 }
 .choice-bg{
   position:absolute;inset:0;
   background-image:url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/properties-hero-sunset.jpg');
   background-size:cover;
-  background-position:center center;
-  opacity:.6;
-  filter:saturate(1.08);
-  animation:bgDrift 32s var(--ease) infinite alternate;
-}
-@keyframes bgDrift{
-  from{transform:scale(1) translateX(0)}
-  to{transform:scale(1.06) translateX(-1.5%)}
+  background-position:center 28%;
+  opacity:.18;
+  filter:saturate(.85);
 }
 .choice-grad{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse at 50% 100%,rgba(28,61,49,.35) 0%,rgba(28,61,49,.78) 70%),
-    linear-gradient(180deg,rgba(7,11,51,.4) 0%,rgba(28,61,49,.55) 40%,rgba(28,61,49,.85) 100%);
+    radial-gradient(ellipse at 50% 55%,rgba(255,255,255,.55) 0%,rgba(255,255,255,.95) 60%),
+    linear-gradient(180deg,rgba(255,255,255,.5) 0%,rgba(255,255,255,.85) 50%,rgba(255,255,255,1) 100%);
 }
 .choice-inner{
   position:relative;z-index:2;
-  max-width:1080px;width:100%;
+  max-width:1100px;width:100%;
   text-align:center;
 }
 .choice-eyebrow{
   display:inline-flex;align-items:center;gap:14px;
-  font-size:11px;font-weight:600;letter-spacing:.26em;
-  text-transform:uppercase;color:var(--brass);
-  margin-bottom:24px;
+  font-size:11px;font-weight:700;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--navy);
+  margin-bottom:28px;
 }
 .choice-eyebrow::before,.choice-eyebrow::after{
-  content:'';display:block;width:28px;height:1px;background:var(--brass);
+  content:'';display:block;width:32px;height:1px;background:var(--navy);opacity:.5;
 }
 .choice h1{
   font-family:var(--serif);
-  font-size:clamp(38px,6.4vw,68px);
+  font-size:clamp(40px,6.8vw,76px);
   font-weight:400;
-  line-height:1.05;
+  line-height:1.04;
   letter-spacing:-.015em;
-  margin-bottom:18px;
+  color:var(--ink);
+  margin-bottom:20px;
 }
-.choice h1 em{font-style:italic;color:var(--brass)}
+.choice h1 em{font-style:italic;color:var(--navy)}
 .choice-sub{
-  font-size:clamp(15px,1.6vw,18px);
+  font-size:clamp(15px,1.7vw,18px);
   font-weight:300;
   line-height:1.65;
-  color:rgba(255,255,255,.82);
-  max-width:520px;margin:0 auto 56px;
+  color:var(--mid);
+  max-width:560px;margin:0 auto 64px;
 }
 
-/* ── TWO CARDS ── */
+/* ── TWO CARDS — bold navy on white ── */
 .cards{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:24px;
-  max-width:900px;
+  gap:20px;
+  max-width:940px;
   margin:0 auto;
 }
 .card{
   display:flex;flex-direction:column;
-  padding:44px 36px 36px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:8px;
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
+  padding:48px 36px 36px;
+  background:var(--navy);
+  border:1px solid var(--navy);
+  border-radius:6px;
   text-align:left;
   cursor:pointer;
   transition:transform .25s var(--ease),
              background .25s,
-             border-color .25s,
              box-shadow .25s;
   position:relative;
   overflow:hidden;
+  color:#fff;
 }
 .card::before{
   content:'';
-  position:absolute;top:0;left:0;right:0;height:3px;
+  position:absolute;top:0;left:0;right:0;height:4px;
   background:var(--brass);
   transform:scaleX(0);
   transform-origin:left;
-  transition:transform .35s var(--ease);
+  transition:transform .4s var(--ease);
 }
 .card:hover{
   transform:translateY(-4px);
-  background:rgba(255,255,255,.1);
-  border-color:rgba(255,193,60,.5);
-  box-shadow:0 24px 60px -16px rgba(0,0,0,.5);
+  background:var(--navy-lt);
+  box-shadow:0 32px 64px -20px rgba(7,11,51,.4);
 }
 .card:hover::before{transform:scaleX(1)}
 .card-eyebrow{
-  font-size:10px;font-weight:700;letter-spacing:.26em;
+  font-size:10px;font-weight:700;letter-spacing:.28em;
   text-transform:uppercase;
   color:var(--brass);
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 .card-h{
   font-family:var(--serif);
-  font-size:clamp(24px,2.6vw,30px);
+  font-size:clamp(26px,2.8vw,32px);
   font-weight:400;
-  line-height:1.2;
+  line-height:1.18;
   color:#fff;
   margin-bottom:14px;
 }
 .card-h em{font-style:italic;color:var(--brass)}
 .card-desc{
-  font-size:14px;font-weight:300;line-height:1.65;
-  color:rgba(255,255,255,.75);
-  margin-bottom:32px;
+  font-size:14px;font-weight:300;line-height:1.7;
+  color:rgba(255,255,255,.78);
+  margin-bottom:36px;
   flex:1;
 }
 .card-cta{
   display:inline-flex;align-items:center;gap:10px;
   font-family:var(--sans);
-  font-size:13px;font-weight:600;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--brass);
-  padding-top:18px;
-  border-top:1px solid rgba(255,255,255,.12);
-  transition:gap .2s var(--ease);
+  font-size:13px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:#fff;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.14);
+  transition:gap .2s var(--ease),color .2s;
 }
-.card:hover .card-cta{gap:14px}
+.card:hover .card-cta{
+  gap:14px;
+  color:var(--brass);
+}
 .card-cta .arrow{
   font-size:18px;line-height:1;
   transition:transform .25s var(--ease);
@@ -217,20 +211,20 @@ img{display:block;max-width:100%}
 
 .both-link{
   display:inline-block;
-  margin-top:36px;
+  margin-top:44px;
   font-size:13px;font-weight:400;
-  color:rgba(255,255,255,.55);
-  border-bottom:1px solid rgba(255,255,255,.2);
+  color:var(--mid);
+  border-bottom:1px solid var(--rule);
   padding-bottom:2px;
   transition:color .2s,border-color .2s;
 }
-.both-link:hover{color:#fff;border-color:rgba(255,255,255,.6)}
+.both-link:hover{color:var(--ink);border-color:var(--mid)}
 
 @media(max-width:680px){
-  .choice{padding:calc(var(--nav-h) + 36px) 20px 56px}
-  .cards{grid-template-columns:1fr;gap:16px}
-  .card{padding:32px 24px 26px}
-  .card-desc{margin-bottom:24px}
+  .choice{padding:calc(var(--nav-h) + 40px) 20px 64px}
+  .cards{grid-template-columns:1fr;gap:14px}
+  .card{padding:36px 24px 28px}
+  .card-desc{margin-bottom:28px}
 }
 
 /* ── REVEAL ── */
@@ -261,7 +255,7 @@ img{display:block;max-width:100%}
 .site-footer-disclosure-bar{background:#fff;border-top:1px solid var(--rule);padding:32px 44px}
 .site-footer-disclosure{max-width:1200px;margin-inline:auto;display:flex;gap:32px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .site-footer-disclosure-text{font-family:var(--sans);font-size:11px;font-weight:300;line-height:1.7;color:#5a5a5a;flex:1;min-width:280px}
-.site-footer-disclosure-text a{color:var(--forest);text-decoration:underline}
+.site-footer-disclosure-text a{color:var(--navy);text-decoration:underline}
 .site-footer-disclosure-eho{flex-shrink:0}
 .site-footer-disclosure-eho img{height:60px;width:auto;opacity:.85}
 
@@ -295,7 +289,7 @@ img{display:block;max-width:100%}
   <div class="choice-grad" aria-hidden="true"></div>
   <div class="choice-inner">
     <div class="choice-eyebrow f">Welcome</div>
-    <h1 class="f d1">Buying or selling<br>in <em>LA?</em></h1>
+    <h1 class="f d1">Buying or selling<br>in <em>Los Angeles?</em></h1>
     <p class="choice-sub f d2">Tell us where you are. We'll send the right toolkit — free, no obligation.</p>
 
     <div class="cards">
@@ -311,8 +305,8 @@ img{display:block;max-width:100%}
 
       <a class="card f d3" href="/start/buy/" aria-label="Continue as a buyer">
         <div class="card-eyebrow">For Buyers</div>
-        <h2 class="card-h">See homes <em>before</em> they hit MLS.</h2>
-        <p class="card-desc">Get private access to Compass off-market listings plus a curated weekly brief on the LA neighborhoods you care about. 30–90 days ahead of public.</p>
+        <h2 class="card-h">See homes <em>before</em> MLS, Zillow, and Redfin.</h2>
+        <p class="card-desc">Get private access to Compass off-market listings plus a curated weekly brief on the Los Angeles neighborhoods you care about. 30–90 days ahead of public.</p>
         <span class="card-cta">
           I'm Buying
           <span class="arrow" aria-hidden="true">→</span>
